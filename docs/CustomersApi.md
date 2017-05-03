@@ -1,4 +1,4 @@
-# kaemo_client.CustomersApi
+# CustomersApi
 
 All URIs are relative to *https://api.kaemo.com/api*
 
@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**attach_cart_to_customer**](#attach_cart_to_customer) | **POST** /customers/{customer_id}/carts | 
 [**check_customer_credentials**](#check_customer_credentials) | **POST** /customers/check-credentials | 
 [**create_customer**](#create_customer) | **POST** /customers | 
+[**create_facebook_id**](#create_facebook_id) | **POST** /facebook/customers | 
 [**delete_customer**](#delete_customer) | **DELETE** /customers/{customer_id} | 
 [**get_customer**](#get_customer) | **GET** /customers/{customer_id} | 
 [**get_customer_accesses_subscriptions**](#get_customer_accesses_subscriptions) | **GET** /customers/{customer_id}/accesses/subscriptions | 
@@ -144,6 +145,50 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Customer**](#Customer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **create_facebook_id**
+> create_facebook_id(customer_id, facebook_id)
+
+
+
+Create new Facebook ID for user
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kaemo_client
+from kaemo_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kaemo_client.CustomersApi()
+customer_id = 789 # int | Customer ID
+facebook_id = 'facebook_id_example' # str | Facebook ID
+
+try: 
+    api_instance.create_facebook_id(customer_id, facebook_id)
+except ApiException as e:
+    print("Exception when calling CustomersApi->create_facebook_id: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customer_id** | **int**| Customer ID | 
+ **facebook_id** | **str**| Facebook ID | 
+
+### Return type
+
+void (empty response body)
 
 ### HTTP request headers
 
@@ -466,7 +511,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_customers**
-> Customers get_customers(page=page, per_page=per_page)
+> Customers get_customers(page=page, per_page=per_page, filters=filters, sort_by=sort_by, sort_direction=sort_direction)
 
 
 
@@ -484,9 +529,12 @@ from pprint import pprint
 api_instance = kaemo_client.CustomersApi()
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
+filters = 'filters_example' # str |      ```     filters[email][value]=string&filters[email][operator]=strict&filters[firstname][value]=string&filters[firstname][operator]=contains     _______________      {         \"email\": {             \"value\": \"string\",             \"operator\": \"strict\"         },         \"firstname\": {             \"value\": \"string\",             \"operator\": \"contains\"         }     } ```Operator can be strict, contains, gt or lt. (optional)
+sort_by = 'sort_by_example' # str | Sort by this attribute (id by default) (optional)
+sort_direction = 'sort_direction_example' # str | Sorting direction (asc by default) (optional)
 
 try: 
-    api_response = api_instance.get_customers(page=page, per_page=per_page)
+    api_response = api_instance.get_customers(page=page, per_page=per_page, filters=filters, sort_by=sort_by, sort_direction=sort_direction)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CustomersApi->get_customers: %s\n" % e)
@@ -498,6 +546,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
+ **filters** | **str**|      &#x60;&#x60;&#x60;     filters[email][value]&#x3D;string&amp;filters[email][operator]&#x3D;strict&amp;filters[firstname][value]&#x3D;string&amp;filters[firstname][operator]&#x3D;contains     _______________      {         \&quot;email\&quot;: {             \&quot;value\&quot;: \&quot;string\&quot;,             \&quot;operator\&quot;: \&quot;strict\&quot;         },         \&quot;firstname\&quot;: {             \&quot;value\&quot;: \&quot;string\&quot;,             \&quot;operator\&quot;: \&quot;contains\&quot;         }     } &#x60;&#x60;&#x60;Operator can be strict, contains, gt or lt. | [optional] 
+ **sort_by** | **str**| Sort by this attribute (id by default) | [optional] 
+ **sort_direction** | **str**| Sorting direction (asc by default) | [optional] 
 
 ### Return type
 

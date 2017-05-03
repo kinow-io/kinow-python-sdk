@@ -1,6 +1,6 @@
-# Product
+## Product
 
-## Properties
+### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] 
@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **available_for_order** | **bool** |  | [optional] 
 **date_add** | **str** |  | [optional] 
 **date_upd** | **str** |  | [optional] 
+**id_category_default** | **int** |  | [optional] 
 **meta_description** | [**list[I18nField]**](#I18nField) |  | [optional] 
 **meta_keywords** | [**list[I18nField]**](#I18nField) |  | [optional] 
 **meta_title** | [**list[I18nField]**](#I18nField) |  | [optional] 

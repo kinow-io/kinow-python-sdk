@@ -1,4 +1,4 @@
-# kaemo_client.VideosApi
+# VideosApi
 
 All URIs are relative to *https://api.kaemo.com/api*
 
@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**get_disabled_subscriptions**](#get_disabled_subscriptions) | **GET** /videos/{video_id}/disabled-subscriptions | 
 [**get_player_url**](#get_player_url) | **GET** /customers/{customer_id}/videos/{video_id}/player | 
 [**get_video**](#get_video) | **GET** /videos/{video_id} | 
+[**get_video_access**](#get_video_access) | **GET** /videos/{video_id}/customers/{customer_id}/access | 
 [**get_video_geolocation**](#get_video_geolocation) | **GET** /videos/{video_id}/geolocation | 
 [**get_video_geolocation_0**](#get_video_geolocation_0) | **POST** /videos/{video_id}/geolocations/{ip_address} | 
 [**get_videos**](#get_videos) | **GET** /videos | 
@@ -326,6 +327,50 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
+## **get_video_access**
+> get_video_access(video_id, customer_id)
+
+
+
+Get video access
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kaemo_client
+from kaemo_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kaemo_client.VideosApi()
+video_id = 789 # int | ID of the video to fetch
+customer_id = 789 # int | ID of the customer to fetch
+
+try: 
+    api_instance.get_video_access(video_id, customer_id)
+except ApiException as e:
+    print("Exception when calling VideosApi->get_video_access: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **video_id** | **int**| ID of the video to fetch | 
+ **customer_id** | **int**| ID of the customer to fetch | 
+
+### Return type
+
+void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
 ## **get_video_geolocation**
 > Geolocs get_video_geolocation(video_id, page=page, per_page=per_page)
 
@@ -422,7 +467,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_videos**
-> Videos get_videos(page=page, per_page=per_page)
+> Videos get_videos(page=page, per_page=per_page, filters=filters)
 
 
 
@@ -440,9 +485,10 @@ from pprint import pprint
 api_instance = kaemo_client.VideosApi()
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
+filters = 'filters_example' # str |  ``` filters[name][value]=string&filters[name][operator]=strict&filters[duration][value]=string&filters[duration][operator]=gt _______________  {     \"name\": {         \"value\": \"string\",         \"operator\": \"strict\"     },     \"duration\": {         \"value\": \"string\",         \"operator\": \"gt\"     } } ``` Operator can be strict, contains, gt or lt. (optional)
 
 try: 
-    api_response = api_instance.get_videos(page=page, per_page=per_page)
+    api_response = api_instance.get_videos(page=page, per_page=per_page, filters=filters)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling VideosApi->get_videos: %s\n" % e)
@@ -454,6 +500,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
+ **filters** | **str**|  &#x60;&#x60;&#x60; filters[name][value]&#x3D;string&amp;filters[name][operator]&#x3D;strict&amp;filters[duration][value]&#x3D;string&amp;filters[duration][operator]&#x3D;gt _______________  {     \&quot;name\&quot;: {         \&quot;value\&quot;: \&quot;string\&quot;,         \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;duration\&quot;: {         \&quot;value\&quot;: \&quot;string\&quot;,         \&quot;operator\&quot;: \&quot;gt\&quot;     } } &#x60;&#x60;&#x60; Operator can be strict, contains, gt or lt. | [optional] 
 
 ### Return type
 
@@ -467,7 +514,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_videos_from_product**
-> Videos get_videos_from_product(product_id, page=page, per_page=per_page)
+> Videos get_videos_from_product(product_id, page=page, filters=filters, per_page=per_page)
 
 
 
@@ -485,10 +532,11 @@ from pprint import pprint
 api_instance = kaemo_client.VideosApi()
 product_id = 789 # int | ID of the product to fetch
 page = 789 # int |  (optional)
+filters = 'filters_example' # str |  ``` filters[name][value]=string&filters[name][operator]=strict&filters[duration][value]=string&filters[duration][operator]=gt _______________  {     \"name\": {         \"value\": \"string\",         \"operator\": \"strict\"     },     \"duration\": {         \"value\": \"string\",         \"operator\": \"gt\"     } } ``` Operator can be strict, contains, gt or lt. (optional)
 per_page = 789 # int |  (optional)
 
 try: 
-    api_response = api_instance.get_videos_from_product(product_id, page=page, per_page=per_page)
+    api_response = api_instance.get_videos_from_product(product_id, page=page, filters=filters, per_page=per_page)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling VideosApi->get_videos_from_product: %s\n" % e)
@@ -500,6 +548,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **product_id** | **int**| ID of the product to fetch | 
  **page** | **int**|  | [optional] 
+ **filters** | **str**|  &#x60;&#x60;&#x60; filters[name][value]&#x3D;string&amp;filters[name][operator]&#x3D;strict&amp;filters[duration][value]&#x3D;string&amp;filters[duration][operator]&#x3D;gt _______________  {     \&quot;name\&quot;: {         \&quot;value\&quot;: \&quot;string\&quot;,         \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;duration\&quot;: {         \&quot;value\&quot;: \&quot;string\&quot;,         \&quot;operator\&quot;: \&quot;gt\&quot;     } } &#x60;&#x60;&#x60; Operator can be strict, contains, gt or lt. | [optional] 
  **per_page** | **int**|  | [optional] 
 
 ### Return type

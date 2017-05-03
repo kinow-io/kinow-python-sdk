@@ -1,4 +1,4 @@
-# kaemo_client.SubscriptionsApi
+# SubscriptionsApi
 
 All URIs are relative to *https://api.kaemo.com/api*
 
@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_disabled_subscriptions**](#get_disabled_subscriptions) | **GET** /videos/{video_id}/disabled-subscriptions | 
 [**get_subscription**](#get_subscription) | **GET** /subscriptions/{subscription_id} | 
+[**get_subscription_cover_image**](#get_subscription_cover_image) | **GET** /subscriptions/{subscription_id}/cover | 
 [**get_subscriptions**](#get_subscriptions) | **GET** /subscriptions | 
 
 
@@ -91,6 +92,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Subscription**](#Subscription)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_subscription_cover_image**
+> Image get_subscription_cover_image(subscription_id)
+
+
+
+Get cover image of a subscription
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kaemo_client
+from kaemo_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kaemo_client.SubscriptionsApi()
+subscription_id = 789 # int | ID of the subscription to fetch
+
+try: 
+    api_response = api_instance.get_subscription_cover_image(subscription_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SubscriptionsApi->get_subscription_cover_image: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **subscription_id** | **int**| ID of the subscription to fetch | 
+
+### Return type
+
+[**Image**](#Image)
 
 ### HTTP request headers
 

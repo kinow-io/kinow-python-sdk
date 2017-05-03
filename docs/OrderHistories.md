@@ -1,6 +1,6 @@
-# OrderHistories
+## OrderHistories
 
-## Properties
+### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pagination** | [**Pagination**](#Pagination) |  | [optional] 

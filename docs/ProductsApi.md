@@ -1,4 +1,4 @@
-# kaemo_client.ProductsApi
+# ProductsApi
 
 All URIs are relative to *https://api.kaemo.com/api*
 
@@ -7,11 +7,18 @@ Method | HTTP request | Description
 [**attach_video_to_product**](#attach_video_to_product) | **POST** /products/{product_id}/videos | 
 [**create_product**](#create_product) | **POST** /products | 
 [**delete_product**](#delete_product) | **DELETE** /products/{product_id} | 
+[**get_category_products**](#get_category_products) | **GET** /categories/{category_id}/products | 
 [**get_product**](#get_product) | **GET** /products/{product_id} | 
+[**get_product_actors**](#get_product_actors) | **GET** /products/{product_id}/actors | 
 [**get_product_attributes**](#get_product_attributes) | **GET** /products/{product_id}/attributes | 
+[**get_product_availability**](#get_product_availability) | **GET** /products/{product_id}/access | 
+[**get_product_cover_image**](#get_product_cover_image) | **GET** /products/{product_id}/cover | 
+[**get_product_directors**](#get_product_directors) | **GET** /products/{product_id}/directors | 
+[**get_product_extracts**](#get_product_extracts) | **GET** /products/{product_id}/extracts | 
 [**get_product_features**](#get_product_features) | **GET** /products/{product_id}/features | 
 [**get_product_geolocations**](#get_product_geolocations) | **GET** /products/{product_id}/geolocations | 
-[**get_product_geolocations_by_ip**](#get_product_geolocations_by_ip) | **POST** /products/{product_id}/geolocations/{ip_address} | 
+[**get_product_geolocations_by_ip**](#get_product_geolocations_by_ip) | **POST** /products/{product_id}/geolocations | 
+[**get_product_images**](#get_product_images) | **GET** /products/{product_id}/images | 
 [**get_products**](#get_products) | **GET** /products | 
 [**get_videos_from_product**](#get_videos_from_product) | **GET** /products/{product_id}/videos | 
 [**update_product**](#update_product) | **PUT** /products/{product_id} | 
@@ -146,6 +153,53 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
+## **get_category_products**
+> Products get_category_products(category_id, page=page, per_page=per_page)
+
+
+
+Get category products
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kaemo_client
+from kaemo_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kaemo_client.ProductsApi()
+category_id = 789 # int | ID of the category to fetch
+page = 789 # int |  (optional)
+per_page = 789 # int |  (optional)
+
+try: 
+    api_response = api_instance.get_category_products(category_id, page=page, per_page=per_page)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ProductsApi->get_category_products: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **category_id** | **int**| ID of the category to fetch | 
+ **page** | **int**|  | [optional] 
+ **per_page** | **int**|  | [optional] 
+
+### Return type
+
+[**Products**](#Products)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
 ## **get_product**
 > Product get_product(product_id)
 
@@ -181,6 +235,53 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Product**](#Product)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_product_actors**
+> Actors get_product_actors(product_id, page=page, per_page=per_page)
+
+
+
+Get actors attached to product
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kaemo_client
+from kaemo_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kaemo_client.ProductsApi()
+product_id = 789 # int | ID of the product to fetch
+page = 789 # int |  (optional)
+per_page = 789 # int |  (optional)
+
+try: 
+    api_response = api_instance.get_product_actors(product_id, page=page, per_page=per_page)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ProductsApi->get_product_actors: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_id** | **int**| ID of the product to fetch | 
+ **page** | **int**|  | [optional] 
+ **per_page** | **int**|  | [optional] 
+
+### Return type
+
+[**Actors**](#Actors)
 
 ### HTTP request headers
 
@@ -236,8 +337,189 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
+## **get_product_availability**
+> get_product_availability(product_id, customer_id=customer_id)
+
+
+
+Get availability of a product
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kaemo_client
+from kaemo_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kaemo_client.ProductsApi()
+product_id = 789 # int | ID of the product to fetch
+customer_id = 789 # int | ID of the customer to fetch (optional)
+
+try: 
+    api_instance.get_product_availability(product_id, customer_id=customer_id)
+except ApiException as e:
+    print("Exception when calling ProductsApi->get_product_availability: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_id** | **int**| ID of the product to fetch | 
+ **customer_id** | **int**| ID of the customer to fetch | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_product_cover_image**
+> Image get_product_cover_image(product_id)
+
+
+
+Get cover image of a product
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kaemo_client
+from kaemo_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kaemo_client.ProductsApi()
+product_id = 789 # int | ID of the product to fetch
+
+try: 
+    api_response = api_instance.get_product_cover_image(product_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ProductsApi->get_product_cover_image: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_id** | **int**| ID of the product to fetch | 
+
+### Return type
+
+[**Image**](#Image)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_product_directors**
+> Director1 get_product_directors(product_id, page=page, per_page=per_page)
+
+
+
+Get directors of a product
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kaemo_client
+from kaemo_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kaemo_client.ProductsApi()
+product_id = 789 # int | ID of the product to fetch
+page = 789 # int |  (optional)
+per_page = 789 # int |  (optional)
+
+try: 
+    api_response = api_instance.get_product_directors(product_id, page=page, per_page=per_page)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ProductsApi->get_product_directors: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_id** | **int**| ID of the product to fetch | 
+ **page** | **int**|  | [optional] 
+ **per_page** | **int**|  | [optional] 
+
+### Return type
+
+[**Director1**](#Director1)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_product_extracts**
+> ProductExtractsResponse get_product_extracts(product_id, page=page, per_page=per_page)
+
+
+
+Get extracts of a product
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kaemo_client
+from kaemo_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kaemo_client.ProductsApi()
+product_id = 789 # int | ID of the product to fetch
+page = 789 # int |  (optional)
+per_page = 789 # int |  (optional)
+
+try: 
+    api_response = api_instance.get_product_extracts(product_id, page=page, per_page=per_page)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ProductsApi->get_product_extracts: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_id** | **int**| ID of the product to fetch | 
+ **page** | **int**|  | [optional] 
+ **per_page** | **int**|  | [optional] 
+
+### Return type
+
+[**ProductExtractsResponse**](#ProductExtractsResponse)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
 ## **get_product_features**
-> Features get_product_features(product_id, page=page, per_page=per_page)
+> Products1 get_product_features(product_id, page=page, per_page=per_page)
 
 
 
@@ -274,7 +556,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Features**](#Features)
+[**Products1**](#Products1)
 
 ### HTTP request headers
 
@@ -378,8 +660,57 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
+## **get_product_images**
+> ProductImagesResponse get_product_images(product_id, type=type, page=page, per_page=per_page)
+
+
+
+Get images attached to product
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kaemo_client
+from kaemo_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kaemo_client.ProductsApi()
+product_id = 789 # int | ID of the product to fetch
+type = 'type_example' # str | type as screen_small or screen_large (optional)
+page = 789 # int |  (optional)
+per_page = 789 # int |  (optional)
+
+try: 
+    api_response = api_instance.get_product_images(product_id, type=type, page=page, per_page=per_page)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ProductsApi->get_product_images: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_id** | **int**| ID of the product to fetch | 
+ **type** | **str**| type as screen_small or screen_large | [optional] 
+ **page** | **int**|  | [optional] 
+ **per_page** | **int**|  | [optional] 
+
+### Return type
+
+[**ProductImagesResponse**](#ProductImagesResponse)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
 ## **get_products**
-> Products get_products(page=page, per_page=per_page)
+> Products get_products(page=page, per_page=per_page, features=features, filters=filters, sort_by=sort_by, sort_direction=sort_direction)
 
 
 
@@ -397,9 +728,13 @@ from pprint import pprint
 api_instance = kaemo_client.ProductsApi()
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
+features = 'features_example' # str |  ``` features[*][value]=string&features[*][operator]=strict&features[1][value]=string&features[1][operator]=strict _______________  {     \"*\": {         \"value\": \"string\",         \"operator\": \"strict\"     },     \"1\": {         \"value\": \"string\",         \"operator\": \"contains\"     } } ``` Operator can be strict, contains, gt or lt. To search on all features, you can pass * as featureId. (optional)
+filters = 'filters_example' # str |  ``` filters[name][value]=string&filters[name][operator]=contains&filters[date_add][value]=string&filters[date_add][operator]=lt _______________  {     \"name\": {         \"value\": \"string\",         \"operator\": \"contains\"     },     \"date_add\": {         \"value\": \"string\",         \"operator\": \"lt\"     } } ``` Operator can be strict, contains, gt or lt. (optional)
+sort_by = 'sort_by_example' # str | Sort by this attribute (id by default) (optional)
+sort_direction = 'sort_direction_example' # str | Sorting direction (asc by default) (optional)
 
 try: 
-    api_response = api_instance.get_products(page=page, per_page=per_page)
+    api_response = api_instance.get_products(page=page, per_page=per_page, features=features, filters=filters, sort_by=sort_by, sort_direction=sort_direction)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProductsApi->get_products: %s\n" % e)
@@ -411,6 +746,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
+ **features** | **str**|  &#x60;&#x60;&#x60; features[*][value]&#x3D;string&amp;features[*][operator]&#x3D;strict&amp;features[1][value]&#x3D;string&amp;features[1][operator]&#x3D;strict _______________  {     \&quot;*\&quot;: {         \&quot;value\&quot;: \&quot;string\&quot;,         \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;1\&quot;: {         \&quot;value\&quot;: \&quot;string\&quot;,         \&quot;operator\&quot;: \&quot;contains\&quot;     } } &#x60;&#x60;&#x60; Operator can be strict, contains, gt or lt. To search on all features, you can pass * as featureId. | [optional] 
+ **filters** | **str**|  &#x60;&#x60;&#x60; filters[name][value]&#x3D;string&amp;filters[name][operator]&#x3D;contains&amp;filters[date_add][value]&#x3D;string&amp;filters[date_add][operator]&#x3D;lt _______________  {     \&quot;name\&quot;: {         \&quot;value\&quot;: \&quot;string\&quot;,         \&quot;operator\&quot;: \&quot;contains\&quot;     },     \&quot;date_add\&quot;: {         \&quot;value\&quot;: \&quot;string\&quot;,         \&quot;operator\&quot;: \&quot;lt\&quot;     } } &#x60;&#x60;&#x60; Operator can be strict, contains, gt or lt. | [optional] 
+ **sort_by** | **str**| Sort by this attribute (id by default) | [optional] 
+ **sort_direction** | **str**| Sorting direction (asc by default) | [optional] 
 
 ### Return type
 
@@ -424,7 +763,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_videos_from_product**
-> Videos get_videos_from_product(product_id, page=page, per_page=per_page)
+> Videos get_videos_from_product(product_id, page=page, filters=filters, per_page=per_page)
 
 
 
@@ -442,10 +781,11 @@ from pprint import pprint
 api_instance = kaemo_client.ProductsApi()
 product_id = 789 # int | ID of the product to fetch
 page = 789 # int |  (optional)
+filters = 'filters_example' # str |  ``` filters[name][value]=string&filters[name][operator]=strict&filters[duration][value]=string&filters[duration][operator]=gt _______________  {     \"name\": {         \"value\": \"string\",         \"operator\": \"strict\"     },     \"duration\": {         \"value\": \"string\",         \"operator\": \"gt\"     } } ``` Operator can be strict, contains, gt or lt. (optional)
 per_page = 789 # int |  (optional)
 
 try: 
-    api_response = api_instance.get_videos_from_product(product_id, page=page, per_page=per_page)
+    api_response = api_instance.get_videos_from_product(product_id, page=page, filters=filters, per_page=per_page)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProductsApi->get_videos_from_product: %s\n" % e)
@@ -457,6 +797,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **product_id** | **int**| ID of the product to fetch | 
  **page** | **int**|  | [optional] 
+ **filters** | **str**|  &#x60;&#x60;&#x60; filters[name][value]&#x3D;string&amp;filters[name][operator]&#x3D;strict&amp;filters[duration][value]&#x3D;string&amp;filters[duration][operator]&#x3D;gt _______________  {     \&quot;name\&quot;: {         \&quot;value\&quot;: \&quot;string\&quot;,         \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;duration\&quot;: {         \&quot;value\&quot;: \&quot;string\&quot;,         \&quot;operator\&quot;: \&quot;gt\&quot;     } } &#x60;&#x60;&#x60; Operator can be strict, contains, gt or lt. | [optional] 
  **per_page** | **int**|  | [optional] 
 
 ### Return type

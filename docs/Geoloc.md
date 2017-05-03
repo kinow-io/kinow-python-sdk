@@ -1,6 +1,6 @@
-# Geoloc
+## Geoloc
 
-## Properties
+### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] 

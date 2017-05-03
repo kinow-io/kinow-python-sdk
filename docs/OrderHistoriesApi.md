@@ -1,4 +1,4 @@
-# kaemo_client.OrderHistoriesApi
+# OrderHistoriesApi
 
 All URIs are relative to *https://api.kaemo.com/api*
 

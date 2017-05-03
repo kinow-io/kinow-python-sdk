@@ -1,6 +1,6 @@
-# CartBody
+## CartBody
 
-## Properties
+### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id_currency** | **int** |  | [optional] 

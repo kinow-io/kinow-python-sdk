@@ -1,6 +1,6 @@
-# OAuthToken
+## OAuthToken
 
-## Properties
+### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **token_type** | **str** |  | [optional] 

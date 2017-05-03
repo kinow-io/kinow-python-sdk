@@ -1,6 +1,6 @@
-# PaymentUrl
+## PaymentUrl
 
-## Properties
+### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **url** | **str** |  | [optional] 

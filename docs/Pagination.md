@@ -1,6 +1,6 @@
-# Pagination
+## Pagination
 
-## Properties
+### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **total** | **int** |  | [optional] 

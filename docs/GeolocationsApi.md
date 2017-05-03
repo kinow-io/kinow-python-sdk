@@ -1,4 +1,4 @@
-# kaemo_client.GeolocationsApi
+# GeolocationsApi
 
 All URIs are relative to *https://api.kaemo.com/api*
 
@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**geolocations**](#geolocations) | **POST** /geolocations/{ip_address} | 
 [**get_product_geolocations**](#get_product_geolocations) | **GET** /products/{product_id}/geolocations | 
-[**get_product_geolocations_by_ip**](#get_product_geolocations_by_ip) | **POST** /products/{product_id}/geolocations/{ip_address} | 
+[**get_product_geolocations_by_ip**](#get_product_geolocations_by_ip) | **POST** /products/{product_id}/geolocations | 
 [**get_video_geolocation**](#get_video_geolocation) | **POST** /videos/{video_id}/geolocations/{ip_address} | 
 
 

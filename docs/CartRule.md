@@ -1,6 +1,6 @@
-# CartRule
+## CartRule
 
-## Properties
+### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] 
