@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_payment_modules**](#get_payment_modules) | **GET** /payment-modules | 
 [**get_payment_url**](#get_payment_url) | **GET** /carts/{cart_id}/payments/{payment_name} | 
+[**validate_cart**](#validate_cart) | **POST** /carts/{cart_id}/payments/{payment_name}/validate | 
 
 
 ## **get_payment_modules**
@@ -90,6 +91,52 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PaymentUrl**](#PaymentUrl)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **validate_cart**
+> validate_cart(cart_id, payment_name, payment_arguments)
+
+
+
+Validate order
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kaemo_client
+from kaemo_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kaemo_client.PaymentModulesApi()
+cart_id = 789 # int | Id of the cart to fetch
+payment_name = 'payment_name_example' # str | Payment module name
+payment_arguments = kaemo_client.PaymentArguments() # PaymentArguments | payment arguments, token and tokenType
+
+try: 
+    api_instance.validate_cart(cart_id, payment_name, payment_arguments)
+except ApiException as e:
+    print("Exception when calling PaymentModulesApi->validate_cart: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cart_id** | **int**| Id of the cart to fetch | 
+ **payment_name** | **str**| Payment module name | 
+ **payment_arguments** | [**PaymentArguments**](#PaymentArguments)| payment arguments, token and tokenType | 
+
+### Return type
+
+void (empty response body)
 
 ### HTTP request headers
 

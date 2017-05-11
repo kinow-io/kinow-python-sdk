@@ -4,9 +4,11 @@ All URIs are relative to *https://api.kaemo.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**attach_features_to_product**](#attach_features_to_product) | **POST** /products/{product_id}/features | 
 [**attach_video_to_product**](#attach_video_to_product) | **POST** /products/{product_id}/videos | 
 [**create_product**](#create_product) | **POST** /products | 
 [**delete_product**](#delete_product) | **DELETE** /products/{product_id} | 
+[**detach_feature_to_product**](#detach_feature_to_product) | **DELETE** products/{product_id}/features/{feature_id} | 
 [**get_category_products**](#get_category_products) | **GET** /categories/{category_id}/products | 
 [**get_product**](#get_product) | **GET** /products/{product_id} | 
 [**get_product_actors**](#get_product_actors) | **GET** /products/{product_id}/actors | 
@@ -23,6 +25,50 @@ Method | HTTP request | Description
 [**get_videos_from_product**](#get_videos_from_product) | **GET** /products/{product_id}/videos | 
 [**update_product**](#update_product) | **PUT** /products/{product_id} | 
 
+
+## **attach_features_to_product**
+> attach_features_to_product(product_id, features)
+
+
+
+Attach feature to product
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kaemo_client
+from kaemo_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kaemo_client.ProductsApi()
+product_id = 789 # int | 
+features = 'features_example' # str |  To attach existing FeatureValue to Product: ``` [{     \"id_feature\":3,     \"id_feature_value\":5 }]```  To create a custom FeatureValue: ``` [{      \"id_feature\":3,      \"custom_value\":[{         \"lang\": 1,         \"value\": \"string\"      }] }]```
+
+try: 
+    api_instance.attach_features_to_product(product_id, features)
+except ApiException as e:
+    print("Exception when calling ProductsApi->attach_features_to_product: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_id** | **int**|  | 
+ **features** | **str**|  To attach existing FeatureValue to Product: &#x60;&#x60;&#x60; [{     \&quot;id_feature\&quot;:3,     \&quot;id_feature_value\&quot;:5 }]&#x60;&#x60;&#x60;  To create a custom FeatureValue: &#x60;&#x60;&#x60; [{      \&quot;id_feature\&quot;:3,      \&quot;custom_value\&quot;:[{         \&quot;lang\&quot;: 1,         \&quot;value\&quot;: \&quot;string\&quot;      }] }]&#x60;&#x60;&#x60; | 
+
+### Return type
+
+void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **attach_video_to_product**
 > attach_video_to_product(product_id, video_id)
@@ -141,6 +187,50 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **product_id** | **int**| ID of the product to fetch | 
+
+### Return type
+
+void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **detach_feature_to_product**
+> detach_feature_to_product(product_id, feature_id)
+
+
+
+Detach feature to product
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kaemo_client
+from kaemo_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kaemo_client.ProductsApi()
+product_id = 789 # int | 
+feature_id = 789 # int | 
+
+try: 
+    api_instance.detach_feature_to_product(product_id, feature_id)
+except ApiException as e:
+    print("Exception when calling ProductsApi->detach_feature_to_product: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_id** | **int**|  | 
+ **feature_id** | **int**|  | 
 
 ### Return type
 
@@ -519,7 +609,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_product_features**
-> Products1 get_product_features(product_id, page=page, per_page=per_page)
+> Products2 get_product_features(product_id, page=page, per_page=per_page)
 
 
 
@@ -556,7 +646,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Products1**](#Products1)
+[**Products2**](#Products2)
 
 ### HTTP request headers
 
@@ -728,8 +818,8 @@ from pprint import pprint
 api_instance = kaemo_client.ProductsApi()
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
-features = 'features_example' # str |  ``` features[*][value]=string&features[*][operator]=strict&features[1][value]=string&features[1][operator]=strict _______________  {     \"*\": {         \"value\": \"string\",         \"operator\": \"strict\"     },     \"1\": {         \"value\": \"string\",         \"operator\": \"contains\"     } } ``` Operator can be strict, contains, gt or lt. To search on all features, you can pass * as featureId. (optional)
-filters = 'filters_example' # str |  ``` filters[name][value]=string&filters[name][operator]=contains&filters[date_add][value]=string&filters[date_add][operator]=lt _______________  {     \"name\": {         \"value\": \"string\",         \"operator\": \"contains\"     },     \"date_add\": {         \"value\": \"string\",         \"operator\": \"lt\"     } } ``` Operator can be strict, contains, gt or lt. (optional)
+features = 'features_example' # str |      ```     features[*][value]=string&features[*][operator]=strict&features[1][value]=string&features[1][operator]=strict     _______________      {     \"*\": {     \"value\": \"string\",     \"operator\": \"strict\"     },     \"1\": {     \"value\": \"string\",     \"operator\": \"contains\"     }     } ```     Operator can be strict, contains, gt or lt.     To search on all features, you can pass * as featureId. (optional)
+filters = 'filters_example' # str |      ```     filters[name][value]=string&filters[name][operator]=contains&filters[date_add][value]=string&filters[date_add][operator]=lt     _______________      {     \"name\": {     \"value\": \"string\",     \"operator\": \"contains\"     },     \"date_add\": {     \"value\": \"string\",     \"operator\": \"lt\"     }     } ```     Operator can be strict, contains, gt or lt. (optional)
 sort_by = 'sort_by_example' # str | Sort by this attribute (id by default) (optional)
 sort_direction = 'sort_direction_example' # str | Sorting direction (asc by default) (optional)
 
@@ -746,8 +836,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
- **features** | **str**|  &#x60;&#x60;&#x60; features[*][value]&#x3D;string&amp;features[*][operator]&#x3D;strict&amp;features[1][value]&#x3D;string&amp;features[1][operator]&#x3D;strict _______________  {     \&quot;*\&quot;: {         \&quot;value\&quot;: \&quot;string\&quot;,         \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;1\&quot;: {         \&quot;value\&quot;: \&quot;string\&quot;,         \&quot;operator\&quot;: \&quot;contains\&quot;     } } &#x60;&#x60;&#x60; Operator can be strict, contains, gt or lt. To search on all features, you can pass * as featureId. | [optional] 
- **filters** | **str**|  &#x60;&#x60;&#x60; filters[name][value]&#x3D;string&amp;filters[name][operator]&#x3D;contains&amp;filters[date_add][value]&#x3D;string&amp;filters[date_add][operator]&#x3D;lt _______________  {     \&quot;name\&quot;: {         \&quot;value\&quot;: \&quot;string\&quot;,         \&quot;operator\&quot;: \&quot;contains\&quot;     },     \&quot;date_add\&quot;: {         \&quot;value\&quot;: \&quot;string\&quot;,         \&quot;operator\&quot;: \&quot;lt\&quot;     } } &#x60;&#x60;&#x60; Operator can be strict, contains, gt or lt. | [optional] 
+ **features** | **str**|      &#x60;&#x60;&#x60;     features[*][value]&#x3D;string&amp;features[*][operator]&#x3D;strict&amp;features[1][value]&#x3D;string&amp;features[1][operator]&#x3D;strict     _______________      {     \&quot;*\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;1\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;contains\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be strict, contains, gt or lt.     To search on all features, you can pass * as featureId. | [optional] 
+ **filters** | **str**|      &#x60;&#x60;&#x60;     filters[name][value]&#x3D;string&amp;filters[name][operator]&#x3D;contains&amp;filters[date_add][value]&#x3D;string&amp;filters[date_add][operator]&#x3D;lt     _______________      {     \&quot;name\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;contains\&quot;     },     \&quot;date_add\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;lt\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be strict, contains, gt or lt. | [optional] 
  **sort_by** | **str**| Sort by this attribute (id by default) | [optional] 
  **sort_direction** | **str**| Sorting direction (asc by default) | [optional] 
 
@@ -781,7 +871,7 @@ from pprint import pprint
 api_instance = kaemo_client.ProductsApi()
 product_id = 789 # int | ID of the product to fetch
 page = 789 # int |  (optional)
-filters = 'filters_example' # str |  ``` filters[name][value]=string&filters[name][operator]=strict&filters[duration][value]=string&filters[duration][operator]=gt _______________  {     \"name\": {         \"value\": \"string\",         \"operator\": \"strict\"     },     \"duration\": {         \"value\": \"string\",         \"operator\": \"gt\"     } } ``` Operator can be strict, contains, gt or lt. (optional)
+filters = 'filters_example' # str |      ```     filters[name][value]=string&filters[name][operator]=strict&filters[duration][value]=string&filters[duration][operator]=gt     _______________      {     \"name\": {     \"value\": \"string\",     \"operator\": \"strict\"     },     \"duration\": {     \"value\": \"string\",     \"operator\": \"gt\"     }     } ```     Operator can be strict, contains, gt or lt. (optional)
 per_page = 789 # int |  (optional)
 
 try: 
@@ -797,7 +887,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **product_id** | **int**| ID of the product to fetch | 
  **page** | **int**|  | [optional] 
- **filters** | **str**|  &#x60;&#x60;&#x60; filters[name][value]&#x3D;string&amp;filters[name][operator]&#x3D;strict&amp;filters[duration][value]&#x3D;string&amp;filters[duration][operator]&#x3D;gt _______________  {     \&quot;name\&quot;: {         \&quot;value\&quot;: \&quot;string\&quot;,         \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;duration\&quot;: {         \&quot;value\&quot;: \&quot;string\&quot;,         \&quot;operator\&quot;: \&quot;gt\&quot;     } } &#x60;&#x60;&#x60; Operator can be strict, contains, gt or lt. | [optional] 
+ **filters** | **str**|      &#x60;&#x60;&#x60;     filters[name][value]&#x3D;string&amp;filters[name][operator]&#x3D;strict&amp;filters[duration][value]&#x3D;string&amp;filters[duration][operator]&#x3D;gt     _______________      {     \&quot;name\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;duration\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;gt\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be strict, contains, gt or lt. | [optional] 
  **per_page** | **int**|  | [optional] 
 
 ### Return type
