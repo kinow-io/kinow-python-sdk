@@ -16,6 +16,8 @@ Method | HTTP request | Description
 [**get_customer_has_access_to_video**](#get_customer_has_access_to_video) | **GET** /customers/{customer_id}/videos/{video_id}/has-access | 
 [**get_customer_orders**](#get_customer_orders) | **GET** /customers/{customer_id}/orders | 
 [**get_customers**](#get_customers) | **GET** /customers | 
+[**get_download_url**](#get_download_url) | **GET** /customers/{customer_id}/videos/{video_id}/download | 
+[**get_marlin_token**](#get_marlin_token) | **GET** /customers/{customer_id}/videos/{video_id}/marlin | 
 [**get_player_url**](#get_player_url) | **GET** /customers/{customer_id}/videos/{video_id}/player | 
 [**update_customer**](#update_customer) | **PUT** /customers/{customer_id} | 
 
@@ -553,6 +555,96 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Customers**](#Customers)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_download_url**
+> DownloadUrl get_download_url(customer_id, video_id)
+
+
+
+Get video download url
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kaemo_client
+from kaemo_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kaemo_client.CustomersApi()
+customer_id = 789 # int | Id of the customer to fetch
+video_id = 789 # int | Id of the video to fetch
+
+try: 
+    api_response = api_instance.get_download_url(customer_id, video_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CustomersApi->get_download_url: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customer_id** | **int**| Id of the customer to fetch | 
+ **video_id** | **int**| Id of the video to fetch | 
+
+### Return type
+
+[**DownloadUrl**](#DownloadUrl)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_marlin_token**
+> MarlinToken get_marlin_token(customer_id, video_id)
+
+
+
+Get Marlin access token for a video
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kaemo_client
+from kaemo_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kaemo_client.CustomersApi()
+customer_id = 789 # int | Id of the customer to fetch
+video_id = 789 # int | Id of the video to fetch
+
+try: 
+    api_response = api_instance.get_marlin_token(customer_id, video_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CustomersApi->get_marlin_token: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customer_id** | **int**| Id of the customer to fetch | 
+ **video_id** | **int**| Id of the video to fetch | 
+
+### Return type
+
+[**MarlinToken**](#MarlinToken)
 
 ### HTTP request headers
 

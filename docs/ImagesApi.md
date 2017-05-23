@@ -358,7 +358,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_video_cover**
-> Image get_video_cover()
+> Image get_video_cover(video)
 
 
 
@@ -374,16 +374,20 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kaemo_client.ImagesApi()
+video = 789 # int | ID of the video to fetch
 
 try: 
-    api_response = api_instance.get_video_cover()
+    api_response = api_instance.get_video_cover(video)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ImagesApi->get_video_cover: %s\n" % e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **video** | **int**| ID of the video to fetch | 
 
 ### Return type
 

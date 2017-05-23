@@ -10,11 +10,12 @@ Method | HTTP request | Description
 [**get_categories_from_category**](#get_categories_from_category) | **GET** /categories/{category_id}/categories | 
 [**get_category**](#get_category) | **GET** /categories/{category_id} | 
 [**get_category_banner**](#get_category_banner) | **GET** /categories/{category_id}/banner | 
+[**get_category_features**](#get_category_features) | **GET** /categories/{category_id}/features | 
 [**get_category_products**](#get_category_products) | **GET** /categories/{category_id}/products | 
 
 
 ## **get_available_categories**
-> Categories1 get_available_categories(customer_id=customer_id)
+> Categories get_available_categories(customer_id=customer_id, page=page, per_page=per_page)
 
 
 
@@ -31,9 +32,11 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = kaemo_client.CategoriesApi()
 customer_id = 789 # int | ID of the customer to fetch (optional)
+page = 789 # int |  (optional)
+per_page = 789 # int |  (optional)
 
 try: 
-    api_response = api_instance.get_available_categories(customer_id=customer_id)
+    api_response = api_instance.get_available_categories(customer_id=customer_id, page=page, per_page=per_page)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CategoriesApi->get_available_categories: %s\n" % e)
@@ -44,10 +47,12 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customer_id** | **int**| ID of the customer to fetch | [optional] 
+ **page** | **int**|  | [optional] 
+ **per_page** | **int**|  | [optional] 
 
 ### Return type
 
-[**Categories1**](#Categories1)
+[**Categories**](#Categories)
 
 ### HTTP request headers
 
@@ -275,6 +280,53 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Image**](#Image)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_category_features**
+> Features get_category_features(category_id, page=page, per_page=per_page)
+
+
+
+Get category features
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kaemo_client
+from kaemo_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kaemo_client.CategoriesApi()
+category_id = 789 # int | ID of the category to fetch
+page = 789 # int |  (optional)
+per_page = 789 # int |  (optional)
+
+try: 
+    api_response = api_instance.get_category_features(category_id, page=page, per_page=per_page)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CategoriesApi->get_category_features: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **category_id** | **int**| ID of the category to fetch | 
+ **page** | **int**|  | [optional] 
+ **per_page** | **int**|  | [optional] 
+
+### Return type
+
+[**Features**](#Features)
 
 ### HTTP request headers
 

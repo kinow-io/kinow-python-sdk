@@ -23,6 +23,7 @@ Method | HTTP request | Description
 [**get_product_images**](#get_product_images) | **GET** /products/{product_id}/images | 
 [**get_products**](#get_products) | **GET** /products | 
 [**get_videos_from_product**](#get_videos_from_product) | **GET** /products/{product_id}/videos | 
+[**search_products**](#search_products) | **GET** /products/search/{search_query} | 
 [**update_product**](#update_product) | **PUT** /products/{product_id} | 
 
 
@@ -609,7 +610,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_product_features**
-> Products2 get_product_features(product_id, page=page, per_page=per_page)
+> Features get_product_features(product_id, page=page, per_page=per_page)
 
 
 
@@ -646,7 +647,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Products2**](#Products2)
+[**Features**](#Features)
 
 ### HTTP request headers
 
@@ -893,6 +894,53 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Videos**](#Videos)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **search_products**
+> Products search_products(search_query, page=page, per_page=per_page)
+
+
+
+Search product with a keyword
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kaemo_client
+from kaemo_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kaemo_client.ProductsApi()
+search_query = 'search_query_example' # str | Keyword used to search the products
+page = 789 # int |  (optional)
+per_page = 789 # int |  (optional)
+
+try: 
+    api_response = api_instance.search_products(search_query, page=page, per_page=per_page)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ProductsApi->search_products: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **search_query** | **str**| Keyword used to search the products | 
+ **page** | **int**|  | [optional] 
+ **per_page** | **int**|  | [optional] 
+
+### Return type
+
+[**Products**](#Products)
 
 ### HTTP request headers
 

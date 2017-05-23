@@ -29,6 +29,7 @@ from .order_histories_api import OrderHistoriesApi
 from .order_states_api import OrderStatesApi
 from .orders_api import OrdersApi
 from .payment_modules_api import PaymentModulesApi
+from .player_api import PlayerApi
 from .product_accesses_api import ProductAccessesApi
 from .products_api import ProductsApi
 from .subscriptions_api import SubscriptionsApi

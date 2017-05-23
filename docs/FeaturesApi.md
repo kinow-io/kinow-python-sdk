@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**attach_features_to_product**](#attach_features_to_product) | **POST** /products/{product_id}/features | 
 [**detach_feature_to_product**](#detach_feature_to_product) | **DELETE** products/{product_id}/features/{feature_id} | 
+[**get_category_features**](#get_category_features) | **GET** /categories/{category_id}/features | 
 [**get_feature_values**](#get_feature_values) | **GET** /feature-values | 
 [**get_features**](#get_features) | **GET** /features | 
 [**get_product_features**](#get_product_features) | **GET** /products/{product_id}/features | 
@@ -99,6 +100,53 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
+## **get_category_features**
+> Features get_category_features(category_id, page=page, per_page=per_page)
+
+
+
+Get category features
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kaemo_client
+from kaemo_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kaemo_client.FeaturesApi()
+category_id = 789 # int | ID of the category to fetch
+page = 789 # int |  (optional)
+per_page = 789 # int |  (optional)
+
+try: 
+    api_response = api_instance.get_category_features(category_id, page=page, per_page=per_page)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling FeaturesApi->get_category_features: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **category_id** | **int**| ID of the category to fetch | 
+ **page** | **int**|  | [optional] 
+ **per_page** | **int**|  | [optional] 
+
+### Return type
+
+[**Features**](#Features)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
 ## **get_feature_values**
 > Products1 get_feature_values(page=page, per_page=per_page)
 
@@ -145,7 +193,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_features**
-> Products2 get_features(page=page, per_page=per_page)
+> Features get_features(page=page, per_page=per_page)
 
 
 
@@ -180,7 +228,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Products2**](#Products2)
+[**Features**](#Features)
 
 ### HTTP request headers
 
@@ -190,7 +238,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_product_features**
-> Products2 get_product_features(product_id, page=page, per_page=per_page)
+> Features get_product_features(product_id, page=page, per_page=per_page)
 
 
 
@@ -227,7 +275,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Products2**](#Products2)
+[**Features**](#Features)
 
 ### HTTP request headers
 

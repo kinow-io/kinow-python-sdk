@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **date_add** | **str** |  | [optional] 
 **date_upd** | **str** |  | [optional] 
 **id_category_default** | **int** |  | [optional] 
+**images** | [**list[Image]**](#Image) |  | [optional] 
 **meta_description** | [**list[I18nField]**](#I18nField) |  | [optional] 
 **meta_keywords** | [**list[I18nField]**](#I18nField) |  | [optional] 
 **meta_title** | [**list[I18nField]**](#I18nField) |  | [optional] 

@@ -4,11 +4,99 @@ All URIs are relative to *https://api.kaemo.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**create_product_access**](#create_product_access) | **POST** /product-accesses | 
+[**delete_product_access**](#delete_product_access) | **DELETE** /product-accesses/{product_access_id} | 
 [**get_customer_accesses_subscriptions**](#get_customer_accesses_subscriptions) | **GET** /customers/{customer_id}/accesses/subscriptions | 
 [**get_customer_accesses_videos**](#get_customer_accesses_videos) | **GET** /customers/{customer_id}/accesses/videos | 
 [**get_product_accesses**](#get_product_accesses) | **GET** /product-accesses | 
+[**stop_subscription**](#stop_subscription) | **PUT** /customers/{customer_id}/unsubscribe | 
 [**update_product_access**](#update_product_access) | **PUT** /product-accesses/{product_access_id} | 
 
+
+## **create_product_access**
+> ProductAccess create_product_access(body)
+
+
+
+Create new product access
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kaemo_client
+from kaemo_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kaemo_client.ProductAccessesApi()
+body = kaemo_client.ProductAccess() # ProductAccess | 
+
+try: 
+    api_response = api_instance.create_product_access(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ProductAccessesApi->create_product_access: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ProductAccess**](#ProductAccess)|  | 
+
+### Return type
+
+[**ProductAccess**](#ProductAccess)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **delete_product_access**
+> delete_product_access(product_access_id)
+
+
+
+Delete product access
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kaemo_client
+from kaemo_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kaemo_client.ProductAccessesApi()
+product_access_id = 789 # int | ID of the product access to fetch
+
+try: 
+    api_instance.delete_product_access(product_access_id)
+except ApiException as e:
+    print("Exception when calling ProductAccessesApi->delete_product_access: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_access_id** | **int**| ID of the product access to fetch | 
+
+### Return type
+
+void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_customer_accesses_subscriptions**
 > SubscriptionAccesses get_customer_accesses_subscriptions(customer_id, page=page, per_page=per_page)
@@ -151,6 +239,50 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SubscriptionAccesses**](#SubscriptionAccesses)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **stop_subscription**
+> stop_subscription(customer_id, product_access_id)
+
+
+
+unsubcribe a user from a access
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kaemo_client
+from kaemo_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kaemo_client.ProductAccessesApi()
+customer_id = 789 # int | ID of the user to unsubscribe
+product_access_id = 'product_access_id_example' # str | ID of the product access to unsubscribe from
+
+try: 
+    api_instance.stop_subscription(customer_id, product_access_id)
+except ApiException as e:
+    print("Exception when calling ProductAccessesApi->stop_subscription: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customer_id** | **int**| ID of the user to unsubscribe | 
+ **product_access_id** | **str**| ID of the product access to unsubscribe from | 
+
+### Return type
+
+void (empty response body)
 
 ### HTTP request headers
 

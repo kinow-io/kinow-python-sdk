@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 ## **get_available_categories**
-> Categories1 get_available_categories(customer_id=customer_id)
+> Categories get_available_categories(customer_id=customer_id, page=page, per_page=per_page)
 
 
 
@@ -28,9 +28,11 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = kaemo_client.AccessesApi()
 customer_id = 789 # int | ID of the customer to fetch (optional)
+page = 789 # int |  (optional)
+per_page = 789 # int |  (optional)
 
 try: 
-    api_response = api_instance.get_available_categories(customer_id=customer_id)
+    api_response = api_instance.get_available_categories(customer_id=customer_id, page=page, per_page=per_page)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccessesApi->get_available_categories: %s\n" % e)
@@ -41,10 +43,12 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customer_id** | **int**| ID of the customer to fetch | [optional] 
+ **page** | **int**|  | [optional] 
+ **per_page** | **int**|  | [optional] 
 
 ### Return type
 
-[**Categories1**](#Categories1)
+[**Categories**](#Categories)
 
 ### HTTP request headers
 
