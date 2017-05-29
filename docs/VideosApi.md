@@ -4,6 +4,7 @@ All URIs are relative to *https://api.kaemo.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**attach_features_to_video**](#attach_features_to_video) | **POST** /videos/{video_id}/features | 
 [**attach_video_to_product**](#attach_video_to_product) | **POST** /products/{product_id}/videos | 
 [**create_video**](#create_video) | **POST** /videos | 
 [**delete_video**](#delete_video) | **DELETE** /videos/{video_id} | 
@@ -14,6 +15,7 @@ Method | HTTP request | Description
 [**get_player_url**](#get_player_url) | **GET** /customers/{customer_id}/videos/{video_id}/player | 
 [**get_video**](#get_video) | **GET** /videos/{video_id} | 
 [**get_video_access**](#get_video_access) | **GET** /videos/{video_id}/customers/{customer_id}/access | 
+[**get_video_features**](#get_video_features) | **GET** /videos/{video_id}/features | 
 [**get_video_geolocation**](#get_video_geolocation) | **GET** /videos/{video_id}/geolocation | 
 [**get_video_geolocation_0**](#get_video_geolocation_0) | **POST** /videos/{video_id}/geolocations/{ip_address} | 
 [**get_video_player_url**](#get_video_player_url) | **GET** /videos/{video_id}/player | 
@@ -21,6 +23,50 @@ Method | HTTP request | Description
 [**get_videos_from_product**](#get_videos_from_product) | **GET** /products/{product_id}/videos | 
 [**update_video**](#update_video) | **PUT** /videos/{video_id} | 
 
+
+## **attach_features_to_video**
+> attach_features_to_video(video_id, features)
+
+
+
+Attach feature to video
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kaemo_client
+from kaemo_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kaemo_client.VideosApi()
+video_id = 789 # int | 
+features = 'features_example' # str |      To attach existing FeatureValue to Product:     ```     [{     \"id_feature\":3,     \"id_feature_value\":5     }]     ```      To create a custom FeatureValue:     ```     [{     \"id_feature\":3,     \"custom_value\":[{     \"lang\": 1,     \"value\": \"string\"     }]     }]     ```
+
+try: 
+    api_instance.attach_features_to_video(video_id, features)
+except ApiException as e:
+    print("Exception when calling VideosApi->attach_features_to_video: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **video_id** | **int**|  | 
+ **features** | **str**|      To attach existing FeatureValue to Product:     &#x60;&#x60;&#x60;     [{     \&quot;id_feature\&quot;:3,     \&quot;id_feature_value\&quot;:5     }]     &#x60;&#x60;&#x60;      To create a custom FeatureValue:     &#x60;&#x60;&#x60;     [{     \&quot;id_feature\&quot;:3,     \&quot;custom_value\&quot;:[{     \&quot;lang\&quot;: 1,     \&quot;value\&quot;: \&quot;string\&quot;     }]     }]     &#x60;&#x60;&#x60; | 
+
+### Return type
+
+void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **attach_video_to_product**
 > attach_video_to_product(product_id, video_id)
@@ -464,6 +510,53 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
+## **get_video_features**
+> Features get_video_features(video_id, page=page, per_page=per_page)
+
+
+
+Get video features
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kaemo_client
+from kaemo_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kaemo_client.VideosApi()
+video_id = 789 # int | ID of the video to fetch
+page = 789 # int |  (optional)
+per_page = 789 # int |  (optional)
+
+try: 
+    api_response = api_instance.get_video_features(video_id, page=page, per_page=per_page)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling VideosApi->get_video_features: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **video_id** | **int**| ID of the video to fetch | 
+ **page** | **int**|  | [optional] 
+ **per_page** | **int**|  | [optional] 
+
+### Return type
+
+[**Features**](#Features)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
 ## **get_video_geolocation**
 > Geolocs get_video_geolocation(video_id, page=page, per_page=per_page)
 
@@ -603,7 +696,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_videos**
-> Videos get_videos(page=page, per_page=per_page, filters=filters)
+> Videos get_videos(page=page, per_page=per_page, features=features, filters=filters)
 
 
 
@@ -621,10 +714,11 @@ from pprint import pprint
 api_instance = kaemo_client.VideosApi()
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
+features = 'features_example' # str |      ```     features[*][value]=string&features[*][operator]=strict&features[1][value]=string&features[1][operator]=strict     _______________      {     \"*\": {     \"value\": \"string\",     \"operator\": \"strict\"     },     \"1\": {     \"value\": \"string\",     \"operator\": \"contains\"     }     } ```     Operator can be strict, contains, gt or lt.     To search on all features, you can pass * as featureId. (optional)
 filters = 'filters_example' # str |      ```     filters[name][value]=string&filters[name][operator]=strict&filters[duration][value]=string&filters[duration][operator]=gt     _______________      {     \"name\": {     \"value\": \"string\",     \"operator\": \"strict\"     },     \"duration\": {     \"value\": \"string\",     \"operator\": \"gt\"     }     } ```     Operator can be strict, contains, gt or lt. (optional)
 
 try: 
-    api_response = api_instance.get_videos(page=page, per_page=per_page, filters=filters)
+    api_response = api_instance.get_videos(page=page, per_page=per_page, features=features, filters=filters)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling VideosApi->get_videos: %s\n" % e)
@@ -636,6 +730,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
+ **features** | **str**|      &#x60;&#x60;&#x60;     features[*][value]&#x3D;string&amp;features[*][operator]&#x3D;strict&amp;features[1][value]&#x3D;string&amp;features[1][operator]&#x3D;strict     _______________      {     \&quot;*\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;1\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;contains\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be strict, contains, gt or lt.     To search on all features, you can pass * as featureId. | [optional] 
  **filters** | **str**|      &#x60;&#x60;&#x60;     filters[name][value]&#x3D;string&amp;filters[name][operator]&#x3D;strict&amp;filters[duration][value]&#x3D;string&amp;filters[duration][operator]&#x3D;gt     _______________      {     \&quot;name\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;duration\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;gt\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be strict, contains, gt or lt. | [optional] 
 
 ### Return type
