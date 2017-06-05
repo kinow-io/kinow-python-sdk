@@ -653,7 +653,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_video_player_url**
-> PlayerConfiguration get_video_player_url(video_id)
+> PlayerConfiguration get_video_player_url(video_id, customer_id=customer_id)
 
 
 
@@ -670,9 +670,10 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = kaemo_client.VideosApi()
 video_id = 789 # int | Id of the video to fetch
+customer_id = 789 # int |  (optional)
 
 try: 
-    api_response = api_instance.get_video_player_url(video_id)
+    api_response = api_instance.get_video_player_url(video_id, customer_id=customer_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling VideosApi->get_video_player_url: %s\n" % e)
@@ -683,6 +684,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **video_id** | **int**| Id of the video to fetch | 
+ **customer_id** | **int**|  | [optional] 
 
 ### Return type
 
