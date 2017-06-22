@@ -245,7 +245,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_category_products**
-> Products get_category_products(category_id, page=page, per_page=per_page)
+> Products get_category_products(category_id, page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction)
 
 
 
@@ -264,9 +264,11 @@ api_instance = kaemo_client.ProductsApi()
 category_id = 789 # int | ID of the category to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
+sort_by = 'sort_by_example' # str | Sort by this attribute (id by default) (optional)
+sort_direction = 'sort_direction_example' # str | Sorting direction (asc by default) (optional)
 
 try: 
-    api_response = api_instance.get_category_products(category_id, page=page, per_page=per_page)
+    api_response = api_instance.get_category_products(category_id, page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProductsApi->get_category_products: %s\n" % e)
@@ -279,6 +281,8 @@ Name | Type | Description  | Notes
  **category_id** | **int**| ID of the category to fetch | 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
+ **sort_by** | **str**| Sort by this attribute (id by default) | [optional] 
+ **sort_direction** | **str**| Sorting direction (asc by default) | [optional] 
 
 ### Return type
 
