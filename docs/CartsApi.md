@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**get_payment_url**](#get_payment_url) | **GET** /carts/{cart_id}/payments/{payment_name} | 
 [**update_cart**](#update_cart) | **PUT** /carts/{cart_id} | 
 [**validate_cart**](#validate_cart) | **POST** /carts/{cart_id}/payments/{payment_name}/validate | 
+[**validate_free_order**](#validate_free_order) | **POST** /carts/{cart_id}/validate-free-order | 
 
 
 ## **add_product_to_cart**
@@ -446,6 +447,48 @@ Name | Type | Description  | Notes
  **cart_id** | **int**| Id of the cart to fetch | 
  **payment_name** | **str**| Payment module name | 
  **payment_arguments** | [**PaymentArguments**](#PaymentArguments)| payment arguments, token and tokenType | 
+
+### Return type
+
+void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **validate_free_order**
+> validate_free_order(cart_id)
+
+
+
+Validate cart without payment method (only for carts with a total of 0)
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kaemo_client
+from kaemo_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kaemo_client.CartsApi()
+cart_id = 789 # int | Id of the cart to validate
+
+try: 
+    api_instance.validate_free_order(cart_id)
+except ApiException as e:
+    print("Exception when calling CartsApi->validate_free_order: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cart_id** | **int**| Id of the cart to validate | 
 
 ### Return type
 
