@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **date_from** | **str** |  | [optional] 
 **date_to** | **str** |  | [optional] 
 **price** | **float** |  | [optional] 
+**position** | **int** |  | [optional] 
 **active** | **bool** |  | [optional] 
 **available_for_order** | **bool** |  | [optional] 
 **date_add** | **str** |  | [optional] 
