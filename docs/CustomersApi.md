@@ -18,6 +18,7 @@ Method | HTTP request | Description
 [**get_customers**](#get_customers) | **GET** /customers | 
 [**get_download_url**](#get_download_url) | **GET** /customers/{customer_id}/videos/{video_id}/download | 
 [**get_marlin_token**](#get_marlin_token) | **GET** /customers/{customer_id}/videos/{video_id}/marlin | 
+[**get_payment_customer_id**](#get_payment_customer_id) | **GET** /customers/{customer_id}/payments/{payment_name}/customer | 
 [**get_player_url**](#get_player_url) | **GET** /customers/{customer_id}/videos/{video_id}/player | 
 [**update_customer**](#update_customer) | **PUT** /customers/{customer_id} | 
 
@@ -645,6 +646,50 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**MarlinToken**](#MarlinToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_payment_customer_id**
+> get_payment_customer_id(customer_id, payment_name)
+
+
+
+Get payment modules list
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kaemo_client
+from kaemo_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kaemo_client.CustomersApi()
+customer_id = 789 # int | 
+payment_name = 'payment_name_example' # str | 
+
+try: 
+    api_instance.get_payment_customer_id(customer_id, payment_name)
+except ApiException as e:
+    print("Exception when calling CustomersApi->get_payment_customer_id: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customer_id** | **int**|  | 
+ **payment_name** | **str**|  | 
+
+### Return type
+
+void (empty response body)
 
 ### HTTP request headers
 
