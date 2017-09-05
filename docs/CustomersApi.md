@@ -655,7 +655,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_payment_customer_id**
-> get_payment_customer_id(customer_id, payment_name)
+> str get_payment_customer_id(customer_id, payment_name)
 
 
 
@@ -675,7 +675,8 @@ customer_id = 789 # int |
 payment_name = 'payment_name_example' # str | 
 
 try: 
-    api_instance.get_payment_customer_id(customer_id, payment_name)
+    api_response = api_instance.get_payment_customer_id(customer_id, payment_name)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling CustomersApi->get_payment_customer_id: %s\n" % e)
 ```
@@ -689,7 +690,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**str**
 
 ### HTTP request headers
 
