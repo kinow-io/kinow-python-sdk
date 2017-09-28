@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **description** | [**list[I18nField]**](#I18nField) |  | [optional] 
 **description_short** | [**list[I18nField]**](#I18nField) |  | [optional] 
 **tags** | **str** |  | [optional] 
+**can_buy** | **bool** |  | [optional] 
 
 [[Back to Model list]](#documentation-for-models) [[Back to API list]](#documentation-for-api-endpoints)
 

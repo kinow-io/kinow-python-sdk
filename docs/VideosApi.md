@@ -21,6 +21,7 @@ Method | HTTP request | Description
 [**get_video_player_url**](#get_video_player_url) | **GET** /videos/{video_id}/player | 
 [**get_videos**](#get_videos) | **GET** /videos | 
 [**get_videos_from_product**](#get_videos_from_product) | **GET** /products/{product_id}/videos | 
+[**set_video_geolocation**](#set_video_geolocation) | **PUT** /videos/{video_id}/geolocations | 
 [**update_video**](#update_video) | **PUT** /videos/{video_id} | 
 
 
@@ -698,7 +699,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_videos**
-> Videos get_videos(page=page, per_page=per_page, features=features, filters=filters)
+> Videos get_videos(page=page, per_page=per_page, features=features, filters=filters, ip=ip)
 
 
 
@@ -718,9 +719,10 @@ page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 features = 'features_example' # str |      ```     features[*][value]=string&features[*][operator]=strict&features[1][value]=string&features[1][operator]=strict     _______________      {     \"*\": {     \"value\": \"string\",     \"operator\": \"strict\"     },     \"1\": {     \"value\": \"string\",     \"operator\": \"contains\"     }     } ```     Operator can be strict, contains, gt or lt.     To search on all features, you can pass * as featureId. (optional)
 filters = 'filters_example' # str |      ```     filters[name][value]=string&filters[name][operator]=strict&filters[duration][value]=string&filters[duration][operator]=gt     _______________      {     \"name\": {     \"value\": \"string\",     \"operator\": \"strict\"     },     \"duration\": {     \"value\": \"string\",     \"operator\": \"gt\"     }     } ```     Operator can be strict, contains, gt or lt. (optional)
+ip = 'ip_example' # str | filter by customer ip (optional)
 
 try: 
-    api_response = api_instance.get_videos(page=page, per_page=per_page, features=features, filters=filters)
+    api_response = api_instance.get_videos(page=page, per_page=per_page, features=features, filters=filters, ip=ip)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling VideosApi->get_videos: %s\n" % e)
@@ -734,6 +736,7 @@ Name | Type | Description  | Notes
  **per_page** | **int**|  | [optional] 
  **features** | **str**|      &#x60;&#x60;&#x60;     features[*][value]&#x3D;string&amp;features[*][operator]&#x3D;strict&amp;features[1][value]&#x3D;string&amp;features[1][operator]&#x3D;strict     _______________      {     \&quot;*\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;1\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;contains\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be strict, contains, gt or lt.     To search on all features, you can pass * as featureId. | [optional] 
  **filters** | **str**|      &#x60;&#x60;&#x60;     filters[name][value]&#x3D;string&amp;filters[name][operator]&#x3D;strict&amp;filters[duration][value]&#x3D;string&amp;filters[duration][operator]&#x3D;gt     _______________      {     \&quot;name\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;duration\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;gt\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be strict, contains, gt or lt. | [optional] 
+ **ip** | **str**| filter by customer ip | [optional] 
 
 ### Return type
 
@@ -747,7 +750,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_videos_from_product**
-> Videos get_videos_from_product(product_id, page=page, filters=filters, per_page=per_page)
+> Videos get_videos_from_product(product_id, page=page, filters=filters, per_page=per_page, ip=ip)
 
 
 
@@ -767,9 +770,10 @@ product_id = 789 # int | ID of the product to fetch
 page = 789 # int |  (optional)
 filters = 'filters_example' # str |      ```     filters[name][value]=string&filters[name][operator]=strict&filters[duration][value]=string&filters[duration][operator]=gt     _______________      {     \"name\": {     \"value\": \"string\",     \"operator\": \"strict\"     },     \"duration\": {     \"value\": \"string\",     \"operator\": \"gt\"     }     } ```     Operator can be strict, contains, gt or lt. (optional)
 per_page = 789 # int |  (optional)
+ip = 'ip_example' # str | filter by customer ip (optional)
 
 try: 
-    api_response = api_instance.get_videos_from_product(product_id, page=page, filters=filters, per_page=per_page)
+    api_response = api_instance.get_videos_from_product(product_id, page=page, filters=filters, per_page=per_page, ip=ip)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling VideosApi->get_videos_from_product: %s\n" % e)
@@ -783,10 +787,65 @@ Name | Type | Description  | Notes
  **page** | **int**|  | [optional] 
  **filters** | **str**|      &#x60;&#x60;&#x60;     filters[name][value]&#x3D;string&amp;filters[name][operator]&#x3D;strict&amp;filters[duration][value]&#x3D;string&amp;filters[duration][operator]&#x3D;gt     _______________      {     \&quot;name\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;duration\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;gt\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be strict, contains, gt or lt. | [optional] 
  **per_page** | **int**|  | [optional] 
+ **ip** | **str**| filter by customer ip | [optional] 
 
 ### Return type
 
 [**Videos**](#Videos)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **set_video_geolocation**
+> set_video_geolocation(video_id, enabled, behavior_detected_countries, behavior_non_detected_countries, countries=countries, page=page, per_page=per_page)
+
+
+
+Handle geolocation for videos by countries
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kaemo_client
+from kaemo_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kaemo_client.VideosApi()
+video_id = 789 # int | ID of the video to fetch
+enabled = 56 # int | Enabled
+behavior_detected_countries = 'behavior_detected_countries_example' # str | Behavior for detected countries
+behavior_non_detected_countries = 'behavior_non_detected_countries_example' # str | Behavior for non-detected countries
+countries = 'countries_example' # str | IDs of the non-detected countries separated by comma (optional)
+page = 789 # int |  (optional)
+per_page = 789 # int |  (optional)
+
+try: 
+    api_instance.set_video_geolocation(video_id, enabled, behavior_detected_countries, behavior_non_detected_countries, countries=countries, page=page, per_page=per_page)
+except ApiException as e:
+    print("Exception when calling VideosApi->set_video_geolocation: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **video_id** | **int**| ID of the video to fetch | 
+ **enabled** | **int**| Enabled | 
+ **behavior_detected_countries** | **str**| Behavior for detected countries | 
+ **behavior_non_detected_countries** | **str**| Behavior for non-detected countries | 
+ **countries** | **str**| IDs of the non-detected countries separated by comma | [optional] 
+ **page** | **int**|  | [optional] 
+ **per_page** | **int**|  | [optional] 
+
+### Return type
+
+void (empty response body)
 
 ### HTTP request headers
 
