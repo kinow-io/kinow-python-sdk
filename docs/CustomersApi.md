@@ -9,10 +9,13 @@ Method | HTTP request | Description
 [**create_customer**](#create_customer) | **POST** /customers | 
 [**create_facebook_id**](#create_facebook_id) | **POST** /facebook/customers | 
 [**delete_customer**](#delete_customer) | **DELETE** /customers/{customer_id} | 
+[**generate_authentication_token**](#generate_authentication_token) | **GET** /customers/{customer_id}/authentication-token | 
 [**get_customer**](#get_customer) | **GET** /customers/{customer_id} | 
 [**get_customer_accesses_subscriptions**](#get_customer_accesses_subscriptions) | **GET** /customers/{customer_id}/accesses/subscriptions | 
 [**get_customer_accesses_videos**](#get_customer_accesses_videos) | **GET** /customers/{customer_id}/accesses/videos | 
 [**get_customer_address**](#get_customer_address) | **GET** /customers/{customer_id}/address | 
+[**get_customer_current_views**](#get_customer_current_views) | **GET** /customers/{customer_id}/current-views | 
+[**get_customer_has_access_to_product**](#get_customer_has_access_to_product) | **GET** /customers/{customer_id}/products/{product_id}/has-access | 
 [**get_customer_has_access_to_video**](#get_customer_has_access_to_video) | **GET** /customers/{customer_id}/videos/{video_id}/has-access | 
 [**get_customer_orders**](#get_customer_orders) | **GET** /customers/{customer_id}/orders | 
 [**get_customers**](#get_customers) | **GET** /customers | 
@@ -242,6 +245,48 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
+## **generate_authentication_token**
+> generate_authentication_token(customer_id)
+
+
+
+Create authentication token for customer.  You can use it to auto login customer using an iframe or a redirection to the user  Example url: `https://YOUR_PLATFORM.kinow.tv/?authentication_token=AUTHENTICATION_TOKEN`
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kaemo_client
+from kaemo_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kaemo_client.CustomersApi()
+customer_id = 789 # int | ID of the customer to authenticate
+
+try: 
+    api_instance.generate_authentication_token(customer_id)
+except ApiException as e:
+    print("Exception when calling CustomersApi->generate_authentication_token: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customer_id** | **int**| ID of the customer to authenticate | 
+
+### Return type
+
+void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
 ## **get_customer**
 > Customer get_customer(customer_id)
 
@@ -414,6 +459,93 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Address**](#Address)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_customer_current_views**
+> CustomerCurrentViews get_customer_current_views(customer_id)
+
+
+
+Get customer current number of views
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kaemo_client
+from kaemo_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kaemo_client.CustomersApi()
+customer_id = 789 # int | ID of the customer to fetch
+
+try: 
+    api_response = api_instance.get_customer_current_views(customer_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CustomersApi->get_customer_current_views: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customer_id** | **int**| ID of the customer to fetch | 
+
+### Return type
+
+[**CustomerCurrentViews**](#CustomerCurrentViews)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_customer_has_access_to_product**
+> get_customer_has_access_to_product(customer_id, product_id)
+
+
+
+Get customer access to video
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kaemo_client
+from kaemo_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kaemo_client.CustomersApi()
+customer_id = 789 # int | ID of the customer to fetch
+product_id = 789 # int | ID of the product to fetch
+
+try: 
+    api_instance.get_customer_has_access_to_product(customer_id, product_id)
+except ApiException as e:
+    print("Exception when calling CustomersApi->get_customer_has_access_to_product: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customer_id** | **int**| ID of the customer to fetch | 
+ **product_id** | **int**| ID of the product to fetch | 
+
+### Return type
+
+void (empty response body)
 
 ### HTTP request headers
 

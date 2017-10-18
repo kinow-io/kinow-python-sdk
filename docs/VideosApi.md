@@ -19,6 +19,7 @@ Method | HTTP request | Description
 [**get_video_geolocation**](#get_video_geolocation) | **GET** /videos/{video_id}/geolocation | 
 [**get_video_geolocation_0**](#get_video_geolocation_0) | **POST** /videos/{video_id}/geolocations/{ip_address} | 
 [**get_video_player_url**](#get_video_player_url) | **GET** /videos/{video_id}/player | 
+[**get_video_views**](#get_video_views) | **GET** /videos/{video_id}/views | 
 [**get_videos**](#get_videos) | **GET** /videos | 
 [**get_videos_from_product**](#get_videos_from_product) | **GET** /products/{product_id}/videos | 
 [**set_video_geolocation**](#set_video_geolocation) | **PUT** /videos/{video_id}/geolocations | 
@@ -690,6 +691,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PlayerConfiguration**](#PlayerConfiguration)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_video_views**
+> VideoViews get_video_views(video_id)
+
+
+
+Get video views
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kaemo_client
+from kaemo_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kaemo_client.VideosApi()
+video_id = 789 # int | ID of the video to fetch
+
+try: 
+    api_response = api_instance.get_video_views(video_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling VideosApi->get_video_views: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **video_id** | **int**| ID of the video to fetch | 
+
+### Return type
+
+[**VideoViews**](#VideoViews)
 
 ### HTTP request headers
 

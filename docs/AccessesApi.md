@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_available_categories**](#get_available_categories) | **GET** /categories-accesses | 
 [**get_available_category**](#get_available_category) | **GET** /categories-accesses/{category_id} | 
+[**get_customer_has_access_to_product**](#get_customer_has_access_to_product) | **GET** /customers/{customer_id}/products/{product_id}/has-access | 
 [**get_customer_has_access_to_video**](#get_customer_has_access_to_video) | **GET** /customers/{customer_id}/videos/{video_id}/has-access | 
 [**get_product_availability**](#get_product_availability) | **GET** /products/{product_id}/access | 
 
@@ -94,6 +95,50 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Category**](#Category)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_customer_has_access_to_product**
+> get_customer_has_access_to_product(customer_id, product_id)
+
+
+
+Get customer access to video
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kaemo_client
+from kaemo_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kaemo_client.AccessesApi()
+customer_id = 789 # int | ID of the customer to fetch
+product_id = 789 # int | ID of the product to fetch
+
+try: 
+    api_instance.get_customer_has_access_to_product(customer_id, product_id)
+except ApiException as e:
+    print("Exception when calling AccessesApi->get_customer_has_access_to_product: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customer_id** | **int**| ID of the customer to fetch | 
+ **product_id** | **int**| ID of the product to fetch | 
+
+### Return type
+
+void (empty response body)
 
 ### HTTP request headers
 

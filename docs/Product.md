@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **name** | [**list[I18nField]**](#I18nField) |  | [optional] 
 **description** | [**list[I18nField]**](#I18nField) |  | [optional] 
 **description_short** | [**list[I18nField]**](#I18nField) |  | [optional] 
-**tags** | **str** |  | [optional] 
+**tags** | [**list[Tag]**](#Tag) |  | [optional] 
 **can_buy** | **bool** |  | [optional] 
 
 [[Back to Model list]](#documentation-for-models) [[Back to API list]](#documentation-for-api-endpoints)

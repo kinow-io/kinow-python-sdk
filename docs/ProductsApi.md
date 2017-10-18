@@ -5,11 +5,13 @@ All URIs are relative to *https://api.kaemo.com/api*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**attach_features_to_product**](#attach_features_to_product) | **POST** /products/{product_id}/features | 
+[**attach_product_to_category**](#attach_product_to_category) | **POST** /products/{product_id}/categories | 
 [**attach_video_to_product**](#attach_video_to_product) | **POST** /products/{product_id}/videos | 
 [**create_product**](#create_product) | **POST** /products | 
 [**delete_product**](#delete_product) | **DELETE** /products/{product_id} | 
 [**detach_feature_to_product**](#detach_feature_to_product) | **DELETE** products/{product_id}/features/{feature_id} | 
 [**get_category_products**](#get_category_products) | **GET** /categories/{category_id}/products | 
+[**get_customer_has_access_to_product**](#get_customer_has_access_to_product) | **GET** /customers/{customer_id}/products/{product_id}/has-access | 
 [**get_product**](#get_product) | **GET** /products/{product_id} | 
 [**get_product_actors**](#get_product_actors) | **GET** /products/{product_id}/actors | 
 [**get_product_attributes**](#get_product_attributes) | **GET** /products/{product_id}/attributes | 
@@ -61,6 +63,50 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **product_id** | **int**|  | 
  **features** | **str**|  To attach existing FeatureValue to Product: &#x60;&#x60;&#x60; [{     \&quot;id_feature\&quot;:3,     \&quot;id_feature_value\&quot;:5 }]&#x60;&#x60;&#x60;  To create a custom FeatureValue: &#x60;&#x60;&#x60; [{      \&quot;id_feature\&quot;:3,      \&quot;custom_value\&quot;:[{         \&quot;lang\&quot;: 1,         \&quot;value\&quot;: \&quot;string\&quot;      }] }]&#x60;&#x60;&#x60; | 
+
+### Return type
+
+void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **attach_product_to_category**
+> attach_product_to_category(product_id, category_id)
+
+
+
+Attach product to category
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kaemo_client
+from kaemo_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kaemo_client.ProductsApi()
+product_id = 789 # int | Id of the product
+category_id = 789 # int | ID of the category to attach
+
+try: 
+    api_instance.attach_product_to_category(product_id, category_id)
+except ApiException as e:
+    print("Exception when calling ProductsApi->attach_product_to_category: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_id** | **int**| Id of the product | 
+ **category_id** | **int**| ID of the category to attach | 
 
 ### Return type
 
@@ -291,6 +337,50 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Products**](#Products)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_customer_has_access_to_product**
+> get_customer_has_access_to_product(customer_id, product_id)
+
+
+
+Get customer access to video
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kaemo_client
+from kaemo_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kaemo_client.ProductsApi()
+customer_id = 789 # int | ID of the customer to fetch
+product_id = 789 # int | ID of the product to fetch
+
+try: 
+    api_instance.get_customer_has_access_to_product(customer_id, product_id)
+except ApiException as e:
+    print("Exception when calling ProductsApi->get_customer_has_access_to_product: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customer_id** | **int**| ID of the customer to fetch | 
+ **product_id** | **int**| ID of the product to fetch | 
+
+### Return type
+
+void (empty response body)
 
 ### HTTP request headers
 

@@ -4,6 +4,7 @@ All URIs are relative to *https://api.kaemo.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**create_category**](#create_category) | **POST** /categories | 
 [**get_available_categories**](#get_available_categories) | **GET** /categories-accesses | 
 [**get_available_category**](#get_available_category) | **GET** /categories-accesses/{category_id} | 
 [**get_categories**](#get_categories) | **GET** /categories | 
@@ -13,7 +14,51 @@ Method | HTTP request | Description
 [**get_category_features**](#get_category_features) | **GET** /categories/{category_id}/features | 
 [**get_category_products**](#get_category_products) | **GET** /categories/{category_id}/products | 
 [**get_product_categories**](#get_product_categories) | **GET** /products/{product_id}/categories | 
+[**get_subscription_categories**](#get_subscription_categories) | **GET** /subscriptions/{subscription_id}/categories | 
 
+
+## **create_category**
+> Category create_category(body)
+
+
+
+Create new category
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kaemo_client
+from kaemo_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kaemo_client.CategoriesApi()
+body = kaemo_client.Category() # Category | 
+
+try: 
+    api_response = api_instance.create_category(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CategoriesApi->create_category: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**Category**](#Category)|  | 
+
+### Return type
+
+[**Category**](#Category)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_available_categories**
 > Categories get_available_categories(customer_id=customer_id, page=page, per_page=per_page)
@@ -436,6 +481,57 @@ Name | Type | Description  | Notes
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
  **filters** | **str**|  &#x60;&#x60;&#x60; filters[name][value]&#x3D;string&amp;filters[name][operator]&#x3D;contains&amp;filters[date_add][value]&#x3D;string&amp;filters[date_add][operator]&#x3D;lt _______________  { \&quot;name\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;contains\&quot; }, \&quot;date_add\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;lt\&quot; } } &#x60;&#x60;&#x60;     Operator can be strict, contains, gt or lt. | [optional] 
+ **sort_by** | **str**| Sort by this attribute (id by default) | [optional] 
+ **sort_direction** | **str**| Sorting direction (asc by default) | [optional] 
+
+### Return type
+
+[**Categories**](#Categories)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_subscription_categories**
+> Categories get_subscription_categories(subscription_id, page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction)
+
+
+
+Get categories list
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kaemo_client
+from kaemo_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kaemo_client.CategoriesApi()
+subscription_id = 789 # int | 
+page = 789 # int |  (optional)
+per_page = 789 # int |  (optional)
+sort_by = 'sort_by_example' # str | Sort by this attribute (id by default) (optional)
+sort_direction = 'sort_direction_example' # str | Sorting direction (asc by default) (optional)
+
+try: 
+    api_response = api_instance.get_subscription_categories(subscription_id, page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CategoriesApi->get_subscription_categories: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **subscription_id** | **int**|  | 
+ **page** | **int**|  | [optional] 
+ **per_page** | **int**|  | [optional] 
  **sort_by** | **str**| Sort by this attribute (id by default) | [optional] 
  **sort_direction** | **str**| Sorting direction (asc by default) | [optional] 
 

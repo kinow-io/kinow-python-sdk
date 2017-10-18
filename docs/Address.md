@@ -14,6 +14,8 @@ Name | Type | Description | Notes
 **city** | **str** |  | [optional] 
 **date_add** | **str** |  | [optional] 
 **date_upd** | **str** |  | [optional] 
+**firstname** | **str** |  | [optional] 
+**lastname** | **str** |  | [optional] 
 
 [[Back to Model list]](#documentation-for-models) [[Back to API list]](#documentation-for-api-endpoints)
 
