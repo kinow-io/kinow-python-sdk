@@ -484,7 +484,7 @@ Name | Type | Description  | Notes
 
 
 
-Get videos attached to product
+Get product attributes. Important to add product to a cart. Allow to select if the customer will buy the product for download, streaming or both
 
 ### Example 
 ```python
