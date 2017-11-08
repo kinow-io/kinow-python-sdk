@@ -25,6 +25,7 @@ Method | HTTP request | Description
 [**get_product_geolocations_by_ip**](#get_product_geolocations_by_ip) | **POST** /products/{product_id}/geolocations | 
 [**get_product_images**](#get_product_images) | **GET** /products/{product_id}/images | 
 [**get_products**](#get_products) | **GET** /products | 
+[**get_products_from_product**](#get_products_from_product) | **GET** /products/{product_id}/products | 
 [**get_videos_from_product**](#get_videos_from_product) | **GET** /products/{product_id}/videos | 
 [**search_products**](#search_products) | **GET** /products/search/{search_query} | 
 [**set_product_geolocation**](#set_product_geolocation) | **PUT** /products/{product_id}/geolocations | 
@@ -293,7 +294,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_category_products**
-> Products get_category_products(category_id, page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction, ip=ip)
+> Products get_category_products(category_id, page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction, ip=ip, features=features, filters=filters)
 
 
 
@@ -315,9 +316,11 @@ per_page = 789 # int |  (optional)
 sort_by = 'sort_by_example' # str | Sort by this attribute (id by default) (optional)
 sort_direction = 'sort_direction_example' # str | Sorting direction (asc by default) (optional)
 ip = 'ip_example' # str | filter by customer ip (optional)
+features = 'features_example' # str |      ```     features[*][value]=string&features[*][operator]=strict&features[1][value]=string&features[1][operator]=strict     _______________      {     \"*\": {     \"value\": \"string\",     \"operator\": \"strict\"     },     \"1\": {     \"value\": \"string\",     \"operator\": \"contains\"     }     } ```     Operator can be strict, contains, gt or lt.     To search on all features, you can pass * as featureId. (optional)
+filters = 'filters_example' # str |      ```     filters[name][value]=string&filters[name][operator]=contains&filters[date_add][value]=string&filters[date_add][operator]=lt     _______________      {     \"name\": {     \"value\": \"string\",     \"operator\": \"contains\"     },     \"date_add\": {     \"value\": \"string\",     \"operator\": \"lt\"     }     } ```     Operator can be strict, contains, gt or lt. (optional)
 
 try: 
-    api_response = api_instance.get_category_products(category_id, page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction, ip=ip)
+    api_response = api_instance.get_category_products(category_id, page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction, ip=ip, features=features, filters=filters)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProductsApi->get_category_products: %s\n" % e)
@@ -333,6 +336,8 @@ Name | Type | Description  | Notes
  **sort_by** | **str**| Sort by this attribute (id by default) | [optional] 
  **sort_direction** | **str**| Sorting direction (asc by default) | [optional] 
  **ip** | **str**| filter by customer ip | [optional] 
+ **features** | **str**|      &#x60;&#x60;&#x60;     features[*][value]&#x3D;string&amp;features[*][operator]&#x3D;strict&amp;features[1][value]&#x3D;string&amp;features[1][operator]&#x3D;strict     _______________      {     \&quot;*\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;1\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;contains\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be strict, contains, gt or lt.     To search on all features, you can pass * as featureId. | [optional] 
+ **filters** | **str**|      &#x60;&#x60;&#x60;     filters[name][value]&#x3D;string&amp;filters[name][operator]&#x3D;contains&amp;filters[date_add][value]&#x3D;string&amp;filters[date_add][operator]&#x3D;lt     _______________      {     \&quot;name\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;contains\&quot;     },     \&quot;date_add\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;lt\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be strict, contains, gt or lt. | [optional] 
 
 ### Return type
 
@@ -991,6 +996,63 @@ Name | Type | Description  | Notes
  **per_page** | **int**|  | [optional] 
  **features** | **str**|      &#x60;&#x60;&#x60;     features[*][value]&#x3D;string&amp;features[*][operator]&#x3D;strict&amp;features[1][value]&#x3D;string&amp;features[1][operator]&#x3D;strict     _______________      {     \&quot;*\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;1\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;contains\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be strict, contains, gt or lt.     To search on all features, you can pass * as featureId. | [optional] 
  **filters** | **str**|      &#x60;&#x60;&#x60;     filters[name][value]&#x3D;string&amp;filters[name][operator]&#x3D;contains&amp;filters[date_add][value]&#x3D;string&amp;filters[date_add][operator]&#x3D;lt     _______________      {     \&quot;name\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;contains\&quot;     },     \&quot;date_add\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;lt\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be strict, contains, gt or lt. | [optional] 
+ **sort_by** | **str**| Sort by this attribute (id by default) | [optional] 
+ **sort_direction** | **str**| Sorting direction (asc by default) | [optional] 
+ **ip** | **str**| filter by customer ip | [optional] 
+
+### Return type
+
+[**Products**](#Products)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_products_from_product**
+> Products get_products_from_product(product_id, page=page, per_page=per_page, features=features, filters=filters, sort_by=sort_by, sort_direction=sort_direction, ip=ip)
+
+
+
+Get products linked to another product
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kaemo_client
+from kaemo_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kaemo_client.ProductsApi()
+product_id = 789 # int | 
+page = 789 # int |  (optional)
+per_page = 789 # int |  (optional)
+features = 'features_example' # str |  ``` features[*][value]=string&features[*][operator]=strict&features[1][value]=string&features[1][operator]=strict _______________  { \"*\": { \"value\": \"string\", \"operator\": \"strict\" }, \"1\": { \"value\": \"string\", \"operator\": \"contains\" } } ``` Operator can be strict, contains, gt or lt. To search on all features, you can pass * as featureId. (optional)
+filters = 'filters_example' # str |  ``` filters[name][value]=string&filters[name][operator]=contains&filters[date_add][value]=string&filters[date_add][operator]=lt _______________  { \"name\": { \"value\": \"string\", \"operator\": \"contains\" }, \"date_add\": { \"value\": \"string\", \"operator\": \"lt\" } } ``` Operator can be strict, contains, gt or lt. (optional)
+sort_by = 'sort_by_example' # str | Sort by this attribute (id by default) (optional)
+sort_direction = 'sort_direction_example' # str | Sorting direction (asc by default) (optional)
+ip = 'ip_example' # str | filter by customer ip (optional)
+
+try: 
+    api_response = api_instance.get_products_from_product(product_id, page=page, per_page=per_page, features=features, filters=filters, sort_by=sort_by, sort_direction=sort_direction, ip=ip)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ProductsApi->get_products_from_product: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_id** | **int**|  | 
+ **page** | **int**|  | [optional] 
+ **per_page** | **int**|  | [optional] 
+ **features** | **str**|  &#x60;&#x60;&#x60; features[*][value]&#x3D;string&amp;features[*][operator]&#x3D;strict&amp;features[1][value]&#x3D;string&amp;features[1][operator]&#x3D;strict _______________  { \&quot;*\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;strict\&quot; }, \&quot;1\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;contains\&quot; } } &#x60;&#x60;&#x60; Operator can be strict, contains, gt or lt. To search on all features, you can pass * as featureId. | [optional] 
+ **filters** | **str**|  &#x60;&#x60;&#x60; filters[name][value]&#x3D;string&amp;filters[name][operator]&#x3D;contains&amp;filters[date_add][value]&#x3D;string&amp;filters[date_add][operator]&#x3D;lt _______________  { \&quot;name\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;contains\&quot; }, \&quot;date_add\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;lt\&quot; } } &#x60;&#x60;&#x60; Operator can be strict, contains, gt or lt. | [optional] 
  **sort_by** | **str**| Sort by this attribute (id by default) | [optional] 
  **sort_direction** | **str**| Sorting direction (asc by default) | [optional] 
  **ip** | **str**| filter by customer ip | [optional] 

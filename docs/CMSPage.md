@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **meta_keywords** | [**list[I18nField]**](#I18nField) |  | [optional] 
 **content** | [**list[I18nField]**](#I18nField) |  | [optional] 
 **position** | **int** |  | [optional] 
+**id_cms_category** | **int** |  | [optional] 
 
 [[Back to Model list]](#documentation-for-models) [[Back to API list]](#documentation-for-api-endpoints)
 
