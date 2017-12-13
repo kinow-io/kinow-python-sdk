@@ -4,7 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] 
-**id_shop** | **int** |  | [optional] 
 **id_land** | **int** |  | [optional] 
 **id_contact** | **int** |  | [optional] 
 **id_customer** | **int** |  | [optional] 

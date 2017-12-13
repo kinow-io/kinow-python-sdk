@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 **tags** | [**list[Tag]**](#Tag) |  | [optional] 
 **can_buy** | **bool** |  | [optional] 
 **available_in_subscriptions** | **bool** |  | [optional] 
+**duration** | **int** |  | [optional] 
 
 [[Back to Model list]](#documentation-for-models) [[Back to API list]](#documentation-for-api-endpoints)
 
