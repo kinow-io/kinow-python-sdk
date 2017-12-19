@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **recurring** | **int** |  | [optional] 
 **active** | **int** |  | [optional] 
 **message** | **str** |  | [optional] 
+**id_order** | **int** |  | [optional] 
 
 [[Back to Model list]](#documentation-for-models) [[Back to API list]](#documentation-for-api-endpoints)
 
