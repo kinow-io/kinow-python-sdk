@@ -1165,7 +1165,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **search_products**
-> Products search_products(search_query, page=page, per_page=per_page)
+> Products search_products(search_query, page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction, in_categories=in_categories, in_features=in_features, feature_values=feature_values)
 
 
 
@@ -1184,9 +1184,14 @@ api_instance = kaemo_client.ProductsApi()
 search_query = 'search_query_example' # str | Keyword used to search the products
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
+sort_by = 'sort_by_example' # str | default: position (optional)
+sort_direction = 'sort_direction_example' # str | default: desc (optional)
+in_categories = 'in_categories_example' # str | Search in given categories. Values are separated with comma (,) (optional)
+in_features = 'in_features_example' # str | Search in given features. Values are separated with comma (,) (optional)
+feature_values = 'feature_values_example' # str | Search by feature values. Values are separated with comma (,) (optional)
 
 try: 
-    api_response = api_instance.search_products(search_query, page=page, per_page=per_page)
+    api_response = api_instance.search_products(search_query, page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction, in_categories=in_categories, in_features=in_features, feature_values=feature_values)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProductsApi->search_products: %s\n" % e)
@@ -1199,6 +1204,11 @@ Name | Type | Description  | Notes
  **search_query** | **str**| Keyword used to search the products | 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
+ **sort_by** | **str**| default: position | [optional] 
+ **sort_direction** | **str**| default: desc | [optional] 
+ **in_categories** | **str**| Search in given categories. Values are separated with comma (,) | [optional] 
+ **in_features** | **str**| Search in given features. Values are separated with comma (,) | [optional] 
+ **feature_values** | **str**| Search by feature values. Values are separated with comma (,) | [optional] 
 
 ### Return type
 

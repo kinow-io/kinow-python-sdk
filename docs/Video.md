@@ -20,6 +20,8 @@ Name | Type | Description | Notes
 **date_add** | **str** |  | [optional] 
 **date_upd** | **str** |  | [optional] 
 **can_watch** | **bool** |  | [optional] 
+**cover** | **str** |  | [optional] 
+**thumbnail** | **str** |  | [optional] 
 
 [[Back to Model list]](#documentation-for-models) [[Back to API list]](#documentation-for-api-endpoints)
 

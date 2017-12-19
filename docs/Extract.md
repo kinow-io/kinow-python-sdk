@@ -15,6 +15,8 @@ Name | Type | Description | Notes
 **date_upd** | **str** |  | [optional] 
 **name** | [**list[I18nField]**](#I18nField) |  | [optional] 
 **description** | [**list[I18nField]**](#I18nField) |  | [optional] 
+**cover** | **str** |  | [optional] 
+**thumbnail** | **str** |  | [optional] 
 
 [[Back to Model list]](#documentation-for-models) [[Back to API list]](#documentation-for-api-endpoints)
 

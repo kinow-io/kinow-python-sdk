@@ -5,6 +5,7 @@ from .accesses_api import AccessesApi
 from .actors_api import ActorsApi
 from .address_api import AddressApi
 from .attributes_api import AttributesApi
+from .bookmarks_api import BookmarksApi
 from .cms_categories_api import CMSCategoriesApi
 from .cms_pages_api import CMSPagesApi
 from .cart_rules_api import CartRulesApi
