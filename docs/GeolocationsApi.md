@@ -4,7 +4,7 @@ All URIs are relative to *https://api.kaemo.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**geolocations**](#geolocations) | **POST** /geolocations/{ip_address} | 
+[**geolocations**](#geolocations) | **POST** /geolocations | 
 [**get_product_geolocations**](#get_product_geolocations) | **GET** /products/{product_id}/geolocations | 
 [**get_product_geolocations_by_ip**](#get_product_geolocations_by_ip) | **POST** /products/{product_id}/geolocations | 
 [**get_video_geolocation**](#get_video_geolocation) | **POST** /videos/{video_id}/geolocations/{ip_address} | 
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 ## **geolocations**
-> geolocations(ip_address, page=page, per_page=per_page)
+> geolocations(ip_address)
 
 
 
@@ -30,11 +30,9 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = kaemo_client.GeolocationsApi()
 ip_address = 'ip_address_example' # str | address ip
-page = 789 # int |  (optional)
-per_page = 789 # int |  (optional)
 
 try: 
-    api_instance.geolocations(ip_address, page=page, per_page=per_page)
+    api_instance.geolocations(ip_address)
 except ApiException as e:
     print("Exception when calling GeolocationsApi->geolocations: %s\n" % e)
 ```
@@ -44,8 +42,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ip_address** | **str**| address ip | 
- **page** | **int**|  | [optional] 
- **per_page** | **int**|  | [optional] 
 
 ### Return type
 
