@@ -27,6 +27,7 @@ Name | Type | Description | Notes
 **can_buy** | **bool** |  | [optional] 
 **available_in_subscriptions** | **bool** |  | [optional] 
 **duration** | **int** |  | [optional] 
+**sub** | **bool** |  | [optional] 
 
 [[Back to Model list]](#documentation-for-models) [[Back to API list]](#documentation-for-api-endpoints)
 
