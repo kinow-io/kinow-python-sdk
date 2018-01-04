@@ -577,7 +577,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_product_availability**
-> get_product_availability(product_id, customer_id=customer_id)
+> get_product_availability(product_id)
 
 
 
@@ -594,10 +594,9 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = kaemo_client.ProductsApi()
 product_id = 789 # int | ID of the product to fetch
-customer_id = 789 # int | ID of the customer to fetch (optional)
 
 try: 
-    api_instance.get_product_availability(product_id, customer_id=customer_id)
+    api_instance.get_product_availability(product_id)
 except ApiException as e:
     print("Exception when calling ProductsApi->get_product_availability: %s\n" % e)
 ```
@@ -607,7 +606,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **product_id** | **int**| ID of the product to fetch | 
- **customer_id** | **int**| ID of the customer to fetch | [optional] 
 
 ### Return type
 
