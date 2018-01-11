@@ -5,6 +5,7 @@ All URIs are relative to *https://api.kaemo.com/api*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**attach_customer_to_group**](#attach_customer_to_group) | **POST** /groups/{group_id}/customers | 
+[**detach_customer_from_group**](#detach_customer_from_group) | **DELETE** /groups/{group_id}/customers/{customer_id} | 
 [**get_groups**](#get_groups) | **GET** /groups | 
 
 
@@ -39,6 +40,50 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **group_id** | **int**| ID of the group | 
+ **customer_id** | **int**| ID of the customer to attach | 
+
+### Return type
+
+void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **detach_customer_from_group**
+> detach_customer_from_group(group_id, customer_id)
+
+
+
+Detach customer from group
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kaemo_client
+from kaemo_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kaemo_client.GroupsApi()
+group_id = 789 # int | Id of the group
+customer_id = 789 # int | ID of the customer to attach
+
+try: 
+    api_instance.detach_customer_from_group(group_id, customer_id)
+except ApiException as e:
+    print("Exception when calling GroupsApi->detach_customer_from_group: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **group_id** | **int**| Id of the group | 
  **customer_id** | **int**| ID of the customer to attach | 
 
 ### Return type

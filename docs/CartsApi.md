@@ -11,6 +11,8 @@ Method | HTTP request | Description
 [**delete_cart**](#delete_cart) | **DELETE** /carts/{cart_id} | 
 [**delete_product_from_cart**](#delete_product_from_cart) | **DELETE** /carts/{cart_id}/products | 
 [**get_cart**](#get_cart) | **GET** /carts/{cart_id} | 
+[**get_customer_carts**](#get_customer_carts) | **GET** /customers/{customer_id}/carts | 
+[**get_last_cart**](#get_last_cart) | **GET** /customers/{customer_id}/last-cart | 
 [**get_payment_url**](#get_payment_url) | **GET** /carts/{cart_id}/payments/{payment_name} | 
 [**update_cart**](#update_cart) | **PUT** /carts/{cart_id} | 
 [**validate_cart**](#validate_cart) | **POST** /carts/{cart_id}/payments/{payment_name}/validate | 
@@ -315,6 +317,102 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cart_id** | **str**| Id of the cart to fetch | 
+
+### Return type
+
+[**Cart**](#Cart)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_customer_carts**
+> Carts get_customer_carts(customer_id, page=page, per_page=per_page, filters=filters, sort_by=sort_by, sort_direction=sort_direction)
+
+
+
+Get customer carts
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kaemo_client
+from kaemo_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kaemo_client.CartsApi()
+customer_id = 789 # int | ID of the customer to fetch
+page = 789 # int |  (optional)
+per_page = 789 # int |  (optional)
+filters = 'filters_example' # str |      ```     filters[date_add][value]=string&filters[date_add][operator]=lt     _______________      {     \"date_add\": {     \"value\": \"string\",     \"operator\": \"lt\"     }     } ```     Operator can be strict, contains, gt or lt. (optional)
+sort_by = 'sort_by_example' # str | Sort by this attribute (id by default) (optional)
+sort_direction = 'sort_direction_example' # str | Sorting direction (asc by default) (optional)
+
+try: 
+    api_response = api_instance.get_customer_carts(customer_id, page=page, per_page=per_page, filters=filters, sort_by=sort_by, sort_direction=sort_direction)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CartsApi->get_customer_carts: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customer_id** | **int**| ID of the customer to fetch | 
+ **page** | **int**|  | [optional] 
+ **per_page** | **int**|  | [optional] 
+ **filters** | **str**|      &#x60;&#x60;&#x60;     filters[date_add][value]&#x3D;string&amp;filters[date_add][operator]&#x3D;lt     _______________      {     \&quot;date_add\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;lt\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be strict, contains, gt or lt. | [optional] 
+ **sort_by** | **str**| Sort by this attribute (id by default) | [optional] 
+ **sort_direction** | **str**| Sorting direction (asc by default) | [optional] 
+
+### Return type
+
+[**Carts**](#Carts)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_last_cart**
+> Cart get_last_cart(customer_id)
+
+
+
+Get customer last cart
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kaemo_client
+from kaemo_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kaemo_client.CartsApi()
+customer_id = 789 # int | ID of the customer to fetch
+
+try: 
+    api_response = api_instance.get_last_cart(customer_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CartsApi->get_last_cart: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customer_id** | **int**| ID of the customer to fetch | 
 
 ### Return type
 

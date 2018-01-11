@@ -133,7 +133,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kaemo_client.CustomersApi()
-body = kaemo_client.Customer() # Customer | Created user object
+body = kaemo_client.CustomerCreateRequest() # CustomerCreateRequest | Created user object
 
 try: 
     api_response = api_instance.create_customer(body)
@@ -146,7 +146,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Customer**](#Customer)| Created user object | 
+ **body** | [**CustomerCreateRequest**](#CustomerCreateRequest)| Created user object | 
 
 ### Return type
 
@@ -250,7 +250,7 @@ void (empty response body)
 
 
 
-Create authentication token for customer.  You can use it to auto login customer using an iframe or a redirection to the user  Example url: `https://YOUR_PLATFORM.kinow.tv/?authentication_token=AUTHENTICATION_TOKEN`
+Create authentication token for customer.      You can use it to auto login customer using an iframe or a redirection to the user      Example url: `https://YOUR_PLATFORM.kinow.tv/?authentication_token=AUTHENTICATION_TOKEN`
 
 ### Example 
 ```python
