@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **alert_type** | **str** |  | [optional] 
 **alert_qty** | **int** |  | [optional] 
 **active** | **bool** |  | [optional] 
+**recurring_payment** | **int** |  | [optional] 
 
 [[Back to Model list]](#documentation-for-models) [[Back to API list]](#documentation-for-api-endpoints)
 
