@@ -100,7 +100,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_customer_accesses_subscriptions**
-> SubscriptionAccesses get_customer_accesses_subscriptions(customer_id, page=page, per_page=per_page)
+> SubscriptionAccesses get_customer_accesses_subscriptions(customer_id, page=page, per_page=per_page, filters=filters)
 
 
 
@@ -119,9 +119,10 @@ api_instance = kaemo_client.ProductAccessesApi()
 customer_id = 789 # int | ID of the customer to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
+filters = 'filters_example' # str |  ``` filters[type][value]=string&filters[type][operator]=strict&filters[cancel][value]=string&filters[cancel][operator]=contains _______________  { \"type\": { \"value\": \"string\", \"operator\": \"strict\" }, \"cancel\": { \"value\": \"string\", \"operator\": \"contains\" } } ```Operator can be strict, contains, gt or lt. (optional)
 
 try: 
-    api_response = api_instance.get_customer_accesses_subscriptions(customer_id, page=page, per_page=per_page)
+    api_response = api_instance.get_customer_accesses_subscriptions(customer_id, page=page, per_page=per_page, filters=filters)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProductAccessesApi->get_customer_accesses_subscriptions: %s\n" % e)
@@ -134,6 +135,7 @@ Name | Type | Description  | Notes
  **customer_id** | **int**| ID of the customer to fetch | 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
+ **filters** | **str**|  &#x60;&#x60;&#x60; filters[type][value]&#x3D;string&amp;filters[type][operator]&#x3D;strict&amp;filters[cancel][value]&#x3D;string&amp;filters[cancel][operator]&#x3D;contains _______________  { \&quot;type\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;strict\&quot; }, \&quot;cancel\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;contains\&quot; } } &#x60;&#x60;&#x60;Operator can be strict, contains, gt or lt. | [optional] 
 
 ### Return type
 

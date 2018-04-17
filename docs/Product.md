@@ -28,6 +28,7 @@ Name | Type | Description | Notes
 **available_in_subscriptions** | **bool** |  | [optional] 
 **duration** | **int** |  | [optional] 
 **sub** | **bool** |  | [optional] 
+**has_group_restriction** | **bool** |  | [optional] 
 
 [[Back to Model list]](#documentation-for-models) [[Back to API list]](#documentation-for-api-endpoints)
 

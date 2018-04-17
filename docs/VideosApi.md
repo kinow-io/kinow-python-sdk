@@ -4,6 +4,7 @@ All URIs are relative to *https://api.kaemo.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**attach_cover_to_video**](#attach_cover_to_video) | **POST** /videos/{video_id}/cover | 
 [**attach_features_to_video**](#attach_features_to_video) | **POST** /videos/{video_id}/features | 
 [**attach_video_to_product**](#attach_video_to_product) | **POST** /products/{product_id}/videos | 
 [**create_video**](#create_video) | **POST** /videos | 
@@ -25,6 +26,50 @@ Method | HTTP request | Description
 [**set_video_geolocation**](#set_video_geolocation) | **PUT** /videos/{video_id}/geolocations | 
 [**update_video**](#update_video) | **PUT** /videos/{video_id} | 
 
+
+## **attach_cover_to_video**
+> attach_cover_to_video(video_id, id_image)
+
+
+
+Attach cover to video (the image need to be attached to the product)
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kaemo_client
+from kaemo_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kaemo_client.VideosApi()
+video_id = 789 # int | ID of the video to fetch
+id_image = 789 # int | ID of the image to attach
+
+try: 
+    api_instance.attach_cover_to_video(video_id, id_image)
+except ApiException as e:
+    print("Exception when calling VideosApi->attach_cover_to_video: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **video_id** | **int**| ID of the video to fetch | 
+ **id_image** | **int**| ID of the image to attach | 
+
+### Return type
+
+void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **attach_features_to_video**
 > attach_features_to_video(video_id, features)
@@ -845,7 +890,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **set_video_geolocation**
-> set_video_geolocation(video_id, enabled, behavior_detected_countries, behavior_non_detected_countries, countries=countries, page=page, per_page=per_page)
+> set_video_geolocation(video_id, enabled, behavior_detected_countries, behavior_non_detected_countries, countries=countries)
 
 
 
@@ -866,11 +911,9 @@ enabled = 56 # int | Enabled
 behavior_detected_countries = 'behavior_detected_countries_example' # str | Behavior for detected countries
 behavior_non_detected_countries = 'behavior_non_detected_countries_example' # str | Behavior for non-detected countries
 countries = 'countries_example' # str | IDs of the non-detected countries separated by comma (optional)
-page = 789 # int |  (optional)
-per_page = 789 # int |  (optional)
 
 try: 
-    api_instance.set_video_geolocation(video_id, enabled, behavior_detected_countries, behavior_non_detected_countries, countries=countries, page=page, per_page=per_page)
+    api_instance.set_video_geolocation(video_id, enabled, behavior_detected_countries, behavior_non_detected_countries, countries=countries)
 except ApiException as e:
     print("Exception when calling VideosApi->set_video_geolocation: %s\n" % e)
 ```
@@ -884,8 +927,6 @@ Name | Type | Description  | Notes
  **behavior_detected_countries** | **str**| Behavior for detected countries | 
  **behavior_non_detected_countries** | **str**| Behavior for non-detected countries | 
  **countries** | **str**| IDs of the non-detected countries separated by comma | [optional] 
- **page** | **int**|  | [optional] 
- **per_page** | **int**|  | [optional] 
 
 ### Return type
 

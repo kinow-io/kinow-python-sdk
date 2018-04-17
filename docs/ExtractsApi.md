@@ -4,12 +4,57 @@ All URIs are relative to *https://api.kaemo.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**attach_cover_to_extract**](#attach_cover_to_extract) | **POST** /extracts/{extract_id}/cover | 
 [**create_extract**](#create_extract) | **POST** /extracts | 
 [**delete_extract**](#delete_extract) | **DELETE** /extracts/{extract_id} | 
 [**get_extract_player**](#get_extract_player) | **GET** /extracts/{extract_id}/player | 
 [**get_product_extracts**](#get_product_extracts) | **GET** /products/{product_id}/extracts | 
 [**update_extract**](#update_extract) | **PUT** /extracts/{extract_id} | 
 
+
+## **attach_cover_to_extract**
+> attach_cover_to_extract(extract_id, id_image)
+
+
+
+Attach cover to extract (the image need to be attached to the product)
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kaemo_client
+from kaemo_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kaemo_client.ExtractsApi()
+extract_id = 789 # int | ID of the extract to fetch
+id_image = 789 # int | ID of the image to attach
+
+try: 
+    api_instance.attach_cover_to_extract(extract_id, id_image)
+except ApiException as e:
+    print("Exception when calling ExtractsApi->attach_cover_to_extract: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **extract_id** | **int**| ID of the extract to fetch | 
+ **id_image** | **int**| ID of the image to attach | 
+
+### Return type
+
+void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **create_extract**
 > Extract create_extract(body)

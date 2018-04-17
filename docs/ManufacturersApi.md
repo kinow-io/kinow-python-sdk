@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 
-Get cover image of a manufacturer
+Please, use __/directors/{actor_id}/cover__
 
 ### Example 
 ```python

@@ -5,12 +5,18 @@ All URIs are relative to *https://api.kaemo.com/api*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**attach_features_to_product**](#attach_features_to_product) | **POST** /products/{product_id}/features | 
+[**attach_product_to_actor**](#attach_product_to_actor) | **POST** /products/{product_id}/actors | 
 [**attach_product_to_category**](#attach_product_to_category) | **POST** /products/{product_id}/categories | 
+[**attach_product_to_director**](#attach_product_to_director) | **POST** /products/{product_id}/directors | 
+[**attach_product_to_director_0**](#attach_product_to_director_0) | **POST** /products/{product_id}/groups | 
 [**attach_video_to_product**](#attach_video_to_product) | **POST** /products/{product_id}/videos | 
 [**create_product**](#create_product) | **POST** /products | 
 [**delete_product**](#delete_product) | **DELETE** /products/{product_id} | 
 [**detach_feature_to_product**](#detach_feature_to_product) | **DELETE** products/{product_id}/features/{feature_id} | 
+[**detach_product_from_actor**](#detach_product_from_actor) | **DELETE** /products/{product_id}/actors/{actor_id} | 
 [**detach_product_from_category**](#detach_product_from_category) | **DELETE** /products/{product_id}/categories/{category_id} | 
+[**detach_product_from_director**](#detach_product_from_director) | **DELETE** /products/{product_id}/directors/{director_id} | 
+[**detach_product_from_group**](#detach_product_from_group) | **POST** /products/{product_id}/groups/{group_id} | 
 [**get_category_products**](#get_category_products) | **GET** /categories/{category_id}/products | 
 [**get_customer_has_access_to_product**](#get_customer_has_access_to_product) | **GET** /customers/{customer_id}/products/{product_id}/has-access | 
 [**get_product**](#get_product) | **GET** /products/{product_id} | 
@@ -77,6 +83,50 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
+## **attach_product_to_actor**
+> attach_product_to_actor(product_id, actor_id)
+
+
+
+Attach product to actor
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kaemo_client
+from kaemo_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kaemo_client.ProductsApi()
+product_id = 789 # int | ID of the product
+actor_id = 789 # int | ID of the actor to attach
+
+try: 
+    api_instance.attach_product_to_actor(product_id, actor_id)
+except ApiException as e:
+    print("Exception when calling ProductsApi->attach_product_to_actor: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_id** | **int**| ID of the product | 
+ **actor_id** | **int**| ID of the actor to attach | 
+
+### Return type
+
+void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
 ## **attach_product_to_category**
 > attach_product_to_category(product_id, category_id)
 
@@ -109,6 +159,94 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **product_id** | **int**| Id of the product | 
  **category_id** | **int**| ID of the category to attach | 
+
+### Return type
+
+void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **attach_product_to_director**
+> attach_product_to_director(product_id, director_id)
+
+
+
+Attach product to director
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kaemo_client
+from kaemo_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kaemo_client.ProductsApi()
+product_id = 789 # int | ID of the product
+director_id = 789 # int | ID of the director to attach
+
+try: 
+    api_instance.attach_product_to_director(product_id, director_id)
+except ApiException as e:
+    print("Exception when calling ProductsApi->attach_product_to_director: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_id** | **int**| ID of the product | 
+ **director_id** | **int**| ID of the director to attach | 
+
+### Return type
+
+void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **attach_product_to_director_0**
+> attach_product_to_director_0(product_id, group_id)
+
+
+
+Attach product to group
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kaemo_client
+from kaemo_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kaemo_client.ProductsApi()
+product_id = 789 # int | ID of the product
+group_id = 789 # int | ID of the group to attach
+
+try: 
+    api_instance.attach_product_to_director_0(product_id, group_id)
+except ApiException as e:
+    print("Exception when calling ProductsApi->attach_product_to_director_0: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_id** | **int**| ID of the product | 
+ **group_id** | **int**| ID of the group to attach | 
 
 ### Return type
 
@@ -294,6 +432,50 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
+## **detach_product_from_actor**
+> detach_product_from_actor(product_id, actor_id)
+
+
+
+Detach product from actor
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kaemo_client
+from kaemo_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kaemo_client.ProductsApi()
+product_id = 789 # int | ID of the product
+actor_id = 789 # int | ID of the actor to detach
+
+try: 
+    api_instance.detach_product_from_actor(product_id, actor_id)
+except ApiException as e:
+    print("Exception when calling ProductsApi->detach_product_from_actor: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_id** | **int**| ID of the product | 
+ **actor_id** | **int**| ID of the actor to detach | 
+
+### Return type
+
+void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
 ## **detach_product_from_category**
 > detach_product_from_category(product_id, category_id)
 
@@ -312,7 +494,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = kaemo_client.ProductsApi()
 product_id = 789 # int | Id of the product
-category_id = 789 # int | ID of the category to attach
+category_id = 789 # int | ID of the category to detach
 
 try: 
     api_instance.detach_product_from_category(product_id, category_id)
@@ -325,7 +507,95 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **product_id** | **int**| Id of the product | 
- **category_id** | **int**| ID of the category to attach | 
+ **category_id** | **int**| ID of the category to detach | 
+
+### Return type
+
+void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **detach_product_from_director**
+> detach_product_from_director(product_id, director_id)
+
+
+
+Detach product from director
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kaemo_client
+from kaemo_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kaemo_client.ProductsApi()
+product_id = 789 # int | ID of the product
+director_id = 789 # int | ID of the director to detach
+
+try: 
+    api_instance.detach_product_from_director(product_id, director_id)
+except ApiException as e:
+    print("Exception when calling ProductsApi->detach_product_from_director: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_id** | **int**| ID of the product | 
+ **director_id** | **int**| ID of the director to detach | 
+
+### Return type
+
+void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **detach_product_from_group**
+> detach_product_from_group(product_id, group_id)
+
+
+
+Detach product from group
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kaemo_client
+from kaemo_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kaemo_client.ProductsApi()
+product_id = 789 # int | ID of the product
+group_id = 789 # int | ID of the group to detach
+
+try: 
+    api_instance.detach_product_from_group(product_id, group_id)
+except ApiException as e:
+    print("Exception when calling ProductsApi->detach_product_from_group: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_id** | **int**| ID of the product | 
+ **group_id** | **int**| ID of the group to detach | 
 
 ### Return type
 
@@ -1000,7 +1270,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_products**
-> Products get_products(page=page, per_page=per_page, features=features, filters=filters, sort_by=sort_by, sort_direction=sort_direction, ip=ip)
+> Products get_products(page=page, per_page=per_page, features=features, filters=filters, sort_by=sort_by, sort_direction=sort_direction, ip=ip, customer_id=customer_id)
 
 
 
@@ -1023,9 +1293,10 @@ filters = 'filters_example' # str |      ```     filters[name][value]=string&fil
 sort_by = 'sort_by_example' # str | Sort by this attribute (id by default) (optional)
 sort_direction = 'sort_direction_example' # str | Sorting direction (asc by default) (optional)
 ip = 'ip_example' # str | filter by customer ip (optional)
+customer_id = 'customer_id_example' # str | Check if customer can see this product, if it's group is not restricted (optional)
 
 try: 
-    api_response = api_instance.get_products(page=page, per_page=per_page, features=features, filters=filters, sort_by=sort_by, sort_direction=sort_direction, ip=ip)
+    api_response = api_instance.get_products(page=page, per_page=per_page, features=features, filters=filters, sort_by=sort_by, sort_direction=sort_direction, ip=ip, customer_id=customer_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProductsApi->get_products: %s\n" % e)
@@ -1042,6 +1313,7 @@ Name | Type | Description  | Notes
  **sort_by** | **str**| Sort by this attribute (id by default) | [optional] 
  **sort_direction** | **str**| Sorting direction (asc by default) | [optional] 
  **ip** | **str**| filter by customer ip | [optional] 
+ **customer_id** | **str**| Check if customer can see this product, if it&#39;s group is not restricted | [optional] 
 
 ### Return type
 

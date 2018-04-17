@@ -36,6 +36,7 @@ from .payment_modules_api import PaymentModulesApi
 from .player_api import PlayerApi
 from .product_accesses_api import ProductAccessesApi
 from .products_api import ProductsApi
+from .stats_api import StatsApi
 from .subscriptions_api import SubscriptionsApi
 from .suppliers_api import SuppliersApi
 from .videos_api import VideosApi

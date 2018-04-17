@@ -4,9 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] 
-**name** | **str** |  | [optional] 
 **price** | **int** |  | [optional] 
-**price_noreduc** | **int** |  | [optional] 
 **active** | **int** |  | [optional] 
 **type** | **int** |  | [optional] 
 
