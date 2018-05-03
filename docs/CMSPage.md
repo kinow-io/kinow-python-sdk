@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **content** | [**list[I18nField]**](#I18nField) |  | [optional] 
 **position** | **int** |  | [optional] 
 **id_cms_category** | **int** |  | [optional] 
+**id** | **int** |  | [optional] 
 
 [[Back to Model list]](#documentation-for-models) [[Back to API list]](#documentation-for-api-endpoints)
 

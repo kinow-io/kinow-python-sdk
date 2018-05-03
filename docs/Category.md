@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **date_upd** | **str** |  | [optional] 
 **active** | **bool** |  | [optional] 
 **position** | **int** |  | [optional] 
-**images** | [**list[Image]**](#Image) |  | [optional] 
+**images** | [**CategoryImages**](#CategoryImages) |  | [optional] 
 **meta_description** | [**list[I18nField]**](#I18nField) |  | [optional] 
 **meta_keywords** | [**list[I18nField]**](#I18nField) |  | [optional] 
 **meta_title** | [**list[I18nField]**](#I18nField) |  | [optional] 

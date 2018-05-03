@@ -15,6 +15,8 @@ Name | Type | Description | Notes
 **id_lang** | **int** |  | [optional] 
 **date_add** | **str** |  | [optional] 
 **date_upd** | **str** |  | [optional] 
+**max_viewing** | **int** |  | [optional] 
+**custom** | **str** |  | [optional] 
 **password** | **str** | Only available in body | [optional] 
 **id_country** | **int** | Only available in body | [optional] 
 
