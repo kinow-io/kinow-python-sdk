@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **link_rewrite** | [**list[I18nField]**](#I18nField) |  | [optional] 
 **description** | [**list[I18nField]**](#I18nField) |  | [optional] 
 **image** | **str** |  | [optional] 
+**description_short** | [**list[I18nField]**](#I18nField) |  | [optional] 
 
 [[Back to Model list]](#documentation-for-models) [[Back to API list]](#documentation-for-api-endpoints)
 
