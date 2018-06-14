@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**get_customer_address**](#get_customer_address) | **GET** /customers/{customer_id}/address | 
 [**get_customer_can_see_product**](#get_customer_can_see_product) | **GET** /customers/{customer_id}/products/{product_id}/can-see | 
 [**get_customer_current_views**](#get_customer_current_views) | **GET** /customers/{customer_id}/current-views | 
+[**get_customer_groups**](#get_customer_groups) | **GET** /customers/{customer_id}/groups | 
 [**get_customer_has_access_to_product**](#get_customer_has_access_to_product) | **GET** /customers/{customer_id}/products/{product_id}/has-access | 
 [**get_customer_has_access_to_video**](#get_customer_has_access_to_video) | **GET** /customers/{customer_id}/videos/{video_id}/has-access | 
 [**get_customer_orders**](#get_customer_orders) | **GET** /customers/{customer_id}/orders | 
@@ -351,7 +352,7 @@ api_instance = kaemo_client.CustomersApi()
 customer_id = 789 # int | ID of the customer to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
-filters = 'filters_example' # str |  ``` filters[type][value]=string&filters[type][operator]=strict&filters[cancel][value]=string&filters[cancel][operator]=contains _______________  { \"type\": { \"value\": \"string\", \"operator\": \"strict\" }, \"cancel\": { \"value\": \"string\", \"operator\": \"contains\" } } ```Operator can be strict, contains, gt or lt. (optional)
+filters = 'filters_example' # str |      ```     filters[type][value]=string&filters[type][operator]=strict&filters[cancel][value]=string&filters[cancel][operator]=contains     _______________      {     \"type\": {     \"value\": \"string\",     \"operator\": \"strict\"     },     \"cancel\": {     \"value\": \"string\",     \"operator\": \"contains\"     }     } ```Operator can be strict, contains, gt or lt. (optional)
 
 try: 
     api_response = api_instance.get_customer_accesses_subscriptions(customer_id, page=page, per_page=per_page, filters=filters)
@@ -367,7 +368,7 @@ Name | Type | Description  | Notes
  **customer_id** | **int**| ID of the customer to fetch | 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
- **filters** | **str**|  &#x60;&#x60;&#x60; filters[type][value]&#x3D;string&amp;filters[type][operator]&#x3D;strict&amp;filters[cancel][value]&#x3D;string&amp;filters[cancel][operator]&#x3D;contains _______________  { \&quot;type\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;strict\&quot; }, \&quot;cancel\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;contains\&quot; } } &#x60;&#x60;&#x60;Operator can be strict, contains, gt or lt. | [optional] 
+ **filters** | **str**|      &#x60;&#x60;&#x60;     filters[type][value]&#x3D;string&amp;filters[type][operator]&#x3D;strict&amp;filters[cancel][value]&#x3D;string&amp;filters[cancel][operator]&#x3D;contains     _______________      {     \&quot;type\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;cancel\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;contains\&quot;     }     } &#x60;&#x60;&#x60;Operator can be strict, contains, gt or lt. | [optional] 
 
 ### Return type
 
@@ -549,6 +550,53 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CustomerCurrentViews**](#CustomerCurrentViews)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_customer_groups**
+> Groups get_customer_groups(customer_id, page=page, per_page=per_page)
+
+
+
+Get groups attached to this customer
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kaemo_client
+from kaemo_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kaemo_client.CustomersApi()
+customer_id = 789 # int | Id of the customer
+page = 789 # int |  (optional)
+per_page = 789 # int |  (optional)
+
+try: 
+    api_response = api_instance.get_customer_groups(customer_id, page=page, per_page=per_page)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CustomersApi->get_customer_groups: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customer_id** | **int**| Id of the customer | 
+ **page** | **int**|  | [optional] 
+ **per_page** | **int**|  | [optional] 
+
+### Return type
+
+[**Groups**](#Groups)
 
 ### HTTP request headers
 
