@@ -15,6 +15,8 @@ Name | Type | Description | Notes
 **date_issue** | **str** |  | [optional] 
 **date_upd** | **str** |  | [optional] 
 **active** | **int** |  | [optional] 
+**id_blog_category** | **int** |  | [optional] 
+**cover** | **str** |  | [optional] 
 
 [[Back to Model list]](#documentation-for-models) [[Back to API list]](#documentation-for-api-endpoints)
 
