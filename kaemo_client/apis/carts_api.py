@@ -55,7 +55,7 @@ class CartsApi(object):
             for asynchronous request. (optional)
         :param int cart_id: Id of the cart to fetch (required)
         :param int product_id: Id of the product to attach to the cart (required)
-        :param int product_attribute_id: Id of the product attribute, required to add product to cart it product is not a subscription
+        :param int product_attribute_id: Id of the product attribute, required to add product to cart if product is not a subscription
         :param int switch_subscription_id: When customer want to switch subscription, switch_subscription_id is the id of the product access that match with the subscription to cancel.
         :return: Cart
                  If the method is called asynchronously,
@@ -83,7 +83,7 @@ class CartsApi(object):
             for asynchronous request. (optional)
         :param int cart_id: Id of the cart to fetch (required)
         :param int product_id: Id of the product to attach to the cart (required)
-        :param int product_attribute_id: Id of the product attribute, required to add product to cart it product is not a subscription
+        :param int product_attribute_id: Id of the product attribute, required to add product to cart if product is not a subscription
         :param int switch_subscription_id: When customer want to switch subscription, switch_subscription_id is the id of the product access that match with the subscription to cancel.
         :return: Cart
                  If the method is called asynchronously,
@@ -581,6 +581,7 @@ class CartsApi(object):
             for asynchronous request. (optional)
         :param str cart_id: Id of the cart to fetch (required)
         :param int product_id: Id of the product to delete from cart (required)
+        :param int product_attribute_id: Id of the product attribute, required to add product to cart if product is not a subscription
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -607,12 +608,13 @@ class CartsApi(object):
             for asynchronous request. (optional)
         :param str cart_id: Id of the cart to fetch (required)
         :param int product_id: Id of the product to delete from cart (required)
+        :param int product_attribute_id: Id of the product attribute, required to add product to cart if product is not a subscription
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['cart_id', 'product_id']
+        all_params = ['cart_id', 'product_id', 'product_attribute_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -645,6 +647,8 @@ class CartsApi(object):
         query_params = {}
         if 'product_id' in params:
             query_params['product_id'] = params['product_id']
+        if 'product_attribute_id' in params:
+            query_params['product_attribute_id'] = params['product_attribute_id']
 
         header_params = {}
 

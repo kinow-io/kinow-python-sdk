@@ -38,7 +38,7 @@ from pprint import pprint
 api_instance = kaemo_client.CartsApi()
 cart_id = 789 # int | Id of the cart to fetch
 product_id = 789 # int | Id of the product to attach to the cart
-product_attribute_id = 789 # int | Id of the product attribute, required to add product to cart it product is not a subscription (optional)
+product_attribute_id = 789 # int | Id of the product attribute, required to add product to cart if product is not a subscription (optional)
 switch_subscription_id = 789 # int | When customer want to switch subscription, switch_subscription_id is the id of the product access that match with the subscription to cancel. (optional)
 
 try: 
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cart_id** | **int**| Id of the cart to fetch | 
  **product_id** | **int**| Id of the product to attach to the cart | 
- **product_attribute_id** | **int**| Id of the product attribute, required to add product to cart it product is not a subscription | [optional] 
+ **product_attribute_id** | **int**| Id of the product attribute, required to add product to cart if product is not a subscription | [optional] 
  **switch_subscription_id** | **int**| When customer want to switch subscription, switch_subscription_id is the id of the product access that match with the subscription to cancel. | [optional] 
 
 ### Return type
@@ -243,7 +243,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **delete_product_from_cart**
-> delete_product_from_cart(cart_id, product_id)
+> delete_product_from_cart(cart_id, product_id, product_attribute_id=product_attribute_id)
 
 
 
@@ -261,9 +261,10 @@ from pprint import pprint
 api_instance = kaemo_client.CartsApi()
 cart_id = 'cart_id_example' # str | Id of the cart to fetch
 product_id = 789 # int | Id of the product to delete from cart
+product_attribute_id = 789 # int | Id of the product attribute, required to add product to cart if product is not a subscription (optional)
 
 try: 
-    api_instance.delete_product_from_cart(cart_id, product_id)
+    api_instance.delete_product_from_cart(cart_id, product_id, product_attribute_id=product_attribute_id)
 except ApiException as e:
     print("Exception when calling CartsApi->delete_product_from_cart: %s\n" % e)
 ```
@@ -274,6 +275,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cart_id** | **str**| Id of the cart to fetch | 
  **product_id** | **int**| Id of the product to delete from cart | 
+ **product_attribute_id** | **int**| Id of the product attribute, required to add product to cart if product is not a subscription | [optional] 
 
 ### Return type
 
