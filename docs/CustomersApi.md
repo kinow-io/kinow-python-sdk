@@ -1,6 +1,6 @@
 # CustomersApi
 
-All URIs are relative to *https://api.kaemo.com/api*
+All URIs are relative to *https://api.kinow.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

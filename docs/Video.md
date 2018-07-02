@@ -22,6 +22,9 @@ Name | Type | Description | Notes
 **can_watch** | **bool** |  | [optional] 
 **cover** | **str** |  | [optional] 
 **thumbnail** | **str** |  | [optional] 
+**geoloc_enabled** | **bool** |  | [optional] 
+**behavior_detected_countries** | **str** |  | [optional] 
+**behavior_non_detected_countries** | **str** |  | [optional] 
 
 [[Back to Model list]](#documentation-for-models) [[Back to API list]](#documentation-for-api-endpoints)
 

@@ -1,6 +1,6 @@
 # CartRulesApi
 
-All URIs are relative to *https://api.kaemo.com/api*
+All URIs are relative to *https://api.kinow.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -29,7 +29,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kaemo_client.CartRulesApi()
-cart_id = 'cart_id_example' # str | Id of the cart to fetch
+cart_id = 789 # int | Id of the cart to fetch
 code = 'code_example' # str | Code of the cart rule to attach
 
 try: 
@@ -42,7 +42,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cart_id** | **str**| Id of the cart to fetch | 
+ **cart_id** | **int**| Id of the cart to fetch | 
  **code** | **str**| Code of the cart rule to attach | 
 
 ### Return type

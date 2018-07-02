@@ -1,6 +1,6 @@
 # CartsApi
 
-All URIs are relative to *https://api.kaemo.com/api*
+All URIs are relative to *https://api.kinow.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -85,7 +85,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kaemo_client.CartsApi()
-cart_id = 'cart_id_example' # str | Id of the cart to fetch
+cart_id = 789 # int | Id of the cart to fetch
 code = 'code_example' # str | Code of the cart rule to attach
 
 try: 
@@ -98,7 +98,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cart_id** | **str**| Id of the cart to fetch | 
+ **cart_id** | **int**| Id of the cart to fetch | 
  **code** | **str**| Code of the cart rule to attach | 
 
 ### Return type
@@ -217,7 +217,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kaemo_client.CartsApi()
-cart_id = 'cart_id_example' # str | Id of the cart to fetch
+cart_id = 789 # int | Id of the cart to fetch
 
 try: 
     api_instance.delete_cart(cart_id)
@@ -229,7 +229,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cart_id** | **str**| Id of the cart to fetch | 
+ **cart_id** | **int**| Id of the cart to fetch | 
 
 ### Return type
 
@@ -259,7 +259,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kaemo_client.CartsApi()
-cart_id = 'cart_id_example' # str | Id of the cart to fetch
+cart_id = 789 # int | Id of the cart to fetch
 product_id = 789 # int | Id of the product to delete from cart
 product_attribute_id = 789 # int | Id of the product attribute, required to add product to cart if product is not a subscription (optional)
 
@@ -273,7 +273,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cart_id** | **str**| Id of the cart to fetch | 
+ **cart_id** | **int**| Id of the cart to fetch | 
  **product_id** | **int**| Id of the product to delete from cart | 
  **product_attribute_id** | **int**| Id of the product attribute, required to add product to cart if product is not a subscription | [optional] 
 
@@ -305,7 +305,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kaemo_client.CartsApi()
-cart_id = 'cart_id_example' # str | Id of the cart to fetch
+cart_id = 789 # int | Id of the cart to fetch
 
 try: 
     api_response = api_instance.get_cart(cart_id)
@@ -318,7 +318,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cart_id** | **str**| Id of the cart to fetch | 
+ **cart_id** | **int**| Id of the cart to fetch | 
 
 ### Return type
 
@@ -489,7 +489,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kaemo_client.CartsApi()
-cart_id = 'cart_id_example' # str | Cart id
+cart_id = 789 # int | Cart id
 body = kaemo_client.Cart() # Cart | Cart body
 
 try: 
@@ -503,7 +503,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cart_id** | **str**| Cart id | 
+ **cart_id** | **int**| Cart id | 
  **body** | [**Cart**](#Cart)| Cart body | 
 
 ### Return type
