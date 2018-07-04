@@ -753,7 +753,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_product_actors**
-> Actors get_product_actors(product_id, page=page, per_page=per_page)
+> Actors get_product_actors(product_id, page=page, per_page=per_page, image_type=image_type)
 
 
 
@@ -772,9 +772,10 @@ api_instance = kaemo_client.ProductsApi()
 product_id = 789 # int | ID of the product to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
+image_type = 'image_type_example' # str |  (optional)
 
 try: 
-    api_response = api_instance.get_product_actors(product_id, page=page, per_page=per_page)
+    api_response = api_instance.get_product_actors(product_id, page=page, per_page=per_page, image_type=image_type)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProductsApi->get_product_actors: %s\n" % e)
@@ -787,6 +788,7 @@ Name | Type | Description  | Notes
  **product_id** | **int**| ID of the product to fetch | 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
+ **image_type** | **str**|  | [optional] 
 
 ### Return type
 
@@ -985,7 +987,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_product_directors**
-> Director1 get_product_directors(product_id, page=page, per_page=per_page)
+> Director1 get_product_directors(product_id, page=page, per_page=per_page, image_type=image_type)
 
 
 
@@ -1004,9 +1006,10 @@ api_instance = kaemo_client.ProductsApi()
 product_id = 789 # int | ID of the product to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
+image_type = 'image_type_example' # str |  (optional)
 
 try: 
-    api_response = api_instance.get_product_directors(product_id, page=page, per_page=per_page)
+    api_response = api_instance.get_product_directors(product_id, page=page, per_page=per_page, image_type=image_type)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProductsApi->get_product_directors: %s\n" % e)
@@ -1019,6 +1022,7 @@ Name | Type | Description  | Notes
  **product_id** | **int**| ID of the product to fetch | 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
+ **image_type** | **str**|  | [optional] 
 
 ### Return type
 
