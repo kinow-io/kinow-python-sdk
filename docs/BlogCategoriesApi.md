@@ -5,7 +5,7 @@ All URIs are relative to *https://api.kinow.com/api*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_blog_categories**](#get_blog_categories) | **GET** /blog-categories | 
-[**get_blog_category**](#get_blog_category) | **GET** /blog-pages/{blog_category_id} | 
+[**get_blog_category**](#get_blog_category) | **GET** /blog-categories/{blog_category_id} | 
 
 
 ## **get_blog_categories**
