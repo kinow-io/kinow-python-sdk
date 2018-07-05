@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **active** | **int** |  | [optional] 
 **id_blog_category** | **int** |  | [optional] 
 **cover** | **str** |  | [optional] 
+**id** | **int** |  | [optional] 
 
 [[Back to Model list]](#documentation-for-models) [[Back to API list]](#documentation-for-api-endpoints)
 
