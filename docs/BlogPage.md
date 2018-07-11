@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **link_rewrite** | **str** |  | [optional] 
 **description_short** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
-**meta_title** | **int** |  | [optional] 
+**meta_title** | **str** |  | [optional] 
 **meta_description** | **str** |  | [optional] 
 **meta_keywords** | **str** |  | [optional] 
 **date_add** | **str** |  | [optional] 

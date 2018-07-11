@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **meta_description** | [**list[I18nField]**](#I18nField) |  | [optional] 
 **link_rewrite** | [**list[I18nField]**](#I18nField) |  | [optional] 
 **id** | **int** |  | [optional] 
+**meta_keywords** | [**list[I18nField]**](#I18nField) |  | [optional] 
 
 [[Back to Model list]](#documentation-for-models) [[Back to API list]](#documentation-for-api-endpoints)
 
