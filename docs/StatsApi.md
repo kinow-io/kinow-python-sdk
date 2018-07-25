@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 ## **get_video_stats_by_customers**
-> Image get_video_stats_by_customers(customer_id=customer_id, date_from=date_from, date_to=date_to, page=page, per_page=per_page)
+> CustomerVideoStat get_video_stats_by_customers(customer_id=customer_id, date_from=date_from, date_to=date_to, page=page, per_page=per_page)
 
 
 
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Image**](#Image)
+[**CustomerVideoStat**](#CustomerVideoStat)
 
 ### HTTP request headers
 
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_video_stats_by_video**
-> Image get_video_stats_by_video(customer_id=customer_id, date_from=date_from, date_to=date_to, page=page)
+> VideoStat get_video_stats_by_video(customer_id=customer_id, date_from=date_from, date_to=date_to, page=page)
 
 
 
@@ -100,7 +100,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Image**](#Image)
+[**VideoStat**](#VideoStat)
 
 ### HTTP request headers
 
@@ -110,7 +110,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_video_stats_sessions**
-> Image get_video_stats_sessions(customer_id=customer_id, video_id=video_id, date_from=date_from, date_to=date_to, page=page, per_page=per_page)
+> SessionVideoStat get_video_stats_sessions(customer_id=customer_id, video_id=video_id, date_from=date_from, date_to=date_to, page=page, per_page=per_page)
 
 
 
@@ -153,7 +153,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Image**](#Image)
+[**SessionVideoStat**](#SessionVideoStat)
 
 ### HTTP request headers
 
