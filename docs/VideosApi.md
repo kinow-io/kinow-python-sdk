@@ -13,9 +13,11 @@ Method | HTTP request | Description
 [**get_disabled_subscriptions**](#get_disabled_subscriptions) | **GET** /videos/{video_id}/disabled-subscriptions | 
 [**get_download_url**](#get_download_url) | **GET** /customers/{customer_id}/videos/{video_id}/download | 
 [**get_marlin_token**](#get_marlin_token) | **GET** /customers/{customer_id}/videos/{video_id}/marlin | 
+[**get_player_iframe**](#get_player_iframe) | **GET** /videos/{video_id}/player-iframe | 
 [**get_player_url**](#get_player_url) | **GET** /customers/{customer_id}/videos/{video_id}/player | 
 [**get_video**](#get_video) | **GET** /videos/{video_id} | 
 [**get_video_access**](#get_video_access) | **GET** /videos/{video_id}/customers/{customer_id}/access | 
+[**get_video_download_url**](#get_video_download_url) | **GET** /videos/{video_id}/download-url | 
 [**get_video_features**](#get_video_features) | **GET** /videos/{video_id}/features | 
 [**get_video_geolocation**](#get_video_geolocation) | **GET** /videos/{video_id}/geolocation | 
 [**get_video_geolocation_0**](#get_video_geolocation_0) | **POST** /videos/{video_id}/geolocations/{ip_address} | 
@@ -425,6 +427,51 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
+## **get_player_iframe**
+> VideoUrl get_player_iframe(video_id, customer_id=customer_id)
+
+
+
+Get video player url
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kaemo_client
+from kaemo_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kaemo_client.VideosApi()
+video_id = 789 # int | Id of the video to fetch
+customer_id = 789 # int | Id of the customer to fetch (optional)
+
+try: 
+    api_response = api_instance.get_player_iframe(video_id, customer_id=customer_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling VideosApi->get_player_iframe: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **video_id** | **int**| Id of the video to fetch | 
+ **customer_id** | **int**| Id of the customer to fetch | [optional] 
+
+### Return type
+
+[**VideoUrl**](#VideoUrl)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
 ## **get_player_url**
 > VideoUrl get_player_url(customer_id, video_id)
 
@@ -549,6 +596,51 @@ Name | Type | Description  | Notes
 ### Return type
 
 void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_video_download_url**
+> DownloadUrl get_video_download_url(video_id, customer_id=customer_id)
+
+
+
+Get video download url
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kaemo_client
+from kaemo_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kaemo_client.VideosApi()
+video_id = 789 # int | Id of the video to fetch
+customer_id = 789 # int | Id of the customer to fetch (optional)
+
+try: 
+    api_response = api_instance.get_video_download_url(video_id, customer_id=customer_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling VideosApi->get_video_download_url: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **video_id** | **int**| Id of the video to fetch | 
+ **customer_id** | **int**| Id of the customer to fetch | [optional] 
+
+### Return type
+
+[**DownloadUrl**](#DownloadUrl)
 
 ### HTTP request headers
 
