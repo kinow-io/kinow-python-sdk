@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_video_stats_by_video**
-> VideoStat get_video_stats_by_video(customer_id=customer_id, date_from=date_from, date_to=date_to, page=page)
+> VideoStat get_video_stats_by_video(video_id=video_id, date_from=date_from, date_to=date_to, page=page)
 
 
 
@@ -77,13 +77,13 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kaemo_client.StatsApi()
-customer_id = 789 # int | ID of the customer to fetch (optional)
+video_id = 789 # int | ID of the customer to fetch (optional)
 date_from = 'date_from_example' # str | Search entries from this date (optional)
 date_to = 'date_to_example' # str | Search entries to this date (optional)
 page = 789 # int |  (optional)
 
 try: 
-    api_response = api_instance.get_video_stats_by_video(customer_id=customer_id, date_from=date_from, date_to=date_to, page=page)
+    api_response = api_instance.get_video_stats_by_video(video_id=video_id, date_from=date_from, date_to=date_to, page=page)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling StatsApi->get_video_stats_by_video: %s\n" % e)
@@ -93,7 +93,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customer_id** | **int**| ID of the customer to fetch | [optional] 
+ **video_id** | **int**| ID of the customer to fetch | [optional] 
  **date_from** | **str**| Search entries from this date | [optional] 
  **date_to** | **str**| Search entries to this date | [optional] 
  **page** | **int**|  | [optional] 
