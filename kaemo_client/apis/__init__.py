@@ -41,5 +41,6 @@ from .products_api import ProductsApi
 from .stats_api import StatsApi
 from .subscriptions_api import SubscriptionsApi
 from .suppliers_api import SuppliersApi
+from .tasks_api import TasksApi
 from .videos_api import VideosApi
 from .widgets_api import WidgetsApi
