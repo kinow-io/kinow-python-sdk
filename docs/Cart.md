@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **date_upd** | **str** |  | [optional] 
 **total** | **int** |  | [optional] 
 **products** | [**list[Product]**](#Product) |  | [optional] 
+**cart_rules** | [**list[CartRule]**](#CartRule) |  | [optional] 
 
 [[Back to Model list]](#documentation-for-models) [[Back to API list]](#documentation-for-api-endpoints)
 
