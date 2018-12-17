@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**get_order**](#get_order) | **GET** /orders/{order_id} | 
 [**get_order_histories**](#get_order_histories) | **GET** /orders/{order_id}/histories | 
 [**get_order_invoice**](#get_order_invoice) | **GET** /orders/{order_id}/invoice | 
+[**get_orders**](#get_orders) | **GET** /orders | 
 
 
 ## **get_customer_orders**
@@ -182,6 +183,57 @@ Name | Type | Description  | Notes
 ### Return type
 
 **str**
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_orders**
+> Orders get_orders(page=page, per_page=per_page, filters=filters, sort_by=sort_by, sort_direction=sort_direction)
+
+
+
+Get order list
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kaemo_client
+from kaemo_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kaemo_client.OrdersApi()
+page = 789 # int |  (optional)
+per_page = 789 # int |  (optional)
+filters = 'filters_example' # str |  filters[email][value]=string&filters[email][operator]=strict&filters[firstname][value]=string&filters[firstname][operator]=contains  ``` {     \"email\": {         \"value\": \"string\",         \"operator\": \"strict\"     },     \"firstname\": {         \"value\": \"string\",         \"operator\": \"contains\"     },     \"invoice_date\": {         \"value\": [\"Y-m-d\", \"Y-m-d\"],         \"operator\": \"between\"     } }``` Operator can be strict, contains, between, gt or lt. (optional)
+sort_by = 'sort_by_example' # str | Sort by this attribute (id by default) (optional)
+sort_direction = 'sort_direction_example' # str | Sorting direction (asc by default) (optional)
+
+try: 
+    api_response = api_instance.get_orders(page=page, per_page=per_page, filters=filters, sort_by=sort_by, sort_direction=sort_direction)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OrdersApi->get_orders: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **int**|  | [optional] 
+ **per_page** | **int**|  | [optional] 
+ **filters** | **str**|  filters[email][value]&#x3D;string&amp;filters[email][operator]&#x3D;strict&amp;filters[firstname][value]&#x3D;string&amp;filters[firstname][operator]&#x3D;contains  &#x60;&#x60;&#x60; {     \&quot;email\&quot;: {         \&quot;value\&quot;: \&quot;string\&quot;,         \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;firstname\&quot;: {         \&quot;value\&quot;: \&quot;string\&quot;,         \&quot;operator\&quot;: \&quot;contains\&quot;     },     \&quot;invoice_date\&quot;: {         \&quot;value\&quot;: [\&quot;Y-m-d\&quot;, \&quot;Y-m-d\&quot;],         \&quot;operator\&quot;: \&quot;between\&quot;     } }&#x60;&#x60;&#x60; Operator can be strict, contains, between, gt or lt. | [optional] 
+ **sort_by** | **str**| Sort by this attribute (id by default) | [optional] 
+ **sort_direction** | **str**| Sorting direction (asc by default) | [optional] 
+
+### Return type
+
+[**Orders**](#Orders)
 
 ### HTTP request headers
 
