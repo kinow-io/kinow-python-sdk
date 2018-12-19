@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **id_lang** | **int** |  | [optional] 
 **date_add** | **str** |  | [optional] 
 **date_upd** | **str** |  | [optional] 
-**total** | **int** |  | [optional] 
+**total** | **float** |  | [optional] 
 **products** | [**list[Product]**](#Product) |  | [optional] 
 **cart_rules** | [**list[CartRule]**](#CartRule) |  | [optional] 
 
