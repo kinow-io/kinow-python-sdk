@@ -19,11 +19,11 @@ import unittest
 
 import kaemo_client
 from kaemo_client.rest import ApiException
-from kaemo_client.models.i18n_field import I18nField
+from kaemo_client.models.video_free_access import VideoFreeAccess
 
 
-class TestI18nField(unittest.TestCase):
-    """ I18nField unit test stubs """
+class TestVideoFreeAccess(unittest.TestCase):
+    """ VideoFreeAccess unit test stubs """
 
     def setUp(self):
         pass
@@ -31,11 +31,11 @@ class TestI18nField(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testI18nField(self):
+    def testVideoFreeAccess(self):
         """
-        Test I18nField
+        Test VideoFreeAccess
         """
-        model = kaemo_client.models.i18n_field.I18nField()
+        model = kaemo_client.models.video_free_access.VideoFreeAccess()
 
 
 if __name__ == '__main__':
