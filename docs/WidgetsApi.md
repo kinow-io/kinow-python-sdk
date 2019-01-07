@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**get_intro_image**](#get_intro_image) | **GET** /widgets/intro/images | 
 [**get_slider_images**](#get_slider_images) | **GET** /widgets/slider/images | 
 [**get_widget_footer_menu**](#get_widget_footer_menu) | **GET** /widgets/footer-menu | 
+[**get_widget_slider**](#get_widget_slider) | **GET** /widgets/slider | 
 [**get_widget_top_menu**](#get_widget_top_menu) | **GET** /widgets/top-menu | 
 
 
@@ -125,6 +126,51 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**WidgetFooterMenus**](#WidgetFooterMenus)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_widget_slider**
+> WidgetSliders get_widget_slider(page=page, per_page=per_page)
+
+
+
+Get slider list
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kaemo_client
+from kaemo_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kaemo_client.WidgetsApi()
+page = 789 # int |  (optional)
+per_page = 789 # int |  (optional)
+
+try: 
+    api_response = api_instance.get_widget_slider(page=page, per_page=per_page)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WidgetsApi->get_widget_slider: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **int**|  | [optional] 
+ **per_page** | **int**|  | [optional] 
+
+### Return type
+
+[**WidgetSliders**](#WidgetSliders)
 
 ### HTTP request headers
 
