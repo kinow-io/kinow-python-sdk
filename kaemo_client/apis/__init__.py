@@ -40,6 +40,7 @@ from .product_accesses_api import ProductAccessesApi
 from .products_api import ProductsApi
 from .stats_api import StatsApi
 from .subscriptions_api import SubscriptionsApi
+from .subtitles_api import SubtitlesApi
 from .suppliers_api import SuppliersApi
 from .tasks_api import TasksApi
 from .videos_api import VideosApi
