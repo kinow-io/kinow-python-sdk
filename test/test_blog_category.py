@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import kaemo_client
-from kaemo_client.rest import ApiException
-from kaemo_client.models.blog_category import BlogCategory
+import kinow_client
+from kinow_client.rest import ApiException
+from kinow_client.models.blog_category import BlogCategory
 
 
 class TestBlogCategory(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestBlogCategory(unittest.TestCase):
         """
         Test BlogCategory
         """
-        model = kaemo_client.models.blog_category.BlogCategory()
+        model = kinow_client.models.blog_category.BlogCategory()
 
 
 if __name__ == '__main__':

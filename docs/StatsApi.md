@@ -20,12 +20,12 @@ Get video stats by customer
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.StatsApi()
+api_instance = kinow_client.StatsApi()
 customer_id = 789 # int | ID of the customer to fetch (optional)
 date_from = 'date_from_example' # str | Search entries from this date (optional)
 date_to = 'date_to_example' # str | Search entries to this date (optional)
@@ -71,12 +71,12 @@ Get video stats by video
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.StatsApi()
+api_instance = kinow_client.StatsApi()
 video_id = 789 # int | ID of the customer to fetch (optional)
 date_from = 'date_from_example' # str | Search entries from this date (optional)
 date_to = 'date_to_example' # str | Search entries to this date (optional)
@@ -120,12 +120,12 @@ Get video stats sessions
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.StatsApi()
+api_instance = kinow_client.StatsApi()
 customer_id = 789 # int | ID of the customer to fetch (optional)
 video_id = 789 # int | ID of the video to fetch (optional)
 date_from = 'date_from_example' # str | Search entries from this date (optional)

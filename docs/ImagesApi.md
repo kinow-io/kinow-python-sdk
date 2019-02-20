@@ -37,12 +37,12 @@ Get cover image of an actor
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ImagesApi()
+api_instance = kinow_client.ImagesApi()
 to_id = 789 # int | ID of the actor to fetch
 
 try: 
@@ -80,12 +80,12 @@ Get banner of a category
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ImagesApi()
+api_instance = kinow_client.ImagesApi()
 category_id = 789 # int | ID of the category to fetch
 
 try: 
@@ -123,12 +123,12 @@ Get cover image of a director
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ImagesApi()
+api_instance = kinow_client.ImagesApi()
 director_id = 789 # int | ID of the director to fetch
 
 try: 
@@ -166,12 +166,12 @@ Get introduction image
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ImagesApi()
+api_instance = kinow_client.ImagesApi()
 
 try: 
     api_response = api_instance.get_intro_image()
@@ -205,12 +205,12 @@ Please, use __/directors/{actor_id}/cover__
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ImagesApi()
+api_instance = kinow_client.ImagesApi()
 manufacturer_id = 789 # int | ID of the manufacturer to fetch
 
 try: 
@@ -248,12 +248,12 @@ Get cover image of a product
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ImagesApi()
+api_instance = kinow_client.ImagesApi()
 product_id = 789 # int | ID of the product to fetch
 
 try: 
@@ -291,12 +291,12 @@ Get images attached to product
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ImagesApi()
+api_instance = kinow_client.ImagesApi()
 product_id = 789 # int | ID of the product to fetch
 type = 'type_example' # str | type as screen_small or screen_large (optional)
 page = 789 # int |  (optional)
@@ -340,12 +340,12 @@ Get product screenshots
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ImagesApi()
+api_instance = kinow_client.ImagesApi()
 product_id = 789 # int | ID of the product to fetch
 
 try: 
@@ -383,12 +383,12 @@ Get introduction image
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ImagesApi()
+api_instance = kinow_client.ImagesApi()
 
 try: 
     api_response = api_instance.get_slider_images()
@@ -422,12 +422,12 @@ Get cover image of a subscription
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ImagesApi()
+api_instance = kinow_client.ImagesApi()
 subscription_id = 789 # int | ID of the subscription to fetch
 
 try: 
@@ -465,12 +465,12 @@ Please, use __/actors/{actor_id}/cover__
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ImagesApi()
+api_instance = kinow_client.ImagesApi()
 supplier_id = 789 # int | ID of the supplier to fetch
 
 try: 
@@ -508,12 +508,12 @@ Get video cover
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ImagesApi()
+api_instance = kinow_client.ImagesApi()
 video = 789 # int | ID of the video to fetch
 
 try: 
@@ -551,12 +551,12 @@ Upload actor cover
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ImagesApi()
+api_instance = kinow_client.ImagesApi()
 actor_id = 3.4 # float | Id of the actor
 file = '/path/to/file.txt' # file | 
 hash = 'hash_example' # str | 
@@ -600,12 +600,12 @@ Upload category banner
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ImagesApi()
+api_instance = kinow_client.ImagesApi()
 category_id = 3.4 # float | Id of the category
 file = '/path/to/file.txt' # file | 
 hash = 'hash_example' # str | 
@@ -649,12 +649,12 @@ Upload director cover
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ImagesApi()
+api_instance = kinow_client.ImagesApi()
 director_id = 3.4 # float | Id of the director
 file = '/path/to/file.txt' # file | 
 hash = 'hash_example' # str | 
@@ -698,12 +698,12 @@ Upload product cover
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ImagesApi()
+api_instance = kinow_client.ImagesApi()
 product_id = 3.4 # float | Id of the product
 file = '/path/to/file.txt' # file | 
 hash = 'hash_example' # str | 
@@ -747,12 +747,12 @@ Upload product screenshot
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ImagesApi()
+api_instance = kinow_client.ImagesApi()
 product_id = 3.4 # float | Id of the product
 image_id = 3.4 # float | Id of the product
 position = 3.4 # float |  (optional)
@@ -794,12 +794,12 @@ Upload product screenshot
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ImagesApi()
+api_instance = kinow_client.ImagesApi()
 product_id = 3.4 # float | Id of the product
 image_id = 3.4 # float | Id of the image to delete
 
@@ -838,12 +838,12 @@ Upload product screenshots
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ImagesApi()
+api_instance = kinow_client.ImagesApi()
 product_id = 3.4 # float | Id of the product
 file = '/path/to/file.txt' # file | 
 hash = 'hash_example' # str | 
@@ -889,12 +889,12 @@ Upload subscription cover
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ImagesApi()
+api_instance = kinow_client.ImagesApi()
 subscription_id = 3.4 # float | Id of the subscription
 file = '/path/to/file.txt' # file | 
 hash = 'hash_example' # str | 

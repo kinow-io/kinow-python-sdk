@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import kaemo_client
-from kaemo_client.rest import ApiException
-from kaemo_client.models.address import Address
+import kinow_client
+from kinow_client.rest import ApiException
+from kinow_client.models.address import Address
 
 
 class TestAddress(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestAddress(unittest.TestCase):
         """
         Test Address
         """
-        model = kaemo_client.models.address.Address()
+        model = kinow_client.models.address.Address()
 
 
 if __name__ == '__main__':

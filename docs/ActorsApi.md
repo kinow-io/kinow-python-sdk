@@ -23,13 +23,13 @@ Create new actor
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ActorsApi()
-body = kaemo_client.Actor() # Actor | 
+api_instance = kinow_client.ActorsApi()
+body = kinow_client.Actor() # Actor | 
 
 try: 
     api_response = api_instance.create_actor(body)
@@ -66,12 +66,12 @@ Delete actor
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ActorsApi()
+api_instance = kinow_client.ActorsApi()
 actor_id = 56 # int | 
 
 try: 
@@ -108,12 +108,12 @@ Get actor
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ActorsApi()
+api_instance = kinow_client.ActorsApi()
 actor_id = 789 # int | ID of the actor to fetch
 image_type = 'image_type_example' # str |  (optional)
 
@@ -153,12 +153,12 @@ Get actors list
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ActorsApi()
+api_instance = kinow_client.ActorsApi()
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 image_type = 'image_type_example' # str |  (optional)
@@ -200,12 +200,12 @@ Get actors attached to product
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ActorsApi()
+api_instance = kinow_client.ActorsApi()
 product_id = 789 # int | ID of the product to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
@@ -249,14 +249,14 @@ Update actor
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ActorsApi()
+api_instance = kinow_client.ActorsApi()
 actor_id = 56 # int | 
-body = kaemo_client.Actor() # Actor | 
+body = kinow_client.Actor() # Actor | 
 
 try: 
     api_instance.update_actor(actor_id, body)

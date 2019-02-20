@@ -19,12 +19,12 @@ Get order state
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.OrderStatesApi()
+api_instance = kinow_client.OrderStatesApi()
 order_state_id = 789 # int | ID of the order state to fetch
 
 try: 
@@ -62,12 +62,12 @@ Get order state list
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.OrderStatesApi()
+api_instance = kinow_client.OrderStatesApi()
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 

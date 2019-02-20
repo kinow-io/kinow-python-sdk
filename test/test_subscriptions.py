@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import kaemo_client
-from kaemo_client.rest import ApiException
-from kaemo_client.models.subscriptions import Subscriptions
+import kinow_client
+from kinow_client.rest import ApiException
+from kinow_client.models.subscriptions import Subscriptions
 
 
 class TestSubscriptions(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestSubscriptions(unittest.TestCase):
         """
         Test Subscriptions
         """
-        model = kaemo_client.models.subscriptions.Subscriptions()
+        model = kinow_client.models.subscriptions.Subscriptions()
 
 
 if __name__ == '__main__':

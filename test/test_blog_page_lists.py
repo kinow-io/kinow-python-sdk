@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import kaemo_client
-from kaemo_client.rest import ApiException
-from kaemo_client.models.blog_page_lists import BlogPageLists
+import kinow_client
+from kinow_client.rest import ApiException
+from kinow_client.models.blog_page_lists import BlogPageLists
 
 
 class TestBlogPageLists(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestBlogPageLists(unittest.TestCase):
         """
         Test BlogPageLists
         """
-        model = kaemo_client.models.blog_page_lists.BlogPageLists()
+        model = kinow_client.models.blog_page_lists.BlogPageLists()
 
 
 if __name__ == '__main__':

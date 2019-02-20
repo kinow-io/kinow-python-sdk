@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import kaemo_client
-from kaemo_client.rest import ApiException
-from kaemo_client.models.player_configuration import PlayerConfiguration
+import kinow_client
+from kinow_client.rest import ApiException
+from kinow_client.models.player_configuration import PlayerConfiguration
 
 
 class TestPlayerConfiguration(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestPlayerConfiguration(unittest.TestCase):
         """
         Test PlayerConfiguration
         """
-        model = kaemo_client.models.player_configuration.PlayerConfiguration()
+        model = kinow_client.models.player_configuration.PlayerConfiguration()
 
 
 if __name__ == '__main__':

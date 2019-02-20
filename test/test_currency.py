@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import kaemo_client
-from kaemo_client.rest import ApiException
-from kaemo_client.models.currency import Currency
+import kinow_client
+from kinow_client.rest import ApiException
+from kinow_client.models.currency import Currency
 
 
 class TestCurrency(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestCurrency(unittest.TestCase):
         """
         Test Currency
         """
-        model = kaemo_client.models.currency.Currency()
+        model = kinow_client.models.currency.Currency()
 
 
 if __name__ == '__main__':

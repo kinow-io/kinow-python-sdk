@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import kaemo_client
-from kaemo_client.rest import ApiException
-from kaemo_client.models.i18n_field import I18nField
+import kinow_client
+from kinow_client.rest import ApiException
+from kinow_client.models.i18n_field import I18nField
 
 
 class TestI18nField(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestI18nField(unittest.TestCase):
         """
         Test I18nField
         """
-        model = kaemo_client.models.i18n_field.I18nField()
+        model = kinow_client.models.i18n_field.I18nField()
 
 
 if __name__ == '__main__':

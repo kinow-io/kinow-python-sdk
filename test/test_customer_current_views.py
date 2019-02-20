@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import kaemo_client
-from kaemo_client.rest import ApiException
-from kaemo_client.models.customer_current_views import CustomerCurrentViews
+import kinow_client
+from kinow_client.rest import ApiException
+from kinow_client.models.customer_current_views import CustomerCurrentViews
 
 
 class TestCustomerCurrentViews(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestCustomerCurrentViews(unittest.TestCase):
         """
         Test CustomerCurrentViews
         """
-        model = kaemo_client.models.customer_current_views.CustomerCurrentViews()
+        model = kinow_client.models.customer_current_views.CustomerCurrentViews()
 
 
 if __name__ == '__main__':

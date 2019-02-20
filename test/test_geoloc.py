@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import kaemo_client
-from kaemo_client.rest import ApiException
-from kaemo_client.models.geoloc import Geoloc
+import kinow_client
+from kinow_client.rest import ApiException
+from kinow_client.models.geoloc import Geoloc
 
 
 class TestGeoloc(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestGeoloc(unittest.TestCase):
         """
         Test Geoloc
         """
-        model = kaemo_client.models.geoloc.Geoloc()
+        model = kinow_client.models.geoloc.Geoloc()
 
 
 if __name__ == '__main__':

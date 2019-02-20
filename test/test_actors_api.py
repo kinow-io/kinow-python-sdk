@@ -17,16 +17,16 @@ import os
 import sys
 import unittest
 
-import kaemo_client
-from kaemo_client.rest import ApiException
-from kaemo_client.apis.actors_api import ActorsApi
+import kinow_client
+from kinow_client.rest import ApiException
+from kinow_client.apis.actors_api import ActorsApi
 
 
 class TestActorsApi(unittest.TestCase):
     """ ActorsApi unit test stubs """
 
     def setUp(self):
-        self.api = kaemo_client.apis.actors_api.ActorsApi()
+        self.api = kinow_client.apis.actors_api.ActorsApi()
 
     def tearDown(self):
         pass

@@ -25,13 +25,13 @@ Create new product access
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ProductAccessesApi()
-body = kaemo_client.ProductAccess() # ProductAccess | 
+api_instance = kinow_client.ProductAccessesApi()
+body = kinow_client.ProductAccess() # ProductAccess | 
 
 try: 
     api_response = api_instance.create_product_access(body)
@@ -68,12 +68,12 @@ Delete product access
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ProductAccessesApi()
+api_instance = kinow_client.ProductAccessesApi()
 product_access_id = 789 # int | ID of the product access to fetch
 
 try: 
@@ -110,12 +110,12 @@ Get customer accesses for subscription
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ProductAccessesApi()
+api_instance = kinow_client.ProductAccessesApi()
 customer_id = 789 # int | ID of the customer to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
@@ -159,12 +159,12 @@ Get customer access for videos
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ProductAccessesApi()
+api_instance = kinow_client.ProductAccessesApi()
 customer_id = 789 # int | ID of the customer to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
@@ -206,12 +206,12 @@ Get product access
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ProductAccessesApi()
+api_instance = kinow_client.ProductAccessesApi()
 product_access_id = 789 # int | ID of the product access to fetch
 
 try: 
@@ -249,12 +249,12 @@ Get product accesses list
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ProductAccessesApi()
+api_instance = kinow_client.ProductAccessesApi()
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 type = 'type_example' # str | Filter by access type, available values are: video, sub (optional)
@@ -304,12 +304,12 @@ unsubcribe a user from a access
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ProductAccessesApi()
+api_instance = kinow_client.ProductAccessesApi()
 customer_id = 789 # int | ID of the user to unsubscribe
 product_access_id = 'product_access_id_example' # str | ID of the product access to unsubscribe from
 
@@ -348,14 +348,14 @@ Update product access
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ProductAccessesApi()
+api_instance = kinow_client.ProductAccessesApi()
 product_access_id = 789 # int | ID of the product access to update
-body = kaemo_client.ProductAccess() # ProductAccess | 
+body = kinow_client.ProductAccess() # ProductAccess | 
 
 try: 
     api_response = api_instance.update_product_access(product_access_id, body)

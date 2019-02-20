@@ -19,12 +19,12 @@ Get blog page
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.BlogPagesApi()
+api_instance = kinow_client.BlogPagesApi()
 blog_page_id = 789 # int | 
 
 try: 
@@ -62,12 +62,12 @@ Get blog pages
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.BlogPagesApi()
+api_instance = kinow_client.BlogPagesApi()
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 filters = 'filters_example' # str |  ``` filters[name][value]=string&filters[name][operator]=contains&filters[date_add][value]=string&filters[date_add][operator]=lt _______________  { \"name\": { \"value\": \"string\", \"operator\": \"contains\" }, \"date_add\": { \"value\": \"string\", \"operator\": \"lt\" } } ``` Operator can be strict, contains, gt or lt. (optional)

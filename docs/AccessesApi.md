@@ -22,12 +22,12 @@ Get available categories
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.AccessesApi()
+api_instance = kinow_client.AccessesApi()
 customer_id = 789 # int | ID of the customer to fetch (optional)
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
@@ -69,12 +69,12 @@ Get available category
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.AccessesApi()
+api_instance = kinow_client.AccessesApi()
 category_id = 789 # int | ID of the category to fetch
 customer_id = 789 # int |  (optional)
 
@@ -114,12 +114,12 @@ Get customer access to video
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.AccessesApi()
+api_instance = kinow_client.AccessesApi()
 customer_id = 789 # int | ID of the customer to fetch
 product_id = 789 # int | ID of the product to fetch
 
@@ -158,12 +158,12 @@ Get customer access to video
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.AccessesApi()
+api_instance = kinow_client.AccessesApi()
 customer_id = 789 # int | ID of the customer to fetch
 video_id = 789 # int | ID of the video to fetch
 
@@ -202,12 +202,12 @@ Get availability of a product
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.AccessesApi()
+api_instance = kinow_client.AccessesApi()
 product_id = 789 # int | ID of the product to fetch
 
 try: 

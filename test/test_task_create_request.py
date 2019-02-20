@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import kaemo_client
-from kaemo_client.rest import ApiException
-from kaemo_client.models.task_create_request import TaskCreateRequest
+import kinow_client
+from kinow_client.rest import ApiException
+from kinow_client.models.task_create_request import TaskCreateRequest
 
 
 class TestTaskCreateRequest(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestTaskCreateRequest(unittest.TestCase):
         """
         Test TaskCreateRequest
         """
-        model = kaemo_client.models.task_create_request.TaskCreateRequest()
+        model = kinow_client.models.task_create_request.TaskCreateRequest()
 
 
 if __name__ == '__main__':

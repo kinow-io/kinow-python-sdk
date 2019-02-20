@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import kaemo_client
-from kaemo_client.rest import ApiException
-from kaemo_client.models.products import Products
+import kinow_client
+from kinow_client.rest import ApiException
+from kinow_client.models.products import Products
 
 
 class TestProducts(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestProducts(unittest.TestCase):
         """
         Test Products
         """
-        model = kaemo_client.models.products.Products()
+        model = kinow_client.models.products.Products()
 
 
 if __name__ == '__main__':

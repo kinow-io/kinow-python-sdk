@@ -17,16 +17,16 @@ import os
 import sys
 import unittest
 
-import kaemo_client
-from kaemo_client.rest import ApiException
-from kaemo_client.apis.o_auth_api import OAuthApi
+import kinow_client
+from kinow_client.rest import ApiException
+from kinow_client.apis.o_auth_api import OAuthApi
 
 
 class TestOAuthApi(unittest.TestCase):
     """ OAuthApi unit test stubs """
 
     def setUp(self):
-        self.api = kaemo_client.apis.o_auth_api.OAuthApi()
+        self.api = kinow_client.apis.o_auth_api.OAuthApi()
 
     def tearDown(self):
         pass

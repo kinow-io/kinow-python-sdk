@@ -22,12 +22,12 @@ Attach customer to the group
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.GroupsApi()
+api_instance = kinow_client.GroupsApi()
 group_id = 789 # int | ID of the group
 customer_id = 789 # int | ID of the customer to attach
 
@@ -66,12 +66,12 @@ Detach customer from group
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.GroupsApi()
+api_instance = kinow_client.GroupsApi()
 group_id = 789 # int | Id of the group
 customer_id = 789 # int | ID of the customer to attach
 
@@ -110,12 +110,12 @@ Get group
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.GroupsApi()
+api_instance = kinow_client.GroupsApi()
 group_id = 789 # int | ID of the group to fetch
 
 try: 
@@ -153,12 +153,12 @@ Get group list
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.GroupsApi()
+api_instance = kinow_client.GroupsApi()
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 filters = 'filters_example' # str |      ```     filters[email][value]=string&filters[email][operator]=strict&filters[firstname][value]=string&filters[firstname][operator]=contains     _______________      {     \"email\": {     \"value\": \"string\",     \"operator\": \"strict\"     },     \"firstname\": {     \"value\": \"string\",     \"operator\": \"contains\"     }     } ```Operator can be strict, contains, gt or lt. (optional)
@@ -204,12 +204,12 @@ Get groups allowed to see this product
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.GroupsApi()
+api_instance = kinow_client.GroupsApi()
 product_id = 789 # int | Id of the product
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)

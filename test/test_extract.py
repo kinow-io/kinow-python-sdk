@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import kaemo_client
-from kaemo_client.rest import ApiException
-from kaemo_client.models.extract import Extract
+import kinow_client
+from kinow_client.rest import ApiException
+from kinow_client.models.extract import Extract
 
 
 class TestExtract(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestExtract(unittest.TestCase):
         """
         Test Extract
         """
-        model = kaemo_client.models.extract.Extract()
+        model = kinow_client.models.extract.Extract()
 
 
 if __name__ == '__main__':

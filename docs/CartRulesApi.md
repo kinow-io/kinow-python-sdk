@@ -23,12 +23,12 @@ Attach cart rule to cart
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.CartRulesApi()
+api_instance = kinow_client.CartRulesApi()
 cart_id = 789 # int | Id of the cart to fetch
 code = 'code_example' # str | Code of the cart rule to attach
 
@@ -67,13 +67,13 @@ Create new cart rule
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.CartRulesApi()
-body = kaemo_client.CartRule() # CartRule | 
+api_instance = kinow_client.CartRulesApi()
+body = kinow_client.CartRule() # CartRule | 
 
 try: 
     api_instance.create_cart_rule(body)
@@ -109,12 +109,12 @@ Delete cart rule
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.CartRulesApi()
+api_instance = kinow_client.CartRulesApi()
 cart_rule_id = 56 # int | 
 
 try: 
@@ -151,12 +151,12 @@ Get cart rule by id
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.CartRulesApi()
+api_instance = kinow_client.CartRulesApi()
 cart_rule_id = 789 # int | ID of the cart rule to fetch
 
 try: 
@@ -194,12 +194,12 @@ Get cart rules list
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.CartRulesApi()
+api_instance = kinow_client.CartRulesApi()
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 
@@ -239,14 +239,14 @@ Update cart rule
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.CartRulesApi()
+api_instance = kinow_client.CartRulesApi()
 cart_rule_id = 56 # int | 
-body = kaemo_client.CartRule() # CartRule | 
+body = kinow_client.CartRule() # CartRule | 
 
 try: 
     api_instance.update_cart_rule(cart_rule_id, body)

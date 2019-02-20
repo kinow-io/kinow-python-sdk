@@ -17,16 +17,16 @@ import os
 import sys
 import unittest
 
-import kaemo_client
-from kaemo_client.rest import ApiException
-from kaemo_client.apis.geolocations_api import GeolocationsApi
+import kinow_client
+from kinow_client.rest import ApiException
+from kinow_client.apis.geolocations_api import GeolocationsApi
 
 
 class TestGeolocationsApi(unittest.TestCase):
     """ GeolocationsApi unit test stubs """
 
     def setUp(self):
-        self.api = kaemo_client.apis.geolocations_api.GeolocationsApi()
+        self.api = kinow_client.apis.geolocations_api.GeolocationsApi()
 
     def tearDown(self):
         pass

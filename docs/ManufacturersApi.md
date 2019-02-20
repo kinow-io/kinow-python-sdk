@@ -18,12 +18,12 @@ Please, use __/directors/{actor_id}/cover__
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ManufacturersApi()
+api_instance = kinow_client.ManufacturersApi()
 manufacturer_id = 789 # int | ID of the manufacturer to fetch
 
 try: 

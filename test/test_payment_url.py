@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import kaemo_client
-from kaemo_client.rest import ApiException
-from kaemo_client.models.payment_url import PaymentUrl
+import kinow_client
+from kinow_client.rest import ApiException
+from kinow_client.models.payment_url import PaymentUrl
 
 
 class TestPaymentUrl(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestPaymentUrl(unittest.TestCase):
         """
         Test PaymentUrl
         """
-        model = kaemo_client.models.payment_url.PaymentUrl()
+        model = kinow_client.models.payment_url.PaymentUrl()
 
 
 if __name__ == '__main__':

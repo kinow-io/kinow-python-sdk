@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import kaemo_client
-from kaemo_client.rest import ApiException
-from kaemo_client.models.subtitles import Subtitles
+import kinow_client
+from kinow_client.rest import ApiException
+from kinow_client.models.subtitles import Subtitles
 
 
 class TestSubtitles(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestSubtitles(unittest.TestCase):
         """
         Test Subtitles
         """
-        model = kaemo_client.models.subtitles.Subtitles()
+        model = kinow_client.models.subtitles.Subtitles()
 
 
 if __name__ == '__main__':

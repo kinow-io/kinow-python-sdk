@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import kaemo_client
-from kaemo_client.rest import ApiException
-from kaemo_client.models.cms_page import CMSPage
+import kinow_client
+from kinow_client.rest import ApiException
+from kinow_client.models.cms_page import CMSPage
 
 
 class TestCMSPage(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestCMSPage(unittest.TestCase):
         """
         Test CMSPage
         """
-        model = kaemo_client.models.cms_page.CMSPage()
+        model = kinow_client.models.cms_page.CMSPage()
 
 
 if __name__ == '__main__':

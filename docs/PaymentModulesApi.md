@@ -21,12 +21,12 @@ Get payment modules list
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.PaymentModulesApi()
+api_instance = kinow_client.PaymentModulesApi()
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 
@@ -66,12 +66,12 @@ Get payment url
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.PaymentModulesApi()
+api_instance = kinow_client.PaymentModulesApi()
 cart_id = 789 # int | Id of the cart to fetch
 payment_name = 'payment_name_example' # str | Payment module name
 
@@ -111,15 +111,15 @@ Validate order
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.PaymentModulesApi()
+api_instance = kinow_client.PaymentModulesApi()
 cart_id = 789 # int | Id of the cart to fetch
 payment_name = 'payment_name_example' # str | Payment module name
-payment_arguments = kaemo_client.PaymentArguments() # PaymentArguments | payment arguments, token and tokenType
+payment_arguments = kinow_client.PaymentArguments() # PaymentArguments | payment arguments, token and tokenType
 
 try: 
     api_instance.validate_cart(cart_id, payment_name, payment_arguments)
@@ -157,12 +157,12 @@ Validate cart without payment method (only for carts with a total of 0)
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.PaymentModulesApi()
+api_instance = kinow_client.PaymentModulesApi()
 cart_id = 789 # int | Id of the cart to validate
 
 try: 

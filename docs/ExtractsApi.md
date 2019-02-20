@@ -23,12 +23,12 @@ Attach cover to extract (the image need to be attached to the product)
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ExtractsApi()
+api_instance = kinow_client.ExtractsApi()
 extract_id = 789 # int | ID of the extract to fetch
 id_image = 789 # int | ID of the image to attach
 
@@ -67,13 +67,13 @@ Create new extract
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ExtractsApi()
-body = kaemo_client.Extract() # Extract | 
+api_instance = kinow_client.ExtractsApi()
+body = kinow_client.Extract() # Extract | 
 
 try: 
     api_response = api_instance.create_extract(body)
@@ -110,12 +110,12 @@ Delete extract
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ExtractsApi()
+api_instance = kinow_client.ExtractsApi()
 extract_id = 789 # int | ID of the video to update
 
 try: 
@@ -152,12 +152,12 @@ Get extract's player
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ExtractsApi()
+api_instance = kinow_client.ExtractsApi()
 extract_id = 789 # int | ID of the extract to fetch
 
 try: 
@@ -195,12 +195,12 @@ Get extracts of a product
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ExtractsApi()
+api_instance = kinow_client.ExtractsApi()
 product_id = 789 # int | ID of the product to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
@@ -242,14 +242,14 @@ Update extract
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ExtractsApi()
+api_instance = kinow_client.ExtractsApi()
 extract_id = 789 # int | ID of the video to update
-body = kaemo_client.Extract() # Extract | 
+body = kinow_client.Extract() # Extract | 
 
 try: 
     api_response = api_instance.update_extract(extract_id, body)

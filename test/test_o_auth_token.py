@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import kaemo_client
-from kaemo_client.rest import ApiException
-from kaemo_client.models.o_auth_token import OAuthToken
+import kinow_client
+from kinow_client.rest import ApiException
+from kinow_client.models.o_auth_token import OAuthToken
 
 
 class TestOAuthToken(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestOAuthToken(unittest.TestCase):
         """
         Test OAuthToken
         """
-        model = kaemo_client.models.o_auth_token.OAuthToken()
+        model = kinow_client.models.o_auth_token.OAuthToken()
 
 
 if __name__ == '__main__':

@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import kaemo_client
-from kaemo_client.rest import ApiException
-from kaemo_client.models.director import Director
+import kinow_client
+from kinow_client.rest import ApiException
+from kinow_client.models.director import Director
 
 
 class TestDirector(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestDirector(unittest.TestCase):
         """
         Test Director
         """
-        model = kaemo_client.models.director.Director()
+        model = kinow_client.models.director.Director()
 
 
 if __name__ == '__main__':

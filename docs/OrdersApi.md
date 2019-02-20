@@ -22,12 +22,12 @@ Get customer orders
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.OrdersApi()
+api_instance = kinow_client.OrdersApi()
 customer_id = 789 # int | ID of the customer to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
@@ -69,12 +69,12 @@ Get order
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.OrdersApi()
+api_instance = kinow_client.OrdersApi()
 order_id = 789 # int | ID of the order to fetch
 
 try: 
@@ -112,12 +112,12 @@ Get order histories
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.OrdersApi()
+api_instance = kinow_client.OrdersApi()
 order_id = 789 # int | ID of the order to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
@@ -159,12 +159,12 @@ Get order invoice
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.OrdersApi()
+api_instance = kinow_client.OrdersApi()
 order_id = 789 # int | ID of the order to fetch
 
 try: 
@@ -202,12 +202,12 @@ Get order list
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.OrdersApi()
+api_instance = kinow_client.OrdersApi()
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 filters = 'filters_example' # str |  filters[email][value]=string&filters[email][operator]=strict&filters[firstname][value]=string&filters[firstname][operator]=contains  ``` {     \"email\": {         \"value\": \"string\",         \"operator\": \"strict\"     },     \"firstname\": {         \"value\": \"string\",         \"operator\": \"contains\"     },     \"invoice_date\": {         \"value\": [\"Y-m-d\", \"Y-m-d\"],         \"operator\": \"between\"     } }``` Operator can be strict, contains, between, gt or lt. (optional)

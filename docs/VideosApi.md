@@ -41,12 +41,12 @@ Attach cover to video (the image need to be attached to the product)
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.VideosApi()
+api_instance = kinow_client.VideosApi()
 video_id = 789 # int | ID of the video to fetch
 id_image = 789 # int | ID of the image to attach
 
@@ -85,12 +85,12 @@ Attach feature to video
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.VideosApi()
+api_instance = kinow_client.VideosApi()
 video_id = 789 # int | 
 features = 'features_example' # str |      To attach existing FeatureValue to Product:     ```     [{     \"id_feature\":3,     \"id_feature_value\":5     }]     ```      To create a custom FeatureValue:     ```     [{     \"id_feature\":3,     \"custom_value\":[{     \"lang\": 1,     \"value\": \"string\"     }]     }]     ```
 
@@ -129,12 +129,12 @@ Attach video to product
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.VideosApi()
+api_instance = kinow_client.VideosApi()
 product_id = 789 # int | ID of the product to fetch
 video_id = 789 # int | ID of the video to attach
 
@@ -173,13 +173,13 @@ Create new video
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.VideosApi()
-body = kaemo_client.Video() # Video | 
+api_instance = kinow_client.VideosApi()
+body = kinow_client.Video() # Video | 
 
 try: 
     api_response = api_instance.create_video(body)
@@ -216,12 +216,12 @@ Delete video
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.VideosApi()
+api_instance = kinow_client.VideosApi()
 video_id = 789 # int | ID of the video to delete
 
 try: 
@@ -258,12 +258,12 @@ Get customer access to video
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.VideosApi()
+api_instance = kinow_client.VideosApi()
 customer_id = 789 # int | ID of the customer to fetch
 video_id = 789 # int | ID of the video to fetch
 
@@ -302,12 +302,12 @@ Get disabled subscriptions list
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.VideosApi()
+api_instance = kinow_client.VideosApi()
 video_id = 789 # int | ID of the video to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
@@ -349,12 +349,12 @@ Get video download url
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.VideosApi()
+api_instance = kinow_client.VideosApi()
 customer_id = 789 # int | Id of the customer to fetch
 video_id = 789 # int | Id of the video to fetch
 
@@ -394,12 +394,12 @@ Get Marlin access token for a video
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.VideosApi()
+api_instance = kinow_client.VideosApi()
 customer_id = 789 # int | Id of the customer to fetch
 video_id = 789 # int | Id of the video to fetch
 
@@ -439,12 +439,12 @@ Get video player url
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.VideosApi()
+api_instance = kinow_client.VideosApi()
 video_id = 789 # int | Id of the video to fetch
 customer_id = 789 # int | Id of the customer to fetch (optional)
 
@@ -484,12 +484,12 @@ Get video player url
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.VideosApi()
+api_instance = kinow_client.VideosApi()
 customer_id = 789 # int | Id of the customer to fetch
 video_id = 789 # int | Id of the video to fetch
 
@@ -529,12 +529,12 @@ Get video
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.VideosApi()
+api_instance = kinow_client.VideosApi()
 video_id = 789 # int | ID of the video to fetch
 
 try: 
@@ -572,12 +572,12 @@ Get video access
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.VideosApi()
+api_instance = kinow_client.VideosApi()
 video_id = 789 # int | ID of the video to fetch
 customer_id = 789 # int | ID of the customer to fetch
 
@@ -616,12 +616,12 @@ Get video download url
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.VideosApi()
+api_instance = kinow_client.VideosApi()
 video_id = 789 # int | Id of the video to fetch
 customer_id = 789 # int | Id of the customer to fetch (optional)
 
@@ -661,12 +661,12 @@ Get video features
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.VideosApi()
+api_instance = kinow_client.VideosApi()
 video_id = 789 # int | ID of the video to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
@@ -708,12 +708,12 @@ Get geoloc list
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.VideosApi()
+api_instance = kinow_client.VideosApi()
 video_id = 789 # int | ID of the video to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
@@ -755,12 +755,12 @@ Check access to a product by geolocation
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.VideosApi()
+api_instance = kinow_client.VideosApi()
 video_id = 789 # int | ID of the video to fetch
 ip_address = 'ip_address_example' # str | address ip
 page = 789 # int |  (optional)
@@ -803,12 +803,12 @@ Get video player url
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.VideosApi()
+api_instance = kinow_client.VideosApi()
 video_id = 789 # int | Id of the video to fetch
 customer_id = 789 # int |  (optional)
 
@@ -848,12 +848,12 @@ Get video subtitles
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.VideosApi()
+api_instance = kinow_client.VideosApi()
 video_id = 789 # int | ID of the video to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
@@ -895,12 +895,12 @@ Get video views
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.VideosApi()
+api_instance = kinow_client.VideosApi()
 video_id = 789 # int | ID of the video to fetch
 
 try: 
@@ -938,12 +938,12 @@ Get customer list
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.VideosApi()
+api_instance = kinow_client.VideosApi()
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 features = 'features_example' # str |      ```     features[*][value]=string&features[*][operator]=strict&features[1][value]=string&features[1][operator]=strict     _______________      {     \"*\": {     \"value\": \"string\",     \"operator\": \"strict\"     },     \"1\": {     \"value\": \"string\",     \"operator\": \"contains\"     }     } ```     Operator can be strict, contains, gt or lt.     To search on all features, you can pass * as featureId. (optional)
@@ -989,12 +989,12 @@ Get videos attached to product
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.VideosApi()
+api_instance = kinow_client.VideosApi()
 product_id = 789 # int | ID of the product to fetch
 page = 789 # int |  (optional)
 filters = 'filters_example' # str |      ```     filters[name][value]=string&filters[name][operator]=strict&filters[duration][value]=string&filters[duration][operator]=gt     _______________      {     \"name\": {     \"value\": \"string\",     \"operator\": \"strict\"     },     \"duration\": {     \"value\": \"string\",     \"operator\": \"gt\"     }     } ```     Operator can be strict, contains, gt or lt. (optional)
@@ -1044,12 +1044,12 @@ Handle geolocation for videos by countries
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.VideosApi()
+api_instance = kinow_client.VideosApi()
 video_id = 789 # int | ID of the video to fetch
 enabled = 56 # int | Enabled
 behavior_detected_countries = 'behavior_detected_countries_example' # str | Behavior for detected countries
@@ -1094,14 +1094,14 @@ Update video
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.VideosApi()
+api_instance = kinow_client.VideosApi()
 video_id = 789 # int | ID of the video to update
-body = kaemo_client.Video() # Video | 
+body = kinow_client.Video() # Video | 
 
 try: 
     api_response = api_instance.update_video(video_id, body)

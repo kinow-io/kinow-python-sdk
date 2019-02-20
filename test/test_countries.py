@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import kaemo_client
-from kaemo_client.rest import ApiException
-from kaemo_client.models.countries import Countries
+import kinow_client
+from kinow_client.rest import ApiException
+from kinow_client.models.countries import Countries
 
 
 class TestCountries(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestCountries(unittest.TestCase):
         """
         Test Countries
         """
-        model = kaemo_client.models.countries.Countries()
+        model = kinow_client.models.countries.Countries()
 
 
 if __name__ == '__main__':

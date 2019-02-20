@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import kaemo_client
-from kaemo_client.rest import ApiException
-from kaemo_client.models.widget_top_menus import WidgetTopMenus
+import kinow_client
+from kinow_client.rest import ApiException
+from kinow_client.models.widget_top_menus import WidgetTopMenus
 
 
 class TestWidgetTopMenus(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestWidgetTopMenus(unittest.TestCase):
         """
         Test WidgetTopMenus
         """
-        model = kaemo_client.models.widget_top_menus.WidgetTopMenus()
+        model = kinow_client.models.widget_top_menus.WidgetTopMenus()
 
 
 if __name__ == '__main__':

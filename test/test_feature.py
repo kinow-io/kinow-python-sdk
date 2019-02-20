@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import kaemo_client
-from kaemo_client.rest import ApiException
-from kaemo_client.models.feature import Feature
+import kinow_client
+from kinow_client.rest import ApiException
+from kinow_client.models.feature import Feature
 
 
 class TestFeature(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestFeature(unittest.TestCase):
         """
         Test Feature
         """
-        model = kaemo_client.models.feature.Feature()
+        model = kinow_client.models.feature.Feature()
 
 
 if __name__ == '__main__':

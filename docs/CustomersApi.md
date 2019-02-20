@@ -39,12 +39,12 @@ Attach cart to customer
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.CustomersApi()
+api_instance = kinow_client.CustomersApi()
 customer_id = 789 # int | ID of the customer to fetch
 cart_id = 789 # int | ID of the cart to attach
 
@@ -84,12 +84,12 @@ Check customer credentials
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.CustomersApi()
+api_instance = kinow_client.CustomersApi()
 email = 'email_example' # str | Email of the customer to check
 password = 'password_example' # str | Password of the customer to check
 
@@ -129,13 +129,13 @@ Create new customer
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.CustomersApi()
-body = kaemo_client.CustomerCreateRequest() # CustomerCreateRequest | Created user object
+api_instance = kinow_client.CustomersApi()
+body = kinow_client.CustomerCreateRequest() # CustomerCreateRequest | Created user object
 
 try: 
     api_response = api_instance.create_customer(body)
@@ -172,12 +172,12 @@ Create new Facebook ID for user
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.CustomersApi()
+api_instance = kinow_client.CustomersApi()
 customer_id = 789 # int | Customer ID
 facebook_id = 'facebook_id_example' # str | Facebook ID
 
@@ -216,12 +216,12 @@ Delete customer
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.CustomersApi()
+api_instance = kinow_client.CustomersApi()
 customer_id = 789 # int | ID of the customer to delete
 
 try: 
@@ -258,12 +258,12 @@ Create authentication token for customer.      You can use it to auto login cust
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.CustomersApi()
+api_instance = kinow_client.CustomersApi()
 customer_id = 789 # int | ID of the customer to authenticate
 
 try: 
@@ -300,12 +300,12 @@ Get customer
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.CustomersApi()
+api_instance = kinow_client.CustomersApi()
 customer_id = 789 # int | ID of the customer to fetch
 
 try: 
@@ -343,12 +343,12 @@ Get customer accesses for subscription
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.CustomersApi()
+api_instance = kinow_client.CustomersApi()
 customer_id = 789 # int | ID of the customer to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
@@ -392,12 +392,12 @@ Get customer access for videos
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.CustomersApi()
+api_instance = kinow_client.CustomersApi()
 customer_id = 789 # int | ID of the customer to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
@@ -439,12 +439,12 @@ Get customer address
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.CustomersApi()
+api_instance = kinow_client.CustomersApi()
 customer_id = 789 # int | ID of the customer to fetch
 
 try: 
@@ -482,12 +482,12 @@ Check if the customer can see this product (restriction by group)
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.CustomersApi()
+api_instance = kinow_client.CustomersApi()
 customer_id = 789 # int | ID of the customer to fetch
 product_id = 789 # int | ID of the product to fetch
 
@@ -526,12 +526,12 @@ Get customer current number of views
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.CustomersApi()
+api_instance = kinow_client.CustomersApi()
 customer_id = 789 # int | ID of the customer to fetch
 
 try: 
@@ -569,12 +569,12 @@ Get groups attached to this customer
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.CustomersApi()
+api_instance = kinow_client.CustomersApi()
 customer_id = 789 # int | Id of the customer
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
@@ -616,12 +616,12 @@ Get customer access to video
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.CustomersApi()
+api_instance = kinow_client.CustomersApi()
 customer_id = 789 # int | ID of the customer to fetch
 product_id = 789 # int | ID of the product to fetch
 
@@ -660,12 +660,12 @@ Get customer access to video
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.CustomersApi()
+api_instance = kinow_client.CustomersApi()
 customer_id = 789 # int | ID of the customer to fetch
 video_id = 789 # int | ID of the video to fetch
 
@@ -704,12 +704,12 @@ Get customer orders
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.CustomersApi()
+api_instance = kinow_client.CustomersApi()
 customer_id = 789 # int | ID of the customer to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
@@ -751,12 +751,12 @@ Get customer list
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.CustomersApi()
+api_instance = kinow_client.CustomersApi()
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 filters = 'filters_example' # str |      ```     filters[email][value]=string&filters[email][operator]=strict&filters[firstname][value]=string&filters[firstname][operator]=contains     _______________      {     \"email\": {     \"value\": \"string\",     \"operator\": \"strict\"     },     \"firstname\": {     \"value\": \"string\",     \"operator\": \"contains\"     }     } ```Operator can be strict, contains, gt or lt. (optional)
@@ -802,12 +802,12 @@ Get video download url
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.CustomersApi()
+api_instance = kinow_client.CustomersApi()
 customer_id = 789 # int | Id of the customer to fetch
 video_id = 789 # int | Id of the video to fetch
 
@@ -847,12 +847,12 @@ Get Marlin access token for a video
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.CustomersApi()
+api_instance = kinow_client.CustomersApi()
 customer_id = 789 # int | Id of the customer to fetch
 video_id = 789 # int | Id of the video to fetch
 
@@ -892,12 +892,12 @@ Get payment modules list
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.CustomersApi()
+api_instance = kinow_client.CustomersApi()
 customer_id = 789 # int | 
 payment_name = 'payment_name_example' # str | 
 
@@ -937,12 +937,12 @@ Get video player url
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.CustomersApi()
+api_instance = kinow_client.CustomersApi()
 customer_id = 789 # int | Id of the customer to fetch
 video_id = 789 # int | Id of the video to fetch
 
@@ -982,14 +982,14 @@ Update customer
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.CustomersApi()
+api_instance = kinow_client.CustomersApi()
 customer_id = 789 # int | ID of the customer to fetch
-body = kaemo_client.Customer() # Customer | Body of the customer
+body = kinow_client.Customer() # Customer | Body of the customer
 
 try: 
     api_response = api_instance.update_customer(customer_id, body)

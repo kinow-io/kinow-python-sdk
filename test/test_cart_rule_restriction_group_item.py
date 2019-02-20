@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import kaemo_client
-from kaemo_client.rest import ApiException
-from kaemo_client.models.cart_rule_restriction_group_item import CartRuleRestrictionGroupItem
+import kinow_client
+from kinow_client.rest import ApiException
+from kinow_client.models.cart_rule_restriction_group_item import CartRuleRestrictionGroupItem
 
 
 class TestCartRuleRestrictionGroupItem(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestCartRuleRestrictionGroupItem(unittest.TestCase):
         """
         Test CartRuleRestrictionGroupItem
         """
-        model = kaemo_client.models.cart_rule_restriction_group_item.CartRuleRestrictionGroupItem()
+        model = kinow_client.models.cart_rule_restriction_group_item.CartRuleRestrictionGroupItem()
 
 
 if __name__ == '__main__':

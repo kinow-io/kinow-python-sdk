@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import kaemo_client
-from kaemo_client.rest import ApiException
-from kaemo_client.models.video_url import VideoUrl
+import kinow_client
+from kinow_client.rest import ApiException
+from kinow_client.models.video_url import VideoUrl
 
 
 class TestVideoUrl(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestVideoUrl(unittest.TestCase):
         """
         Test VideoUrl
         """
-        model = kaemo_client.models.video_url.VideoUrl()
+        model = kinow_client.models.video_url.VideoUrl()
 
 
 if __name__ == '__main__':

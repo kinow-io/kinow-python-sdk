@@ -18,13 +18,13 @@ Create new task
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.TasksApi()
-body = kaemo_client.TaskCreateRequest() # TaskCreateRequest | Create task object
+api_instance = kinow_client.TasksApi()
+body = kinow_client.TaskCreateRequest() # TaskCreateRequest | Create task object
 
 try: 
     api_response = api_instance.create_task(body)

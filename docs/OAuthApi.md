@@ -18,12 +18,12 @@ Get authentication token
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.OAuthApi()
+api_instance = kinow_client.OAuthApi()
 client_id = 'client_id_example' # str | Client Id given by your back office
 client_secret = 'client_secret_example' # str | Client secret given by your back office
 

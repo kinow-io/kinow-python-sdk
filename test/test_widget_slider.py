@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import kaemo_client
-from kaemo_client.rest import ApiException
-from kaemo_client.models.widget_slider import WidgetSlider
+import kinow_client
+from kinow_client.rest import ApiException
+from kinow_client.models.widget_slider import WidgetSlider
 
 
 class TestWidgetSlider(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestWidgetSlider(unittest.TestCase):
         """
         Test WidgetSlider
         """
-        model = kaemo_client.models.widget_slider.WidgetSlider()
+        model = kinow_client.models.widget_slider.WidgetSlider()
 
 
 if __name__ == '__main__':

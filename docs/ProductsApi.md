@@ -50,12 +50,12 @@ Attach feature to product
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ProductsApi()
+api_instance = kinow_client.ProductsApi()
 product_id = 789 # int | 
 features = 'features_example' # str |      To attach existing FeatureValue to Product:     ```     [{     \"id_feature\":3,     \"id_feature_value\":5     }]```      To create a custom FeatureValue:     ```     [{     \"id_feature\":3,     \"custom_value\":[{     \"lang\": 1,     \"value\": \"string\"     }]     }]```
 
@@ -94,12 +94,12 @@ Attach product to actor
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ProductsApi()
+api_instance = kinow_client.ProductsApi()
 product_id = 789 # int | ID of the product
 actor_id = 789 # int | ID of the actor to attach
 
@@ -138,12 +138,12 @@ Attach product to category
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ProductsApi()
+api_instance = kinow_client.ProductsApi()
 product_id = 789 # int | Id of the product
 category_id = 789 # int | ID of the category to attach
 
@@ -182,12 +182,12 @@ Attach product to director
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ProductsApi()
+api_instance = kinow_client.ProductsApi()
 product_id = 789 # int | ID of the product
 director_id = 789 # int | ID of the director to attach
 
@@ -226,12 +226,12 @@ Attach product to group
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ProductsApi()
+api_instance = kinow_client.ProductsApi()
 product_id = 789 # int | ID of the product
 group_id = 789 # int | ID of the group to attach
 
@@ -270,12 +270,12 @@ Attach video to product
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ProductsApi()
+api_instance = kinow_client.ProductsApi()
 product_id = 789 # int | ID of the product to fetch
 video_id = 789 # int | ID of the video to attach
 
@@ -314,13 +314,13 @@ Create new product
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ProductsApi()
-body = kaemo_client.Product() # Product | 
+api_instance = kinow_client.ProductsApi()
+body = kinow_client.Product() # Product | 
 
 try: 
     api_response = api_instance.create_product(body)
@@ -357,12 +357,12 @@ Delete product
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ProductsApi()
+api_instance = kinow_client.ProductsApi()
 product_id = 789 # int | ID of the product to fetch
 
 try: 
@@ -399,12 +399,12 @@ Detach feature to product
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ProductsApi()
+api_instance = kinow_client.ProductsApi()
 product_id = 789 # int | 
 feature_id = 789 # int | 
 
@@ -443,12 +443,12 @@ Detach product from actor
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ProductsApi()
+api_instance = kinow_client.ProductsApi()
 product_id = 789 # int | ID of the product
 actor_id = 789 # int | ID of the actor to detach
 
@@ -487,12 +487,12 @@ Detach product from category
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ProductsApi()
+api_instance = kinow_client.ProductsApi()
 product_id = 789 # int | Id of the product
 category_id = 789 # int | ID of the category to detach
 
@@ -531,12 +531,12 @@ Detach product from director
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ProductsApi()
+api_instance = kinow_client.ProductsApi()
 product_id = 789 # int | ID of the product
 director_id = 789 # int | ID of the director to detach
 
@@ -575,12 +575,12 @@ Detach product from group
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ProductsApi()
+api_instance = kinow_client.ProductsApi()
 product_id = 789 # int | ID of the product
 group_id = 789 # int | ID of the group to detach
 
@@ -619,12 +619,12 @@ Get category products
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ProductsApi()
+api_instance = kinow_client.ProductsApi()
 category_id = 789 # int | ID of the category to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
@@ -676,12 +676,12 @@ Get customer access to video
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ProductsApi()
+api_instance = kinow_client.ProductsApi()
 customer_id = 789 # int | ID of the customer to fetch
 product_id = 789 # int | ID of the product to fetch
 
@@ -720,12 +720,12 @@ Get product
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ProductsApi()
+api_instance = kinow_client.ProductsApi()
 product_id = 789 # int | ID of the product to fetch
 
 try: 
@@ -763,12 +763,12 @@ Get actors attached to product
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ProductsApi()
+api_instance = kinow_client.ProductsApi()
 product_id = 789 # int | ID of the product to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
@@ -812,12 +812,12 @@ Get product attributes. Important to add product to a cart. Allow to select if t
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ProductsApi()
+api_instance = kinow_client.ProductsApi()
 product_id = 789 # int | ID of the product to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
@@ -859,12 +859,12 @@ Get availability of a product
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ProductsApi()
+api_instance = kinow_client.ProductsApi()
 product_id = 789 # int | ID of the product to fetch
 
 try: 
@@ -901,12 +901,12 @@ Get product categories
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ProductsApi()
+api_instance = kinow_client.ProductsApi()
 product_id = 789 # int | ID of the product to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
@@ -954,12 +954,12 @@ Get cover image of a product
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ProductsApi()
+api_instance = kinow_client.ProductsApi()
 product_id = 789 # int | ID of the product to fetch
 
 try: 
@@ -997,12 +997,12 @@ Get directors of a product
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ProductsApi()
+api_instance = kinow_client.ProductsApi()
 product_id = 789 # int | ID of the product to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
@@ -1046,12 +1046,12 @@ Get extracts of a product
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ProductsApi()
+api_instance = kinow_client.ProductsApi()
 product_id = 789 # int | ID of the product to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
@@ -1093,12 +1093,12 @@ Get videos attached to product
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ProductsApi()
+api_instance = kinow_client.ProductsApi()
 product_id = 789 # int | ID of the product to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
@@ -1140,12 +1140,12 @@ Get videos attached to product
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ProductsApi()
+api_instance = kinow_client.ProductsApi()
 product_id = 789 # int | ID of the product to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
@@ -1187,12 +1187,12 @@ check access to a product by geolocation
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ProductsApi()
+api_instance = kinow_client.ProductsApi()
 product_id = 789 # int | ID of the product to fetch
 ip_address = 'ip_address_example' # str | address ip
 page = 789 # int |  (optional)
@@ -1235,12 +1235,12 @@ Get images attached to product
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ProductsApi()
+api_instance = kinow_client.ProductsApi()
 product_id = 789 # int | ID of the product to fetch
 type = 'type_example' # str | type as screen_small or screen_large (optional)
 page = 789 # int |  (optional)
@@ -1284,12 +1284,12 @@ Get products list
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ProductsApi()
+api_instance = kinow_client.ProductsApi()
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 features = 'features_example' # str |      ```     features[*][value]=string&features[*][operator]=strict&features[1][value]=string&features[1][operator]=strict     _______________      {     \"*\": {     \"value\": \"string\",     \"operator\": \"strict\"     },     \"1\": {     \"value\": \"string\",     \"operator\": \"contains\"     }     } ```     Operator can be strict, contains, gt or lt.     To search on all features, you can pass * as featureId. (optional)
@@ -1341,12 +1341,12 @@ Get products linked to another product
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ProductsApi()
+api_instance = kinow_client.ProductsApi()
 product_id = 789 # int | 
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
@@ -1398,12 +1398,12 @@ Get videos attached to product
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ProductsApi()
+api_instance = kinow_client.ProductsApi()
 product_id = 789 # int | ID of the product to fetch
 page = 789 # int |  (optional)
 filters = 'filters_example' # str |      ```     filters[name][value]=string&filters[name][operator]=strict&filters[duration][value]=string&filters[duration][operator]=gt     _______________      {     \"name\": {     \"value\": \"string\",     \"operator\": \"strict\"     },     \"duration\": {     \"value\": \"string\",     \"operator\": \"gt\"     }     } ```     Operator can be strict, contains, gt or lt. (optional)
@@ -1453,12 +1453,12 @@ Search product with a keyword
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ProductsApi()
+api_instance = kinow_client.ProductsApi()
 search_query = 'search_query_example' # str | Keyword used to search the products
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
@@ -1510,12 +1510,12 @@ Handle geolocation for products by countries
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ProductsApi()
+api_instance = kinow_client.ProductsApi()
 product_id = 789 # int | ID of the product to fetch
 enabled = 56 # int | Enabled
 behavior_detected_countries = 'behavior_detected_countries_example' # str | Behavior for detected countries
@@ -1564,14 +1564,14 @@ Update product
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.ProductsApi()
+api_instance = kinow_client.ProductsApi()
 product_id = 789 # int | ID of the product to fetch
-body = kaemo_client.Product() # Product | 
+body = kinow_client.Product() # Product | 
 
 try: 
     api_response = api_instance.update_product(product_id, body)

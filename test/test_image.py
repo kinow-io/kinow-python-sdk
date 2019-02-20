@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import kaemo_client
-from kaemo_client.rest import ApiException
-from kaemo_client.models.image import Image
+import kinow_client
+from kinow_client.rest import ApiException
+from kinow_client.models.image import Image
 
 
 class TestImage(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestImage(unittest.TestCase):
         """
         Test Image
         """
-        model = kaemo_client.models.image.Image()
+        model = kinow_client.models.image.Image()
 
 
 if __name__ == '__main__':

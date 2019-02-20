@@ -20,13 +20,13 @@ Create new product attribute
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.AttributesApi()
-body = kaemo_client.ProductAttributeCreateRequest() # ProductAttributeCreateRequest | 
+api_instance = kinow_client.AttributesApi()
+body = kinow_client.ProductAttributeCreateRequest() # ProductAttributeCreateRequest | 
 
 try: 
     api_response = api_instance.create_product_attribute(body)
@@ -63,12 +63,12 @@ Get product attributes. Important to add product to a cart. Allow to select if t
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.AttributesApi()
+api_instance = kinow_client.AttributesApi()
 product_id = 789 # int | ID of the product to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
@@ -110,14 +110,14 @@ Update product attribute
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.AttributesApi()
+api_instance = kinow_client.AttributesApi()
 attribute_id = 789 # int | Id of the attribute 
-body = kaemo_client.ProductAttributeUpdateRequest() # ProductAttributeUpdateRequest | 
+body = kinow_client.ProductAttributeUpdateRequest() # ProductAttributeUpdateRequest | 
 
 try: 
     api_response = api_instance.update_product_attribute(attribute_id, body)

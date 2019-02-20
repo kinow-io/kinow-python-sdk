@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import kaemo_client
-from kaemo_client.rest import ApiException
-from kaemo_client.models.product_access import ProductAccess
+import kinow_client
+from kinow_client.rest import ApiException
+from kinow_client.models.product_access import ProductAccess
 
 
 class TestProductAccess(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestProductAccess(unittest.TestCase):
         """
         Test ProductAccess
         """
-        model = kaemo_client.models.product_access.ProductAccess()
+        model = kinow_client.models.product_access.ProductAccess()
 
 
 if __name__ == '__main__':

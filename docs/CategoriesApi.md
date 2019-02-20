@@ -28,13 +28,13 @@ Create new category
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.CategoriesApi()
-body = kaemo_client.Category() # Category | 
+api_instance = kinow_client.CategoriesApi()
+body = kinow_client.Category() # Category | 
 
 try: 
     api_response = api_instance.create_category(body)
@@ -71,12 +71,12 @@ Get available categories
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.CategoriesApi()
+api_instance = kinow_client.CategoriesApi()
 customer_id = 789 # int | ID of the customer to fetch (optional)
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
@@ -118,12 +118,12 @@ Get available category
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.CategoriesApi()
+api_instance = kinow_client.CategoriesApi()
 category_id = 789 # int | ID of the category to fetch
 customer_id = 789 # int |  (optional)
 
@@ -163,12 +163,12 @@ Get categories list
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.CategoriesApi()
+api_instance = kinow_client.CategoriesApi()
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 features = 'features_example' # str |  ``` features[*][value]=string&features[*][operator]=strict&features[1][value]=string&features[1][operator]=strict _______________  {     \"*\": {         \"value\": \"string\",         \"operator\": \"strict\"     },     \"1\": {         \"value\": \"string\",         \"operator\": \"contains\"     } } ``` Operator can be strict, contains, gt or lt. To search on all features, you can pass * as featureId. (optional)
@@ -216,12 +216,12 @@ Get categories list
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.CategoriesApi()
+api_instance = kinow_client.CategoriesApi()
 category_id = 789 # int | 
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
@@ -267,12 +267,12 @@ Get category
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.CategoriesApi()
+api_instance = kinow_client.CategoriesApi()
 category_id = 789 # int | ID of the category to fetch
 
 try: 
@@ -310,12 +310,12 @@ Get banner of a category
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.CategoriesApi()
+api_instance = kinow_client.CategoriesApi()
 category_id = 789 # int | ID of the category to fetch
 
 try: 
@@ -353,12 +353,12 @@ Get category features
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.CategoriesApi()
+api_instance = kinow_client.CategoriesApi()
 category_id = 789 # int | ID of the category to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
@@ -400,12 +400,12 @@ Get category products
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.CategoriesApi()
+api_instance = kinow_client.CategoriesApi()
 category_id = 789 # int | ID of the category to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
@@ -457,12 +457,12 @@ Get product categories
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.CategoriesApi()
+api_instance = kinow_client.CategoriesApi()
 product_id = 789 # int | ID of the product to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
@@ -510,12 +510,12 @@ Get categories list
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.CategoriesApi()
+api_instance = kinow_client.CategoriesApi()
 subscription_id = 789 # int | 
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)

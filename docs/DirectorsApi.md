@@ -23,13 +23,13 @@ Create new director
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.DirectorsApi()
-body = kaemo_client.Director() # Director | 
+api_instance = kinow_client.DirectorsApi()
+body = kinow_client.Director() # Director | 
 
 try: 
     api_response = api_instance.create_director(body)
@@ -66,12 +66,12 @@ Delete director
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.DirectorsApi()
+api_instance = kinow_client.DirectorsApi()
 director_id = 56 # int | 
 
 try: 
@@ -108,12 +108,12 @@ Get director
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.DirectorsApi()
+api_instance = kinow_client.DirectorsApi()
 director_id = 789 # int | ID of the director to fetch
 image_type = 'image_type_example' # str |  (optional)
 
@@ -153,12 +153,12 @@ Get directors list
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.DirectorsApi()
+api_instance = kinow_client.DirectorsApi()
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 image_type = 'image_type_example' # str |  (optional)
@@ -200,12 +200,12 @@ Get directors of a product
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.DirectorsApi()
+api_instance = kinow_client.DirectorsApi()
 product_id = 789 # int | ID of the product to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
@@ -249,14 +249,14 @@ Update director
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.DirectorsApi()
+api_instance = kinow_client.DirectorsApi()
 director_id = 56 # int | 
-body = kaemo_client.Director() # Director | 
+body = kinow_client.Director() # Director | 
 
 try: 
     api_instance.update_director(director_id, body)

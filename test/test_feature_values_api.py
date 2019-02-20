@@ -17,16 +17,16 @@ import os
 import sys
 import unittest
 
-import kaemo_client
-from kaemo_client.rest import ApiException
-from kaemo_client.apis.feature_values_api import FeatureValuesApi
+import kinow_client
+from kinow_client.rest import ApiException
+from kinow_client.apis.feature_values_api import FeatureValuesApi
 
 
 class TestFeatureValuesApi(unittest.TestCase):
     """ FeatureValuesApi unit test stubs """
 
     def setUp(self):
-        self.api = kaemo_client.apis.feature_values_api.FeatureValuesApi()
+        self.api = kinow_client.apis.feature_values_api.FeatureValuesApi()
 
     def tearDown(self):
         pass

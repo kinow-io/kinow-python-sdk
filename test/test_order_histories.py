@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import kaemo_client
-from kaemo_client.rest import ApiException
-from kaemo_client.models.order_histories import OrderHistories
+import kinow_client
+from kinow_client.rest import ApiException
+from kinow_client.models.order_histories import OrderHistories
 
 
 class TestOrderHistories(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestOrderHistories(unittest.TestCase):
         """
         Test OrderHistories
         """
-        model = kaemo_client.models.order_histories.OrderHistories()
+        model = kinow_client.models.order_histories.OrderHistories()
 
 
 if __name__ == '__main__':

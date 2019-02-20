@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import kaemo_client
-from kaemo_client.rest import ApiException
-from kaemo_client.models.languages import Languages
+import kinow_client
+from kinow_client.rest import ApiException
+from kinow_client.models.languages import Languages
 
 
 class TestLanguages(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestLanguages(unittest.TestCase):
         """
         Test Languages
         """
-        model = kaemo_client.models.languages.Languages()
+        model = kinow_client.models.languages.Languages()
 
 
 if __name__ == '__main__':

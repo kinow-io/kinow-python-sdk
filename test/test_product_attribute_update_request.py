@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import kaemo_client
-from kaemo_client.rest import ApiException
-from kaemo_client.models.product_attribute_update_request import ProductAttributeUpdateRequest
+import kinow_client
+from kinow_client.rest import ApiException
+from kinow_client.models.product_attribute_update_request import ProductAttributeUpdateRequest
 
 
 class TestProductAttributeUpdateRequest(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestProductAttributeUpdateRequest(unittest.TestCase):
         """
         Test ProductAttributeUpdateRequest
         """
-        model = kaemo_client.models.product_attribute_update_request.ProductAttributeUpdateRequest()
+        model = kinow_client.models.product_attribute_update_request.ProductAttributeUpdateRequest()
 
 
 if __name__ == '__main__':

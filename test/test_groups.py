@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import kaemo_client
-from kaemo_client.rest import ApiException
-from kaemo_client.models.groups import Groups
+import kinow_client
+from kinow_client.rest import ApiException
+from kinow_client.models.groups import Groups
 
 
 class TestGroups(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestGroups(unittest.TestCase):
         """
         Test Groups
         """
-        model = kaemo_client.models.groups.Groups()
+        model = kinow_client.models.groups.Groups()
 
 
 if __name__ == '__main__':

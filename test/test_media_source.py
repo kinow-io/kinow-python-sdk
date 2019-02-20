@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import kaemo_client
-from kaemo_client.rest import ApiException
-from kaemo_client.models.media_source import MediaSource
+import kinow_client
+from kinow_client.rest import ApiException
+from kinow_client.models.media_source import MediaSource
 
 
 class TestMediaSource(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestMediaSource(unittest.TestCase):
         """
         Test MediaSource
         """
-        model = kaemo_client.models.media_source.MediaSource()
+        model = kinow_client.models.media_source.MediaSource()
 
 
 if __name__ == '__main__':

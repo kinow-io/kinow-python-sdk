@@ -18,12 +18,12 @@ Get order histories
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.OrderHistoriesApi()
+api_instance = kinow_client.OrderHistoriesApi()
 order_id = 789 # int | ID of the order to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)

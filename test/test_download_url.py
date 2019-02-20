@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import kaemo_client
-from kaemo_client.rest import ApiException
-from kaemo_client.models.download_url import DownloadUrl
+import kinow_client
+from kinow_client.rest import ApiException
+from kinow_client.models.download_url import DownloadUrl
 
 
 class TestDownloadUrl(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestDownloadUrl(unittest.TestCase):
         """
         Test DownloadUrl
         """
-        model = kaemo_client.models.download_url.DownloadUrl()
+        model = kinow_client.models.download_url.DownloadUrl()
 
 
 if __name__ == '__main__':

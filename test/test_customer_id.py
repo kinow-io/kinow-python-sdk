@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import kaemo_client
-from kaemo_client.rest import ApiException
-from kaemo_client.models.customer_id import CustomerId
+import kinow_client
+from kinow_client.rest import ApiException
+from kinow_client.models.customer_id import CustomerId
 
 
 class TestCustomerId(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestCustomerId(unittest.TestCase):
         """
         Test CustomerId
         """
-        model = kaemo_client.models.customer_id.CustomerId()
+        model = kinow_client.models.customer_id.CustomerId()
 
 
 if __name__ == '__main__':

@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import kaemo_client
-from kaemo_client.rest import ApiException
-from kaemo_client.models.pagination import Pagination
+import kinow_client
+from kinow_client.rest import ApiException
+from kinow_client.models.pagination import Pagination
 
 
 class TestPagination(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestPagination(unittest.TestCase):
         """
         Test Pagination
         """
-        model = kaemo_client.models.pagination.Pagination()
+        model = kinow_client.models.pagination.Pagination()
 
 
 if __name__ == '__main__':

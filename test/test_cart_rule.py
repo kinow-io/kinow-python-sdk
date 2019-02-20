@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import kaemo_client
-from kaemo_client.rest import ApiException
-from kaemo_client.models.cart_rule import CartRule
+import kinow_client
+from kinow_client.rest import ApiException
+from kinow_client.models.cart_rule import CartRule
 
 
 class TestCartRule(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestCartRule(unittest.TestCase):
         """
         Test CartRule
         """
-        model = kaemo_client.models.cart_rule.CartRule()
+        model = kinow_client.models.cart_rule.CartRule()
 
 
 if __name__ == '__main__':

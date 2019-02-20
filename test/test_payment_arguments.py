@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import kaemo_client
-from kaemo_client.rest import ApiException
-from kaemo_client.models.payment_arguments import PaymentArguments
+import kinow_client
+from kinow_client.rest import ApiException
+from kinow_client.models.payment_arguments import PaymentArguments
 
 
 class TestPaymentArguments(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestPaymentArguments(unittest.TestCase):
         """
         Test PaymentArguments
         """
-        model = kaemo_client.models.payment_arguments.PaymentArguments()
+        model = kinow_client.models.payment_arguments.PaymentArguments()
 
 
 if __name__ == '__main__':

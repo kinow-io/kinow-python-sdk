@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import kaemo_client
-from kaemo_client.rest import ApiException
-from kaemo_client.models.genders import Genders
+import kinow_client
+from kinow_client.rest import ApiException
+from kinow_client.models.genders import Genders
 
 
 class TestGenders(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestGenders(unittest.TestCase):
         """
         Test Genders
         """
-        model = kaemo_client.models.genders.Genders()
+        model = kinow_client.models.genders.Genders()
 
 
 if __name__ == '__main__':

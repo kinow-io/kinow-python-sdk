@@ -19,12 +19,12 @@ Get media source files
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.MediaFilesApi()
+api_instance = kinow_client.MediaFilesApi()
 source_id = 789 # int | ID of the media source to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
@@ -68,14 +68,14 @@ Post media file
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.MediaFilesApi()
+api_instance = kinow_client.MediaFilesApi()
 source_id = 789 # int | ID of the media source to fetch
-body = kaemo_client.MediaFile() # MediaFile | Create MediaFile object
+body = kinow_client.MediaFile() # MediaFile | Create MediaFile object
 
 try: 
     api_response = api_instance.post_media_source_files(source_id, body)

@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import kaemo_client
-from kaemo_client.rest import ApiException
-from kaemo_client.models.cms_categories_lists import CMSCategoriesLists
+import kinow_client
+from kinow_client.rest import ApiException
+from kinow_client.models.cms_categories_lists import CMSCategoriesLists
 
 
 class TestCMSCategoriesLists(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestCMSCategoriesLists(unittest.TestCase):
         """
         Test CMSCategoriesLists
         """
-        model = kaemo_client.models.cms_categories_lists.CMSCategoriesLists()
+        model = kinow_client.models.cms_categories_lists.CMSCategoriesLists()
 
 
 if __name__ == '__main__':

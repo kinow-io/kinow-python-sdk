@@ -19,12 +19,12 @@ Get customer address
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.AddressApi()
+api_instance = kinow_client.AddressApi()
 customer_id = 789 # int | ID of the customer to fetch
 
 try: 
@@ -62,14 +62,14 @@ Update address
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.AddressApi()
+api_instance = kinow_client.AddressApi()
 address_id = 789 # int | ID of the address to update
-body = kaemo_client.Address() # Address | 
+body = kinow_client.Address() # Address | 
 
 try: 
     api_response = api_instance.update_address(address_id, body)

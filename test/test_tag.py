@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import kaemo_client
-from kaemo_client.rest import ApiException
-from kaemo_client.models.tag import Tag
+import kinow_client
+from kinow_client.rest import ApiException
+from kinow_client.models.tag import Tag
 
 
 class TestTag(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestTag(unittest.TestCase):
         """
         Test Tag
         """
-        model = kaemo_client.models.tag.Tag()
+        model = kinow_client.models.tag.Tag()
 
 
 if __name__ == '__main__':

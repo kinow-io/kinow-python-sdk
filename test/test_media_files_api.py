@@ -17,16 +17,16 @@ import os
 import sys
 import unittest
 
-import kaemo_client
-from kaemo_client.rest import ApiException
-from kaemo_client.apis.media_files_api import MediaFilesApi
+import kinow_client
+from kinow_client.rest import ApiException
+from kinow_client.apis.media_files_api import MediaFilesApi
 
 
 class TestMediaFilesApi(unittest.TestCase):
     """ MediaFilesApi unit test stubs """
 
     def setUp(self):
-        self.api = kaemo_client.apis.media_files_api.MediaFilesApi()
+        self.api = kinow_client.apis.media_files_api.MediaFilesApi()
 
     def tearDown(self):
         pass

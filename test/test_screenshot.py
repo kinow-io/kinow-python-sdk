@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import kaemo_client
-from kaemo_client.rest import ApiException
-from kaemo_client.models.screenshot import Screenshot
+import kinow_client
+from kinow_client.rest import ApiException
+from kinow_client.models.screenshot import Screenshot
 
 
 class TestScreenshot(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestScreenshot(unittest.TestCase):
         """
         Test Screenshot
         """
-        model = kaemo_client.models.screenshot.Screenshot()
+        model = kinow_client.models.screenshot.Screenshot()
 
 
 if __name__ == '__main__':

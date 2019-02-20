@@ -22,12 +22,12 @@ Get disabled subscriptions list
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.SubscriptionsApi()
+api_instance = kinow_client.SubscriptionsApi()
 video_id = 789 # int | ID of the video to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
@@ -69,12 +69,12 @@ Get Subscription
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.SubscriptionsApi()
+api_instance = kinow_client.SubscriptionsApi()
 subscription_id = 789 # int | ID of the product to fetch
 
 try: 
@@ -112,12 +112,12 @@ Get categories list
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.SubscriptionsApi()
+api_instance = kinow_client.SubscriptionsApi()
 subscription_id = 789 # int | 
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
@@ -163,12 +163,12 @@ Get cover image of a subscription
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.SubscriptionsApi()
+api_instance = kinow_client.SubscriptionsApi()
 subscription_id = 789 # int | ID of the subscription to fetch
 
 try: 
@@ -206,12 +206,12 @@ Get Subscriptions list
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.SubscriptionsApi()
+api_instance = kinow_client.SubscriptionsApi()
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 

@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import kaemo_client
-from kaemo_client.rest import ApiException
-from kaemo_client.models.task_factory import TaskFactory
+import kinow_client
+from kinow_client.rest import ApiException
+from kinow_client.models.task_factory import TaskFactory
 
 
 class TestTaskFactory(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestTaskFactory(unittest.TestCase):
         """
         Test TaskFactory
         """
-        model = kaemo_client.models.task_factory.TaskFactory()
+        model = kinow_client.models.task_factory.TaskFactory()
 
 
 if __name__ == '__main__':

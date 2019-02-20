@@ -23,12 +23,12 @@ Check access to platform by ip
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.GeolocationsApi()
+api_instance = kinow_client.GeolocationsApi()
 ip_address = 'ip_address_example' # str | address ip
 
 try: 
@@ -65,12 +65,12 @@ Get videos attached to product
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.GeolocationsApi()
+api_instance = kinow_client.GeolocationsApi()
 product_id = 789 # int | ID of the product to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
@@ -112,12 +112,12 @@ check access to a product by geolocation
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.GeolocationsApi()
+api_instance = kinow_client.GeolocationsApi()
 product_id = 789 # int | ID of the product to fetch
 ip_address = 'ip_address_example' # str | address ip
 page = 789 # int |  (optional)
@@ -160,12 +160,12 @@ Check access to a product by geolocation
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.GeolocationsApi()
+api_instance = kinow_client.GeolocationsApi()
 video_id = 789 # int | ID of the video to fetch
 ip_address = 'ip_address_example' # str | address ip
 page = 789 # int |  (optional)
@@ -208,12 +208,12 @@ Handle geolocation for products by countries
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.GeolocationsApi()
+api_instance = kinow_client.GeolocationsApi()
 product_id = 789 # int | ID of the product to fetch
 enabled = 56 # int | Enabled
 behavior_detected_countries = 'behavior_detected_countries_example' # str | Behavior for detected countries
@@ -262,12 +262,12 @@ Handle geolocation for videos by countries
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.GeolocationsApi()
+api_instance = kinow_client.GeolocationsApi()
 video_id = 789 # int | ID of the video to fetch
 enabled = 56 # int | Enabled
 behavior_detected_countries = 'behavior_detected_countries_example' # str | Behavior for detected countries

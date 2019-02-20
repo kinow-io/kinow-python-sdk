@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import kaemo_client
-from kaemo_client.rest import ApiException
-from kaemo_client.models.videos import Videos
+import kinow_client
+from kinow_client.rest import ApiException
+from kinow_client.models.videos import Videos
 
 
 class TestVideos(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestVideos(unittest.TestCase):
         """
         Test Videos
         """
-        model = kaemo_client.models.videos.Videos()
+        model = kinow_client.models.videos.Videos()
 
 
 if __name__ == '__main__':

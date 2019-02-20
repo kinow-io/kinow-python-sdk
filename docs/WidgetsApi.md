@@ -23,12 +23,12 @@ Get introduction image
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.WidgetsApi()
+api_instance = kinow_client.WidgetsApi()
 
 try: 
     api_response = api_instance.get_intro_image()
@@ -62,12 +62,12 @@ Get introduction image
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.WidgetsApi()
+api_instance = kinow_client.WidgetsApi()
 
 try: 
     api_response = api_instance.get_slider_images()
@@ -101,12 +101,12 @@ Get footer menu list
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.WidgetsApi()
+api_instance = kinow_client.WidgetsApi()
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 
@@ -146,12 +146,12 @@ Get slider list
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.WidgetsApi()
+api_instance = kinow_client.WidgetsApi()
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 
@@ -191,12 +191,12 @@ Get slider item
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.WidgetsApi()
+api_instance = kinow_client.WidgetsApi()
 slider_id = 789 # int | ID of the slider to fetch
 
 try: 
@@ -234,12 +234,12 @@ Get top menu list
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.WidgetsApi()
+api_instance = kinow_client.WidgetsApi()
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 

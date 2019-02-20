@@ -19,12 +19,12 @@ Create new Facebook ID for user
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.FacebookApi()
+api_instance = kinow_client.FacebookApi()
 customer_id = 789 # int | Customer ID
 facebook_id = 'facebook_id_example' # str | Facebook ID
 
@@ -63,12 +63,12 @@ Get customer ID by Facebook ID
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.FacebookApi()
+api_instance = kinow_client.FacebookApi()
 facebook_id = 789 # int | Facebook ID to fetch
 
 try: 

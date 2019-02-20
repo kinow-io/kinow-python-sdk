@@ -17,16 +17,16 @@ import os
 import sys
 import unittest
 
-import kaemo_client
-from kaemo_client.rest import ApiException
-from kaemo_client.apis.subtitles_api import SubtitlesApi
+import kinow_client
+from kinow_client.rest import ApiException
+from kinow_client.apis.subtitles_api import SubtitlesApi
 
 
 class TestSubtitlesApi(unittest.TestCase):
     """ SubtitlesApi unit test stubs """
 
     def setUp(self):
-        self.api = kaemo_client.apis.subtitles_api.SubtitlesApi()
+        self.api = kinow_client.apis.subtitles_api.SubtitlesApi()
 
     def tearDown(self):
         pass

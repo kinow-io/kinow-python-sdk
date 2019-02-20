@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import kaemo_client
-from kaemo_client.rest import ApiException
-from kaemo_client.models.task import Task
+import kinow_client
+from kinow_client.rest import ApiException
+from kinow_client.models.task import Task
 
 
 class TestTask(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestTask(unittest.TestCase):
         """
         Test Task
         """
-        model = kaemo_client.models.task.Task()
+        model = kinow_client.models.task.Task()
 
 
 if __name__ == '__main__':

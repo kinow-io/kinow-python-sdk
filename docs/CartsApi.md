@@ -30,12 +30,12 @@ Add product to cart
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.CartsApi()
+api_instance = kinow_client.CartsApi()
 cart_id = 789 # int | Id of the cart to fetch
 product_id = 789 # int | Id of the product to attach to the cart
 product_attribute_id = 789 # int | Id of the product attribute, required to add product to cart if product is not a subscription (optional)
@@ -79,12 +79,12 @@ Attach cart rule to cart
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.CartsApi()
+api_instance = kinow_client.CartsApi()
 cart_id = 789 # int | Id of the cart to fetch
 code = 'code_example' # str | Code of the cart rule to attach
 
@@ -123,12 +123,12 @@ Attach cart to customer
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.CartsApi()
+api_instance = kinow_client.CartsApi()
 customer_id = 789 # int | ID of the customer to fetch
 cart_id = 789 # int | ID of the cart to attach
 
@@ -168,13 +168,13 @@ Create new cart
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.CartsApi()
-body = kaemo_client.CartBody() # CartBody | Create cart object
+api_instance = kinow_client.CartsApi()
+body = kinow_client.CartBody() # CartBody | Create cart object
 
 try: 
     api_response = api_instance.create_cart(body)
@@ -211,12 +211,12 @@ Delete cart
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.CartsApi()
+api_instance = kinow_client.CartsApi()
 cart_id = 789 # int | Id of the cart to fetch
 
 try: 
@@ -253,12 +253,12 @@ Remove product from cart
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.CartsApi()
+api_instance = kinow_client.CartsApi()
 cart_id = 789 # int | Id of the cart to fetch
 product_id = 789 # int | Id of the product to delete from cart
 product_attribute_id = 789 # int | Id of the product attribute, required to add product to cart if product is not a subscription (optional)
@@ -299,12 +299,12 @@ Get cart
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.CartsApi()
+api_instance = kinow_client.CartsApi()
 cart_id = 789 # int | Id of the cart to fetch
 
 try: 
@@ -342,12 +342,12 @@ Get customer carts
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.CartsApi()
+api_instance = kinow_client.CartsApi()
 customer_id = 789 # int | ID of the customer to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
@@ -395,12 +395,12 @@ Get customer last cart
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.CartsApi()
+api_instance = kinow_client.CartsApi()
 customer_id = 789 # int | ID of the customer to fetch
 
 try: 
@@ -438,12 +438,12 @@ Get payment url
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.CartsApi()
+api_instance = kinow_client.CartsApi()
 cart_id = 789 # int | Id of the cart to fetch
 payment_name = 'payment_name_example' # str | Payment module name
 
@@ -483,14 +483,14 @@ Update cart
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.CartsApi()
+api_instance = kinow_client.CartsApi()
 cart_id = 789 # int | Cart id
-body = kaemo_client.Cart() # Cart | Cart body
+body = kinow_client.Cart() # Cart | Cart body
 
 try: 
     api_response = api_instance.update_cart(cart_id, body)
@@ -528,15 +528,15 @@ Validate order
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.CartsApi()
+api_instance = kinow_client.CartsApi()
 cart_id = 789 # int | Id of the cart to fetch
 payment_name = 'payment_name_example' # str | Payment module name
-payment_arguments = kaemo_client.PaymentArguments() # PaymentArguments | payment arguments, token and tokenType
+payment_arguments = kinow_client.PaymentArguments() # PaymentArguments | payment arguments, token and tokenType
 
 try: 
     api_instance.validate_cart(cart_id, payment_name, payment_arguments)
@@ -574,12 +574,12 @@ Validate cart without payment method (only for carts with a total of 0)
 ```python
 from __future__ import print_statement
 import time
-import kaemo_client
-from kaemo_client.rest import ApiException
+import kinow_client
+from kinow_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = kaemo_client.CartsApi()
+api_instance = kinow_client.CartsApi()
 cart_id = 789 # int | Id of the cart to validate
 
 try: 

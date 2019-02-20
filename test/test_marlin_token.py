@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import kaemo_client
-from kaemo_client.rest import ApiException
-from kaemo_client.models.marlin_token import MarlinToken
+import kinow_client
+from kinow_client.rest import ApiException
+from kinow_client.models.marlin_token import MarlinToken
 
 
 class TestMarlinToken(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestMarlinToken(unittest.TestCase):
         """
         Test MarlinToken
         """
-        model = kaemo_client.models.marlin_token.MarlinToken()
+        model = kinow_client.models.marlin_token.MarlinToken()
 
 
 if __name__ == '__main__':
