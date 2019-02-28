@@ -842,7 +842,7 @@ Name | Type | Description  | Notes
 
 
 
-Get video subtitles
+Get subtitles of a video
 
 ### Example 
 ```python
