@@ -19,11 +19,11 @@ import unittest
 
 import kinow_client
 from kinow_client.rest import ApiException
-from kinow_client.models.cart import Cart
+from kinow_client.models.video_subtitles_response import VideoSubtitlesResponse
 
 
-class TestCart(unittest.TestCase):
-    """ Cart unit test stubs """
+class TestVideoSubtitlesResponse(unittest.TestCase):
+    """ VideoSubtitlesResponse unit test stubs """
 
     def setUp(self):
         pass
@@ -31,11 +31,11 @@ class TestCart(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testCart(self):
+    def testVideoSubtitlesResponse(self):
         """
-        Test Cart
+        Test VideoSubtitlesResponse
         """
-        model = kinow_client.models.cart.Cart()
+        model = kinow_client.models.video_subtitles_response.VideoSubtitlesResponse()
 
 
 if __name__ == '__main__':

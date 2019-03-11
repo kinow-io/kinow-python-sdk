@@ -838,7 +838,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_video_subtitles**
-> Subtitles get_video_subtitles(video_id, page=page, per_page=per_page)
+> VideoSubtitlesResponse get_video_subtitles(video_id, page=page, per_page=per_page)
 
 
 
@@ -875,7 +875,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Subtitles**](#Subtitles)
+[**VideoSubtitlesResponse**](#VideoSubtitlesResponse)
 
 ### HTTP request headers
 
