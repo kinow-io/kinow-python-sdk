@@ -4,18 +4,18 @@ All URIs are relative to *https://api.kinow.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_available_categories**](#get_available_categories) | **GET** /categories-accesses | 
+[**get_available_category**](#get_available_category) | **GET** /categories-accesses/{category_id} | 
 [**get_customer_has_access_to_product**](#get_customer_has_access_to_product) | **GET** /customers/{customer_id}/products/{product_id}/has-access | 
 [**get_customer_has_access_to_video**](#get_customer_has_access_to_video) | **GET** /customers/{customer_id}/videos/{video_id}/has-access | 
 [**get_product_availability**](#get_product_availability) | **GET** /products/{product_id}/access | 
 
 
-## **get_available_categories**
-> Categories get_available_categories(customer_id=customer_id, page=page, per_page=per_page)
+## **get_available_category**
+> Category get_available_category(category_id, customer_id=customer_id)
 
 
 
-Get available categories
+Get available category
 
 ### Example 
 ```python
@@ -27,28 +27,26 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.AccessesApi()
-customer_id = 789 # int | ID of the customer to fetch (optional)
-page = 789 # int |  (optional)
-per_page = 789 # int |  (optional)
+category_id = 789 # int | ID of the category to fetch
+customer_id = 789 # int |  (optional)
 
 try: 
-    api_response = api_instance.get_available_categories(customer_id=customer_id, page=page, per_page=per_page)
+    api_response = api_instance.get_available_category(category_id, customer_id=customer_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling AccessesApi->get_available_categories: %s\n" % e)
+    print("Exception when calling AccessesApi->get_available_category: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customer_id** | **int**| ID of the customer to fetch | [optional] 
- **page** | **int**|  | [optional] 
- **per_page** | **int**|  | [optional] 
+ **category_id** | **int**| ID of the category to fetch | 
+ **customer_id** | **int**|  | [optional] 
 
 ### Return type
 
-[**Categories**](#Categories)
+[**Category**](#Category)
 
 ### HTTP request headers
 
