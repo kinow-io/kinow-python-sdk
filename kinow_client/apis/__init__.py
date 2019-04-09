@@ -27,7 +27,6 @@ from .geolocations_api import GeolocationsApi
 from .groups_api import GroupsApi
 from .images_api import ImagesApi
 from .languages_api import LanguagesApi
-from .manufacturers_api import ManufacturersApi
 from .media_files_api import MediaFilesApi
 from .media_sources_api import MediaSourcesApi
 from .o_auth_api import OAuthApi
@@ -35,13 +34,11 @@ from .order_histories_api import OrderHistoriesApi
 from .order_states_api import OrderStatesApi
 from .orders_api import OrdersApi
 from .payment_modules_api import PaymentModulesApi
-from .player_api import PlayerApi
 from .product_accesses_api import ProductAccessesApi
 from .products_api import ProductsApi
 from .stats_api import StatsApi
 from .subscriptions_api import SubscriptionsApi
 from .subtitles_api import SubtitlesApi
-from .suppliers_api import SuppliersApi
 from .tasks_api import TasksApi
 from .videos_api import VideosApi
 from .widgets_api import WidgetsApi

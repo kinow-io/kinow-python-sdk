@@ -8,13 +8,10 @@ Method | HTTP request | Description
 [**get_category_banner**](#get_category_banner) | **GET** /categories/{category_id}/banner | 
 [**get_director_cover_image**](#get_director_cover_image) | **GET** /directors/{director_id}/cover | 
 [**get_intro_image**](#get_intro_image) | **GET** /widgets/intro/images | 
-[**get_manufacturer_cover_image**](#get_manufacturer_cover_image) | **GET** /manufacturers/{manufacturer_id}/cover | 
 [**get_product_cover_image**](#get_product_cover_image) | **GET** /products/{product_id}/cover | 
 [**get_product_images**](#get_product_images) | **GET** /products/{product_id}/images | 
 [**get_product_screenshots**](#get_product_screenshots) | **GET** /products/{product_id}/screenshots | 
-[**get_slider_images**](#get_slider_images) | **GET** /widgets/slider/images | 
 [**get_subscription_cover_image**](#get_subscription_cover_image) | **GET** /subscriptions/{subscription_id}/cover | 
-[**get_supplier_cover_image**](#get_supplier_cover_image) | **GET** /suppliers/{supplier_id}/cover | 
 [**get_video_cover**](#get_video_cover) | **GET** /videos/{video_id}/cover | 
 [**upload_actor_cover**](#upload_actor_cover) | **POST** /actors/{actor_id}/cover | 
 [**upload_category_banner**](#upload_category_banner) | **POST** /category/{category_id}/banner | 
@@ -194,49 +191,6 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
-## **get_manufacturer_cover_image**
-> Image get_manufacturer_cover_image(manufacturer_id)
-
-
-
-Please, use __/directors/{actor_id}/cover__
-
-### Example 
-```python
-from __future__ import print_statement
-import time
-import kinow_client
-from kinow_client.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = kinow_client.ImagesApi()
-manufacturer_id = 789 # int | ID of the manufacturer to fetch
-
-try: 
-    api_response = api_instance.get_manufacturer_cover_image(manufacturer_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ImagesApi->get_manufacturer_cover_image: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **manufacturer_id** | **int**| ID of the manufacturer to fetch | 
-
-### Return type
-
-[**Image**](#Image)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
-
 ## **get_product_cover_image**
 > Image get_product_cover_image(product_id)
 
@@ -372,45 +326,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
-## **get_slider_images**
-> list[Image] get_slider_images()
-
-
-
-Get introduction image
-
-### Example 
-```python
-from __future__ import print_statement
-import time
-import kinow_client
-from kinow_client.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = kinow_client.ImagesApi()
-
-try: 
-    api_response = api_instance.get_slider_images()
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ImagesApi->get_slider_images: %s\n" % e)
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**list[Image]**](#Image)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
-
 ## **get_subscription_cover_image**
 > Image get_subscription_cover_image(subscription_id)
 
@@ -442,49 +357,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **subscription_id** | **int**| ID of the subscription to fetch | 
-
-### Return type
-
-[**Image**](#Image)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
-
-## **get_supplier_cover_image**
-> Image get_supplier_cover_image(supplier_id)
-
-
-
-Please, use __/actors/{actor_id}/cover__
-
-### Example 
-```python
-from __future__ import print_statement
-import time
-import kinow_client
-from kinow_client.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = kinow_client.ImagesApi()
-supplier_id = 789 # int | ID of the supplier to fetch
-
-try: 
-    api_response = api_instance.get_supplier_cover_image(supplier_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ImagesApi->get_supplier_cover_image: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **supplier_id** | **int**| ID of the supplier to fetch | 
 
 ### Return type
 

@@ -116,7 +116,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ExtractsApi()
-extract_id = 789 # int | ID of the video to update
+extract_id = 789 # int | Extract ID to update
 
 try: 
     api_instance.delete_extract(extract_id)
@@ -128,7 +128,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **extract_id** | **int**| ID of the video to update | 
+ **extract_id** | **int**| Extract ID to update | 
 
 ### Return type
 
@@ -158,7 +158,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ExtractsApi()
-extract_id = 789 # int | ID of the extract to fetch
+extract_id = 789 # int | Extract ID to fetch
 
 try: 
     api_response = api_instance.get_extract_player(extract_id)
@@ -171,7 +171,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **extract_id** | **int**| ID of the extract to fetch | 
+ **extract_id** | **int**| Extract ID to fetch | 
 
 ### Return type
 
@@ -248,7 +248,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ExtractsApi()
-extract_id = 789 # int | ID of the video to update
+extract_id = 789 # int | Extract ID to fetch
 body = kinow_client.Extract() # Extract | 
 
 try: 
@@ -262,7 +262,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **extract_id** | **int**| ID of the video to update | 
+ **extract_id** | **int**| Extract ID to fetch | 
  **body** | [**Extract**](#Extract)|  | 
 
 ### Return type

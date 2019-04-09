@@ -11,17 +11,13 @@ Method | HTTP request | Description
 [**delete_video**](#delete_video) | **DELETE** /videos/{video_id} | 
 [**get_customer_has_access_to_video**](#get_customer_has_access_to_video) | **GET** /customers/{customer_id}/videos/{video_id}/has-access | 
 [**get_disabled_subscriptions**](#get_disabled_subscriptions) | **GET** /videos/{video_id}/disabled-subscriptions | 
-[**get_download_url**](#get_download_url) | **GET** /customers/{customer_id}/videos/{video_id}/download | 
-[**get_marlin_token**](#get_marlin_token) | **GET** /customers/{customer_id}/videos/{video_id}/marlin | 
-[**get_player_iframe**](#get_player_iframe) | **GET** /videos/{video_id}/player-iframe | 
-[**get_player_url**](#get_player_url) | **GET** /customers/{customer_id}/videos/{video_id}/player | 
 [**get_video**](#get_video) | **GET** /videos/{video_id} | 
 [**get_video_access**](#get_video_access) | **GET** /videos/{video_id}/customers/{customer_id}/access | 
 [**get_video_download_url**](#get_video_download_url) | **GET** /videos/{video_id}/download-url | 
 [**get_video_features**](#get_video_features) | **GET** /videos/{video_id}/features | 
 [**get_video_geolocation**](#get_video_geolocation) | **GET** /videos/{video_id}/geolocation | 
 [**get_video_geolocation_0**](#get_video_geolocation_0) | **POST** /videos/{video_id}/geolocations/{ip_address} | 
-[**get_video_player_url**](#get_video_player_url) | **GET** /videos/{video_id}/player | 
+[**get_video_player**](#get_video_player) | **GET** /videos/{video_id}/player | 
 [**get_video_subtitles**](#get_video_subtitles) | **GET** /videos/{video_id}/subtitles | 
 [**get_video_views**](#get_video_views) | **GET** /videos/{video_id}/views | 
 [**get_videos**](#get_videos) | **GET** /videos | 
@@ -47,8 +43,8 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.VideosApi()
-video_id = 789 # int | ID of the video to fetch
-id_image = 789 # int | ID of the image to attach
+video_id = 789 # int | Video ID to fetch
+id_image = 789 # int | Image ID to attach
 
 try: 
     api_instance.attach_cover_to_video(video_id, id_image)
@@ -60,8 +56,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **video_id** | **int**| ID of the video to fetch | 
- **id_image** | **int**| ID of the image to attach | 
+ **video_id** | **int**| Video ID to fetch | 
+ **id_image** | **int**| Image ID to attach | 
 
 ### Return type
 
@@ -222,7 +218,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.VideosApi()
-video_id = 789 # int | ID of the video to delete
+video_id = 789 # int | Video ID to fetch
 
 try: 
     api_instance.delete_video(video_id)
@@ -234,7 +230,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **video_id** | **int**| ID of the video to delete | 
+ **video_id** | **int**| Video ID to fetch | 
 
 ### Return type
 
@@ -308,7 +304,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.VideosApi()
-video_id = 789 # int | ID of the video to fetch
+video_id = 789 # int | Video ID to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 
@@ -323,193 +319,13 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **video_id** | **int**| ID of the video to fetch | 
+ **video_id** | **int**| Video ID to fetch | 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
 
 ### Return type
 
 [**Subscriptions**](#Subscriptions)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
-
-## **get_download_url**
-> DownloadUrl get_download_url(customer_id, video_id)
-
-
-
-Get video download url
-
-### Example 
-```python
-from __future__ import print_statement
-import time
-import kinow_client
-from kinow_client.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = kinow_client.VideosApi()
-customer_id = 789 # int | Id of the customer to fetch
-video_id = 789 # int | Id of the video to fetch
-
-try: 
-    api_response = api_instance.get_download_url(customer_id, video_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VideosApi->get_download_url: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **customer_id** | **int**| Id of the customer to fetch | 
- **video_id** | **int**| Id of the video to fetch | 
-
-### Return type
-
-[**DownloadUrl**](#DownloadUrl)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
-
-## **get_marlin_token**
-> MarlinToken get_marlin_token(customer_id, video_id)
-
-
-
-Get Marlin access token for a video
-
-### Example 
-```python
-from __future__ import print_statement
-import time
-import kinow_client
-from kinow_client.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = kinow_client.VideosApi()
-customer_id = 789 # int | Id of the customer to fetch
-video_id = 789 # int | Id of the video to fetch
-
-try: 
-    api_response = api_instance.get_marlin_token(customer_id, video_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VideosApi->get_marlin_token: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **customer_id** | **int**| Id of the customer to fetch | 
- **video_id** | **int**| Id of the video to fetch | 
-
-### Return type
-
-[**MarlinToken**](#MarlinToken)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
-
-## **get_player_iframe**
-> VideoUrl get_player_iframe(video_id, customer_id=customer_id)
-
-
-
-Get video player url
-
-### Example 
-```python
-from __future__ import print_statement
-import time
-import kinow_client
-from kinow_client.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = kinow_client.VideosApi()
-video_id = 789 # int | Id of the video to fetch
-customer_id = 789 # int | Id of the customer to fetch (optional)
-
-try: 
-    api_response = api_instance.get_player_iframe(video_id, customer_id=customer_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VideosApi->get_player_iframe: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **video_id** | **int**| Id of the video to fetch | 
- **customer_id** | **int**| Id of the customer to fetch | [optional] 
-
-### Return type
-
-[**VideoUrl**](#VideoUrl)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
-
-## **get_player_url**
-> VideoUrl get_player_url(customer_id, video_id)
-
-
-
-Get video player url
-
-### Example 
-```python
-from __future__ import print_statement
-import time
-import kinow_client
-from kinow_client.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = kinow_client.VideosApi()
-customer_id = 789 # int | Id of the customer to fetch
-video_id = 789 # int | Id of the video to fetch
-
-try: 
-    api_response = api_instance.get_player_url(customer_id, video_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VideosApi->get_player_url: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **customer_id** | **int**| Id of the customer to fetch | 
- **video_id** | **int**| Id of the video to fetch | 
-
-### Return type
-
-[**VideoUrl**](#VideoUrl)
 
 ### HTTP request headers
 
@@ -535,7 +351,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.VideosApi()
-video_id = 789 # int | ID of the video to fetch
+video_id = 789 # int | Video ID to fetch
 
 try: 
     api_response = api_instance.get_video(video_id)
@@ -548,7 +364,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **video_id** | **int**| ID of the video to fetch | 
+ **video_id** | **int**| Video ID to fetch | 
 
 ### Return type
 
@@ -578,8 +394,8 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.VideosApi()
-video_id = 789 # int | ID of the video to fetch
-customer_id = 789 # int | ID of the customer to fetch
+video_id = 789 # int | Video ID to fetch
+customer_id = 789 # int | Customer ID to fetch
 
 try: 
     api_instance.get_video_access(video_id, customer_id)
@@ -591,8 +407,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **video_id** | **int**| ID of the video to fetch | 
- **customer_id** | **int**| ID of the customer to fetch | 
+ **video_id** | **int**| Video ID to fetch | 
+ **customer_id** | **int**| Customer ID to fetch | 
 
 ### Return type
 
@@ -622,8 +438,8 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.VideosApi()
-video_id = 789 # int | Id of the video to fetch
-customer_id = 789 # int | Id of the customer to fetch (optional)
+video_id = 789 # int | Video ID to fetch
+customer_id = 789 # int | Customer ID to fetch (optional)
 
 try: 
     api_response = api_instance.get_video_download_url(video_id, customer_id=customer_id)
@@ -636,8 +452,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **video_id** | **int**| Id of the video to fetch | 
- **customer_id** | **int**| Id of the customer to fetch | [optional] 
+ **video_id** | **int**| Video ID to fetch | 
+ **customer_id** | **int**| Customer ID to fetch | [optional] 
 
 ### Return type
 
@@ -667,7 +483,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.VideosApi()
-video_id = 789 # int | ID of the video to fetch
+video_id = 789 # int | Video ID to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 
@@ -682,7 +498,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **video_id** | **int**| ID of the video to fetch | 
+ **video_id** | **int**| Video ID to fetch | 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
 
@@ -714,7 +530,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.VideosApi()
-video_id = 789 # int | ID of the video to fetch
+video_id = 789 # int | Video ID to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 
@@ -729,7 +545,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **video_id** | **int**| ID of the video to fetch | 
+ **video_id** | **int**| Video ID to fetch | 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
 
@@ -761,7 +577,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.VideosApi()
-video_id = 789 # int | ID of the video to fetch
+video_id = 789 # int | Video ID to fetch
 ip_address = 'ip_address_example' # str | address ip
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
@@ -776,7 +592,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **video_id** | **int**| ID of the video to fetch | 
+ **video_id** | **int**| Video ID to fetch | 
  **ip_address** | **str**| address ip | 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
@@ -792,12 +608,12 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
-## **get_video_player_url**
-> PlayerConfiguration get_video_player_url(video_id, customer_id=customer_id)
+## **get_video_player**
+> PlayerConfiguration get_video_player(video_id, customer_id=customer_id, country_id=country_id)
 
 
 
-Get video player url
+Get video player
 
 ### Example 
 ```python
@@ -809,22 +625,24 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.VideosApi()
-video_id = 789 # int | Id of the video to fetch
-customer_id = 789 # int |  (optional)
+video_id = 789 # int | Video ID to fetch
+customer_id = 789 # int | Customer ID to fetch (optional)
+country_id = 789 # int | Country ID to use in video analytics (optional)
 
 try: 
-    api_response = api_instance.get_video_player_url(video_id, customer_id=customer_id)
+    api_response = api_instance.get_video_player(video_id, customer_id=customer_id, country_id=country_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling VideosApi->get_video_player_url: %s\n" % e)
+    print("Exception when calling VideosApi->get_video_player: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **video_id** | **int**| Id of the video to fetch | 
- **customer_id** | **int**|  | [optional] 
+ **video_id** | **int**| Video ID to fetch | 
+ **customer_id** | **int**| Customer ID to fetch | [optional] 
+ **country_id** | **int**| Country ID to use in video analytics | [optional] 
 
 ### Return type
 
@@ -854,7 +672,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.VideosApi()
-video_id = 789 # int | ID of the video to fetch
+video_id = 789 # int | Video ID to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 
@@ -869,7 +687,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **video_id** | **int**| ID of the video to fetch | 
+ **video_id** | **int**| Video ID to fetch | 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
 
@@ -901,7 +719,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.VideosApi()
-video_id = 789 # int | ID of the video to fetch
+video_id = 789 # int | Video ID to fetch
 
 try: 
     api_response = api_instance.get_video_views(video_id)
@@ -914,7 +732,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **video_id** | **int**| ID of the video to fetch | 
+ **video_id** | **int**| Video ID to fetch | 
 
 ### Return type
 
@@ -1050,7 +868,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.VideosApi()
-video_id = 789 # int | ID of the video to fetch
+video_id = 789 # int | Video ID to fetch
 enabled = 56 # int | Enabled
 behavior_detected_countries = 'behavior_detected_countries_example' # str | Behavior for detected countries
 behavior_non_detected_countries = 'behavior_non_detected_countries_example' # str | Behavior for non-detected countries
@@ -1066,7 +884,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **video_id** | **int**| ID of the video to fetch | 
+ **video_id** | **int**| Video ID to fetch | 
  **enabled** | **int**| Enabled | 
  **behavior_detected_countries** | **str**| Behavior for detected countries | 
  **behavior_non_detected_countries** | **str**| Behavior for non-detected countries | 
@@ -1100,7 +918,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.VideosApi()
-video_id = 789 # int | ID of the video to update
+video_id = 789 # int | Video ID to update
 body = kinow_client.Video() # Video | 
 
 try: 
@@ -1114,7 +932,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **video_id** | **int**| ID of the video to update | 
+ **video_id** | **int**| Video ID to update | 
  **body** | [**Video**](#Video)|  | 
 
 ### Return type

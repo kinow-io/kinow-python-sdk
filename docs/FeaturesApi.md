@@ -347,7 +347,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.FeaturesApi()
-video_id = 789 # int | ID of the video to fetch
+video_id = 789 # int | Video ID to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 
@@ -362,7 +362,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **video_id** | **int**| ID of the video to fetch | 
+ **video_id** | **int**| Video ID to fetch | 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
 

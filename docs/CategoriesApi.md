@@ -5,8 +5,6 @@ All URIs are relative to *https://api.kinow.com/api*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_category**](#create_category) | **POST** /categories | 
-[**get_available_categories**](#get_available_categories) | **GET** /categories-accesses | 
-[**get_available_category**](#get_available_category) | **GET** /categories-accesses/{category_id} | 
 [**get_categories**](#get_categories) | **GET** /categories | 
 [**get_categories_from_category**](#get_categories_from_category) | **GET** /categories/{category_id}/categories | 
 [**get_category**](#get_category) | **GET** /categories/{category_id} | 
@@ -48,98 +46,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**Category**](#Category)|  | 
-
-### Return type
-
-[**Category**](#Category)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
-
-## **get_available_categories**
-> Categories get_available_categories(customer_id=customer_id, page=page, per_page=per_page)
-
-
-
-Get available categories
-
-### Example 
-```python
-from __future__ import print_statement
-import time
-import kinow_client
-from kinow_client.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = kinow_client.CategoriesApi()
-customer_id = 789 # int | ID of the customer to fetch (optional)
-page = 789 # int |  (optional)
-per_page = 789 # int |  (optional)
-
-try: 
-    api_response = api_instance.get_available_categories(customer_id=customer_id, page=page, per_page=per_page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CategoriesApi->get_available_categories: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **customer_id** | **int**| ID of the customer to fetch | [optional] 
- **page** | **int**|  | [optional] 
- **per_page** | **int**|  | [optional] 
-
-### Return type
-
-[**Categories**](#Categories)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
-
-## **get_available_category**
-> Category get_available_category(category_id, customer_id=customer_id)
-
-
-
-Get available category
-
-### Example 
-```python
-from __future__ import print_statement
-import time
-import kinow_client
-from kinow_client.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = kinow_client.CategoriesApi()
-category_id = 789 # int | ID of the category to fetch
-customer_id = 789 # int |  (optional)
-
-try: 
-    api_response = api_instance.get_available_category(category_id, customer_id=customer_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CategoriesApi->get_available_category: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **category_id** | **int**| ID of the category to fetch | 
- **customer_id** | **int**|  | [optional] 
 
 ### Return type
 
