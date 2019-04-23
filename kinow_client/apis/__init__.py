@@ -38,7 +38,6 @@ from .product_accesses_api import ProductAccessesApi
 from .products_api import ProductsApi
 from .stats_api import StatsApi
 from .subscriptions_api import SubscriptionsApi
-from .subtitles_api import SubtitlesApi
 from .tasks_api import TasksApi
 from .videos_api import VideosApi
 from .widgets_api import WidgetsApi
