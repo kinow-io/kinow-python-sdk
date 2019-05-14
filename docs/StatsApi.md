@@ -4,17 +4,18 @@ All URIs are relative to *https://api.kinow.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_video_stats_by_customers**](#get_video_stats_by_customers) | **GET** /video-stats/customers | 
-[**get_video_stats_by_video**](#get_video_stats_by_video) | **GET** /video-stats/videos | 
-[**get_video_stats_sessions**](#get_video_stats_sessions) | **GET** /video-stats/sessions | 
+[**get_customer_group_total_watched**](#get_customer_group_total_watched) | **GET** /video-stats/customer-group | 
+[**get_customer_sessions**](#get_customer_sessions) | **GET** /video-stats/sessions | 
+[**get_customer_video_stats**](#get_customer_video_stats) | **GET** /video-stats/customers | 
+[**get_video_stats**](#get_video_stats) | **GET** /video-stats/videos | 
 
 
-## **get_video_stats_by_customers**
-> CustomerVideoStats get_video_stats_by_customers(customer_id=customer_id, date_from=date_from, date_to=date_to, page=page, per_page=per_page)
+## **get_customer_group_total_watched**
+> CustomerGroupVideoStats1 get_customer_group_total_watched(group_id, video_id, page=page, per_page=per_page)
 
 
 
-Get video stats by customer
+Get video statistics for a given customer group
 
 ### Example 
 ```python
@@ -26,32 +27,30 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.StatsApi()
-customer_id = 789 # int | ID of the customer to fetch (optional)
-date_from = 'date_from_example' # str | Search entries from this date (optional)
-date_to = 'date_to_example' # str | Search entries to this date (optional)
+group_id = 789 # int | Customer group ID to fecth
+video_id = 789 # int | Video ID to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 
 try: 
-    api_response = api_instance.get_video_stats_by_customers(customer_id=customer_id, date_from=date_from, date_to=date_to, page=page, per_page=per_page)
+    api_response = api_instance.get_customer_group_total_watched(group_id, video_id, page=page, per_page=per_page)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling StatsApi->get_video_stats_by_customers: %s\n" % e)
+    print("Exception when calling StatsApi->get_customer_group_total_watched: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customer_id** | **int**| ID of the customer to fetch | [optional] 
- **date_from** | **str**| Search entries from this date | [optional] 
- **date_to** | **str**| Search entries to this date | [optional] 
+ **group_id** | **int**| Customer group ID to fecth | 
+ **video_id** | **int**| Video ID to fetch | 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
 
 ### Return type
 
-[**CustomerVideoStats**](#CustomerVideoStats)
+[**CustomerGroupVideoStats1**](#CustomerGroupVideoStats1)
 
 ### HTTP request headers
 
@@ -60,12 +59,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
-## **get_video_stats_by_video**
-> VideoStats get_video_stats_by_video(video_id=video_id, date_from=date_from, date_to=date_to, page=page)
+## **get_customer_sessions**
+> SessionVideoStats get_customer_sessions(customer_id=customer_id, video_id=video_id, date_from=date_from, date_to=date_to, page=page, per_page=per_page)
 
 
 
-Get video stats by video
+Get customer video sessions statistics
 
 ### Example 
 ```python
@@ -77,75 +76,26 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.StatsApi()
-video_id = 789 # int | ID of the customer to fetch (optional)
-date_from = 'date_from_example' # str | Search entries from this date (optional)
-date_to = 'date_to_example' # str | Search entries to this date (optional)
-page = 789 # int |  (optional)
-
-try: 
-    api_response = api_instance.get_video_stats_by_video(video_id=video_id, date_from=date_from, date_to=date_to, page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling StatsApi->get_video_stats_by_video: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **video_id** | **int**| ID of the customer to fetch | [optional] 
- **date_from** | **str**| Search entries from this date | [optional] 
- **date_to** | **str**| Search entries to this date | [optional] 
- **page** | **int**|  | [optional] 
-
-### Return type
-
-[**VideoStats**](#VideoStats)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
-
-## **get_video_stats_sessions**
-> SessionVideoStats get_video_stats_sessions(customer_id=customer_id, video_id=video_id, date_from=date_from, date_to=date_to, page=page, per_page=per_page)
-
-
-
-Get video stats sessions
-
-### Example 
-```python
-from __future__ import print_statement
-import time
-import kinow_client
-from kinow_client.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = kinow_client.StatsApi()
-customer_id = 789 # int | ID of the customer to fetch (optional)
-video_id = 789 # int | ID of the video to fetch (optional)
+customer_id = 789 # int | Customer ID to fetch (optional)
+video_id = 789 # int | Video ID to fetch (optional)
 date_from = 'date_from_example' # str | Search entries from this date (optional)
 date_to = 'date_to_example' # str | Search entries to this date (optional)
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 
 try: 
-    api_response = api_instance.get_video_stats_sessions(customer_id=customer_id, video_id=video_id, date_from=date_from, date_to=date_to, page=page, per_page=per_page)
+    api_response = api_instance.get_customer_sessions(customer_id=customer_id, video_id=video_id, date_from=date_from, date_to=date_to, page=page, per_page=per_page)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling StatsApi->get_video_stats_sessions: %s\n" % e)
+    print("Exception when calling StatsApi->get_customer_sessions: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customer_id** | **int**| ID of the customer to fetch | [optional] 
- **video_id** | **int**| ID of the video to fetch | [optional] 
+ **customer_id** | **int**| Customer ID to fetch | [optional] 
+ **video_id** | **int**| Video ID to fetch | [optional] 
  **date_from** | **str**| Search entries from this date | [optional] 
  **date_to** | **str**| Search entries to this date | [optional] 
  **page** | **int**|  | [optional] 
@@ -154,6 +104,106 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SessionVideoStats**](#SessionVideoStats)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_customer_video_stats**
+> CustomerVideoStats1 get_customer_video_stats(customer_id, date_from=date_from, date_to=date_to, page=page, per_page=per_page)
+
+
+
+Get customer video statistics
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.StatsApi()
+customer_id = 789 # int | Customer ID to fetch
+date_from = 'date_from_example' # str | Search entries from this date (optional)
+date_to = 'date_to_example' # str | Search entries to this date (optional)
+page = 789 # int |  (optional)
+per_page = 789 # int |  (optional)
+
+try: 
+    api_response = api_instance.get_customer_video_stats(customer_id, date_from=date_from, date_to=date_to, page=page, per_page=per_page)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling StatsApi->get_customer_video_stats: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customer_id** | **int**| Customer ID to fetch | 
+ **date_from** | **str**| Search entries from this date | [optional] 
+ **date_to** | **str**| Search entries to this date | [optional] 
+ **page** | **int**|  | [optional] 
+ **per_page** | **int**|  | [optional] 
+
+### Return type
+
+[**CustomerVideoStats1**](#CustomerVideoStats1)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_video_stats**
+> VideoStats get_video_stats(video_id=video_id, date_from=date_from, date_to=date_to, page=page)
+
+
+
+Get video statistics
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.StatsApi()
+video_id = 789 # int | Video ID to fetch (optional)
+date_from = 'date_from_example' # str | Search entries from this date (optional)
+date_to = 'date_to_example' # str | Search entries to this date (optional)
+page = 789 # int |  (optional)
+
+try: 
+    api_response = api_instance.get_video_stats(video_id=video_id, date_from=date_from, date_to=date_to, page=page)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling StatsApi->get_video_stats: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **video_id** | **int**| Video ID to fetch | [optional] 
+ **date_from** | **str**| Search entries from this date | [optional] 
+ **date_to** | **str**| Search entries to this date | [optional] 
+ **page** | **int**|  | [optional] 
+
+### Return type
+
+[**VideoStats**](#VideoStats)
 
 ### HTTP request headers
 

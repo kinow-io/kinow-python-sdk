@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **create_cart**
-> Cart create_cart(body)
+> Cart create_cart(body=body)
 
 
 
@@ -174,10 +174,10 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.CartsApi()
-body = kinow_client.CartBody() # CartBody | Create cart object
+body = kinow_client.CartBody() # CartBody | Create cart object (optional)
 
 try: 
-    api_response = api_instance.create_cart(body)
+    api_response = api_instance.create_cart(body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CartsApi->create_cart: %s\n" % e)
@@ -187,7 +187,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CartBody**](#CartBody)| Create cart object | 
+ **body** | [**CartBody**](#CartBody)| Create cart object | [optional] 
 
 ### Return type
 
