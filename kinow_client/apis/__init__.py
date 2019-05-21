@@ -19,7 +19,6 @@ from .customer_threads_api import CustomerThreadsApi
 from .customers_api import CustomersApi
 from .directors_api import DirectorsApi
 from .extracts_api import ExtractsApi
-from .facebook_api import FacebookApi
 from .feature_values_api import FeatureValuesApi
 from .features_api import FeaturesApi
 from .genders_api import GendersApi

@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**attach_cart_to_customer**](#attach_cart_to_customer) | **POST** /customers/{customer_id}/carts | 
 [**check_customer_credentials**](#check_customer_credentials) | **POST** /customers/check-credentials | 
 [**create_customer**](#create_customer) | **POST** /customers | 
-[**create_facebook_id**](#create_facebook_id) | **POST** /facebook/customers | 
+[**create_facebook_id**](#create_facebook_id) | **POST** /customers/facebook | 
 [**delete_customer**](#delete_customer) | **DELETE** /customers/{customer_id} | 
 [**generate_authentication_token**](#generate_authentication_token) | **GET** /customers/{customer_id}/authentication-token | 
 [**get_customer**](#get_customer) | **GET** /customers/{customer_id} | 
@@ -21,6 +21,7 @@ Method | HTTP request | Description
 [**get_customer_has_access_to_video**](#get_customer_has_access_to_video) | **GET** /customers/{customer_id}/videos/{video_id}/has-access | 
 [**get_customer_orders**](#get_customer_orders) | **GET** /customers/{customer_id}/orders | 
 [**get_customers**](#get_customers) | **GET** /customers | 
+[**get_facebook_customer**](#get_facebook_customer) | **GET** /customers/facebook/{facebook_id} | 
 [**get_payment_customer_id**](#get_payment_customer_id) | **GET** /customers/{customer_id}/payments/{payment_name}/customer | 
 [**update_customer**](#update_customer) | **PUT** /customers/{customer_id} | 
 
@@ -780,6 +781,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Customers**](#Customers)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_facebook_customer**
+> CustomerId get_facebook_customer(facebook_id)
+
+
+
+Get customer ID by Facebook ID
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.CustomersApi()
+facebook_id = 789 # int | Facebook ID to fetch
+
+try: 
+    api_response = api_instance.get_facebook_customer(facebook_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CustomersApi->get_facebook_customer: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **facebook_id** | **int**| Facebook ID to fetch | 
+
+### Return type
+
+[**CustomerId**](#CustomerId)
 
 ### HTTP request headers
 
