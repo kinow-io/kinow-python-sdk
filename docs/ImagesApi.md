@@ -4,6 +4,7 @@ All URIs are relative to *https://api.kinow.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**delete_product_screenshot**](#delete_product_screenshot) | **DELETE** /products/{product_id}/screenshots/{image_id} | 
 [**get_actor_cover_image**](#get_actor_cover_image) | **GET** /actors/{actor_id}/cover | 
 [**get_category_banner**](#get_category_banner) | **GET** /categories/{category_id}/banner | 
 [**get_director_cover_image**](#get_director_cover_image) | **GET** /directors/{director_id}/cover | 
@@ -18,13 +19,56 @@ Method | HTTP request | Description
 [**upload_director_cover**](#upload_director_cover) | **POST** /directors/{director_id}/cover | 
 [**upload_product_cover**](#upload_product_cover) | **POST** /products/{product_id}/cover | 
 [**upload_product_screenshot**](#upload_product_screenshot) | **PUT** /products/{product_id}/screenshots/{image_id} | 
-[**upload_product_screenshot_0**](#upload_product_screenshot_0) | **DELETE** /products/{product_id}/screenshots/{image_id} | 
 [**upload_product_screenshots**](#upload_product_screenshots) | **POST** /products/{product_id}/screenshots | 
 [**upload_subscription_cover**](#upload_subscription_cover) | **POST** /subscriptions/{subscription_id}/cover | 
 
 
+## **delete_product_screenshot**
+> delete_product_screenshot(product_id, image_id)
+
+
+
+Delete product screenshot
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.ImagesApi()
+product_id = 3.4 # float | Id of the product
+image_id = 3.4 # float | Id of the image to delete
+
+try: 
+    api_instance.delete_product_screenshot(product_id, image_id)
+except ApiException as e:
+    print("Exception when calling ImagesApi->delete_product_screenshot: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_id** | **float**| Id of the product | 
+ **image_id** | **float**| Id of the image to delete | 
+
+### Return type
+
+void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
 ## **get_actor_cover_image**
-> Image get_actor_cover_image(to_id)
+> Image get_actor_cover_image(actor_id)
 
 
 
@@ -40,10 +84,10 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ImagesApi()
-to_id = 789 # int | ID of the actor to fetch
+actor_id = 789 # int | ID of the actor to fetch
 
 try: 
-    api_response = api_instance.get_actor_cover_image(to_id)
+    api_response = api_instance.get_actor_cover_image(actor_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ImagesApi->get_actor_cover_image: %s\n" % e)
@@ -53,7 +97,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **to_id** | **int**| ID of the actor to fetch | 
+ **actor_id** | **int**| ID of the actor to fetch | 
 
 ### Return type
 
@@ -370,7 +414,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_video_cover**
-> Image get_video_cover(video)
+> Image get_video_cover(video_id)
 
 
 
@@ -386,10 +430,10 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ImagesApi()
-video = 789 # int | ID of the video to fetch
+video_id = 789 # int | ID of the video to fetch
 
 try: 
-    api_response = api_instance.get_video_cover(video)
+    api_response = api_instance.get_video_cover(video_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ImagesApi->get_video_cover: %s\n" % e)
@@ -399,7 +443,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **video** | **int**| ID of the video to fetch | 
+ **video_id** | **int**| ID of the video to fetch | 
 
 ### Return type
 
@@ -647,50 +691,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Screenshot**](#Screenshot)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
-
-## **upload_product_screenshot_0**
-> upload_product_screenshot_0(product_id, image_id)
-
-
-
-Upload product screenshot
-
-### Example 
-```python
-from __future__ import print_statement
-import time
-import kinow_client
-from kinow_client.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = kinow_client.ImagesApi()
-product_id = 3.4 # float | Id of the product
-image_id = 3.4 # float | Id of the image to delete
-
-try: 
-    api_instance.upload_product_screenshot_0(product_id, image_id)
-except ApiException as e:
-    print("Exception when calling ImagesApi->upload_product_screenshot_0: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **product_id** | **float**| Id of the product | 
- **image_id** | **float**| Id of the image to delete | 
-
-### Return type
-
-void (empty response body)
 
 ### HTTP request headers
 

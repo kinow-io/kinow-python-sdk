@@ -8,11 +8,11 @@ Method | HTTP request | Description
 [**attach_product_to_actor**](#attach_product_to_actor) | **POST** /products/{product_id}/actors | 
 [**attach_product_to_category**](#attach_product_to_category) | **POST** /products/{product_id}/categories | 
 [**attach_product_to_director**](#attach_product_to_director) | **POST** /products/{product_id}/directors | 
-[**attach_product_to_director_0**](#attach_product_to_director_0) | **POST** /products/{product_id}/groups | 
+[**attach_product_to_group**](#attach_product_to_group) | **POST** /products/{product_id}/groups | 
 [**attach_video_to_product**](#attach_video_to_product) | **POST** /products/{product_id}/videos | 
 [**create_product**](#create_product) | **POST** /products | 
 [**delete_product**](#delete_product) | **DELETE** /products/{product_id} | 
-[**detach_feature_to_product**](#detach_feature_to_product) | **DELETE** products/{product_id}/features/{feature_id} | 
+[**detach_feature_to_product**](#detach_feature_to_product) | **DELETE** /products/{product_id}/features/{feature_id} | 
 [**detach_product_from_actor**](#detach_product_from_actor) | **DELETE** /products/{product_id}/actors/{actor_id} | 
 [**detach_product_from_category**](#detach_product_from_category) | **DELETE** /products/{product_id}/categories/{category_id} | 
 [**detach_product_from_director**](#detach_product_from_director) | **DELETE** /products/{product_id}/directors/{director_id} | 
@@ -215,8 +215,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
-## **attach_product_to_director_0**
-> attach_product_to_director_0(product_id, group_id)
+## **attach_product_to_group**
+> attach_product_to_group(product_id, group_id)
 
 
 
@@ -236,9 +236,9 @@ product_id = 789 # int | ID of the product
 group_id = 789 # int | ID of the group to attach
 
 try: 
-    api_instance.attach_product_to_director_0(product_id, group_id)
+    api_instance.attach_product_to_group(product_id, group_id)
 except ApiException as e:
-    print("Exception when calling ProductsApi->attach_product_to_director_0: %s\n" % e)
+    print("Exception when calling ProductsApi->attach_product_to_group: %s\n" % e)
 ```
 
 ### Parameters
@@ -806,7 +806,7 @@ Name | Type | Description  | Notes
 
 
 
-Get product attributes. Important to add product to a cart. Allow to select if the customer will buy the product for download, streaming or both
+Get product attributes. Mandatory to add product in cart: allows to buy product for download, streaming or both
 
 ### Example 
 ```python
@@ -1087,7 +1087,7 @@ Name | Type | Description  | Notes
 
 
 
-Get videos attached to product
+Get product features
 
 ### Example 
 ```python
@@ -1134,7 +1134,7 @@ Name | Type | Description  | Notes
 
 
 
-Get videos attached to product
+Get product geolocation restrictions
 
 ### Example 
 ```python
@@ -1181,7 +1181,7 @@ Name | Type | Description  | Notes
 
 
 
-check access to a product by geolocation
+Check product access using geolocation
 
 ### Example 
 ```python
@@ -1292,7 +1292,7 @@ from pprint import pprint
 api_instance = kinow_client.ProductsApi()
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
-features = 'features_example' # str |      ```     features[*][value]=string&features[*][operator]=strict&features[1][value]=string&features[1][operator]=strict     _______________      {     \"*\": {     \"value\": \"string\",     \"operator\": \"strict\"     },     \"1\": {     \"value\": \"string\",     \"operator\": \"contains\"     }     } ```     Operator can be strict, contains, gt or lt.     To search on all features, you can pass * as featureId. (optional)
+features = 'features_example' # str |      ```     featureId[value]=string&featureId[operator]=strict     _______________      {     \"*\": {     \"value\": \"string\",     \"operator\": \"strict\"     },     \"1\": {     \"value\": \"string\",     \"operator\": \"contains\"     }     } ```     Operator can be strict, contains, gt or lt.     To search on all features, you can pass * as featureId. (optional)
 filters = 'filters_example' # str |      ```     name[value]=string&name[operator]=contains&date_add[value]=string&date_add[operator]=lt     _______________      {     \"name\": {     \"value\": \"string\",     \"operator\": \"contains\"     },     \"date_add\": {     \"value\": \"string\",     \"operator\": \"lt\"     }     } ```     Operator can be strict, contains, gt or lt. (optional)
 sort_by = 'sort_by_example' # str | Sort by this attribute (id by default) (optional)
 sort_direction = 'sort_direction_example' # str | Sorting direction (asc by default) (optional)
@@ -1312,7 +1312,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
- **features** | **str**|      &#x60;&#x60;&#x60;     features[*][value]&#x3D;string&amp;features[*][operator]&#x3D;strict&amp;features[1][value]&#x3D;string&amp;features[1][operator]&#x3D;strict     _______________      {     \&quot;*\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;1\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;contains\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be strict, contains, gt or lt.     To search on all features, you can pass * as featureId. | [optional] 
+ **features** | **str**|      &#x60;&#x60;&#x60;     featureId[value]&#x3D;string&amp;featureId[operator]&#x3D;strict     _______________      {     \&quot;*\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;1\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;contains\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be strict, contains, gt or lt.     To search on all features, you can pass * as featureId. | [optional] 
  **filters** | **str**|      &#x60;&#x60;&#x60;     name[value]&#x3D;string&amp;name[operator]&#x3D;contains&amp;date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt     _______________      {     \&quot;name\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;contains\&quot;     },     \&quot;date_add\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;lt\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be strict, contains, gt or lt. | [optional] 
  **sort_by** | **str**| Sort by this attribute (id by default) | [optional] 
  **sort_direction** | **str**| Sorting direction (asc by default) | [optional] 
@@ -1350,7 +1350,7 @@ api_instance = kinow_client.ProductsApi()
 product_id = 789 # int | 
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
-features = 'features_example' # str |      ```     features[*][value]=string&features[*][operator]=strict&features[1][value]=string&features[1][operator]=strict     _______________      {     \"*\": {     \"value\": \"string\",     \"operator\": \"strict\"     },     \"1\": {     \"value\": \"string\",     \"operator\": \"contains\"     }     } ```     Operator can be strict, contains, gt or lt.     To search on all features, you can pass * as featureId. (optional)
+features = 'features_example' # str |      ```     featureId[value]=string&featureId[operator]=strict     _______________      {     \"*\": {     \"value\": \"string\",     \"operator\": \"strict\"     },     \"1\": {     \"value\": \"string\",     \"operator\": \"contains\"     }     } ```     Operator can be strict, contains, gt or lt.     To search on all features, you can pass * as featureId. (optional)
 filters = 'filters_example' # str |      ```     name[value]=string&name[operator]=contains&date_add[value]=string&date_add[operator]=lt     _______________      {     \"name\": {     \"value\": \"string\",     \"operator\": \"contains\"     },     \"date_add\": {     \"value\": \"string\",     \"operator\": \"lt\"     }     } ```     Operator can be strict, contains, gt or lt. (optional)
 sort_by = 'sort_by_example' # str | Sort by this attribute (id by default) (optional)
 sort_direction = 'sort_direction_example' # str | Sorting direction (asc by default) (optional)
@@ -1370,7 +1370,7 @@ Name | Type | Description  | Notes
  **product_id** | **int**|  | 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
- **features** | **str**|      &#x60;&#x60;&#x60;     features[*][value]&#x3D;string&amp;features[*][operator]&#x3D;strict&amp;features[1][value]&#x3D;string&amp;features[1][operator]&#x3D;strict     _______________      {     \&quot;*\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;1\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;contains\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be strict, contains, gt or lt.     To search on all features, you can pass * as featureId. | [optional] 
+ **features** | **str**|      &#x60;&#x60;&#x60;     featureId[value]&#x3D;string&amp;featureId[operator]&#x3D;strict     _______________      {     \&quot;*\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;1\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;contains\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be strict, contains, gt or lt.     To search on all features, you can pass * as featureId. | [optional] 
  **filters** | **str**|      &#x60;&#x60;&#x60;     name[value]&#x3D;string&amp;name[operator]&#x3D;contains&amp;date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt     _______________      {     \&quot;name\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;contains\&quot;     },     \&quot;date_add\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;lt\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be strict, contains, gt or lt. | [optional] 
  **sort_by** | **str**| Sort by this attribute (id by default) | [optional] 
  **sort_direction** | **str**| Sorting direction (asc by default) | [optional] 

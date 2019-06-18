@@ -16,7 +16,7 @@ Method | HTTP request | Description
 [**get_video_download_url**](#get_video_download_url) | **GET** /videos/{video_id}/download-url | 
 [**get_video_features**](#get_video_features) | **GET** /videos/{video_id}/features | 
 [**get_video_geolocation**](#get_video_geolocation) | **GET** /videos/{video_id}/geolocation | 
-[**get_video_geolocation_0**](#get_video_geolocation_0) | **POST** /videos/{video_id}/geolocations/{ip_address} | 
+[**get_video_geolocation_by_ip**](#get_video_geolocation_by_ip) | **POST** /videos/{video_id}/geolocations/{ip_address} | 
 [**get_video_player**](#get_video_player) | **GET** /videos/{video_id}/player | 
 [**get_video_subtitles**](#get_video_subtitles) | **GET** /videos/{video_id}/subtitles | 
 [**get_video_views**](#get_video_views) | **GET** /videos/{video_id}/views | 
@@ -560,8 +560,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
-## **get_video_geolocation_0**
-> get_video_geolocation_0(video_id, ip_address, page=page, per_page=per_page)
+## **get_video_geolocation_by_ip**
+> get_video_geolocation_by_ip(video_id, ip_address, page=page, per_page=per_page)
 
 
 
@@ -578,14 +578,14 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = kinow_client.VideosApi()
 video_id = 789 # int | Video ID to fetch
-ip_address = 'ip_address_example' # str | address ip
+ip_address = 'ip_address_example' # str | IP address
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 
 try: 
-    api_instance.get_video_geolocation_0(video_id, ip_address, page=page, per_page=per_page)
+    api_instance.get_video_geolocation_by_ip(video_id, ip_address, page=page, per_page=per_page)
 except ApiException as e:
-    print("Exception when calling VideosApi->get_video_geolocation_0: %s\n" % e)
+    print("Exception when calling VideosApi->get_video_geolocation_by_ip: %s\n" % e)
 ```
 
 ### Parameters
@@ -593,7 +593,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **video_id** | **int**| Video ID to fetch | 
- **ip_address** | **str**| address ip | 
+ **ip_address** | **str**| IP address | 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
 

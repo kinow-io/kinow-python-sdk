@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**geolocations**](#geolocations) | **POST** /geolocations | 
 [**get_product_geolocations**](#get_product_geolocations) | **GET** /products/{product_id}/geolocations | 
 [**get_product_geolocations_by_ip**](#get_product_geolocations_by_ip) | **POST** /products/{product_id}/geolocations | 
-[**get_video_geolocation**](#get_video_geolocation) | **POST** /videos/{video_id}/geolocations/{ip_address} | 
+[**get_video_geolocation_by_ip**](#get_video_geolocation_by_ip) | **POST** /videos/{video_id}/geolocations/{ip_address} | 
 [**set_product_geolocation**](#set_product_geolocation) | **PUT** /products/{product_id}/geolocations | 
 [**set_video_geolocation**](#set_video_geolocation) | **PUT** /videos/{video_id}/geolocations | 
 
@@ -59,7 +59,7 @@ void (empty response body)
 
 
 
-Get videos attached to product
+Get product geolocation restrictions
 
 ### Example 
 ```python
@@ -106,7 +106,7 @@ Name | Type | Description  | Notes
 
 
 
-check access to a product by geolocation
+Check product access using geolocation
 
 ### Example 
 ```python
@@ -149,8 +149,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
-## **get_video_geolocation**
-> get_video_geolocation(video_id, ip_address, page=page, per_page=per_page)
+## **get_video_geolocation_by_ip**
+> get_video_geolocation_by_ip(video_id, ip_address, page=page, per_page=per_page)
 
 
 
@@ -167,14 +167,14 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = kinow_client.GeolocationsApi()
 video_id = 789 # int | Video ID to fetch
-ip_address = 'ip_address_example' # str | address ip
+ip_address = 'ip_address_example' # str | IP address
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 
 try: 
-    api_instance.get_video_geolocation(video_id, ip_address, page=page, per_page=per_page)
+    api_instance.get_video_geolocation_by_ip(video_id, ip_address, page=page, per_page=per_page)
 except ApiException as e:
-    print("Exception when calling GeolocationsApi->get_video_geolocation: %s\n" % e)
+    print("Exception when calling GeolocationsApi->get_video_geolocation_by_ip: %s\n" % e)
 ```
 
 ### Parameters
@@ -182,7 +182,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **video_id** | **int**| Video ID to fetch | 
- **ip_address** | **str**| address ip | 
+ **ip_address** | **str**| IP address | 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
 
