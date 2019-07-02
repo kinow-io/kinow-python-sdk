@@ -72,7 +72,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.PaymentModulesApi()
-cart_id = 789 # int | Id of the cart to fetch
+cart_id = 789 # int | Cart ID to fetch
 payment_name = 'payment_name_example' # str | Payment module name
 
 try: 
@@ -86,7 +86,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cart_id** | **int**| Id of the cart to fetch | 
+ **cart_id** | **int**| Cart ID to fetch | 
  **payment_name** | **str**| Payment module name | 
 
 ### Return type
@@ -117,7 +117,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.PaymentModulesApi()
-cart_id = 789 # int | Id of the cart to fetch
+cart_id = 789 # int | Cart ID to fetch
 payment_name = 'payment_name_example' # str | Payment module name
 payment_arguments = kinow_client.PaymentArguments() # PaymentArguments | payment arguments, token and tokenType
 
@@ -131,7 +131,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cart_id** | **int**| Id of the cart to fetch | 
+ **cart_id** | **int**| Cart ID to fetch | 
  **payment_name** | **str**| Payment module name | 
  **payment_arguments** | [**PaymentArguments**](#PaymentArguments)| payment arguments, token and tokenType | 
 
@@ -163,7 +163,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.PaymentModulesApi()
-cart_id = 789 # int | Id of the cart to validate
+cart_id = 789 # int | Cart ID to validate
 
 try: 
     api_instance.validate_free_order(cart_id)
@@ -175,7 +175,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cart_id** | **int**| Id of the cart to validate | 
+ **cart_id** | **int**| Cart ID to validate | 
 
 ### Return type
 

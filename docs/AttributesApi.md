@@ -69,7 +69,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.AttributesApi()
-product_id = 789 # int | ID of the product to fetch
+product_id = 789 # int | Product ID to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 
@@ -84,7 +84,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_id** | **int**| ID of the product to fetch | 
+ **product_id** | **int**| Product ID to fetch | 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
 
@@ -116,7 +116,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.AttributesApi()
-attribute_id = 789 # int | Id of the attribute 
+attribute_id = 789 # int | Attribute ID to update
 body = kinow_client.ProductAttributeUpdateRequest() # ProductAttributeUpdateRequest | 
 
 try: 
@@ -130,7 +130,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **attribute_id** | **int**| Id of the attribute  | 
+ **attribute_id** | **int**| Attribute ID to update | 
  **body** | [**ProductAttributeUpdateRequest**](#ProductAttributeUpdateRequest)|  | 
 
 ### Return type

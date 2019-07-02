@@ -43,8 +43,8 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.CustomersApi()
-customer_id = 789 # int | ID of the customer to fetch
-cart_id = 789 # int | ID of the cart to attach
+customer_id = 789 # int | Customer ID to fetch
+cart_id = 789 # int | Cart ID to attach
 
 try: 
     api_response = api_instance.attach_cart_to_customer(customer_id, cart_id)
@@ -57,8 +57,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customer_id** | **int**| ID of the customer to fetch | 
- **cart_id** | **int**| ID of the cart to attach | 
+ **customer_id** | **int**| Customer ID to fetch | 
+ **cart_id** | **int**| Cart ID to attach | 
 
 ### Return type
 
@@ -220,7 +220,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.CustomersApi()
-customer_id = 789 # int | ID of the customer to delete
+customer_id = 789 # int | Customer ID to delete
 
 try: 
     api_instance.delete_customer(customer_id)
@@ -232,7 +232,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customer_id** | **int**| ID of the customer to delete | 
+ **customer_id** | **int**| Customer ID to delete | 
 
 ### Return type
 
@@ -262,7 +262,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.CustomersApi()
-customer_id = 789 # int | ID of the customer to authenticate
+customer_id = 789 # int | Customer ID to authenticate
 
 try: 
     api_instance.generate_authentication_token(customer_id)
@@ -274,7 +274,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customer_id** | **int**| ID of the customer to authenticate | 
+ **customer_id** | **int**| Customer ID to authenticate | 
 
 ### Return type
 
@@ -304,7 +304,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.CustomersApi()
-customer_id = 789 # int | ID of the customer to fetch
+customer_id = 789 # int | Customer ID to fetch
 
 try: 
     api_response = api_instance.get_customer(customer_id)
@@ -317,7 +317,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customer_id** | **int**| ID of the customer to fetch | 
+ **customer_id** | **int**| Customer ID to fetch | 
 
 ### Return type
 
@@ -347,7 +347,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.CustomersApi()
-customer_id = 789 # int | ID of the customer to fetch
+customer_id = 789 # int | Customer ID to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 filters = 'filters_example' # str |      ```     type[value]=string&type[operator]=strict&cancel[value]=string&cancel[operator]=contains     _______________      {     \"type\": {     \"value\": \"string\",     \"operator\": \"strict\"     },     \"cancel\": {     \"value\": \"string\",     \"operator\": \"contains\"     }     } ```Operator can be strict, contains, gt or lt. (optional)
@@ -363,7 +363,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customer_id** | **int**| ID of the customer to fetch | 
+ **customer_id** | **int**| Customer ID to fetch | 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
  **filters** | **str**|      &#x60;&#x60;&#x60;     type[value]&#x3D;string&amp;type[operator]&#x3D;strict&amp;cancel[value]&#x3D;string&amp;cancel[operator]&#x3D;contains     _______________      {     \&quot;type\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;cancel\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;contains\&quot;     }     } &#x60;&#x60;&#x60;Operator can be strict, contains, gt or lt. | [optional] 
@@ -396,7 +396,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.CustomersApi()
-customer_id = 789 # int | ID of the customer to fetch
+customer_id = 789 # int | Customer ID to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 
@@ -411,7 +411,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customer_id** | **int**| ID of the customer to fetch | 
+ **customer_id** | **int**| Customer ID to fetch | 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
 
@@ -443,7 +443,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.CustomersApi()
-customer_id = 789 # int | ID of the customer to fetch
+customer_id = 789 # int | Customer ID to fetch
 
 try: 
     api_response = api_instance.get_customer_address(customer_id)
@@ -456,7 +456,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customer_id** | **int**| ID of the customer to fetch | 
+ **customer_id** | **int**| Customer ID to fetch | 
 
 ### Return type
 
@@ -486,8 +486,8 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.CustomersApi()
-customer_id = 789 # int | ID of the customer to fetch
-product_id = 789 # int | ID of the product to fetch
+customer_id = 789 # int | Customer ID to fetch
+product_id = 789 # int | Product ID to fetch
 
 try: 
     api_instance.get_customer_can_see_product(customer_id, product_id)
@@ -499,8 +499,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customer_id** | **int**| ID of the customer to fetch | 
- **product_id** | **int**| ID of the product to fetch | 
+ **customer_id** | **int**| Customer ID to fetch | 
+ **product_id** | **int**| Product ID to fetch | 
 
 ### Return type
 
@@ -530,7 +530,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.CustomersApi()
-customer_id = 789 # int | ID of the customer to fetch
+customer_id = 789 # int | Customer ID to fetch
 
 try: 
     api_response = api_instance.get_customer_current_views(customer_id)
@@ -543,7 +543,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customer_id** | **int**| ID of the customer to fetch | 
+ **customer_id** | **int**| Customer ID to fetch | 
 
 ### Return type
 
@@ -573,7 +573,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.CustomersApi()
-customer_id = 789 # int | Id of the customer
+customer_id = 789 # int | Customer ID to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 
@@ -588,7 +588,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customer_id** | **int**| Id of the customer | 
+ **customer_id** | **int**| Customer ID to fetch | 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
 
@@ -620,8 +620,8 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.CustomersApi()
-customer_id = 789 # int | ID of the customer to fetch
-product_id = 789 # int | ID of the product to fetch
+customer_id = 789 # int | Customer ID to fetch
+product_id = 789 # int | Product ID to fetch
 
 try: 
     api_instance.get_customer_has_access_to_product(customer_id, product_id)
@@ -633,8 +633,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customer_id** | **int**| ID of the customer to fetch | 
- **product_id** | **int**| ID of the product to fetch | 
+ **customer_id** | **int**| Customer ID to fetch | 
+ **product_id** | **int**| Product ID to fetch | 
 
 ### Return type
 
@@ -664,8 +664,8 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.CustomersApi()
-customer_id = 789 # int | ID of the customer to fetch
-video_id = 789 # int | ID of the video to fetch
+customer_id = 789 # int | Customer ID to fetch
+video_id = 789 # int | Video ID to fetch
 
 try: 
     api_instance.get_customer_has_access_to_video(customer_id, video_id)
@@ -677,8 +677,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customer_id** | **int**| ID of the customer to fetch | 
- **video_id** | **int**| ID of the video to fetch | 
+ **customer_id** | **int**| Customer ID to fetch | 
+ **video_id** | **int**| Video ID to fetch | 
 
 ### Return type
 
@@ -708,7 +708,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.CustomersApi()
-customer_id = 789 # int | ID of the customer to fetch
+customer_id = 789 # int | Customer ID to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 
@@ -723,7 +723,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customer_id** | **int**| ID of the customer to fetch | 
+ **customer_id** | **int**| Customer ID to fetch | 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
 
@@ -894,7 +894,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.CustomersApi()
-customer_id = 789 # int | ID of the customer to fetch
+customer_id = 789 # int | Customer ID to fetch
 body = kinow_client.Customer() # Customer | Body of the customer
 
 try: 
@@ -908,7 +908,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customer_id** | **int**| ID of the customer to fetch | 
+ **customer_id** | **int**| Customer ID to fetch | 
  **body** | [**Customer**](#Customer)| Body of the customer | 
 
 ### Return type

@@ -163,7 +163,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.FeaturesApi()
-category_id = 789 # int | ID of the category to fetch
+category_id = 789 # int | Category ID to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 
@@ -178,7 +178,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **category_id** | **int**| ID of the category to fetch | 
+ **category_id** | **int**| Category ID to fetch | 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
 
@@ -300,7 +300,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.FeaturesApi()
-product_id = 789 # int | ID of the product to fetch
+product_id = 789 # int | Product ID to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 
@@ -315,7 +315,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_id** | **int**| ID of the product to fetch | 
+ **product_id** | **int**| Product ID to fetch | 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
 

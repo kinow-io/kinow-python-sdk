@@ -74,7 +74,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ProductAccessesApi()
-product_access_id = 789 # int | ID of the product access to fetch
+product_access_id = 789 # int | Product access ID to fetch
 
 try: 
     api_instance.delete_product_access(product_access_id)
@@ -86,7 +86,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_access_id** | **int**| ID of the product access to fetch | 
+ **product_access_id** | **int**| Product access ID to fetch | 
 
 ### Return type
 
@@ -116,7 +116,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ProductAccessesApi()
-customer_id = 789 # int | ID of the customer to fetch
+customer_id = 789 # int | Customer ID to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 filters = 'filters_example' # str |      ```     type[value]=string&type[operator]=strict&cancel[value]=string&cancel[operator]=contains     _______________      {     \"type\": {     \"value\": \"string\",     \"operator\": \"strict\"     },     \"cancel\": {     \"value\": \"string\",     \"operator\": \"contains\"     }     } ```Operator can be strict, contains, gt or lt. (optional)
@@ -132,7 +132,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customer_id** | **int**| ID of the customer to fetch | 
+ **customer_id** | **int**| Customer ID to fetch | 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
  **filters** | **str**|      &#x60;&#x60;&#x60;     type[value]&#x3D;string&amp;type[operator]&#x3D;strict&amp;cancel[value]&#x3D;string&amp;cancel[operator]&#x3D;contains     _______________      {     \&quot;type\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;cancel\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;contains\&quot;     }     } &#x60;&#x60;&#x60;Operator can be strict, contains, gt or lt. | [optional] 
@@ -165,7 +165,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ProductAccessesApi()
-customer_id = 789 # int | ID of the customer to fetch
+customer_id = 789 # int | Customer ID to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 
@@ -180,7 +180,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customer_id** | **int**| ID of the customer to fetch | 
+ **customer_id** | **int**| Customer ID to fetch | 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
 
@@ -212,7 +212,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ProductAccessesApi()
-product_access_id = 789 # int | ID of the product access to fetch
+product_access_id = 789 # int | Product access ID to fetch
 
 try: 
     api_response = api_instance.get_product_access(product_access_id)
@@ -225,7 +225,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_access_id** | **int**| ID of the product access to fetch | 
+ **product_access_id** | **int**| Product access ID to fetch | 
 
 ### Return type
 
@@ -310,8 +310,8 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ProductAccessesApi()
-customer_id = 789 # int | ID of the user to unsubscribe
-product_access_id = 'product_access_id_example' # str | ID of the product access to unsubscribe from
+customer_id = 789 # int | Customer ID to unsubscribe
+product_access_id = 'product_access_id_example' # str | Product access ID to unsubscribe from
 
 try: 
     api_instance.stop_subscription(customer_id, product_access_id)
@@ -323,8 +323,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customer_id** | **int**| ID of the user to unsubscribe | 
- **product_access_id** | **str**| ID of the product access to unsubscribe from | 
+ **customer_id** | **int**| Customer ID to unsubscribe | 
+ **product_access_id** | **str**| Product access ID to unsubscribe from | 
 
 ### Return type
 
@@ -354,7 +354,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ProductAccessesApi()
-product_access_id = 789 # int | ID of the product access to update
+product_access_id = 789 # int | Product access ID to update
 body = kinow_client.ProductAccess() # ProductAccess | 
 
 try: 
@@ -368,7 +368,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_access_id** | **int**| ID of the product access to update | 
+ **product_access_id** | **int**| Product access ID to update | 
  **body** | [**ProductAccess**](#ProductAccess)|  | 
 
 ### Return type

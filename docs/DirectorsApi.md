@@ -114,7 +114,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.DirectorsApi()
-director_id = 789 # int | ID of the director to fetch
+director_id = 789 # int | Director ID to fetch
 image_type = 'image_type_example' # str |  (optional)
 
 try: 
@@ -128,7 +128,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **director_id** | **int**| ID of the director to fetch | 
+ **director_id** | **int**| Director ID to fetch | 
  **image_type** | **str**|  | [optional] 
 
 ### Return type
@@ -206,7 +206,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.DirectorsApi()
-product_id = 789 # int | ID of the product to fetch
+product_id = 789 # int | Product ID to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 image_type = 'image_type_example' # str |  (optional)
@@ -222,7 +222,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_id** | **int**| ID of the product to fetch | 
+ **product_id** | **int**| Product ID to fetch | 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
  **image_type** | **str**|  | [optional] 

@@ -29,8 +29,8 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ExtractsApi()
-extract_id = 789 # int | ID of the extract to fetch
-id_image = 789 # int | ID of the image to attach
+extract_id = 789 # int | Extract ID to fetch
+id_image = 789 # int | Image ID to attach
 
 try: 
     api_instance.attach_cover_to_extract(extract_id, id_image)
@@ -42,8 +42,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **extract_id** | **int**| ID of the extract to fetch | 
- **id_image** | **int**| ID of the image to attach | 
+ **extract_id** | **int**| Extract ID to fetch | 
+ **id_image** | **int**| Image ID to attach | 
 
 ### Return type
 
@@ -201,7 +201,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ExtractsApi()
-product_id = 789 # int | ID of the product to fetch
+product_id = 789 # int | Product ID to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 
@@ -216,7 +216,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_id** | **int**| ID of the product to fetch | 
+ **product_id** | **int**| Product ID to fetch | 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
 

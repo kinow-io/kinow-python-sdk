@@ -27,7 +27,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.AccessesApi()
-category_id = 789 # int | ID of the category to fetch
+category_id = 789 # int | Category ID to fetch
 customer_id = 789 # int |  (optional)
 
 try: 
@@ -41,7 +41,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **category_id** | **int**| ID of the category to fetch | 
+ **category_id** | **int**| Category ID to fetch | 
  **customer_id** | **int**|  | [optional] 
 
 ### Return type
@@ -72,8 +72,8 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.AccessesApi()
-customer_id = 789 # int | ID of the customer to fetch
-product_id = 789 # int | ID of the product to fetch
+customer_id = 789 # int | Customer ID to fetch
+product_id = 789 # int | Product ID to fetch
 
 try: 
     api_instance.get_customer_has_access_to_product(customer_id, product_id)
@@ -85,8 +85,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customer_id** | **int**| ID of the customer to fetch | 
- **product_id** | **int**| ID of the product to fetch | 
+ **customer_id** | **int**| Customer ID to fetch | 
+ **product_id** | **int**| Product ID to fetch | 
 
 ### Return type
 
@@ -116,8 +116,8 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.AccessesApi()
-customer_id = 789 # int | ID of the customer to fetch
-video_id = 789 # int | ID of the video to fetch
+customer_id = 789 # int | Customer ID to fetch
+video_id = 789 # int | Video ID to fetch
 
 try: 
     api_instance.get_customer_has_access_to_video(customer_id, video_id)
@@ -129,8 +129,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customer_id** | **int**| ID of the customer to fetch | 
- **video_id** | **int**| ID of the video to fetch | 
+ **customer_id** | **int**| Customer ID to fetch | 
+ **video_id** | **int**| Video ID to fetch | 
 
 ### Return type
 
@@ -160,7 +160,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.AccessesApi()
-product_id = 789 # int | ID of the product to fetch
+product_id = 789 # int | Product ID to fetch
 
 try: 
     api_instance.get_product_availability(product_id)
@@ -172,7 +172,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_id** | **int**| ID of the product to fetch | 
+ **product_id** | **int**| Product ID to fetch | 
 
 ### Return type
 

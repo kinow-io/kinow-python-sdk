@@ -75,7 +75,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.SubscriptionsApi()
-subscription_id = 789 # int | ID of the product to fetch
+subscription_id = 789 # int | Product ID to fetch
 
 try: 
     api_response = api_instance.get_subscription(subscription_id)
@@ -88,7 +88,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **subscription_id** | **int**| ID of the product to fetch | 
+ **subscription_id** | **int**| Product ID to fetch | 
 
 ### Return type
 
@@ -169,7 +169,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.SubscriptionsApi()
-subscription_id = 789 # int | ID of the subscription to fetch
+subscription_id = 789 # int | Subscription ID to fetch
 
 try: 
     api_response = api_instance.get_subscription_cover_image(subscription_id)
@@ -182,7 +182,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **subscription_id** | **int**| ID of the subscription to fetch | 
+ **subscription_id** | **int**| Subscription ID to fetch | 
 
 ### Return type
 

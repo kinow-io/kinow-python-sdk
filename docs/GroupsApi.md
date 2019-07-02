@@ -28,8 +28,8 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.GroupsApi()
-group_id = 789 # int | ID of the group
-customer_id = 789 # int | ID of the customer to attach
+group_id = 789 # int | Group ID to fetch
+customer_id = 789 # int | Customer ID to attach
 
 try: 
     api_instance.attach_customer_to_group(group_id, customer_id)
@@ -41,8 +41,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **group_id** | **int**| ID of the group | 
- **customer_id** | **int**| ID of the customer to attach | 
+ **group_id** | **int**| Group ID to fetch | 
+ **customer_id** | **int**| Customer ID to attach | 
 
 ### Return type
 
@@ -72,8 +72,8 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.GroupsApi()
-group_id = 789 # int | Id of the group
-customer_id = 789 # int | ID of the customer to attach
+group_id = 789 # int | Group ID to fetch
+customer_id = 789 # int | Customer ID to attach
 
 try: 
     api_instance.detach_customer_from_group(group_id, customer_id)
@@ -85,8 +85,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **group_id** | **int**| Id of the group | 
- **customer_id** | **int**| ID of the customer to attach | 
+ **group_id** | **int**| Group ID to fetch | 
+ **customer_id** | **int**| Customer ID to attach | 
 
 ### Return type
 
@@ -116,7 +116,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.GroupsApi()
-group_id = 789 # int | ID of the group to fetch
+group_id = 789 # int | Group ID to fetch
 
 try: 
     api_response = api_instance.get_group(group_id)
@@ -129,7 +129,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **group_id** | **int**| ID of the group to fetch | 
+ **group_id** | **int**| Group ID to fetch | 
 
 ### Return type
 
@@ -210,7 +210,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.GroupsApi()
-product_id = 789 # int | Id of the product
+product_id = 789 # int | Product ID to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 
@@ -225,7 +225,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_id** | **int**| Id of the product | 
+ **product_id** | **int**| Product ID to fetch | 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
 

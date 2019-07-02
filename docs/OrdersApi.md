@@ -28,7 +28,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.OrdersApi()
-customer_id = 789 # int | ID of the customer to fetch
+customer_id = 789 # int | Customer ID to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 
@@ -43,7 +43,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customer_id** | **int**| ID of the customer to fetch | 
+ **customer_id** | **int**| Customer ID to fetch | 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
 
@@ -75,7 +75,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.OrdersApi()
-order_id = 789 # int | ID of the order to fetch
+order_id = 789 # int | Order ID to fetch
 
 try: 
     api_response = api_instance.get_order(order_id)
@@ -88,7 +88,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **order_id** | **int**| ID of the order to fetch | 
+ **order_id** | **int**| Order ID to fetch | 
 
 ### Return type
 
@@ -118,7 +118,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.OrdersApi()
-order_id = 789 # int | ID of the order to fetch
+order_id = 789 # int | Order ID to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 
@@ -133,7 +133,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **order_id** | **int**| ID of the order to fetch | 
+ **order_id** | **int**| Order ID to fetch | 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
 
@@ -165,7 +165,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.OrdersApi()
-order_id = 789 # int | ID of the order to fetch
+order_id = 789 # int | Order ID to fetch
 
 try: 
     api_response = api_instance.get_order_invoice(order_id)
@@ -178,7 +178,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **order_id** | **int**| ID of the order to fetch | 
+ **order_id** | **int**| Order ID to fetch | 
 
 ### Return type
 

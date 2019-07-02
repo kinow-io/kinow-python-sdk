@@ -24,7 +24,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.OrderHistoriesApi()
-order_id = 789 # int | ID of the order to fetch
+order_id = 789 # int | Order ID to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 
@@ -39,7 +39,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **order_id** | **int**| ID of the order to fetch | 
+ **order_id** | **int**| Order ID to fetch | 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
 

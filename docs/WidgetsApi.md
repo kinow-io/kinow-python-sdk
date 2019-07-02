@@ -157,7 +157,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.WidgetsApi()
-slider_id = 789 # int | ID of the slider to fetch
+slider_id = 789 # int | Slider ID to fetch
 
 try: 
     api_response = api_instance.get_widget_slider_item(slider_id)
@@ -170,7 +170,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **slider_id** | **int**| ID of the slider to fetch | 
+ **slider_id** | **int**| Slider ID to fetch | 
 
 ### Return type
 

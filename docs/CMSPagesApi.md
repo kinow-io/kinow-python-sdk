@@ -120,7 +120,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.CMSPagesApi()
-cms_page_id = 789 # int | ID of the page to update
+cms_page_id = 789 # int | CMS page ID to update
 body = kinow_client.CMSPage() # CMSPage | 
 
 try: 
@@ -134,7 +134,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cms_page_id** | **int**| ID of the page to update | 
+ **cms_page_id** | **int**| CMS page ID to update | 
  **body** | [**CMSPage**](#CMSPage)|  | 
 
 ### Return type

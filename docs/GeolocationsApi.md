@@ -71,7 +71,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.GeolocationsApi()
-product_id = 789 # int | ID of the product to fetch
+product_id = 789 # int | Product ID to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 
@@ -86,7 +86,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_id** | **int**| ID of the product to fetch | 
+ **product_id** | **int**| Product ID to fetch | 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
 
@@ -118,7 +118,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.GeolocationsApi()
-product_id = 789 # int | ID of the product to fetch
+product_id = 789 # int | Product ID to fetch
 ip_address = 'ip_address_example' # str | address ip
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
@@ -133,7 +133,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_id** | **int**| ID of the product to fetch | 
+ **product_id** | **int**| Product ID to fetch | 
  **ip_address** | **str**| address ip | 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
@@ -214,7 +214,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.GeolocationsApi()
-product_id = 789 # int | ID of the product to fetch
+product_id = 789 # int | Product ID to fetch
 enabled = 56 # int | Enabled
 behavior_detected_countries = 'behavior_detected_countries_example' # str | Behavior for detected countries
 behavior_non_detected_countries = 'behavior_non_detected_countries_example' # str | Behavior for non-detected countries
@@ -232,7 +232,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_id** | **int**| ID of the product to fetch | 
+ **product_id** | **int**| Product ID to fetch | 
  **enabled** | **int**| Enabled | 
  **behavior_detected_countries** | **str**| Behavior for detected countries | 
  **behavior_non_detected_countries** | **str**| Behavior for non-detected countries | 

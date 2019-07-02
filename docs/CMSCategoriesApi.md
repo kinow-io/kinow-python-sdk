@@ -120,7 +120,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.CMSCategoriesApi()
-cms_category_id = 789 # int | ID of the CMS category to update
+cms_category_id = 789 # int | CMS category ID to update
 body = kinow_client.CMSCategory() # CMSCategory | 
 
 try: 
@@ -134,7 +134,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cms_category_id** | **int**| ID of the CMS category to update | 
+ **cms_category_id** | **int**| CMS category ID to update | 
  **body** | [**CMSCategory**](#CMSCategory)|  | 
 
 ### Return type

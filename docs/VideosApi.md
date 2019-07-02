@@ -131,8 +131,8 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.VideosApi()
-product_id = 789 # int | ID of the product to fetch
-video_id = 789 # int | ID of the video to attach
+product_id = 789 # int | Product ID to fetch
+video_id = 789 # int | Video ID to attach
 
 try: 
     api_instance.attach_video_to_product(product_id, video_id)
@@ -144,8 +144,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_id** | **int**| ID of the product to fetch | 
- **video_id** | **int**| ID of the video to attach | 
+ **product_id** | **int**| Product ID to fetch | 
+ **video_id** | **int**| Video ID to attach | 
 
 ### Return type
 
@@ -260,8 +260,8 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.VideosApi()
-customer_id = 789 # int | ID of the customer to fetch
-video_id = 789 # int | ID of the video to fetch
+customer_id = 789 # int | Customer ID to fetch
+video_id = 789 # int | Video ID to fetch
 
 try: 
     api_instance.get_customer_has_access_to_video(customer_id, video_id)
@@ -273,8 +273,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customer_id** | **int**| ID of the customer to fetch | 
- **video_id** | **int**| ID of the video to fetch | 
+ **customer_id** | **int**| Customer ID to fetch | 
+ **video_id** | **int**| Video ID to fetch | 
 
 ### Return type
 
@@ -813,7 +813,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.VideosApi()
-product_id = 789 # int | ID of the product to fetch
+product_id = 789 # int | Product ID to fetch
 page = 789 # int |  (optional)
 filters = 'filters_example' # str |      ```     name[value]=string&name[operator]=strict&duration[value]=string&duration[operator]=gt     _______________      {     \"name\": {     \"value\": \"string\",     \"operator\": \"strict\"     },     \"duration\": {     \"value\": \"string\",     \"operator\": \"gt\"     }     } ```     Operator can be strict, contains, gt or lt. (optional)
 per_page = 789 # int |  (optional)
@@ -832,7 +832,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_id** | **int**| ID of the product to fetch | 
+ **product_id** | **int**| Product ID to fetch | 
  **page** | **int**|  | [optional] 
  **filters** | **str**|      &#x60;&#x60;&#x60;     name[value]&#x3D;string&amp;name[operator]&#x3D;strict&amp;duration[value]&#x3D;string&amp;duration[operator]&#x3D;gt     _______________      {     \&quot;name\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;duration\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;gt\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be strict, contains, gt or lt. | [optional] 
  **per_page** | **int**|  | [optional] 

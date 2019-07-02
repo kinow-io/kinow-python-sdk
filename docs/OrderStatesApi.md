@@ -25,7 +25,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.OrderStatesApi()
-order_state_id = 789 # int | ID of the order state to fetch
+order_state_id = 789 # int | Order state ID to fetch
 
 try: 
     api_response = api_instance.get_order_state(order_state_id)
@@ -38,7 +38,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **order_state_id** | **int**| ID of the order state to fetch | 
+ **order_state_id** | **int**| Order state ID to fetch | 
 
 ### Return type
 

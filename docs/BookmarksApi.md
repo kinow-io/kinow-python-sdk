@@ -26,7 +26,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.BookmarksApi()
-customer_id = 789 # int | ID of the customer to fetch
+customer_id = 789 # int | Customer ID to fetch
 product_id = 789 # int | 
 
 try: 
@@ -39,7 +39,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customer_id** | **int**| ID of the customer to fetch | 
+ **customer_id** | **int**| Customer ID to fetch | 
  **product_id** | **int**|  | 
 
 ### Return type
@@ -70,7 +70,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.BookmarksApi()
-customer_id = 789 # int | ID of the customer to fetch
+customer_id = 789 # int | Customer ID to fetch
 product_id = 789 # int | 
 
 try: 
@@ -83,7 +83,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customer_id** | **int**| ID of the customer to fetch | 
+ **customer_id** | **int**| Customer ID to fetch | 
  **product_id** | **int**|  | 
 
 ### Return type

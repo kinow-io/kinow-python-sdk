@@ -25,7 +25,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.AddressApi()
-customer_id = 789 # int | ID of the customer to fetch
+customer_id = 789 # int | Customer ID to fetch
 
 try: 
     api_response = api_instance.get_customer_address(customer_id)
@@ -38,7 +38,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customer_id** | **int**| ID of the customer to fetch | 
+ **customer_id** | **int**| Customer ID to fetch | 
 
 ### Return type
 
@@ -68,7 +68,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.AddressApi()
-address_id = 789 # int | ID of the address to update
+address_id = 789 # int | Address ID to update
 body = kinow_client.Address() # Address | 
 
 try: 
@@ -82,7 +82,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **address_id** | **int**| ID of the address to update | 
+ **address_id** | **int**| Address ID to update | 
  **body** | [**Address**](#Address)|  | 
 
 ### Return type

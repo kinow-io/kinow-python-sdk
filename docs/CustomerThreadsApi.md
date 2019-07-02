@@ -25,7 +25,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.CustomerThreadsApi()
-customer_thread_id = 789 # int | ID of the customer thread to fetch
+customer_thread_id = 789 # int | Customer thread ID to fetch
 
 try: 
     api_response = api_instance.get_customer_thread(customer_thread_id)
@@ -38,7 +38,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customer_thread_id** | **int**| ID of the customer thread to fetch | 
+ **customer_thread_id** | **int**| Customer thread ID to fetch | 
 
 ### Return type
 

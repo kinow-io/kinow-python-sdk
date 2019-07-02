@@ -100,8 +100,8 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ProductsApi()
-product_id = 789 # int | ID of the product
-actor_id = 789 # int | ID of the actor to attach
+product_id = 789 # int | Product ID to fetch
+actor_id = 789 # int | Actor ID to attach
 
 try: 
     api_instance.attach_product_to_actor(product_id, actor_id)
@@ -113,8 +113,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_id** | **int**| ID of the product | 
- **actor_id** | **int**| ID of the actor to attach | 
+ **product_id** | **int**| Product ID to fetch | 
+ **actor_id** | **int**| Actor ID to attach | 
 
 ### Return type
 
@@ -144,8 +144,8 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ProductsApi()
-product_id = 789 # int | Id of the product
-category_id = 789 # int | ID of the category to attach
+product_id = 789 # int | Product ID to fetch
+category_id = 789 # int | Category ID to attach
 
 try: 
     api_instance.attach_product_to_category(product_id, category_id)
@@ -157,8 +157,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_id** | **int**| Id of the product | 
- **category_id** | **int**| ID of the category to attach | 
+ **product_id** | **int**| Product ID to fetch | 
+ **category_id** | **int**| Category ID to attach | 
 
 ### Return type
 
@@ -188,8 +188,8 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ProductsApi()
-product_id = 789 # int | ID of the product
-director_id = 789 # int | ID of the director to attach
+product_id = 789 # int | Product ID to fetch
+director_id = 789 # int | Director ID to attach
 
 try: 
     api_instance.attach_product_to_director(product_id, director_id)
@@ -201,8 +201,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_id** | **int**| ID of the product | 
- **director_id** | **int**| ID of the director to attach | 
+ **product_id** | **int**| Product ID to fetch | 
+ **director_id** | **int**| Director ID to attach | 
 
 ### Return type
 
@@ -232,8 +232,8 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ProductsApi()
-product_id = 789 # int | ID of the product
-group_id = 789 # int | ID of the group to attach
+product_id = 789 # int | Product ID to fetch
+group_id = 789 # int | Group ID to attach
 
 try: 
     api_instance.attach_product_to_group(product_id, group_id)
@@ -245,8 +245,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_id** | **int**| ID of the product | 
- **group_id** | **int**| ID of the group to attach | 
+ **product_id** | **int**| Product ID to fetch | 
+ **group_id** | **int**| Group ID to attach | 
 
 ### Return type
 
@@ -276,8 +276,8 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ProductsApi()
-product_id = 789 # int | ID of the product to fetch
-video_id = 789 # int | ID of the video to attach
+product_id = 789 # int | Product ID to fetch
+video_id = 789 # int | Video ID to attach
 
 try: 
     api_instance.attach_video_to_product(product_id, video_id)
@@ -289,8 +289,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_id** | **int**| ID of the product to fetch | 
- **video_id** | **int**| ID of the video to attach | 
+ **product_id** | **int**| Product ID to fetch | 
+ **video_id** | **int**| Video ID to attach | 
 
 ### Return type
 
@@ -363,7 +363,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ProductsApi()
-product_id = 789 # int | ID of the product to fetch
+product_id = 789 # int | Product ID to fetch
 
 try: 
     api_instance.delete_product(product_id)
@@ -375,7 +375,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_id** | **int**| ID of the product to fetch | 
+ **product_id** | **int**| Product ID to fetch | 
 
 ### Return type
 
@@ -449,8 +449,8 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ProductsApi()
-product_id = 789 # int | ID of the product
-actor_id = 789 # int | ID of the actor to detach
+product_id = 789 # int | Product ID to fetch
+actor_id = 789 # int | Actor ID to detach
 
 try: 
     api_instance.detach_product_from_actor(product_id, actor_id)
@@ -462,8 +462,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_id** | **int**| ID of the product | 
- **actor_id** | **int**| ID of the actor to detach | 
+ **product_id** | **int**| Product ID to fetch | 
+ **actor_id** | **int**| Actor ID to detach | 
 
 ### Return type
 
@@ -493,8 +493,8 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ProductsApi()
-product_id = 789 # int | Id of the product
-category_id = 789 # int | ID of the category to detach
+product_id = 789 # int | Product ID to fetch
+category_id = 789 # int | Category ID to detach
 
 try: 
     api_instance.detach_product_from_category(product_id, category_id)
@@ -506,8 +506,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_id** | **int**| Id of the product | 
- **category_id** | **int**| ID of the category to detach | 
+ **product_id** | **int**| Product ID to fetch | 
+ **category_id** | **int**| Category ID to detach | 
 
 ### Return type
 
@@ -537,8 +537,8 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ProductsApi()
-product_id = 789 # int | ID of the product
-director_id = 789 # int | ID of the director to detach
+product_id = 789 # int | Product ID to fetch
+director_id = 789 # int | Director ID to detach
 
 try: 
     api_instance.detach_product_from_director(product_id, director_id)
@@ -550,8 +550,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_id** | **int**| ID of the product | 
- **director_id** | **int**| ID of the director to detach | 
+ **product_id** | **int**| Product ID to fetch | 
+ **director_id** | **int**| Director ID to detach | 
 
 ### Return type
 
@@ -581,8 +581,8 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ProductsApi()
-product_id = 789 # int | ID of the product
-group_id = 789 # int | ID of the group to detach
+product_id = 789 # int | Product ID to fetch
+group_id = 789 # int | Group ID to detach
 
 try: 
     api_instance.detach_product_from_group(product_id, group_id)
@@ -594,8 +594,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_id** | **int**| ID of the product | 
- **group_id** | **int**| ID of the group to detach | 
+ **product_id** | **int**| Product ID to fetch | 
+ **group_id** | **int**| Group ID to detach | 
 
 ### Return type
 
@@ -625,7 +625,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ProductsApi()
-category_id = 789 # int | ID of the category to fetch
+category_id = 789 # int | Category ID to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 sort_by = 'sort_by_example' # str | Sort by this attribute (id by default) (optional)
@@ -645,7 +645,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **category_id** | **int**| ID of the category to fetch | 
+ **category_id** | **int**| Category ID to fetch | 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
  **sort_by** | **str**| Sort by this attribute (id by default) | [optional] 
@@ -682,8 +682,8 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ProductsApi()
-customer_id = 789 # int | ID of the customer to fetch
-product_id = 789 # int | ID of the product to fetch
+customer_id = 789 # int | Customer ID to fetch
+product_id = 789 # int | Product ID to fetch
 
 try: 
     api_instance.get_customer_has_access_to_product(customer_id, product_id)
@@ -695,8 +695,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customer_id** | **int**| ID of the customer to fetch | 
- **product_id** | **int**| ID of the product to fetch | 
+ **customer_id** | **int**| Customer ID to fetch | 
+ **product_id** | **int**| Product ID to fetch | 
 
 ### Return type
 
@@ -726,7 +726,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ProductsApi()
-product_id = 789 # int | ID of the product to fetch
+product_id = 789 # int | Product ID to fetch
 
 try: 
     api_response = api_instance.get_product(product_id)
@@ -739,7 +739,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_id** | **int**| ID of the product to fetch | 
+ **product_id** | **int**| Product ID to fetch | 
 
 ### Return type
 
@@ -769,7 +769,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ProductsApi()
-product_id = 789 # int | ID of the product to fetch
+product_id = 789 # int | Product ID to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 image_type = 'image_type_example' # str |  (optional)
@@ -785,7 +785,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_id** | **int**| ID of the product to fetch | 
+ **product_id** | **int**| Product ID to fetch | 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
  **image_type** | **str**|  | [optional] 
@@ -818,7 +818,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ProductsApi()
-product_id = 789 # int | ID of the product to fetch
+product_id = 789 # int | Product ID to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 
@@ -833,7 +833,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_id** | **int**| ID of the product to fetch | 
+ **product_id** | **int**| Product ID to fetch | 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
 
@@ -865,7 +865,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ProductsApi()
-product_id = 789 # int | ID of the product to fetch
+product_id = 789 # int | Product ID to fetch
 
 try: 
     api_instance.get_product_availability(product_id)
@@ -877,7 +877,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_id** | **int**| ID of the product to fetch | 
+ **product_id** | **int**| Product ID to fetch | 
 
 ### Return type
 
@@ -907,7 +907,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ProductsApi()
-product_id = 789 # int | ID of the product to fetch
+product_id = 789 # int | Product ID to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 filters = 'filters_example' # str |      ```     name[value]=string&name[operator]=contains&date_add[value]=string&date_add[operator]=lt     _______________      {     \"name\": {     \"value\": \"string\",     \"operator\": \"contains\"     },     \"date_add\": {     \"value\": \"string\",     \"operator\": \"lt\"     }     } ```     Operator can be strict, contains, gt or lt. (optional)
@@ -925,7 +925,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_id** | **int**| ID of the product to fetch | 
+ **product_id** | **int**| Product ID to fetch | 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
  **filters** | **str**|      &#x60;&#x60;&#x60;     name[value]&#x3D;string&amp;name[operator]&#x3D;contains&amp;date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt     _______________      {     \&quot;name\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;contains\&quot;     },     \&quot;date_add\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;lt\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be strict, contains, gt or lt. | [optional] 
@@ -960,7 +960,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ProductsApi()
-product_id = 789 # int | ID of the product to fetch
+product_id = 789 # int | Product ID to fetch
 
 try: 
     api_response = api_instance.get_product_cover_image(product_id)
@@ -973,7 +973,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_id** | **int**| ID of the product to fetch | 
+ **product_id** | **int**| Product ID to fetch | 
 
 ### Return type
 
@@ -1003,7 +1003,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ProductsApi()
-product_id = 789 # int | ID of the product to fetch
+product_id = 789 # int | Product ID to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 image_type = 'image_type_example' # str |  (optional)
@@ -1019,7 +1019,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_id** | **int**| ID of the product to fetch | 
+ **product_id** | **int**| Product ID to fetch | 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
  **image_type** | **str**|  | [optional] 
@@ -1052,7 +1052,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ProductsApi()
-product_id = 789 # int | ID of the product to fetch
+product_id = 789 # int | Product ID to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 
@@ -1067,7 +1067,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_id** | **int**| ID of the product to fetch | 
+ **product_id** | **int**| Product ID to fetch | 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
 
@@ -1099,7 +1099,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ProductsApi()
-product_id = 789 # int | ID of the product to fetch
+product_id = 789 # int | Product ID to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 
@@ -1114,7 +1114,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_id** | **int**| ID of the product to fetch | 
+ **product_id** | **int**| Product ID to fetch | 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
 
@@ -1146,7 +1146,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ProductsApi()
-product_id = 789 # int | ID of the product to fetch
+product_id = 789 # int | Product ID to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 
@@ -1161,7 +1161,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_id** | **int**| ID of the product to fetch | 
+ **product_id** | **int**| Product ID to fetch | 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
 
@@ -1193,7 +1193,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ProductsApi()
-product_id = 789 # int | ID of the product to fetch
+product_id = 789 # int | Product ID to fetch
 ip_address = 'ip_address_example' # str | address ip
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
@@ -1208,7 +1208,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_id** | **int**| ID of the product to fetch | 
+ **product_id** | **int**| Product ID to fetch | 
  **ip_address** | **str**| address ip | 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
@@ -1241,7 +1241,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ProductsApi()
-product_id = 789 # int | ID of the product to fetch
+product_id = 789 # int | Product ID to fetch
 type = 'type_example' # str | type as screen_small or screen_large (optional)
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
@@ -1257,7 +1257,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_id** | **int**| ID of the product to fetch | 
+ **product_id** | **int**| Product ID to fetch | 
  **type** | **str**| type as screen_small or screen_large | [optional] 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
@@ -1404,7 +1404,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ProductsApi()
-product_id = 789 # int | ID of the product to fetch
+product_id = 789 # int | Product ID to fetch
 page = 789 # int |  (optional)
 filters = 'filters_example' # str |      ```     name[value]=string&name[operator]=strict&duration[value]=string&duration[operator]=gt     _______________      {     \"name\": {     \"value\": \"string\",     \"operator\": \"strict\"     },     \"duration\": {     \"value\": \"string\",     \"operator\": \"gt\"     }     } ```     Operator can be strict, contains, gt or lt. (optional)
 per_page = 789 # int |  (optional)
@@ -1423,7 +1423,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_id** | **int**| ID of the product to fetch | 
+ **product_id** | **int**| Product ID to fetch | 
  **page** | **int**|  | [optional] 
  **filters** | **str**|      &#x60;&#x60;&#x60;     name[value]&#x3D;string&amp;name[operator]&#x3D;strict&amp;duration[value]&#x3D;string&amp;duration[operator]&#x3D;gt     _______________      {     \&quot;name\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;duration\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;gt\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be strict, contains, gt or lt. | [optional] 
  **per_page** | **int**|  | [optional] 
@@ -1516,7 +1516,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ProductsApi()
-product_id = 789 # int | ID of the product to fetch
+product_id = 789 # int | Product ID to fetch
 enabled = 56 # int | Enabled
 behavior_detected_countries = 'behavior_detected_countries_example' # str | Behavior for detected countries
 behavior_non_detected_countries = 'behavior_non_detected_countries_example' # str | Behavior for non-detected countries
@@ -1534,7 +1534,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_id** | **int**| ID of the product to fetch | 
+ **product_id** | **int**| Product ID to fetch | 
  **enabled** | **int**| Enabled | 
  **behavior_detected_countries** | **str**| Behavior for detected countries | 
  **behavior_non_detected_countries** | **str**| Behavior for non-detected countries | 
@@ -1570,7 +1570,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ProductsApi()
-product_id = 789 # int | ID of the product to fetch
+product_id = 789 # int | Product ID to fetch
 body = kinow_client.Product() # Product | 
 
 try: 
@@ -1584,7 +1584,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_id** | **int**| ID of the product to fetch | 
+ **product_id** | **int**| Product ID to fetch | 
  **body** | [**Product**](#Product)|  | 
 
 ### Return type

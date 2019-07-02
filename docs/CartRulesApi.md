@@ -29,7 +29,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.CartRulesApi()
-cart_id = 789 # int | Id of the cart to fetch
+cart_id = 789 # int | Cart ID to fetch
 code = 'code_example' # str | Code of the cart rule to attach
 
 try: 
@@ -42,7 +42,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cart_id** | **int**| Id of the cart to fetch | 
+ **cart_id** | **int**| Cart ID to fetch | 
  **code** | **str**| Code of the cart rule to attach | 
 
 ### Return type
@@ -157,7 +157,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.CartRulesApi()
-cart_rule_id = 789 # int | ID of the cart rule to fetch
+cart_rule_id = 789 # int | Cart rule ID to fetch
 
 try: 
     api_response = api_instance.get_cart_rule(cart_rule_id)
@@ -170,7 +170,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cart_rule_id** | **int**| ID of the cart rule to fetch | 
+ **cart_rule_id** | **int**| Cart rule ID to fetch | 
 
 ### Return type
 

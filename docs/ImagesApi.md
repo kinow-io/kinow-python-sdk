@@ -40,8 +40,8 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ImagesApi()
-product_id = 3.4 # float | Id of the product
-image_id = 3.4 # float | Id of the image to delete
+product_id = 3.4 # float | Product ID to fetch
+image_id = 3.4 # float | Image ID to delete
 
 try: 
     api_instance.delete_product_screenshot(product_id, image_id)
@@ -53,8 +53,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_id** | **float**| Id of the product | 
- **image_id** | **float**| Id of the image to delete | 
+ **product_id** | **float**| Product ID to fetch | 
+ **image_id** | **float**| Image ID to delete | 
 
 ### Return type
 
@@ -84,7 +84,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ImagesApi()
-actor_id = 789 # int | ID of the actor to fetch
+actor_id = 789 # int | Actor ID to fetch
 
 try: 
     api_response = api_instance.get_actor_cover_image(actor_id)
@@ -97,7 +97,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **actor_id** | **int**| ID of the actor to fetch | 
+ **actor_id** | **int**| Actor ID to fetch | 
 
 ### Return type
 
@@ -127,7 +127,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ImagesApi()
-category_id = 789 # int | ID of the category to fetch
+category_id = 789 # int | Category ID to fetch
 
 try: 
     api_response = api_instance.get_category_banner(category_id)
@@ -140,7 +140,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **category_id** | **int**| ID of the category to fetch | 
+ **category_id** | **int**| Category ID to fetch | 
 
 ### Return type
 
@@ -170,7 +170,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ImagesApi()
-director_id = 789 # int | ID of the director to fetch
+director_id = 789 # int | Director ID to fetch
 
 try: 
     api_response = api_instance.get_director_cover_image(director_id)
@@ -183,7 +183,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **director_id** | **int**| ID of the director to fetch | 
+ **director_id** | **int**| Director ID to fetch | 
 
 ### Return type
 
@@ -252,7 +252,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ImagesApi()
-product_id = 789 # int | ID of the product to fetch
+product_id = 789 # int | Product ID to fetch
 
 try: 
     api_response = api_instance.get_product_cover_image(product_id)
@@ -265,7 +265,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_id** | **int**| ID of the product to fetch | 
+ **product_id** | **int**| Product ID to fetch | 
 
 ### Return type
 
@@ -295,7 +295,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ImagesApi()
-product_id = 789 # int | ID of the product to fetch
+product_id = 789 # int | Product ID to fetch
 type = 'type_example' # str | type as screen_small or screen_large (optional)
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
@@ -311,7 +311,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_id** | **int**| ID of the product to fetch | 
+ **product_id** | **int**| Product ID to fetch | 
  **type** | **str**| type as screen_small or screen_large | [optional] 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
@@ -344,7 +344,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ImagesApi()
-product_id = 789 # int | ID of the product to fetch
+product_id = 789 # int | Product ID to fetch
 
 try: 
     api_response = api_instance.get_product_screenshots(product_id)
@@ -357,7 +357,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_id** | **int**| ID of the product to fetch | 
+ **product_id** | **int**| Product ID to fetch | 
 
 ### Return type
 
@@ -387,7 +387,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ImagesApi()
-subscription_id = 789 # int | ID of the subscription to fetch
+subscription_id = 789 # int | Subscription ID to fetch
 
 try: 
     api_response = api_instance.get_subscription_cover_image(subscription_id)
@@ -400,7 +400,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **subscription_id** | **int**| ID of the subscription to fetch | 
+ **subscription_id** | **int**| Subscription ID to fetch | 
 
 ### Return type
 
@@ -430,7 +430,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ImagesApi()
-video_id = 789 # int | ID of the video to fetch
+video_id = 789 # int | Video ID to fetch
 
 try: 
     api_response = api_instance.get_video_cover(video_id)
@@ -443,7 +443,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **video_id** | **int**| ID of the video to fetch | 
+ **video_id** | **int**| Video ID to fetch | 
 
 ### Return type
 
@@ -473,7 +473,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ImagesApi()
-actor_id = 3.4 # float | Id of the actor
+actor_id = 3.4 # float | Actor ID to fetch
 file = '/path/to/file.txt' # file | 
 hash = 'hash_example' # str | 
 hash_algorithm = 'hash_algorithm_example' # str | Hash algorithm to check the hash file (default value is: sha256) (optional)
@@ -489,7 +489,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **actor_id** | **float**| Id of the actor | 
+ **actor_id** | **float**| Actor ID to fetch | 
  **file** | **file**|  | 
  **hash** | **str**|  | 
  **hash_algorithm** | **str**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
@@ -522,7 +522,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ImagesApi()
-category_id = 3.4 # float | Id of the category
+category_id = 3.4 # float | Category ID to fetch
 file = '/path/to/file.txt' # file | 
 hash = 'hash_example' # str | 
 hash_algorithm = 'hash_algorithm_example' # str | Hash algorithm to check the hash file (default value is: sha256) (optional)
@@ -538,7 +538,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **category_id** | **float**| Id of the category | 
+ **category_id** | **float**| Category ID to fetch | 
  **file** | **file**|  | 
  **hash** | **str**|  | 
  **hash_algorithm** | **str**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
@@ -571,7 +571,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ImagesApi()
-director_id = 3.4 # float | Id of the director
+director_id = 3.4 # float | Director ID to fetch
 file = '/path/to/file.txt' # file | 
 hash = 'hash_example' # str | 
 hash_algorithm = 'hash_algorithm_example' # str | Hash algorithm to check the hash file (default value is: sha256) (optional)
@@ -587,7 +587,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **director_id** | **float**| Id of the director | 
+ **director_id** | **float**| Director ID to fetch | 
  **file** | **file**|  | 
  **hash** | **str**|  | 
  **hash_algorithm** | **str**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
@@ -620,7 +620,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ImagesApi()
-product_id = 3.4 # float | Id of the product
+product_id = 3.4 # float | Product ID to fetch
 file = '/path/to/file.txt' # file | 
 hash = 'hash_example' # str | 
 hash_algorithm = 'hash_algorithm_example' # str | Hash algorithm to check the hash file (default value is: sha256) (optional)
@@ -636,7 +636,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_id** | **float**| Id of the product | 
+ **product_id** | **float**| Product ID to fetch | 
  **file** | **file**|  | 
  **hash** | **str**|  | 
  **hash_algorithm** | **str**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
@@ -669,8 +669,8 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ImagesApi()
-product_id = 3.4 # float | Id of the product
-image_id = 3.4 # float | Id of the product
+product_id = 3.4 # float | Product ID to fetch
+image_id = 3.4 # float | Image ID to fetch
 position = 3.4 # float |  (optional)
 
 try: 
@@ -684,8 +684,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_id** | **float**| Id of the product | 
- **image_id** | **float**| Id of the product | 
+ **product_id** | **float**| Product ID to fetch | 
+ **image_id** | **float**| Image ID to fetch | 
  **position** | **float**|  | [optional] 
 
 ### Return type
@@ -716,7 +716,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ImagesApi()
-product_id = 3.4 # float | Id of the product
+product_id = 3.4 # float | Product ID to fetch
 file = '/path/to/file.txt' # file | 
 hash = 'hash_example' # str | 
 hash_algorithm = 'hash_algorithm_example' # str | Hash algorithm to check the hash file (default value is: sha256) (optional)
@@ -733,7 +733,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_id** | **float**| Id of the product | 
+ **product_id** | **float**| Product ID to fetch | 
  **file** | **file**|  | 
  **hash** | **str**|  | 
  **hash_algorithm** | **str**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
@@ -767,7 +767,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ImagesApi()
-subscription_id = 3.4 # float | Id of the subscription
+subscription_id = 3.4 # float | Subscription ID to fetch
 file = '/path/to/file.txt' # file | 
 hash = 'hash_example' # str | 
 hash_algorithm = 'hash_algorithm_example' # str | Hash algorithm to check the hash file (default value is: sha256) (optional)
@@ -783,7 +783,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **subscription_id** | **float**| Id of the subscription | 
+ **subscription_id** | **float**| Subscription ID to fetch | 
  **file** | **file**|  | 
  **hash** | **str**|  | 
  **hash_algorithm** | **str**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
