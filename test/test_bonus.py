@@ -19,11 +19,11 @@ import unittest
 
 import kinow_client
 from kinow_client.rest import ApiException
-from kinow_client.models.customers import Customers
+from kinow_client.models.bonus import Bonus
 
 
-class TestCustomers(unittest.TestCase):
-    """ Customers unit test stubs """
+class TestBonus(unittest.TestCase):
+    """ Bonus unit test stubs """
 
     def setUp(self):
         pass
@@ -31,11 +31,11 @@ class TestCustomers(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testCustomers(self):
+    def testBonus(self):
         """
-        Test Customers
+        Test Bonus
         """
-        model = kinow_client.models.customers.Customers()
+        model = kinow_client.models.bonus.Bonus()
 
 
 if __name__ == '__main__':

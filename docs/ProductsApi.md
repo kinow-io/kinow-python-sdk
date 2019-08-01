@@ -38,6 +38,7 @@ Method | HTTP request | Description
 [**search_products**](#search_products) | **GET** /products/search/{search_query} | 
 [**set_product_geolocation**](#set_product_geolocation) | **PUT** /products/{product_id}/geolocations | 
 [**update_product**](#update_product) | **PUT** /products/{product_id} | 
+[**update_product_group_restriction_behavior**](#update_product_group_restriction_behavior) | **PUT** /products/{product_id}/groups/behavior | 
 
 
 ## **attach_features_to_product**
@@ -1638,6 +1639,50 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Product**](#Product)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **update_product_group_restriction_behavior**
+> update_product_group_restriction_behavior(product_id, behavior)
+
+
+
+Update product group restriction behavior
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.ProductsApi()
+product_id = 789 # int | Product ID to fetch
+behavior = 56 # int |       Group restriction behavior        0 - Disable      1 - Allow Groups      2 - Forbid Groups
+
+try: 
+    api_instance.update_product_group_restriction_behavior(product_id, behavior)
+except ApiException as e:
+    print("Exception when calling ProductsApi->update_product_group_restriction_behavior: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_id** | **int**| Product ID to fetch | 
+ **behavior** | **int**|       Group restriction behavior        0 - Disable      1 - Allow Groups      2 - Forbid Groups | 
+
+### Return type
+
+void (empty response body)
 
 ### HTTP request headers
 

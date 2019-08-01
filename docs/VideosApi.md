@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**get_disabled_subscriptions**](#get_disabled_subscriptions) | **GET** /videos/{video_id}/disabled-subscriptions | 
 [**get_video**](#get_video) | **GET** /videos/{video_id} | 
 [**get_video_access**](#get_video_access) | **GET** /videos/{video_id}/customers/{customer_id}/access | 
+[**get_video_bonus**](#get_video_bonus) | **GET** /videos/{video_id}/bonus | 
 [**get_video_download_url**](#get_video_download_url) | **GET** /videos/{video_id}/download-url | 
 [**get_video_features**](#get_video_features) | **GET** /videos/{video_id}/features | 
 [**get_video_geolocation**](#get_video_geolocation) | **GET** /videos/{video_id}/geolocation | 
@@ -413,6 +414,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_video_bonus**
+> list[Bonus] get_video_bonus(video_id)
+
+
+
+Get bonus list
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.VideosApi()
+video_id = 789 # int | Video ID to fetch
+
+try: 
+    api_response = api_instance.get_video_bonus(video_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling VideosApi->get_video_bonus: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **video_id** | **int**| Video ID to fetch | 
+
+### Return type
+
+[**list[Bonus]**](#Bonus)
 
 ### HTTP request headers
 
