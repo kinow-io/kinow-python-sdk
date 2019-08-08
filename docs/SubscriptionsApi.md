@@ -196,7 +196,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_subscriptions**
-> Subscriptions get_subscriptions(page=page, per_page=per_page, only_active=only_active)
+> Subscriptions get_subscriptions(page=page, per_page=per_page)
 
 
 
@@ -214,10 +214,9 @@ from pprint import pprint
 api_instance = kinow_client.SubscriptionsApi()
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
-only_active = true # bool |  (optional)
 
 try: 
-    api_response = api_instance.get_subscriptions(page=page, per_page=per_page, only_active=only_active)
+    api_response = api_instance.get_subscriptions(page=page, per_page=per_page)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SubscriptionsApi->get_subscriptions: %s\n" % e)
@@ -229,7 +228,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
- **only_active** | **bool**|  | [optional] 
 
 ### Return type
 
