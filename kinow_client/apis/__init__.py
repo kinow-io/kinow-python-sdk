@@ -23,6 +23,7 @@ from .feature_values_api import FeatureValuesApi
 from .features_api import FeaturesApi
 from .genders_api import GendersApi
 from .geolocations_api import GeolocationsApi
+from .gifts_api import GiftsApi
 from .groups_api import GroupsApi
 from .images_api import ImagesApi
 from .languages_api import LanguagesApi
