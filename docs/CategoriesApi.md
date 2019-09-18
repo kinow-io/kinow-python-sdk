@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**get_category_banner**](#get_category_banner) | **GET** /categories/{category_id}/banner | 
 [**get_category_features**](#get_category_features) | **GET** /categories/{category_id}/features | 
 [**get_category_products**](#get_category_products) | **GET** /categories/{category_id}/products | 
+[**get_category_thumbnail**](#get_category_thumbnail) | **GET** /categories/{category_id}/thumbnail | 
 [**get_product_categories**](#get_product_categories) | **GET** /products/{product_id}/categories | 
 [**get_subscription_categories**](#get_subscription_categories) | **GET** /subscriptions/{subscription_id}/categories | 
 
@@ -390,6 +391,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Products**](#Products)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_category_thumbnail**
+> Image get_category_thumbnail(category_id)
+
+
+
+Get thumbnail of a category
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.CategoriesApi()
+category_id = 789 # int | Category ID to fetch
+
+try: 
+    api_response = api_instance.get_category_thumbnail(category_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CategoriesApi->get_category_thumbnail: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **category_id** | **int**| Category ID to fetch | 
+
+### Return type
+
+[**Image**](#Image)
 
 ### HTTP request headers
 
