@@ -7,7 +7,6 @@ Method | HTTP request | Description
 [**delete_product_screenshot**](#delete_product_screenshot) | **DELETE** /products/{product_id}/screenshots/{image_id} | 
 [**get_actor_cover_image**](#get_actor_cover_image) | **GET** /actors/{actor_id}/cover | 
 [**get_category_banner**](#get_category_banner) | **GET** /categories/{category_id}/banner | 
-[**get_category_thumbnail**](#get_category_thumbnail) | **GET** /categories/{category_id}/thumbnail | 
 [**get_director_cover_image**](#get_director_cover_image) | **GET** /directors/{director_id}/cover | 
 [**get_intro_image**](#get_intro_image) | **GET** /widgets/intro/images | 
 [**get_product_cover_image**](#get_product_cover_image) | **GET** /products/{product_id}/cover | 
@@ -135,49 +134,6 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ImagesApi->get_category_banner: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **category_id** | **int**| Category ID to fetch | 
-
-### Return type
-
-[**Image**](#Image)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
-
-## **get_category_thumbnail**
-> Image get_category_thumbnail(category_id)
-
-
-
-Get thumbnail of a category
-
-### Example 
-```python
-from __future__ import print_statement
-import time
-import kinow_client
-from kinow_client.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = kinow_client.ImagesApi()
-category_id = 789 # int | Category ID to fetch
-
-try: 
-    api_response = api_instance.get_category_thumbnail(category_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ImagesApi->get_category_thumbnail: %s\n" % e)
 ```
 
 ### Parameters

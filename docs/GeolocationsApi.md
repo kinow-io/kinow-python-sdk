@@ -5,6 +5,7 @@ All URIs are relative to *https://api.kinow.com/api*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**geolocations**](#geolocations) | **POST** /geolocations | 
+[**get_ip_location**](#get_ip_location) | **GET** /geolocations/ip | 
 [**get_product_geolocations**](#get_product_geolocations) | **GET** /products/{product_id}/geolocations | 
 [**get_product_geolocations_by_ip**](#get_product_geolocations_by_ip) | **POST** /products/{product_id}/geolocations | 
 [**get_video_geolocation_by_ip**](#get_video_geolocation_by_ip) | **POST** /videos/{video_id}/geolocations/{ip_address} | 
@@ -46,6 +47,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_ip_location**
+> IPLocation get_ip_location(ip_address)
+
+
+
+Get IP location
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.GeolocationsApi()
+ip_address = 'ip_address_example' # str | address ip
+
+try: 
+    api_response = api_instance.get_ip_location(ip_address)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GeolocationsApi->get_ip_location: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ip_address** | **str**| address ip | 
+
+### Return type
+
+[**IPLocation**](#IPLocation)
 
 ### HTTP request headers
 
