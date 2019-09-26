@@ -14,9 +14,10 @@ Method | HTTP request | Description
 [**get_customer_carts**](#get_customer_carts) | **GET** /customers/{customer_id}/carts | 
 [**get_last_cart**](#get_last_cart) | **GET** /customers/{customer_id}/last-cart | 
 [**get_payment_url**](#get_payment_url) | **GET** /carts/{cart_id}/payments/{payment_name} | 
+[**prepare_payment**](#prepare_payment) | **POST** /carts/{cart_id}/payments/{payment_name}/prepare | 
 [**update_cart**](#update_cart) | **PUT** /carts/{cart_id} | 
-[**validate_cart**](#validate_cart) | **POST** /carts/{cart_id}/payments/{payment_name}/validate | 
 [**validate_free_order**](#validate_free_order) | **POST** /carts/{cart_id}/validate-free-order | 
+[**validate_payment**](#validate_payment) | **POST** /carts/{cart_id}/payments/{payment_name}/validate | 
 
 
 ## **add_product_to_cart**
@@ -432,7 +433,7 @@ Name | Type | Description  | Notes
 
 
 
-Get payment url
+Get payment gateway URL to use in iframe
 
 ### Example 
 ```python
@@ -445,7 +446,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = kinow_client.CartsApi()
 cart_id = 789 # int | Cart ID to fetch
-payment_name = 'payment_name_example' # str | Payment module name
+payment_name = 'payment_name_example' # str | Payment gateway name
 
 try: 
     api_response = api_instance.get_payment_url(cart_id, payment_name)
@@ -459,11 +460,56 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cart_id** | **int**| Cart ID to fetch | 
- **payment_name** | **str**| Payment module name | 
+ **payment_name** | **str**| Payment gateway name | 
 
 ### Return type
 
 [**PaymentUrl**](#PaymentUrl)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **prepare_payment**
+> PaymentDetails1 prepare_payment(cart_id, payment_name)
+
+
+
+Prepare payment
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.CartsApi()
+cart_id = 789 # int | Cart ID to fetch
+payment_name = 'payment_name_example' # str | Payment gateway name
+
+try: 
+    api_response = api_instance.prepare_payment(cart_id, payment_name)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CartsApi->prepare_payment: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cart_id** | **int**| Cart ID to fetch | 
+ **payment_name** | **str**| Payment gateway name | 
+
+### Return type
+
+[**PaymentDetails1**](#PaymentDetails1)
 
 ### HTTP request headers
 
@@ -517,52 +563,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
-## **validate_cart**
-> validate_cart(cart_id, payment_name, payment_arguments)
-
-
-
-Validate order
-
-### Example 
-```python
-from __future__ import print_statement
-import time
-import kinow_client
-from kinow_client.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = kinow_client.CartsApi()
-cart_id = 789 # int | Cart ID to fetch
-payment_name = 'payment_name_example' # str | Payment module name
-payment_arguments = kinow_client.PaymentArguments() # PaymentArguments | payment arguments, token and tokenType
-
-try: 
-    api_instance.validate_cart(cart_id, payment_name, payment_arguments)
-except ApiException as e:
-    print("Exception when calling CartsApi->validate_cart: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cart_id** | **int**| Cart ID to fetch | 
- **payment_name** | **str**| Payment module name | 
- **payment_arguments** | [**PaymentArguments**](#PaymentArguments)| payment arguments, token and tokenType | 
-
-### Return type
-
-void (empty response body)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
-
 ## **validate_free_order**
 > validate_free_order(cart_id)
 
@@ -593,6 +593,52 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cart_id** | **int**| Cart ID to validate | 
+
+### Return type
+
+void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **validate_payment**
+> validate_payment(cart_id, payment_name, payment_argument)
+
+
+
+Validate payment
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.CartsApi()
+cart_id = 789 # int | Cart ID to fetch
+payment_name = 'payment_name_example' # str | Payment gateway name
+payment_argument = kinow_client.PaymentArguments() # PaymentArguments | Payment argument
+
+try: 
+    api_instance.validate_payment(cart_id, payment_name, payment_argument)
+except ApiException as e:
+    print("Exception when calling CartsApi->validate_payment: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cart_id** | **int**| Cart ID to fetch | 
+ **payment_name** | **str**| Payment gateway name | 
+ **payment_argument** | [**PaymentArguments**](#PaymentArguments)| Payment argument | 
 
 ### Return type
 

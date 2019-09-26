@@ -22,8 +22,10 @@ Method | HTTP request | Description
 [**get_customer_orders**](#get_customer_orders) | **GET** /customers/{customer_id}/orders | 
 [**get_customers**](#get_customers) | **GET** /customers | 
 [**get_facebook_customer**](#get_facebook_customer) | **GET** /customers/facebook/{facebook_id} | 
-[**get_payment_customer_id**](#get_payment_customer_id) | **GET** /customers/{customer_id}/payments/{payment_name}/customer | 
+[**get_payment_methods**](#get_payment_methods) | **GET** /customers/{customer_id}/payments/{payment_name}/payment-methods | 
+[**get_pending_payments**](#get_pending_payments) | **GET** /customers/{customer_id}/payments/{payment_name}/pending | 
 [**update_customer**](#update_customer) | **PUT** /customers/{customer_id} | 
+[**update_payment_method**](#update_payment_method) | **PUT** /customers/{customer_id}/payments/{payment_name}/payment-method | 
 
 
 ## **attach_cart_to_customer**
@@ -832,12 +834,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
-## **get_payment_customer_id**
-> str get_payment_customer_id(customer_id, payment_name)
+## **get_payment_methods**
+> list[PaymentMethods] get_payment_methods(customer_id, payment_name)
 
 
 
-Get payment modules list
+Get payment methods saved for a Customer on a payment gateway
 
 ### Example 
 ```python
@@ -853,10 +855,10 @@ customer_id = 789 # int |
 payment_name = 'payment_name_example' # str | 
 
 try: 
-    api_response = api_instance.get_payment_customer_id(customer_id, payment_name)
+    api_response = api_instance.get_payment_methods(customer_id, payment_name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CustomersApi->get_payment_customer_id: %s\n" % e)
+    print("Exception when calling CustomersApi->get_payment_methods: %s\n" % e)
 ```
 
 ### Parameters
@@ -868,7 +870,52 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**str**
+[**list[PaymentMethods]**](#PaymentMethods)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_pending_payments**
+> list[PaymentDetails] get_pending_payments(payment_name, customer_id)
+
+
+
+Get pending payments for a Customer on a payment gateway
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.CustomersApi()
+payment_name = 'payment_name_example' # str | 
+customer_id = 789 # int | 
+
+try: 
+    api_response = api_instance.get_pending_payments(payment_name, customer_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CustomersApi->get_pending_payments: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payment_name** | **str**|  | 
+ **customer_id** | **int**|  | 
+
+### Return type
+
+[**list[PaymentDetails]**](#PaymentDetails)
 
 ### HTTP request headers
 
@@ -914,6 +961,52 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Customer**](#Customer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **update_payment_method**
+> update_payment_method(customer_id, payment_name, payment_arguments)
+
+
+
+Update payment method for a Customer on a payment gateway
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.CustomersApi()
+customer_id = 789 # int | 
+payment_name = 'payment_name_example' # str | 
+payment_arguments = kinow_client.PaymentArguments() # PaymentArguments | Payment arguments
+
+try: 
+    api_instance.update_payment_method(customer_id, payment_name, payment_arguments)
+except ApiException as e:
+    print("Exception when calling CustomersApi->update_payment_method: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customer_id** | **int**|  | 
+ **payment_name** | **str**|  | 
+ **payment_arguments** | [**PaymentArguments**](#PaymentArguments)| Payment arguments | 
+
+### Return type
+
+void (empty response body)
 
 ### HTTP request headers
 

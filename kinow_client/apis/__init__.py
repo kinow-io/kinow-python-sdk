@@ -13,6 +13,7 @@ from .cms_pages_api import CMSPagesApi
 from .cart_rules_api import CartRulesApi
 from .carts_api import CartsApi
 from .categories_api import CategoriesApi
+from .configuration_api import ConfigurationApi
 from .countries_api import CountriesApi
 from .currencies_api import CurrenciesApi
 from .customer_threads_api import CustomerThreadsApi
