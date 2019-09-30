@@ -199,7 +199,7 @@ Name | Type | Description  | Notes
 
 
 
-Prepare payment
+Prepare payment on a payment gateway
 
 ### Example 
 ```python
@@ -332,7 +332,7 @@ void (empty response body)
 
 
 
-Validate payment
+Validate payment on a payment gateway
 
 ### Example 
 ```python
