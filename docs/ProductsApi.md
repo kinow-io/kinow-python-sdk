@@ -32,6 +32,7 @@ Method | HTTP request | Description
 [**get_product_geolocations_by_ip**](#get_product_geolocations_by_ip) | **POST** /products/{product_id}/geolocations | 
 [**get_product_groups**](#get_product_groups) | **GET** /products/{product_id}/groups | 
 [**get_product_images**](#get_product_images) | **GET** /products/{product_id}/images | 
+[**get_product_subscription**](#get_product_subscription) | **GET** /products/{product_id}/subscription | 
 [**get_products**](#get_products) | **GET** /products | 
 [**get_products_from_product**](#get_products_from_product) | **GET** /products/{product_id}/products | 
 [**get_videos_from_product**](#get_videos_from_product) | **GET** /products/{product_id}/videos | 
@@ -1314,6 +1315,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ProductImagesResponse**](#ProductImagesResponse)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_product_subscription**
+> Subscription get_product_subscription(product_id)
+
+
+
+Get Subscription linked to a Product
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.ProductsApi()
+product_id = 789 # int | Product ID to fetch
+
+try: 
+    api_response = api_instance.get_product_subscription(product_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ProductsApi->get_product_subscription: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_id** | **int**| Product ID to fetch | 
+
+### Return type
+
+[**Subscription**](#Subscription)
 
 ### HTTP request headers
 

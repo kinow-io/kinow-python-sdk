@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**get_customer_accesses_videos**](#get_customer_accesses_videos) | **GET** /customers/{customer_id}/accesses/videos | 
 [**get_customer_address**](#get_customer_address) | **GET** /customers/{customer_id}/address | 
 [**get_customer_can_see_product**](#get_customer_can_see_product) | **GET** /customers/{customer_id}/products/{product_id}/can-see | 
+[**get_customer_carts**](#get_customer_carts) | **GET** /customers/{customer_id}/carts | 
 [**get_customer_current_views**](#get_customer_current_views) | **GET** /customers/{customer_id}/current-views | 
 [**get_customer_groups**](#get_customer_groups) | **GET** /customers/{customer_id}/groups | 
 [**get_customer_has_access_to_product**](#get_customer_has_access_to_product) | **GET** /customers/{customer_id}/products/{product_id}/has-access | 
@@ -507,6 +508,59 @@ Name | Type | Description  | Notes
 ### Return type
 
 void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_customer_carts**
+> Carts get_customer_carts(customer_id, page=page, per_page=per_page, filters=filters, sort_by=sort_by, sort_direction=sort_direction)
+
+
+
+Get customer carts
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.CustomersApi()
+customer_id = 789 # int | Customer ID to fetch
+page = 789 # int |  (optional)
+per_page = 789 # int |  (optional)
+filters = 'filters_example' # str |       ```      date_add[value]=string&date_add[operator]=lt      _______________        {      \"date_add\": {      \"value\": \"string\",      \"operator\": \"lt\"      }      } ```      Operator can be strict, contains, gt or lt. (optional)
+sort_by = 'sort_by_example' # str | Sort by this attribute (id by default) (optional)
+sort_direction = 'sort_direction_example' # str | Sorting direction (asc by default) (optional)
+
+try: 
+    api_response = api_instance.get_customer_carts(customer_id, page=page, per_page=per_page, filters=filters, sort_by=sort_by, sort_direction=sort_direction)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CustomersApi->get_customer_carts: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customer_id** | **int**| Customer ID to fetch | 
+ **page** | **int**|  | [optional] 
+ **per_page** | **int**|  | [optional] 
+ **filters** | **str**|       &#x60;&#x60;&#x60;      date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt      _______________        {      \&quot;date_add\&quot;: {      \&quot;value\&quot;: \&quot;string\&quot;,      \&quot;operator\&quot;: \&quot;lt\&quot;      }      } &#x60;&#x60;&#x60;      Operator can be strict, contains, gt or lt. | [optional] 
+ **sort_by** | **str**| Sort by this attribute (id by default) | [optional] 
+ **sort_direction** | **str**| Sorting direction (asc by default) | [optional] 
+
+### Return type
+
+[**Carts**](#Carts)
 
 ### HTTP request headers
 

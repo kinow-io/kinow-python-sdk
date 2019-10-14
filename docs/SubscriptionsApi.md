@@ -5,6 +5,7 @@ All URIs are relative to *https://api.kinow.com/api*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_disabled_subscriptions**](#get_disabled_subscriptions) | **GET** /videos/{video_id}/disabled-subscriptions | 
+[**get_product_subscription**](#get_product_subscription) | **GET** /products/{product_id}/subscription | 
 [**get_subscription**](#get_subscription) | **GET** /subscriptions/{subscription_id} | 
 [**get_subscription_categories**](#get_subscription_categories) | **GET** /subscriptions/{subscription_id}/categories | 
 [**get_subscription_cover_image**](#get_subscription_cover_image) | **GET** /subscriptions/{subscription_id}/cover | 
@@ -50,6 +51,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Subscriptions**](#Subscriptions)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_product_subscription**
+> Subscription get_product_subscription(product_id)
+
+
+
+Get Subscription linked to a Product
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.SubscriptionsApi()
+product_id = 789 # int | Product ID to fetch
+
+try: 
+    api_response = api_instance.get_product_subscription(product_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SubscriptionsApi->get_product_subscription: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_id** | **int**| Product ID to fetch | 
+
+### Return type
+
+[**Subscription**](#Subscription)
 
 ### HTTP request headers
 
