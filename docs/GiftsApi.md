@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**delete_gift**](#delete_gift) | **DELETE** /gifts/{gift_id} | 
 [**delete_gifts_in_cart**](#delete_gifts_in_cart) | **DELETE** /carts/{cart_id}/gift/ | 
 [**get_gift**](#get_gift) | **GET** /gifts/{gift_id} | 
+[**get_gift_by_token**](#get_gift_by_token) | **GET** /gifts/{token} | 
 [**get_gift_in_cart**](#get_gift_in_cart) | **GET** /carts/{cart_id}/gift | 
 [**get_gift_token**](#get_gift_token) | **GET** /gifts/{gift_id}/token | 
 [**get_gifts**](#get_gifts) | **GET** /gifts | 
@@ -218,6 +219,49 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **gift_id** | **int**| Gift ID to fetch | 
+
+### Return type
+
+[**Gift**](#Gift)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_gift_by_token**
+> Gift get_gift_by_token(token)
+
+
+
+Retrieve a Gift using its token
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.GiftsApi()
+token = 'token_example' # str | Gift token to fetch
+
+try: 
+    api_response = api_instance.get_gift_by_token(token)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GiftsApi->get_gift_by_token: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **token** | **str**| Gift token to fetch | 
 
 ### Return type
 

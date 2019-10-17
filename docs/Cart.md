@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **products** | [**list[Product]**](#Product) |  | [optional] 
 **cart_rules** | [**list[CartRule]**](#CartRule) |  | [optional] 
 **total_without_tax** | **float** |  | [optional] 
+**total_trial** | **float** |  | [optional] 
 
 [[Back to Model list]](#documentation-for-models) [[Back to API list]](#documentation-for-api-endpoints)
 
