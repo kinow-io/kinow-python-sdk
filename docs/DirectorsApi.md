@@ -201,7 +201,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_directors**
-> Director1 get_directors(page=page, per_page=per_page, image_type=image_type)
+> Directors get_directors(page=page, per_page=per_page, image_type=image_type)
 
 
 
@@ -238,7 +238,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Director1**](#Director1)
+[**Directors**](#Directors)
 
 ### HTTP request headers
 
@@ -248,7 +248,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_product_directors**
-> Director1 get_product_directors(product_id, page=page, per_page=per_page, image_type=image_type)
+> Directors get_product_directors(product_id, page=page, per_page=per_page, image_type=image_type)
 
 
 
@@ -287,7 +287,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Director1**](#Director1)
+[**Directors**](#Directors)
 
 ### HTTP request headers
 

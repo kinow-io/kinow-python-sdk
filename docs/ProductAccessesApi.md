@@ -11,6 +11,9 @@ Method | HTTP request | Description
 [**get_product_access**](#get_product_access) | **GET** /product-accesses/{product_access_id} | 
 [**get_product_accesses**](#get_product_accesses) | **GET** /product-accesses | 
 [**stop_subscription**](#stop_subscription) | **PUT** /customers/{customer_id}/unsubscribe | 
+[**switch_subscription**](#switch_subscription) | **PUT** /product-accesses/{product_access_id}/switch | 
+[**switch_subscription_delete**](#switch_subscription_delete) | **DELETE** /product-accesses/{product_access_id}/switch | 
+[**switch_subscription_pending**](#switch_subscription_pending) | **GET** /product-accesses/{product_access_id}/switch | 
 [**update_product_access**](#update_product_access) | **PUT** /product-accesses/{product_access_id} | 
 
 
@@ -74,7 +77,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ProductAccessesApi()
-product_access_id = 789 # int | Product access ID to fetch
+product_access_id = 789 # int | Access ID to fetch
 
 try: 
     api_instance.delete_product_access(product_access_id)
@@ -86,7 +89,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_access_id** | **int**| Product access ID to fetch | 
+ **product_access_id** | **int**| Access ID to fetch | 
 
 ### Return type
 
@@ -298,7 +301,7 @@ Name | Type | Description  | Notes
 
 
 
-unsubcribe a user from a access
+Unsubcribe an Access recurring payment
 
 ### Example 
 ```python
@@ -329,6 +332,135 @@ Name | Type | Description  | Notes
 ### Return type
 
 void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **switch_subscription**
+> switch_subscription(product_access_id, subscription_id)
+
+
+
+Switch an Access to another Subscription
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.ProductAccessesApi()
+product_access_id = 'product_access_id_example' # str | Access ID to switch
+subscription_id = 789 # int | Subscription to switch to
+
+try: 
+    api_instance.switch_subscription(product_access_id, subscription_id)
+except ApiException as e:
+    print("Exception when calling ProductAccessesApi->switch_subscription: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_access_id** | **str**| Access ID to switch | 
+ **subscription_id** | **int**| Subscription to switch to | 
+
+### Return type
+
+void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **switch_subscription_delete**
+> switch_subscription_delete(product_access_id)
+
+
+
+Delete Access pending switch
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.ProductAccessesApi()
+product_access_id = 789 # int | Product access ID to fetch
+
+try: 
+    api_instance.switch_subscription_delete(product_access_id)
+except ApiException as e:
+    print("Exception when calling ProductAccessesApi->switch_subscription_delete: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_access_id** | **int**| Product access ID to fetch | 
+
+### Return type
+
+void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **switch_subscription_pending**
+> Subscription switch_subscription_pending(product_access_id)
+
+
+
+Return Access pending switch
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.ProductAccessesApi()
+product_access_id = 'product_access_id_example' # str | Access ID to fetch
+
+try: 
+    api_response = api_instance.switch_subscription_pending(product_access_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ProductAccessesApi->switch_subscription_pending: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_access_id** | **str**| Access ID to fetch | 
+
+### Return type
+
+[**Subscription**](#Subscription)
 
 ### HTTP request headers
 

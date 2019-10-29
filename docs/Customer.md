@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **birthday** | **str** |  | [optional] 
 **newsletter** | **bool** |  | [optional] 
 **optin** | **bool** |  | [optional] 
+**notification** | **bool** |  | [optional] 
 **active** | **bool** |  | [optional] 
 **id_lang** | **int** |  | [optional] 
 **date_add** | **str** |  | [optional] 

@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 **behavior_detected_countries** | **str** |  | [optional] 
 **behavior_non_detected_countries** | **str** |  | [optional] 
 **has_free_access** | [**VideoFreeAccess**](#VideoFreeAccess) |  | [optional] 
+**advertising_url** | **str** |  | [optional] 
 
 [[Back to Model list]](#documentation-for-models) [[Back to API list]](#documentation-for-api-endpoints)
 

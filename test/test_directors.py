@@ -19,11 +19,11 @@ import unittest
 
 import kinow_client
 from kinow_client.rest import ApiException
-from kinow_client.models.customer_id import CustomerId
+from kinow_client.models.directors import Directors
 
 
-class TestCustomerId(unittest.TestCase):
-    """ CustomerId unit test stubs """
+class TestDirectors(unittest.TestCase):
+    """ Directors unit test stubs """
 
     def setUp(self):
         pass
@@ -31,11 +31,11 @@ class TestCustomerId(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testCustomerId(self):
+    def testDirectors(self):
         """
-        Test CustomerId
+        Test Directors
         """
-        model = kinow_client.models.customer_id.CustomerId()
+        model = kinow_client.models.directors.Directors()
 
 
 if __name__ == '__main__':
