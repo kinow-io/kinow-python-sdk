@@ -7,7 +7,9 @@ Method | HTTP request | Description
 [**attach_cover_to_extract**](#attach_cover_to_extract) | **POST** /extracts/{extract_id}/cover | 
 [**create_extract**](#create_extract) | **POST** /extracts | 
 [**delete_extract**](#delete_extract) | **DELETE** /extracts/{extract_id} | 
+[**get_extract**](#get_extract) | **GET** /extracts/{extract_id} | 
 [**get_extract_player**](#get_extract_player) | **GET** /extracts/{extract_id}/player | 
+[**get_extracts**](#get_extracts) | **GET** /extracts | 
 [**get_product_extracts**](#get_product_extracts) | **GET** /products/{product_id}/extracts | 
 [**update_extract**](#update_extract) | **PUT** /extracts/{extract_id} | 
 
@@ -141,6 +143,49 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
+## **get_extract**
+> Extract get_extract(extract_id)
+
+
+
+Get extract
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.ExtractsApi()
+extract_id = 789 # int | Extract ID to fetch
+
+try: 
+    api_response = api_instance.get_extract(extract_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExtractsApi->get_extract: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **extract_id** | **int**| Extract ID to fetch | 
+
+### Return type
+
+[**Extract**](#Extract)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
 ## **get_extract_player**
 > PlayerConfiguration get_extract_player(extract_id)
 
@@ -184,8 +229,53 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
+## **get_extracts**
+> Videos get_extracts(page=page, per_page=per_page)
+
+
+
+Get extracts list
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.ExtractsApi()
+page = 789 # int |  (optional)
+per_page = 789 # int |  (optional)
+
+try: 
+    api_response = api_instance.get_extracts(page=page, per_page=per_page)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExtractsApi->get_extracts: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **int**|  | [optional] 
+ **per_page** | **int**|  | [optional] 
+
+### Return type
+
+[**Videos**](#Videos)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
 ## **get_product_extracts**
-> ProductExtractsResponse get_product_extracts(product_id, page=page, per_page=per_page)
+> Videos get_product_extracts(product_id, page=page, per_page=per_page)
 
 
 
@@ -222,7 +312,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProductExtractsResponse**](#ProductExtractsResponse)
+[**Videos**](#Videos)
 
 ### HTTP request headers
 

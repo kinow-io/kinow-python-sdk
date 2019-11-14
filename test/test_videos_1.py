@@ -19,11 +19,11 @@ import unittest
 
 import kinow_client
 from kinow_client.rest import ApiException
-from kinow_client.models.cart_rule import CartRule
+from kinow_client.models.videos_1 import Videos1
 
 
-class TestCartRule(unittest.TestCase):
-    """ CartRule unit test stubs """
+class TestVideos1(unittest.TestCase):
+    """ Videos1 unit test stubs """
 
     def setUp(self):
         pass
@@ -31,11 +31,11 @@ class TestCartRule(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testCartRule(self):
+    def testVideos1(self):
         """
-        Test CartRule
+        Test Videos1
         """
-        model = kinow_client.models.cart_rule.CartRule()
+        model = kinow_client.models.videos_1.Videos1()
 
 
 if __name__ == '__main__':

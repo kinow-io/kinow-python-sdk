@@ -790,11 +790,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_videos**
-> Videos get_videos(page=page, per_page=per_page, features=features, filters=filters, ip=ip)
+> Videos1 get_videos(page=page, per_page=per_page, features=features, filters=filters, ip=ip)
 
 
 
-Get customer list
+Get video list
 
 ### Example 
 ```python
@@ -831,7 +831,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Videos**](#Videos)
+[**Videos1**](#Videos1)
 
 ### HTTP request headers
 
@@ -841,7 +841,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_videos_from_product**
-> Videos get_videos_from_product(product_id, page=page, filters=filters, per_page=per_page, ip=ip, sort_by=sort_by, sort_direction=sort_direction)
+> Videos1 get_videos_from_product(product_id, page=page, filters=filters, per_page=per_page, ip=ip, sort_by=sort_by, sort_direction=sort_direction)
 
 
 
@@ -886,7 +886,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Videos**](#Videos)
+[**Videos1**](#Videos1)
 
 ### HTTP request headers
 
