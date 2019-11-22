@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 ## **consume_gift**
-> consume_gift(gift_id, customer_id)
+> consume_gift(gift_id, customer_id, token=token)
 
 
 
@@ -35,9 +35,10 @@ from pprint import pprint
 api_instance = kinow_client.GiftsApi()
 gift_id = 789 # int | Gift ID to fetch
 customer_id = 789 # int | Customer ID to fetch
+token = 'token_example' # str | Gift token to check (optional) (optional)
 
 try: 
-    api_instance.consume_gift(gift_id, customer_id)
+    api_instance.consume_gift(gift_id, customer_id, token=token)
 except ApiException as e:
     print("Exception when calling GiftsApi->consume_gift: %s\n" % e)
 ```
@@ -48,6 +49,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **gift_id** | **int**| Gift ID to fetch | 
  **customer_id** | **int**| Customer ID to fetch | 
+ **token** | **str**| Gift token to check (optional) | [optional] 
 
 ### Return type
 

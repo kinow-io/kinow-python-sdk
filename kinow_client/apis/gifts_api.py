@@ -55,6 +55,7 @@ class GiftsApi(object):
             for asynchronous request. (optional)
         :param int gift_id: Gift ID to fetch (required)
         :param int customer_id: Customer ID to fetch (required)
+        :param str token: Gift token to check (optional)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -81,12 +82,13 @@ class GiftsApi(object):
             for asynchronous request. (optional)
         :param int gift_id: Gift ID to fetch (required)
         :param int customer_id: Customer ID to fetch (required)
+        :param str token: Gift token to check (optional)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['gift_id', 'customer_id']
+        all_params = ['gift_id', 'customer_id', 'token']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -119,6 +121,8 @@ class GiftsApi(object):
         query_params = {}
         if 'customer_id' in params:
             query_params['customer_id'] = params['customer_id']
+        if 'token' in params:
+            query_params['token'] = params['token']
 
         header_params = {}
 
