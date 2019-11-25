@@ -25,6 +25,7 @@ Method | HTTP request | Description
 [**get_facebook_customer**](#get_facebook_customer) | **GET** /customers/facebook/{facebook_id} | 
 [**get_payment_methods**](#get_payment_methods) | **GET** /customers/{customer_id}/payments/{payment_name}/payment-methods | 
 [**get_pending_payments**](#get_pending_payments) | **GET** /customers/{customer_id}/payments/{payment_name}/pending | 
+[**stop_subscription**](#stop_subscription) | **PUT** /customers/{customer_id}/unsubscribe | 
 [**update_customer**](#update_customer) | **PUT** /customers/{customer_id} | 
 [**update_payment_method**](#update_payment_method) | **PUT** /customers/{customer_id}/payments/{payment_name}/payment-method | 
 
@@ -970,6 +971,50 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**list[PaymentDetails]**](#PaymentDetails)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **stop_subscription**
+> stop_subscription(customer_id, product_access_id)
+
+
+
+Unsubcribe an Access recurring payment
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.CustomersApi()
+customer_id = 789 # int | Customer ID to unsubscribe
+product_access_id = 'product_access_id_example' # str | Product access ID to unsubscribe from
+
+try: 
+    api_instance.stop_subscription(customer_id, product_access_id)
+except ApiException as e:
+    print("Exception when calling CustomersApi->stop_subscription: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customer_id** | **int**| Customer ID to unsubscribe | 
+ **product_access_id** | **str**| Product access ID to unsubscribe from | 
+
+### Return type
+
+void (empty response body)
 
 ### HTTP request headers
 

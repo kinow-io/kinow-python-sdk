@@ -1,7 +1,6 @@
 from __future__ import absolute_import
 
 # import apis into api package
-from .accesses_api import AccessesApi
 from .actors_api import ActorsApi
 from .address_api import AddressApi
 from .attributes_api import AttributesApi

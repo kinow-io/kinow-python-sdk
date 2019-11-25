@@ -10,10 +10,11 @@ Method | HTTP request | Description
 [**get_customer_accesses_videos**](#get_customer_accesses_videos) | **GET** /customers/{customer_id}/accesses/videos | 
 [**get_product_access**](#get_product_access) | **GET** /product-accesses/{product_access_id} | 
 [**get_product_accesses**](#get_product_accesses) | **GET** /product-accesses | 
-[**stop_subscription**](#stop_subscription) | **PUT** /customers/{customer_id}/unsubscribe | 
+[**subscribe**](#subscribe) | **PUT** /product-accesses/{product_access_id}/subscribe | 
 [**switch_subscription**](#switch_subscription) | **PUT** /product-accesses/{product_access_id}/switch | 
 [**switch_subscription_delete**](#switch_subscription_delete) | **DELETE** /product-accesses/{product_access_id}/switch | 
 [**switch_subscription_pending**](#switch_subscription_pending) | **GET** /product-accesses/{product_access_id}/switch | 
+[**unsubscribe**](#unsubscribe) | **PUT** /product-accesses/{product_access_id}/unsubscribe | 
 [**update_product_access**](#update_product_access) | **PUT** /product-accesses/{product_access_id} | 
 
 
@@ -296,12 +297,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
-## **stop_subscription**
-> stop_subscription(customer_id, product_access_id)
+## **subscribe**
+> subscribe(product_access_id)
 
 
 
-Unsubcribe an Access recurring payment
+Subcribe to a reccuring payment for an Access
 
 ### Example 
 ```python
@@ -313,21 +314,19 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ProductAccessesApi()
-customer_id = 789 # int | Customer ID to unsubscribe
-product_access_id = 'product_access_id_example' # str | Product access ID to unsubscribe from
+product_access_id = 789 # int | Access ID to fetch
 
 try: 
-    api_instance.stop_subscription(customer_id, product_access_id)
+    api_instance.subscribe(product_access_id)
 except ApiException as e:
-    print("Exception when calling ProductAccessesApi->stop_subscription: %s\n" % e)
+    print("Exception when calling ProductAccessesApi->subscribe: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customer_id** | **int**| Customer ID to unsubscribe | 
- **product_access_id** | **str**| Product access ID to unsubscribe from | 
+ **product_access_id** | **int**| Access ID to fetch | 
 
 ### Return type
 
@@ -461,6 +460,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Subscription**](#Subscription)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **unsubscribe**
+> unsubscribe(product_access_id)
+
+
+
+Unsubcribe an Access recurring payment
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.ProductAccessesApi()
+product_access_id = 789 # int | Access ID to fetch
+
+try: 
+    api_instance.unsubscribe(product_access_id)
+except ApiException as e:
+    print("Exception when calling ProductAccessesApi->unsubscribe: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_access_id** | **int**| Access ID to fetch | 
+
+### Return type
+
+void (empty response body)
 
 ### HTTP request headers
 

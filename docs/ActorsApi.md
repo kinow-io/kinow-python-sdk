@@ -4,14 +4,60 @@ All URIs are relative to *https://api.kinow.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**attach_product_to_actor**](#attach_product_to_actor) | **POST** /products/{product_id}/actors | 
 [**create_actor**](#create_actor) | **POST** /actors | 
 [**delete_actor**](#delete_actor) | **DELETE** /actors/{actor_id} | 
+[**detach_product_from_actor**](#detach_product_from_actor) | **DELETE** /products/{product_id}/actors/{actor_id} | 
 [**get_actor**](#get_actor) | **GET** /actors/{actor_id} | 
 [**get_actor_products**](#get_actor_products) | **GET** /actors/{actor_id}/products | 
 [**get_actors**](#get_actors) | **GET** /actors | 
 [**get_product_actors**](#get_product_actors) | **GET** /products/{product_id}/actors | 
 [**update_actor**](#update_actor) | **PUT** /actors/{actor_id} | 
 
+
+## **attach_product_to_actor**
+> attach_product_to_actor(product_id, actor_id)
+
+
+
+Attach product to actor
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.ActorsApi()
+product_id = 789 # int | Product ID to fetch
+actor_id = 789 # int | Actor ID to attach
+
+try: 
+    api_instance.attach_product_to_actor(product_id, actor_id)
+except ApiException as e:
+    print("Exception when calling ActorsApi->attach_product_to_actor: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_id** | **int**| Product ID to fetch | 
+ **actor_id** | **int**| Actor ID to attach | 
+
+### Return type
+
+void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **create_actor**
 > Actor create_actor(body)
@@ -86,6 +132,50 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **actor_id** | **int**|  | 
+
+### Return type
+
+void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **detach_product_from_actor**
+> detach_product_from_actor(product_id, actor_id)
+
+
+
+Detach product from actor
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.ActorsApi()
+product_id = 789 # int | Product ID to fetch
+actor_id = 789 # int | Actor ID to detach
+
+try: 
+    api_instance.detach_product_from_actor(product_id, actor_id)
+except ApiException as e:
+    print("Exception when calling ActorsApi->detach_product_from_actor: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_id** | **int**| Product ID to fetch | 
+ **actor_id** | **int**| Actor ID to detach | 
 
 ### Return type
 

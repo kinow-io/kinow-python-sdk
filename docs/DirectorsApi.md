@@ -4,14 +4,60 @@ All URIs are relative to *https://api.kinow.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**attach_product_to_director**](#attach_product_to_director) | **POST** /products/{product_id}/directors | 
 [**create_director**](#create_director) | **POST** /directors | 
 [**delete_director**](#delete_director) | **DELETE** /directors/{director_id} | 
+[**detach_product_from_director**](#detach_product_from_director) | **DELETE** /products/{product_id}/directors/{director_id} | 
 [**get_director**](#get_director) | **GET** /directors/{director_id} | 
 [**get_director_products**](#get_director_products) | **GET** /directors/{director_id}/products | 
 [**get_directors**](#get_directors) | **GET** /directors | 
 [**get_product_directors**](#get_product_directors) | **GET** /products/{product_id}/directors | 
 [**update_director**](#update_director) | **PUT** /directors/{director_id} | 
 
+
+## **attach_product_to_director**
+> attach_product_to_director(product_id, director_id)
+
+
+
+Attach product to director
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.DirectorsApi()
+product_id = 789 # int | Product ID to fetch
+director_id = 789 # int | Director ID to attach
+
+try: 
+    api_instance.attach_product_to_director(product_id, director_id)
+except ApiException as e:
+    print("Exception when calling DirectorsApi->attach_product_to_director: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_id** | **int**| Product ID to fetch | 
+ **director_id** | **int**| Director ID to attach | 
+
+### Return type
+
+void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **create_director**
 > Director create_director(body)
@@ -86,6 +132,50 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **director_id** | **int**|  | 
+
+### Return type
+
+void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **detach_product_from_director**
+> detach_product_from_director(product_id, director_id)
+
+
+
+Detach product from director
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.DirectorsApi()
+product_id = 789 # int | Product ID to fetch
+director_id = 789 # int | Director ID to detach
+
+try: 
+    api_instance.detach_product_from_director(product_id, director_id)
+except ApiException as e:
+    print("Exception when calling DirectorsApi->detach_product_from_director: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_id** | **int**| Product ID to fetch | 
+ **director_id** | **int**| Director ID to detach | 
 
 ### Return type
 
