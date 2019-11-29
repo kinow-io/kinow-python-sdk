@@ -25,7 +25,7 @@ Method | HTTP request | Description
 [**get_facebook_customer**](#get_facebook_customer) | **GET** /customers/facebook/{facebook_id} | 
 [**get_payment_methods**](#get_payment_methods) | **GET** /customers/{customer_id}/payments/{payment_name}/payment-methods | 
 [**get_pending_payments**](#get_pending_payments) | **GET** /customers/{customer_id}/payments/{payment_name}/pending | 
-[**get_prepayment_balances**](#get_prepayment_balances) | **GET** /customers/{customer_id}/prepayment-balance/{type} | 
+[**get_prepayment_balances**](#get_prepayment_balances) | **GET** /customers/{customer_id}/prepayment-balance | 
 [**get_prepayment_operations**](#get_prepayment_operations) | **GET** /customers/{customer_id}/prepayment-operation/{type} | 
 [**stop_subscription**](#stop_subscription) | **PUT** /customers/{customer_id}/unsubscribe | 
 [**update_customer**](#update_customer) | **PUT** /customers/{customer_id} | 
@@ -982,7 +982,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_prepayment_balances**
-> PrepaymentBalance get_prepayment_balances(customer_id, type)
+> list[PrepaymentBalance] get_prepayment_balances(customer_id)
 
 
 
@@ -999,10 +999,9 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = kinow_client.CustomersApi()
 customer_id = 789 # int | Customer ID to fetch
-type = 'type_example' # str | PrepaymentBalance type to fetch (currency or credit)
 
 try: 
-    api_response = api_instance.get_prepayment_balances(customer_id, type)
+    api_response = api_instance.get_prepayment_balances(customer_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CustomersApi->get_prepayment_balances: %s\n" % e)
@@ -1013,11 +1012,10 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customer_id** | **int**| Customer ID to fetch | 
- **type** | **str**| PrepaymentBalance type to fetch (currency or credit) | 
 
 ### Return type
 
-[**PrepaymentBalance**](#PrepaymentBalance)
+[**list[PrepaymentBalance]**](#PrepaymentBalance)
 
 ### HTTP request headers
 

@@ -4,7 +4,7 @@ All URIs are relative to *https://api.kinow.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_prepayment_balances**](#get_prepayment_balances) | **GET** /customers/{customer_id}/prepayment-balance/{type} | 
+[**get_prepayment_balances**](#get_prepayment_balances) | **GET** /customers/{customer_id}/prepayment-balance | 
 [**get_prepayment_bonus**](#get_prepayment_bonus) | **GET** /prepayment/bonus | 
 [**get_prepayment_bonus_0**](#get_prepayment_bonus_0) | **GET** /prepayment/bonus/{prepayment_bonus_id} | 
 [**get_prepayment_operation**](#get_prepayment_operation) | **GET** /prepayment/operations/{prepayment_operation_id} | 
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 ## **get_prepayment_balances**
-> PrepaymentBalance get_prepayment_balances(customer_id, type)
+> list[PrepaymentBalance] get_prepayment_balances(customer_id)
 
 
 
@@ -31,10 +31,9 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = kinow_client.PrepaymentsApi()
 customer_id = 789 # int | Customer ID to fetch
-type = 'type_example' # str | PrepaymentBalance type to fetch (currency or credit)
 
 try: 
-    api_response = api_instance.get_prepayment_balances(customer_id, type)
+    api_response = api_instance.get_prepayment_balances(customer_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PrepaymentsApi->get_prepayment_balances: %s\n" % e)
@@ -45,11 +44,10 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customer_id** | **int**| Customer ID to fetch | 
- **type** | **str**| PrepaymentBalance type to fetch (currency or credit) | 
 
 ### Return type
 
-[**PrepaymentBalance**](#PrepaymentBalance)
+[**list[PrepaymentBalance]**](#PrepaymentBalance)
 
 ### HTTP request headers
 
