@@ -193,7 +193,7 @@ void (empty response body)
 
 
 
-Get director
+Get Director
 
 ### Example 
 ```python

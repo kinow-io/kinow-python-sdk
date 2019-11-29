@@ -34,6 +34,7 @@ from .order_histories_api import OrderHistoriesApi
 from .order_states_api import OrderStatesApi
 from .orders_api import OrdersApi
 from .payment_modules_api import PaymentModulesApi
+from .prepayments_api import PrepaymentsApi
 from .product_accesses_api import ProductAccessesApi
 from .products_api import ProductsApi
 from .stats_api import StatsApi

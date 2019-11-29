@@ -104,7 +104,7 @@ void (empty response body)
 
 
 
-Get group
+Get Group
 
 ### Example 
 ```python
