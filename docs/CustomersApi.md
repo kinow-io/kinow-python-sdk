@@ -21,12 +21,12 @@ Method | HTTP request | Description
 [**get_customer_has_access_to_product**](#get_customer_has_access_to_product) | **GET** /customers/{customer_id}/products/{product_id}/has-access | 
 [**get_customer_has_access_to_video**](#get_customer_has_access_to_video) | **GET** /customers/{customer_id}/videos/{video_id}/has-access | 
 [**get_customer_orders**](#get_customer_orders) | **GET** /customers/{customer_id}/orders | 
+[**get_customer_prepayment_balances**](#get_customer_prepayment_balances) | **GET** /customers/{customer_id}/prepayment-balance | 
+[**get_customer_prepayment_operations**](#get_customer_prepayment_operations) | **GET** /customers/{customer_id}/prepayment-operations | 
 [**get_customers**](#get_customers) | **GET** /customers | 
 [**get_facebook_customer**](#get_facebook_customer) | **GET** /customers/facebook/{facebook_id} | 
 [**get_payment_methods**](#get_payment_methods) | **GET** /customers/{customer_id}/payments/{payment_name}/payment-methods | 
 [**get_pending_payments**](#get_pending_payments) | **GET** /customers/{customer_id}/payments/{payment_name}/pending | 
-[**get_prepayment_balances**](#get_prepayment_balances) | **GET** /customers/{customer_id}/prepayment-balance | 
-[**get_prepayment_operations**](#get_prepayment_operations) | **GET** /customers/{customer_id}/prepayment-operation/{type} | 
 [**stop_subscription**](#stop_subscription) | **PUT** /customers/{customer_id}/unsubscribe | 
 [**update_customer**](#update_customer) | **PUT** /customers/{customer_id} | 
 [**update_payment_method**](#update_payment_method) | **PUT** /customers/{customer_id}/payments/{payment_name}/payment-method | 
@@ -797,6 +797,98 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
+## **get_customer_prepayment_balances**
+> list[PrepaymentBalance] get_customer_prepayment_balances(customer_id)
+
+
+
+Get PrepaymentBalances list
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.CustomersApi()
+customer_id = 789 # int | Customer ID to fetch
+
+try: 
+    api_response = api_instance.get_customer_prepayment_balances(customer_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CustomersApi->get_customer_prepayment_balances: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customer_id** | **int**| Customer ID to fetch | 
+
+### Return type
+
+[**list[PrepaymentBalance]**](#PrepaymentBalance)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_customer_prepayment_operations**
+> PrepaymentOperations get_customer_prepayment_operations(customer_id, type=type, page=page, per_page=per_page)
+
+
+
+Get PrepaymentOperations list
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.CustomersApi()
+customer_id = 789 # int | Customer ID to fetch
+type = 'type_example' # str |  (optional)
+page = 789 # int |  (optional)
+per_page = 789 # int |  (optional)
+
+try: 
+    api_response = api_instance.get_customer_prepayment_operations(customer_id, type=type, page=page, per_page=per_page)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CustomersApi->get_customer_prepayment_operations: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customer_id** | **int**| Customer ID to fetch | 
+ **type** | **str**|  | [optional] 
+ **page** | **int**|  | [optional] 
+ **per_page** | **int**|  | [optional] 
+
+### Return type
+
+[**PrepaymentOperations**](#PrepaymentOperations)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
 ## **get_customers**
 > Customers get_customers(page=page, per_page=per_page, filters=filters, sort_by=sort_by, sort_direction=sort_direction)
 
@@ -973,98 +1065,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**list[PaymentDetails]**](#PaymentDetails)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
-
-## **get_prepayment_balances**
-> list[PrepaymentBalance] get_prepayment_balances(customer_id)
-
-
-
-Get PrepaymentBalances list
-
-### Example 
-```python
-from __future__ import print_statement
-import time
-import kinow_client
-from kinow_client.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = kinow_client.CustomersApi()
-customer_id = 789 # int | Customer ID to fetch
-
-try: 
-    api_response = api_instance.get_prepayment_balances(customer_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CustomersApi->get_prepayment_balances: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **customer_id** | **int**| Customer ID to fetch | 
-
-### Return type
-
-[**list[PrepaymentBalance]**](#PrepaymentBalance)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
-
-## **get_prepayment_operations**
-> PrepaymentOperations get_prepayment_operations(customer_id, type, page=page, per_page=per_page)
-
-
-
-Get PrepaymentOperations list
-
-### Example 
-```python
-from __future__ import print_statement
-import time
-import kinow_client
-from kinow_client.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = kinow_client.CustomersApi()
-customer_id = 789 # int | Customer ID to fetch
-type = 'type_example' # str | PrepaymentOperation type to fetch (currency or credit)
-page = 789 # int |  (optional)
-per_page = 789 # int |  (optional)
-
-try: 
-    api_response = api_instance.get_prepayment_operations(customer_id, type, page=page, per_page=per_page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CustomersApi->get_prepayment_operations: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **customer_id** | **int**| Customer ID to fetch | 
- **type** | **str**| PrepaymentOperation type to fetch (currency or credit) | 
- **page** | **int**|  | [optional] 
- **per_page** | **int**|  | [optional] 
-
-### Return type
-
-[**PrepaymentOperations**](#PrepaymentOperations)
 
 ### HTTP request headers
 
