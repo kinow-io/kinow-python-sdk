@@ -19,11 +19,11 @@ import unittest
 
 import kinow_client
 from kinow_client.rest import ApiException
-from kinow_client.models.actor import Actor
+from kinow_client.models.gift_token import GiftToken
 
 
-class TestActor(unittest.TestCase):
-    """ Actor unit test stubs """
+class TestGiftToken(unittest.TestCase):
+    """ GiftToken unit test stubs """
 
     def setUp(self):
         pass
@@ -31,11 +31,11 @@ class TestActor(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testActor(self):
+    def testGiftToken(self):
         """
-        Test Actor
+        Test GiftToken
         """
-        model = kinow_client.models.actor.Actor()
+        model = kinow_client.models.gift_token.GiftToken()
 
 
 if __name__ == '__main__':

@@ -276,7 +276,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_gift_token**
-> get_gift_token(gift_id)
+> GiftToken get_gift_token(gift_id)
 
 
 
@@ -295,7 +295,8 @@ api_instance = kinow_client.GiftsApi()
 gift_id = 789 # int | Gift ID to fetch
 
 try: 
-    api_instance.get_gift_token(gift_id)
+    api_response = api_instance.get_gift_token(gift_id)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling GiftsApi->get_gift_token: %s\n" % e)
 ```
@@ -308,7 +309,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**GiftToken**](#GiftToken)
 
 ### HTTP request headers
 
