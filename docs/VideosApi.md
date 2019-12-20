@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**create_video**](#create_video) | **POST** /videos | 
 [**delete_video**](#delete_video) | **DELETE** /videos/{video_id} | 
 [**get_customer_has_access_to_video**](#get_customer_has_access_to_video) | **GET** /customers/{customer_id}/videos/{video_id}/has-access | 
+[**get_customer_has_access_to_videos**](#get_customer_has_access_to_videos) | **POST** /customers/{customer_id}/videos/has-access | 
 [**get_disabled_subscriptions**](#get_disabled_subscriptions) | **GET** /videos/{video_id}/disabled-subscriptions | 
 [**get_video**](#get_video) | **GET** /videos/{video_id} | 
 [**get_video_access**](#get_video_access) | **GET** /videos/{video_id}/customers/{customer_id}/access | 
@@ -22,6 +23,8 @@ Method | HTTP request | Description
 [**get_video_subtitles**](#get_video_subtitles) | **GET** /videos/{video_id}/subtitles | 
 [**get_video_views**](#get_video_views) | **GET** /videos/{video_id}/views | 
 [**get_videos**](#get_videos) | **GET** /videos | 
+[**get_videos_from_categories**](#get_videos_from_categories) | **GET** /categories/videos | 
+[**get_videos_from_category**](#get_videos_from_category) | **GET** /categories/{category_id}/videos | 
 [**get_videos_from_product**](#get_videos_from_product) | **GET** /products/{product_id}/videos | 
 [**set_video_geolocation**](#set_video_geolocation) | **PUT** /videos/{video_id}/geolocations | 
 [**update_video**](#update_video) | **PUT** /videos/{video_id} | 
@@ -280,6 +283,53 @@ Name | Type | Description  | Notes
 ### Return type
 
 void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_customer_has_access_to_videos**
+> list[VideoAccessInfo] get_customer_has_access_to_videos(customer_id, ip_address, body)
+
+
+
+Get customer access to Videos
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.VideosApi()
+customer_id = 789 # int | Customer ID to fetch
+ip_address = 'ip_address_example' # str | IP address
+body = kinow_client.VideoIDList() # VideoIDList | List of Video IDs separated by comma, eg. '42,21,84'
+
+try: 
+    api_response = api_instance.get_customer_has_access_to_videos(customer_id, ip_address, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling VideosApi->get_customer_has_access_to_videos: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customer_id** | **int**| Customer ID to fetch | 
+ **ip_address** | **str**| IP address | 
+ **body** | [**VideoIDList**](#VideoIDList)| List of Video IDs separated by comma, eg. &#39;42,21,84&#39; | 
+
+### Return type
+
+[**list[VideoAccessInfo]**](#VideoAccessInfo)
 
 ### HTTP request headers
 
@@ -790,7 +840,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_videos**
-> Videos1 get_videos(page=page, per_page=per_page, features=features, filters=filters, ip=ip)
+> Videos2 get_videos(page=page, per_page=per_page, features=features, filters=filters, ip=ip)
 
 
 
@@ -831,7 +881,107 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Videos1**](#Videos1)
+[**Videos2**](#Videos2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_videos_from_categories**
+> Videos get_videos_from_categories(page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction)
+
+
+
+Get Videos attached to Categories
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.VideosApi()
+page = 789 # int |  (optional)
+per_page = 789 # int |  (optional)
+sort_by = 'sort_by_example' # str | Sort by this attribute (id by default) (optional)
+sort_direction = 'sort_direction_example' # str | Sorting direction (asc by default) (optional)
+
+try: 
+    api_response = api_instance.get_videos_from_categories(page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling VideosApi->get_videos_from_categories: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **int**|  | [optional] 
+ **per_page** | **int**|  | [optional] 
+ **sort_by** | **str**| Sort by this attribute (id by default) | [optional] 
+ **sort_direction** | **str**| Sorting direction (asc by default) | [optional] 
+
+### Return type
+
+[**Videos**](#Videos)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_videos_from_category**
+> Videos get_videos_from_category(category_id, page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction)
+
+
+
+Get Videos attached to Category
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.VideosApi()
+category_id = 789 # int | Category ID to fetch
+page = 789 # int |  (optional)
+per_page = 789 # int |  (optional)
+sort_by = 'sort_by_example' # str | Sort by this attribute (id by default) (optional)
+sort_direction = 'sort_direction_example' # str | Sorting direction (asc by default) (optional)
+
+try: 
+    api_response = api_instance.get_videos_from_category(category_id, page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling VideosApi->get_videos_from_category: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **category_id** | **int**| Category ID to fetch | 
+ **page** | **int**|  | [optional] 
+ **per_page** | **int**|  | [optional] 
+ **sort_by** | **str**| Sort by this attribute (id by default) | [optional] 
+ **sort_direction** | **str**| Sorting direction (asc by default) | [optional] 
+
+### Return type
+
+[**Videos**](#Videos)
 
 ### HTTP request headers
 
@@ -841,7 +991,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_videos_from_product**
-> Videos1 get_videos_from_product(product_id, page=page, filters=filters, per_page=per_page, ip=ip, sort_by=sort_by, sort_direction=sort_direction)
+> Videos2 get_videos_from_product(product_id, page=page, filters=filters, per_page=per_page, ip=ip, sort_by=sort_by, sort_direction=sort_direction)
 
 
 
@@ -886,7 +1036,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Videos1**](#Videos1)
+[**Videos2**](#Videos2)
 
 ### HTTP request headers
 

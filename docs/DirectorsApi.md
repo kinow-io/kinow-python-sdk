@@ -7,11 +7,12 @@ Method | HTTP request | Description
 [**attach_product_to_director**](#attach_product_to_director) | **POST** /products/{product_id}/directors | 
 [**create_director**](#create_director) | **POST** /directors | 
 [**delete_director**](#delete_director) | **DELETE** /directors/{director_id} | 
-[**detach_product_from_director**](#detach_product_from_director) | **DELETE** /products/{product_id}/directors/{director_id} | 
 [**get_director**](#get_director) | **GET** /directors/{director_id} | 
 [**get_director_products**](#get_director_products) | **GET** /directors/{director_id}/products | 
+[**get_director_products_role**](#get_director_products_role) | **GET** /directors/{director_id}/products-role | 
 [**get_directors**](#get_directors) | **GET** /directors | 
 [**get_product_directors**](#get_product_directors) | **GET** /products/{product_id}/directors | 
+[**get_product_directors_role**](#get_product_directors_role) | **GET** /products/{product_id}/directors-role | 
 [**update_director**](#update_director) | **PUT** /directors/{director_id} | 
 
 
@@ -76,7 +77,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.DirectorsApi()
-body = kinow_client.Director() # Director | 
+body = kinow_client.Director1() # Director1 | Directory settings
 
 try: 
     api_response = api_instance.create_director(body)
@@ -89,7 +90,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Director**](#Director)|  | 
+ **body** | [**Director1**](#Director1)| Directory settings | 
 
 ### Return type
 
@@ -132,50 +133,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **director_id** | **int**|  | 
-
-### Return type
-
-void (empty response body)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
-
-## **detach_product_from_director**
-> detach_product_from_director(product_id, director_id)
-
-
-
-Detach product from director
-
-### Example 
-```python
-from __future__ import print_statement
-import time
-import kinow_client
-from kinow_client.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = kinow_client.DirectorsApi()
-product_id = 789 # int | Product ID to fetch
-director_id = 789 # int | Director ID to detach
-
-try: 
-    api_instance.detach_product_from_director(product_id, director_id)
-except ApiException as e:
-    print("Exception when calling DirectorsApi->detach_product_from_director: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **product_id** | **int**| Product ID to fetch | 
- **director_id** | **int**| Director ID to detach | 
 
 ### Return type
 
@@ -290,6 +247,53 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
+## **get_director_products_role**
+> Products get_director_products_role(director_id, page=page, per_page=per_page)
+
+
+
+Get Products linked to Product with their role
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.DirectorsApi()
+director_id = 789 # int | Director ID to fetch
+page = 789 # int |  (optional)
+per_page = 789 # int |  (optional)
+
+try: 
+    api_response = api_instance.get_director_products_role(director_id, page=page, per_page=per_page)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DirectorsApi->get_director_products_role: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **director_id** | **int**| Director ID to fetch | 
+ **page** | **int**|  | [optional] 
+ **per_page** | **int**|  | [optional] 
+
+### Return type
+
+[**Products**](#Products)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
 ## **get_directors**
 > Directors get_directors(page=page, per_page=per_page, image_type=image_type)
 
@@ -386,6 +390,53 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
+## **get_product_directors_role**
+> Directors get_product_directors_role(product_id, page=page, per_page=per_page)
+
+
+
+Get Directors attached to Product with their role
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.DirectorsApi()
+product_id = 789 # int | Product ID to fetch
+page = 789 # int |  (optional)
+per_page = 789 # int |  (optional)
+
+try: 
+    api_response = api_instance.get_product_directors_role(product_id, page=page, per_page=per_page)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DirectorsApi->get_product_directors_role: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_id** | **int**| Product ID to fetch | 
+ **page** | **int**|  | [optional] 
+ **per_page** | **int**|  | [optional] 
+
+### Return type
+
+[**Directors**](#Directors)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
 ## **update_director**
 > update_director(director_id, body)
 
@@ -404,7 +455,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = kinow_client.DirectorsApi()
 director_id = 56 # int | 
-body = kinow_client.Director() # Director | 
+body = kinow_client.Director2() # Director2 | Directory settings
 
 try: 
     api_instance.update_director(director_id, body)
@@ -417,7 +468,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **director_id** | **int**|  | 
- **body** | [**Director**](#Director)|  | 
+ **body** | [**Director2**](#Director2)| Directory settings | 
 
 ### Return type
 

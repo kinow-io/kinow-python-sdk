@@ -69,7 +69,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = kinow_client.AddressApi()
 address_id = 789 # int | Address ID to update
-body = kinow_client.Address() # Address | 
+body = kinow_client.Address1() # Address1 | Address settings
 
 try: 
     api_response = api_instance.update_address(address_id, body)
@@ -83,7 +83,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **address_id** | **int**| Address ID to update | 
- **body** | [**Address**](#Address)|  | 
+ **body** | [**Address1**](#Address1)| Address settings | 
 
 ### Return type
 

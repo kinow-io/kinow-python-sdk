@@ -6,7 +6,6 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_product_attribute**](#create_product_attribute) | **POST** /attributes | 
 [**get_product_attributes**](#get_product_attributes) | **GET** /products/{product_id}/attributes | 
-[**update_product_attribute**](#update_product_attribute) | **PUT** /attributes/{attribute_id} | 
 
 
 ## **create_product_attribute**
@@ -57,7 +56,7 @@ Name | Type | Description  | Notes
 
 
 
-Get product attributes. Mandatory to add product in cart: allows to buy product for download, streaming or both
+Get Product attributes. Mandatory to add TVOD Product in cart.
 
 ### Example 
 ```python
@@ -91,51 +90,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ProductAttributesResponse**](#ProductAttributesResponse)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
-
-## **update_product_attribute**
-> ProductAttribute update_product_attribute(attribute_id, body)
-
-
-
-Update product attribute
-
-### Example 
-```python
-from __future__ import print_statement
-import time
-import kinow_client
-from kinow_client.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = kinow_client.AttributesApi()
-attribute_id = 789 # int | Attribute ID to update
-body = kinow_client.ProductAttributeUpdateRequest() # ProductAttributeUpdateRequest | 
-
-try: 
-    api_response = api_instance.update_product_attribute(attribute_id, body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AttributesApi->update_product_attribute: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **attribute_id** | **int**| Attribute ID to update | 
- **body** | [**ProductAttributeUpdateRequest**](#ProductAttributeUpdateRequest)|  | 
-
-### Return type
-
-[**ProductAttribute**](#ProductAttribute)
 
 ### HTTP request headers
 

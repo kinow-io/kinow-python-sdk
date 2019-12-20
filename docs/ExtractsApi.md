@@ -230,7 +230,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_extracts**
-> Videos get_extracts(page=page, per_page=per_page)
+> Videos1 get_extracts(page=page, per_page=per_page)
 
 
 
@@ -265,7 +265,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Videos**](#Videos)
+[**Videos1**](#Videos1)
 
 ### HTTP request headers
 
@@ -275,7 +275,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_product_extracts**
-> Videos get_product_extracts(product_id, page=page, per_page=per_page)
+> Videos1 get_product_extracts(product_id, page=page, per_page=per_page)
 
 
 
@@ -312,7 +312,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Videos**](#Videos)
+[**Videos1**](#Videos1)
 
 ### HTTP request headers
 

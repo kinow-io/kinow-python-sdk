@@ -17,6 +17,7 @@ from .countries_api import CountriesApi
 from .currencies_api import CurrenciesApi
 from .customer_threads_api import CustomerThreadsApi
 from .customers_api import CustomersApi
+from .devices_api import DevicesApi
 from .directors_api import DirectorsApi
 from .extracts_api import ExtractsApi
 from .feature_values_api import FeatureValuesApi

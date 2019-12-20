@@ -19,7 +19,9 @@ Method | HTTP request | Description
 [**get_customer_current_views**](#get_customer_current_views) | **GET** /customers/{customer_id}/current-views | 
 [**get_customer_groups**](#get_customer_groups) | **GET** /customers/{customer_id}/groups | 
 [**get_customer_has_access_to_product**](#get_customer_has_access_to_product) | **GET** /customers/{customer_id}/products/{product_id}/has-access | 
+[**get_customer_has_access_to_products**](#get_customer_has_access_to_products) | **POST** /customers/{customer_id}/products/has-access | 
 [**get_customer_has_access_to_video**](#get_customer_has_access_to_video) | **GET** /customers/{customer_id}/videos/{video_id}/has-access | 
+[**get_customer_has_access_to_videos**](#get_customer_has_access_to_videos) | **POST** /customers/{customer_id}/videos/has-access | 
 [**get_customer_orders**](#get_customer_orders) | **GET** /customers/{customer_id}/orders | 
 [**get_customer_prepayment_balances**](#get_customer_prepayment_balances) | **GET** /customers/{customer_id}/prepayment-balance | 
 [**get_customer_prepayment_operations**](#get_customer_prepayment_operations) | **GET** /customers/{customer_id}/prepayment-operations | 
@@ -706,6 +708,53 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
+## **get_customer_has_access_to_products**
+> list[ProductAccessInfo] get_customer_has_access_to_products(customer_id, ip_address, body)
+
+
+
+Get customer access to Products
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.CustomersApi()
+customer_id = 789 # int | Customer ID to fetch
+ip_address = 'ip_address_example' # str | IP address
+body = kinow_client.ProductIDList() # ProductIDList | List of Product IDs separated by comma, eg. '42,21,84'
+
+try: 
+    api_response = api_instance.get_customer_has_access_to_products(customer_id, ip_address, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CustomersApi->get_customer_has_access_to_products: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customer_id** | **int**| Customer ID to fetch | 
+ **ip_address** | **str**| IP address | 
+ **body** | [**ProductIDList**](#ProductIDList)| List of Product IDs separated by comma, eg. &#39;42,21,84&#39; | 
+
+### Return type
+
+[**list[ProductAccessInfo]**](#ProductAccessInfo)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
 ## **get_customer_has_access_to_video**
 > get_customer_has_access_to_video(customer_id, video_id)
 
@@ -742,6 +791,53 @@ Name | Type | Description  | Notes
 ### Return type
 
 void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_customer_has_access_to_videos**
+> list[VideoAccessInfo] get_customer_has_access_to_videos(customer_id, ip_address, body)
+
+
+
+Get customer access to Videos
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.CustomersApi()
+customer_id = 789 # int | Customer ID to fetch
+ip_address = 'ip_address_example' # str | IP address
+body = kinow_client.VideoIDList() # VideoIDList | List of Video IDs separated by comma, eg. '42,21,84'
+
+try: 
+    api_response = api_instance.get_customer_has_access_to_videos(customer_id, ip_address, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CustomersApi->get_customer_has_access_to_videos: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customer_id** | **int**| Customer ID to fetch | 
+ **ip_address** | **str**| IP address | 
+ **body** | [**VideoIDList**](#VideoIDList)| List of Video IDs separated by comma, eg. &#39;42,21,84&#39; | 
+
+### Return type
+
+[**list[VideoAccessInfo]**](#VideoAccessInfo)
 
 ### HTTP request headers
 

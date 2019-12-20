@@ -7,11 +7,12 @@ Method | HTTP request | Description
 [**attach_product_to_actor**](#attach_product_to_actor) | **POST** /products/{product_id}/actors | 
 [**create_actor**](#create_actor) | **POST** /actors | 
 [**delete_actor**](#delete_actor) | **DELETE** /actors/{actor_id} | 
-[**detach_product_from_actor**](#detach_product_from_actor) | **DELETE** /products/{product_id}/actors/{actor_id} | 
 [**get_actor**](#get_actor) | **GET** /actors/{actor_id} | 
 [**get_actor_products**](#get_actor_products) | **GET** /actors/{actor_id}/products | 
+[**get_actor_products_role**](#get_actor_products_role) | **GET** /actors/{actor_id}/products-role | 
 [**get_actors**](#get_actors) | **GET** /actors | 
 [**get_product_actors**](#get_product_actors) | **GET** /products/{product_id}/actors | 
+[**get_product_actors_role**](#get_product_actors_role) | **GET** /products/{product_id}/actors-role | 
 [**update_actor**](#update_actor) | **PUT** /actors/{actor_id} | 
 
 
@@ -76,7 +77,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.ActorsApi()
-body = kinow_client.Actor() # Actor | 
+body = kinow_client.Actor1() # Actor1 | Actor settings
 
 try: 
     api_response = api_instance.create_actor(body)
@@ -89,7 +90,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Actor**](#Actor)|  | 
+ **body** | [**Actor1**](#Actor1)| Actor settings | 
 
 ### Return type
 
@@ -132,50 +133,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **actor_id** | **int**|  | 
-
-### Return type
-
-void (empty response body)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
-
-## **detach_product_from_actor**
-> detach_product_from_actor(product_id, actor_id)
-
-
-
-Detach product from actor
-
-### Example 
-```python
-from __future__ import print_statement
-import time
-import kinow_client
-from kinow_client.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = kinow_client.ActorsApi()
-product_id = 789 # int | Product ID to fetch
-actor_id = 789 # int | Actor ID to detach
-
-try: 
-    api_instance.detach_product_from_actor(product_id, actor_id)
-except ApiException as e:
-    print("Exception when calling ActorsApi->detach_product_from_actor: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **product_id** | **int**| Product ID to fetch | 
- **actor_id** | **int**| Actor ID to detach | 
 
 ### Return type
 
@@ -290,6 +247,53 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
+## **get_actor_products_role**
+> Products get_actor_products_role(actor_id, page=page, per_page=per_page)
+
+
+
+Get Products linked to Actor with their role
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.ActorsApi()
+actor_id = 789 # int | Actor ID to fetch
+page = 789 # int |  (optional)
+per_page = 789 # int |  (optional)
+
+try: 
+    api_response = api_instance.get_actor_products_role(actor_id, page=page, per_page=per_page)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ActorsApi->get_actor_products_role: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **actor_id** | **int**| Actor ID to fetch | 
+ **page** | **int**|  | [optional] 
+ **per_page** | **int**|  | [optional] 
+
+### Return type
+
+[**Products**](#Products)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
 ## **get_actors**
 > Actors get_actors(page=page, per_page=per_page, image_type=image_type)
 
@@ -386,6 +390,53 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
+## **get_product_actors_role**
+> Actors get_product_actors_role(product_id, page=page, per_page=per_page)
+
+
+
+Get Actors attached to Product with their role
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.ActorsApi()
+product_id = 789 # int | Product ID to fetch
+page = 789 # int |  (optional)
+per_page = 789 # int |  (optional)
+
+try: 
+    api_response = api_instance.get_product_actors_role(product_id, page=page, per_page=per_page)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ActorsApi->get_product_actors_role: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_id** | **int**| Product ID to fetch | 
+ **page** | **int**|  | [optional] 
+ **per_page** | **int**|  | [optional] 
+
+### Return type
+
+[**Actors**](#Actors)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
 ## **update_actor**
 > update_actor(actor_id, body)
 
@@ -404,7 +455,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = kinow_client.ActorsApi()
 actor_id = 56 # int | 
-body = kinow_client.Actor() # Actor | 
+body = kinow_client.Actor2() # Actor2 | Actor settings
 
 try: 
     api_instance.update_actor(actor_id, body)
@@ -417,7 +468,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **actor_id** | **int**|  | 
- **body** | [**Actor**](#Actor)|  | 
+ **body** | [**Actor2**](#Actor2)| Actor settings | 
 
 ### Return type
 

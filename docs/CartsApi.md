@@ -39,7 +39,7 @@ from pprint import pprint
 api_instance = kinow_client.CartsApi()
 cart_id = 789 # int | Cart ID to fetch
 product_id = 789 # int | Product ID to add to cart
-product_attribute_id = 789 # int | Product attribute ID, required to add product to cart if product is not a subscription (optional)
+product_attribute_id = 789 # int | ProductAttribute ID, required to add product to cart if product is not a subscription (optional)
 switch_subscription_id = 789 # int | When customer want to switch subscription, switch_subscription_id is the product access ID that match with the subscription to cancel (optional)
 
 try: 
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cart_id** | **int**| Cart ID to fetch | 
  **product_id** | **int**| Product ID to add to cart | 
- **product_attribute_id** | **int**| Product attribute ID, required to add product to cart if product is not a subscription | [optional] 
+ **product_attribute_id** | **int**| ProductAttribute ID, required to add product to cart if product is not a subscription | [optional] 
  **switch_subscription_id** | **int**| When customer want to switch subscription, switch_subscription_id is the product access ID that match with the subscription to cancel | [optional] 
 
 ### Return type
@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **create_cart**
-> Cart create_cart(body=body)
+> Cart create_cart(body)
 
 
 
@@ -175,10 +175,10 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.CartsApi()
-body = kinow_client.CartBody() # CartBody | Create cart object (optional)
+body = kinow_client.Cart1() # Cart1 | Cart settings
 
 try: 
-    api_response = api_instance.create_cart(body=body)
+    api_response = api_instance.create_cart(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CartsApi->create_cart: %s\n" % e)
@@ -188,7 +188,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CartBody**](#CartBody)| Create cart object | [optional] 
+ **body** | [**Cart1**](#Cart1)| Cart settings | 
 
 ### Return type
 
@@ -536,7 +536,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = kinow_client.CartsApi()
 cart_id = 789 # int | Cart id
-body = kinow_client.Cart() # Cart | Cart body
+body = kinow_client.Cart2() # Cart2 | Cart settings
 
 try: 
     api_response = api_instance.update_cart(cart_id, body)
@@ -550,7 +550,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cart_id** | **int**| Cart id | 
- **body** | [**Cart**](#Cart)| Cart body | 
+ **body** | [**Cart2**](#Cart2)| Cart settings | 
 
 ### Return type
 

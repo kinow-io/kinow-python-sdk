@@ -79,7 +79,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.GiftsApi()
-body = kinow_client.Gift() # Gift | 
+body = kinow_client.Gift1() # Gift1 | Gift settings
 
 try: 
     api_response = api_instance.create_gift(body)
@@ -92,7 +92,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Gift**](#Gift)|  | 
+ **body** | [**Gift1**](#Gift1)| Gift settings | 
 
 ### Return type
 
@@ -421,7 +421,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = kinow_client.GiftsApi()
 gift_id = 789 # int | Gift ID to fetch
-body = kinow_client.Gift() # Gift | 
+body = kinow_client.Gift2() # Gift2 | Gift settings
 
 try: 
     api_response = api_instance.update_gift(gift_id, body)
@@ -435,7 +435,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **gift_id** | **int**| Gift ID to fetch | 
- **body** | [**Gift**](#Gift)|  | 
+ **body** | [**Gift2**](#Gift2)| Gift settings | 
 
 ### Return type
 

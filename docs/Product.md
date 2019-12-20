@@ -35,6 +35,7 @@ Name | Type | Description | Notes
 **behavior_detected_countries** | **str** |  | [optional] 
 **behavior_non_detected_countries** | **str** |  | [optional] 
 **id_product_attribute** | **int** | Only available when the product is in a cart | [optional] 
+**roles** | **str** |  | [optional] 
 
 [[Back to Model list]](#documentation-for-models) [[Back to API list]](#documentation-for-api-endpoints)
 

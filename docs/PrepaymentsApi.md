@@ -6,8 +6,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_customer_prepayment_balances**](#get_customer_prepayment_balances) | **GET** /customers/{customer_id}/prepayment-balance | 
 [**get_customer_prepayment_operations**](#get_customer_prepayment_operations) | **GET** /customers/{customer_id}/prepayment-operations | 
-[**get_prepayment_bonus**](#get_prepayment_bonus) | **GET** /prepayment/bonus | 
-[**get_prepayment_bonus_0**](#get_prepayment_bonus_0) | **GET** /prepayment/bonus/{prepayment_bonus_id} | 
+[**get_prepayment_bonus**](#get_prepayment_bonus) | **GET** /prepayment/bonus/{prepayment_bonus_id} | 
+[**get_prepayment_bonus_list**](#get_prepayment_bonus_list) | **GET** /prepayment/bonus | 
 [**get_prepayment_operation**](#get_prepayment_operation) | **GET** /prepayment/operations/{prepayment_operation_id} | 
 [**get_prepayment_operations**](#get_prepayment_operations) | **GET** /prepayment/operations | 
 [**get_prepayment_recharge**](#get_prepayment_recharge) | **GET** /prepayment/recharges/{prepayment_recharge_id} | 
@@ -107,7 +107,50 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_prepayment_bonus**
-> PrepaymentBonus1 get_prepayment_bonus(page=page, per_page=per_page)
+> PrepaymentBonus get_prepayment_bonus(prepayment_bonus_id)
+
+
+
+Get PrepaymentBonus
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.PrepaymentsApi()
+prepayment_bonus_id = 789 # int | PrepaymentBonus ID to fetch
+
+try: 
+    api_response = api_instance.get_prepayment_bonus(prepayment_bonus_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PrepaymentsApi->get_prepayment_bonus: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **prepayment_bonus_id** | **int**| PrepaymentBonus ID to fetch | 
+
+### Return type
+
+[**PrepaymentBonus**](#PrepaymentBonus)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_prepayment_bonus_list**
+> PrepaymentBonus1 get_prepayment_bonus_list(page=page, per_page=per_page)
 
 
 
@@ -127,10 +170,10 @@ page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 
 try: 
-    api_response = api_instance.get_prepayment_bonus(page=page, per_page=per_page)
+    api_response = api_instance.get_prepayment_bonus_list(page=page, per_page=per_page)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling PrepaymentsApi->get_prepayment_bonus: %s\n" % e)
+    print("Exception when calling PrepaymentsApi->get_prepayment_bonus_list: %s\n" % e)
 ```
 
 ### Parameters
@@ -143,49 +186,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PrepaymentBonus1**](#PrepaymentBonus1)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
-
-## **get_prepayment_bonus_0**
-> PrepaymentBonus get_prepayment_bonus_0(prepayment_bonus_id)
-
-
-
-Get PrepaymentBonus
-
-### Example 
-```python
-from __future__ import print_statement
-import time
-import kinow_client
-from kinow_client.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = kinow_client.PrepaymentsApi()
-prepayment_bonus_id = 789 # int | PrepaymentBonus ID to fetch
-
-try: 
-    api_response = api_instance.get_prepayment_bonus_0(prepayment_bonus_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling PrepaymentsApi->get_prepayment_bonus_0: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **prepayment_bonus_id** | **int**| PrepaymentBonus ID to fetch | 
-
-### Return type
-
-[**PrepaymentBonus**](#PrepaymentBonus)
 
 ### HTTP request headers
 

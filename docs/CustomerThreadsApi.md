@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_customer_threads**
-> CustomerThread1 get_customer_threads(page=page, per_page=per_page, date_add=date_add, date_add_operator=date_add_operator)
+> CustomerThreadList get_customer_threads(page=page, per_page=per_page, date_add=date_add, date_add_operator=date_add_operator)
 
 
 
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CustomerThread1**](#CustomerThread1)
+[**CustomerThreadList**](#CustomerThreadList)
 
 ### HTTP request headers
 

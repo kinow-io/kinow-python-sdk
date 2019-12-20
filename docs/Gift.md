@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **firstname** | **str** |  | [optional] 
 **lastname** | **str** |  | [optional] 
 **message** | **str** |  | [optional] 
+**custom** | **str** |  | [optional] 
 **email** | **str** |  | [optional] 
 **used** | **bool** |  | [optional] 
 **date_send** | **str** |  | [optional] 

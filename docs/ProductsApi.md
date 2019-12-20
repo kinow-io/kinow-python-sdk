@@ -13,19 +13,20 @@ Method | HTTP request | Description
 [**create_product**](#create_product) | **POST** /products | 
 [**delete_product**](#delete_product) | **DELETE** /products/{product_id} | 
 [**detach_feature_to_product**](#detach_feature_to_product) | **DELETE** /products/{product_id}/features/{feature_id} | 
-[**detach_product_from_actor**](#detach_product_from_actor) | **DELETE** /products/{product_id}/actors/{actor_id} | 
 [**detach_product_from_category**](#detach_product_from_category) | **DELETE** /products/{product_id}/categories/{category_id} | 
-[**detach_product_from_director**](#detach_product_from_director) | **DELETE** /products/{product_id}/directors/{director_id} | 
 [**detach_product_from_group**](#detach_product_from_group) | **DELETE** /products/{product_id}/groups/{group_id} | 
 [**get_category_products**](#get_category_products) | **GET** /categories/{category_id}/products | 
 [**get_customer_has_access_to_product**](#get_customer_has_access_to_product) | **GET** /customers/{customer_id}/products/{product_id}/has-access | 
+[**get_customer_has_access_to_products**](#get_customer_has_access_to_products) | **POST** /customers/{customer_id}/products/has-access | 
 [**get_product**](#get_product) | **GET** /products/{product_id} | 
 [**get_product_actors**](#get_product_actors) | **GET** /products/{product_id}/actors | 
+[**get_product_actors_role**](#get_product_actors_role) | **GET** /products/{product_id}/actors-role | 
 [**get_product_attributes**](#get_product_attributes) | **GET** /products/{product_id}/attributes | 
 [**get_product_availability**](#get_product_availability) | **GET** /products/{product_id}/access | 
 [**get_product_categories**](#get_product_categories) | **GET** /products/{product_id}/categories | 
 [**get_product_cover_image**](#get_product_cover_image) | **GET** /products/{product_id}/cover | 
 [**get_product_directors**](#get_product_directors) | **GET** /products/{product_id}/directors | 
+[**get_product_directors_role**](#get_product_directors_role) | **GET** /products/{product_id}/directors-role | 
 [**get_product_extracts**](#get_product_extracts) | **GET** /products/{product_id}/extracts | 
 [**get_product_features**](#get_product_features) | **GET** /products/{product_id}/features | 
 [**get_product_geolocations**](#get_product_geolocations) | **GET** /products/{product_id}/geolocations | 
@@ -435,50 +436,6 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
-## **detach_product_from_actor**
-> detach_product_from_actor(product_id, actor_id)
-
-
-
-Detach product from actor
-
-### Example 
-```python
-from __future__ import print_statement
-import time
-import kinow_client
-from kinow_client.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = kinow_client.ProductsApi()
-product_id = 789 # int | Product ID to fetch
-actor_id = 789 # int | Actor ID to detach
-
-try: 
-    api_instance.detach_product_from_actor(product_id, actor_id)
-except ApiException as e:
-    print("Exception when calling ProductsApi->detach_product_from_actor: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **product_id** | **int**| Product ID to fetch | 
- **actor_id** | **int**| Actor ID to detach | 
-
-### Return type
-
-void (empty response body)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
-
 ## **detach_product_from_category**
 > detach_product_from_category(product_id, category_id)
 
@@ -511,50 +468,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **product_id** | **int**| Product ID to fetch | 
  **category_id** | **int**| Category ID to detach | 
-
-### Return type
-
-void (empty response body)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
-
-## **detach_product_from_director**
-> detach_product_from_director(product_id, director_id)
-
-
-
-Detach product from director
-
-### Example 
-```python
-from __future__ import print_statement
-import time
-import kinow_client
-from kinow_client.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = kinow_client.ProductsApi()
-product_id = 789 # int | Product ID to fetch
-director_id = 789 # int | Director ID to detach
-
-try: 
-    api_instance.detach_product_from_director(product_id, director_id)
-except ApiException as e:
-    print("Exception when calling ProductsApi->detach_product_from_director: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **product_id** | **int**| Product ID to fetch | 
- **director_id** | **int**| Director ID to detach | 
 
 ### Return type
 
@@ -712,6 +625,53 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
+## **get_customer_has_access_to_products**
+> list[ProductAccessInfo] get_customer_has_access_to_products(customer_id, ip_address, body)
+
+
+
+Get customer access to Products
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.ProductsApi()
+customer_id = 789 # int | Customer ID to fetch
+ip_address = 'ip_address_example' # str | IP address
+body = kinow_client.ProductIDList() # ProductIDList | List of Product IDs separated by comma, eg. '42,21,84'
+
+try: 
+    api_response = api_instance.get_customer_has_access_to_products(customer_id, ip_address, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ProductsApi->get_customer_has_access_to_products: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customer_id** | **int**| Customer ID to fetch | 
+ **ip_address** | **str**| IP address | 
+ **body** | [**ProductIDList**](#ProductIDList)| List of Product IDs separated by comma, eg. &#39;42,21,84&#39; | 
+
+### Return type
+
+[**list[ProductAccessInfo]**](#ProductAccessInfo)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
 ## **get_product**
 > Product get_product(product_id)
 
@@ -804,12 +764,59 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
+## **get_product_actors_role**
+> Actors get_product_actors_role(product_id, page=page, per_page=per_page)
+
+
+
+Get Actors attached to Product with their role
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.ProductsApi()
+product_id = 789 # int | Product ID to fetch
+page = 789 # int |  (optional)
+per_page = 789 # int |  (optional)
+
+try: 
+    api_response = api_instance.get_product_actors_role(product_id, page=page, per_page=per_page)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ProductsApi->get_product_actors_role: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_id** | **int**| Product ID to fetch | 
+ **page** | **int**|  | [optional] 
+ **per_page** | **int**|  | [optional] 
+
+### Return type
+
+[**Actors**](#Actors)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
 ## **get_product_attributes**
 > ProductAttributesResponse get_product_attributes(product_id, page=page, per_page=per_page)
 
 
 
-Get product attributes. Mandatory to add product in cart: allows to buy product for download, streaming or both
+Get Product attributes. Mandatory to add TVOD Product in cart.
 
 ### Example 
 ```python
@@ -1038,8 +1045,55 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
+## **get_product_directors_role**
+> Directors get_product_directors_role(product_id, page=page, per_page=per_page)
+
+
+
+Get Directors attached to Product with their role
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.ProductsApi()
+product_id = 789 # int | Product ID to fetch
+page = 789 # int |  (optional)
+per_page = 789 # int |  (optional)
+
+try: 
+    api_response = api_instance.get_product_directors_role(product_id, page=page, per_page=per_page)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ProductsApi->get_product_directors_role: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_id** | **int**| Product ID to fetch | 
+ **page** | **int**|  | [optional] 
+ **per_page** | **int**|  | [optional] 
+
+### Return type
+
+[**Directors**](#Directors)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
 ## **get_product_extracts**
-> Videos get_product_extracts(product_id, page=page, per_page=per_page)
+> Videos1 get_product_extracts(product_id, page=page, per_page=per_page)
 
 
 
@@ -1076,7 +1130,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Videos**](#Videos)
+[**Videos1**](#Videos1)
 
 ### HTTP request headers
 
@@ -1481,7 +1535,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_videos_from_product**
-> Videos1 get_videos_from_product(product_id, page=page, filters=filters, per_page=per_page, ip=ip, sort_by=sort_by, sort_direction=sort_direction)
+> Videos2 get_videos_from_product(product_id, page=page, filters=filters, per_page=per_page, ip=ip, sort_by=sort_by, sort_direction=sort_direction)
 
 
 
@@ -1526,7 +1580,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Videos1**](#Videos1)
+[**Videos2**](#Videos2)
 
 ### HTTP request headers
 
