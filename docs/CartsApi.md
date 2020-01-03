@@ -21,7 +21,7 @@ Method | HTTP request | Description
 
 
 ## **add_product_to_cart**
-> Cart add_product_to_cart(cart_id, product_id, product_attribute_id=product_attribute_id, switch_subscription_id=switch_subscription_id)
+> Cart add_product_to_cart(cart_id, product_id, product_attribute_id=product_attribute_id, switch_subscription_id=switch_subscription_id, is_gift=is_gift)
 
 
 
@@ -41,9 +41,10 @@ cart_id = 789 # int | Cart ID to fetch
 product_id = 789 # int | Product ID to add to cart
 product_attribute_id = 789 # int | ProductAttribute ID, required to add product to cart if product is not a subscription (optional)
 switch_subscription_id = 789 # int | When customer want to switch subscription, switch_subscription_id is the product access ID that match with the subscription to cancel (optional)
+is_gift = false # bool | Allows bypass of access check (in case the current user already bought the product and it cannot be reordered) (optional) (default to false)
 
 try: 
-    api_response = api_instance.add_product_to_cart(cart_id, product_id, product_attribute_id=product_attribute_id, switch_subscription_id=switch_subscription_id)
+    api_response = api_instance.add_product_to_cart(cart_id, product_id, product_attribute_id=product_attribute_id, switch_subscription_id=switch_subscription_id, is_gift=is_gift)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CartsApi->add_product_to_cart: %s\n" % e)
@@ -57,6 +58,7 @@ Name | Type | Description  | Notes
  **product_id** | **int**| Product ID to add to cart | 
  **product_attribute_id** | **int**| ProductAttribute ID, required to add product to cart if product is not a subscription | [optional] 
  **switch_subscription_id** | **int**| When customer want to switch subscription, switch_subscription_id is the product access ID that match with the subscription to cancel | [optional] 
+ **is_gift** | **bool**| Allows bypass of access check (in case the current user already bought the product and it cannot be reordered) | [optional] [default to false]
 
 ### Return type
 

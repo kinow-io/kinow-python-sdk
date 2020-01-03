@@ -13,6 +13,8 @@ Method | HTTP request | Description
 [**get_category_banner**](#get_category_banner) | **GET** /categories/{category_id}/banner | 
 [**get_category_features**](#get_category_features) | **GET** /categories/{category_id}/features | 
 [**get_category_products**](#get_category_products) | **GET** /categories/{category_id}/products | 
+[**get_category_video_player**](#get_category_video_player) | **GET** /categories/videos/{video_id}/player | 
+[**get_category_video_subtitles**](#get_category_video_subtitles) | **GET** /categories/videos/{video_id}/subtitles | 
 [**get_product_categories**](#get_product_categories) | **GET** /products/{product_id}/categories | 
 [**get_subscription_categories**](#get_subscription_categories) | **GET** /subscriptions/{subscription_id}/categories | 
 [**get_videos_from_categories**](#get_videos_from_categories) | **GET** /categories/videos | 
@@ -435,6 +437,100 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Products**](#Products)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_category_video_player**
+> Player get_category_video_player(video_id, customer_id=customer_id, country_id=country_id)
+
+
+
+Get video player
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.CategoriesApi()
+video_id = 789 # int | Video ID to fetch
+customer_id = 789 # int | Customer ID to fetch (optional)
+country_id = 789 # int | Country ID to use in video analytics (optional)
+
+try: 
+    api_response = api_instance.get_category_video_player(video_id, customer_id=customer_id, country_id=country_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CategoriesApi->get_category_video_player: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **video_id** | **int**| Video ID to fetch | 
+ **customer_id** | **int**| Customer ID to fetch | [optional] 
+ **country_id** | **int**| Country ID to use in video analytics | [optional] 
+
+### Return type
+
+[**Player**](#Player)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_category_video_subtitles**
+> VideoSubtitlesResponse get_category_video_subtitles(video_id, page=page, per_page=per_page)
+
+
+
+Get subtitles of a video
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.CategoriesApi()
+video_id = 789 # int | Video ID to fetch
+page = 789 # int |  (optional)
+per_page = 789 # int |  (optional)
+
+try: 
+    api_response = api_instance.get_category_video_subtitles(video_id, page=page, per_page=per_page)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CategoriesApi->get_category_video_subtitles: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **video_id** | **int**| Video ID to fetch | 
+ **page** | **int**|  | [optional] 
+ **per_page** | **int**|  | [optional] 
+
+### Return type
+
+[**VideoSubtitlesResponse**](#VideoSubtitlesResponse)
 
 ### HTTP request headers
 

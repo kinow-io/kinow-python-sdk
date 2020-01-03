@@ -9,6 +9,8 @@ Method | HTTP request | Description
 [**attach_video_to_product**](#attach_video_to_product) | **POST** /products/{product_id}/videos | 
 [**create_video**](#create_video) | **POST** /videos | 
 [**delete_video**](#delete_video) | **DELETE** /videos/{video_id} | 
+[**get_category_video_player**](#get_category_video_player) | **GET** /categories/videos/{video_id}/player | 
+[**get_category_video_subtitles**](#get_category_video_subtitles) | **GET** /categories/videos/{video_id}/subtitles | 
 [**get_customer_has_access_to_video**](#get_customer_has_access_to_video) | **GET** /customers/{customer_id}/videos/{video_id}/has-access | 
 [**get_customer_has_access_to_videos**](#get_customer_has_access_to_videos) | **POST** /customers/{customer_id}/videos/has-access | 
 [**get_disabled_subscriptions**](#get_disabled_subscriptions) | **GET** /videos/{video_id}/disabled-subscriptions | 
@@ -239,6 +241,100 @@ Name | Type | Description  | Notes
 ### Return type
 
 void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_category_video_player**
+> Player get_category_video_player(video_id, customer_id=customer_id, country_id=country_id)
+
+
+
+Get video player
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.VideosApi()
+video_id = 789 # int | Video ID to fetch
+customer_id = 789 # int | Customer ID to fetch (optional)
+country_id = 789 # int | Country ID to use in video analytics (optional)
+
+try: 
+    api_response = api_instance.get_category_video_player(video_id, customer_id=customer_id, country_id=country_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling VideosApi->get_category_video_player: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **video_id** | **int**| Video ID to fetch | 
+ **customer_id** | **int**| Customer ID to fetch | [optional] 
+ **country_id** | **int**| Country ID to use in video analytics | [optional] 
+
+### Return type
+
+[**Player**](#Player)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_category_video_subtitles**
+> VideoSubtitlesResponse get_category_video_subtitles(video_id, page=page, per_page=per_page)
+
+
+
+Get subtitles of a video
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.VideosApi()
+video_id = 789 # int | Video ID to fetch
+page = 789 # int |  (optional)
+per_page = 789 # int |  (optional)
+
+try: 
+    api_response = api_instance.get_category_video_subtitles(video_id, page=page, per_page=per_page)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling VideosApi->get_category_video_subtitles: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **video_id** | **int**| Video ID to fetch | 
+ **page** | **int**|  | [optional] 
+ **per_page** | **int**|  | [optional] 
+
+### Return type
+
+[**VideoSubtitlesResponse**](#VideoSubtitlesResponse)
 
 ### HTTP request headers
 
@@ -703,7 +799,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_video_player**
-> PlayerConfiguration get_video_player(video_id, customer_id=customer_id, country_id=country_id)
+> Player get_video_player(video_id, customer_id=customer_id, country_id=country_id)
 
 
 
@@ -740,7 +836,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PlayerConfiguration**](#PlayerConfiguration)
+[**Player**](#Player)
 
 ### HTTP request headers
 
