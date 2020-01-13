@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **maximum_viewing** | **bool** |  | [optional] 
 **quality_hd** | **bool** |  | [optional] 
 **quality_sd** | **bool** |  | [optional] 
+**expires** | **str** |  | [optional] 
 
 [[Back to Model list]](#documentation-for-models) [[Back to API list]](#documentation-for-api-endpoints)
 
