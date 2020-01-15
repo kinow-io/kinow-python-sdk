@@ -4,7 +4,7 @@ All URIs are relative to *https://api.kinow.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**geolocations**](#geolocations) | **POST** /geolocations | 
+[**geolocations**](#geolocations) | **GET** /geolocations/platform-access | 
 [**get_ip_location**](#get_ip_location) | **GET** /geolocations/ip | 
 [**get_product_geolocations**](#get_product_geolocations) | **GET** /products/{product_id}/geolocations | 
 [**get_product_geolocations_by_ip**](#get_product_geolocations_by_ip) | **POST** /products/{product_id}/geolocations | 
@@ -14,11 +14,11 @@ Method | HTTP request | Description
 
 
 ## **geolocations**
-> geolocations(ip_address)
+> PlatformAccessInfo geolocations(ip_address)
 
 
 
-Check access to platform by ip
+Get PlatformAccessInfo by ip
 
 ### Example 
 ```python
@@ -30,10 +30,11 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.GeolocationsApi()
-ip_address = 'ip_address_example' # str | address ip
+ip_address = 'ip_address_example' # str | IP address
 
 try: 
-    api_instance.geolocations(ip_address)
+    api_response = api_instance.geolocations(ip_address)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling GeolocationsApi->geolocations: %s\n" % e)
 ```
@@ -42,11 +43,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ip_address** | **str**| address ip | 
+ **ip_address** | **str**| IP address | 
 
 ### Return type
 
-void (empty response body)
+[**PlatformAccessInfo**](#PlatformAccessInfo)
 
 ### HTTP request headers
 
