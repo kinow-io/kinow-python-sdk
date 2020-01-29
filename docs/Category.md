@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **date_add** | **str** |  | [optional] 
 **date_upd** | **str** |  | [optional] 
 **active** | **bool** |  | [optional] 
+**level_depth** | **int** |  | [optional] 
 **position** | **int** |  | [optional] 
 **images** | [**CategoryImages**](#CategoryImages) |  | [optional] 
 **meta_description** | [**list[I18nField]**](#I18nField) |  | [optional] 
