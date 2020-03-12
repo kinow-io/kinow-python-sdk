@@ -5,9 +5,11 @@ All URIs are relative to *https://api.kinow.com/api*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**attach_cover_to_extract**](#attach_cover_to_extract) | **POST** /extracts/{extract_id}/cover | 
+[**attach_features_to_extract**](#attach_features_to_extract) | **POST** /extracts/{extract_id}/features | 
 [**create_extract**](#create_extract) | **POST** /extracts | 
 [**delete_extract**](#delete_extract) | **DELETE** /extracts/{extract_id} | 
 [**get_extract**](#get_extract) | **GET** /extracts/{extract_id} | 
+[**get_extract_features**](#get_extract_features) | **GET** /extracts/{extract_id}/features | 
 [**get_extract_player**](#get_extract_player) | **GET** /extracts/{extract_id}/player | 
 [**get_extracts**](#get_extracts) | **GET** /extracts | 
 [**get_product_extracts**](#get_product_extracts) | **GET** /products/{product_id}/extracts | 
@@ -46,6 +48,50 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **extract_id** | **int**| Extract ID to fetch | 
  **id_image** | **int**| Image ID to attach | 
+
+### Return type
+
+void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **attach_features_to_extract**
+> attach_features_to_extract(extract_id, features)
+
+
+
+Attach feature to extract
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.ExtractsApi()
+extract_id = 789 # int | 
+features = 'features_example' # str |       To attach existing FeatureValue to Product:      ```      [{      \"id_feature\":3,      \"id_feature_value\":5      }]      ```        To create a custom FeatureValue:      ```      [{      \"id_feature\":3,      \"custom_value\":[{      \"lang\": 1,      \"value\": \"string\"      }]      }]      ```
+
+try: 
+    api_instance.attach_features_to_extract(extract_id, features)
+except ApiException as e:
+    print("Exception when calling ExtractsApi->attach_features_to_extract: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **extract_id** | **int**|  | 
+ **features** | **str**|       To attach existing FeatureValue to Product:      &#x60;&#x60;&#x60;      [{      \&quot;id_feature\&quot;:3,      \&quot;id_feature_value\&quot;:5      }]      &#x60;&#x60;&#x60;        To create a custom FeatureValue:      &#x60;&#x60;&#x60;      [{      \&quot;id_feature\&quot;:3,      \&quot;custom_value\&quot;:[{      \&quot;lang\&quot;: 1,      \&quot;value\&quot;: \&quot;string\&quot;      }]      }]      &#x60;&#x60;&#x60; | 
 
 ### Return type
 
@@ -186,6 +232,53 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
+## **get_extract_features**
+> Features get_extract_features(extract_id, page=page, per_page=per_page)
+
+
+
+Get extract features
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.ExtractsApi()
+extract_id = 789 # int | Extract ID to fetch
+page = 789 # int |  (optional)
+per_page = 789 # int |  (optional)
+
+try: 
+    api_response = api_instance.get_extract_features(extract_id, page=page, per_page=per_page)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExtractsApi->get_extract_features: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **extract_id** | **int**| Extract ID to fetch | 
+ **page** | **int**|  | [optional] 
+ **per_page** | **int**|  | [optional] 
+
+### Return type
+
+[**Features**](#Features)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
 ## **get_extract_player**
 > Player get_extract_player(extract_id)
 
@@ -230,7 +323,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_extracts**
-> Videos1 get_extracts(page=page, per_page=per_page)
+> Videos1 get_extracts(page=page, per_page=per_page, features=features, filters=filters)
 
 
 
@@ -248,9 +341,11 @@ from pprint import pprint
 api_instance = kinow_client.ExtractsApi()
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
+features = 'features_example' # str |       ```      features[*][value]=string&features[*][operator]=strict&features[1][value]=string&features[1][operator]=strict      _______________        {      \"*\": {      \"value\": \"string\",      \"operator\": \"strict\"      },      \"1\": {      \"value\": \"string\",      \"operator\": \"contains\"      }      } ```      Operator can be strict, contains, gt or lt.      To search on all features, you can pass * as featureId. (optional)
+filters = 'filters_example' # str |       ```      name[value]=string&name[operator]=strict&duration[value]=string&duration[operator]=gt      _______________        {      \"name\": {      \"value\": \"string\",      \"operator\": \"strict\"      },      \"duration\": {      \"value\": \"string\",      \"operator\": \"gt\"      }      } ```      Operator can be strict, contains, gt or lt. (optional)
 
 try: 
-    api_response = api_instance.get_extracts(page=page, per_page=per_page)
+    api_response = api_instance.get_extracts(page=page, per_page=per_page, features=features, filters=filters)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ExtractsApi->get_extracts: %s\n" % e)
@@ -262,6 +357,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
+ **features** | **str**|       &#x60;&#x60;&#x60;      features[*][value]&#x3D;string&amp;features[*][operator]&#x3D;strict&amp;features[1][value]&#x3D;string&amp;features[1][operator]&#x3D;strict      _______________        {      \&quot;*\&quot;: {      \&quot;value\&quot;: \&quot;string\&quot;,      \&quot;operator\&quot;: \&quot;strict\&quot;      },      \&quot;1\&quot;: {      \&quot;value\&quot;: \&quot;string\&quot;,      \&quot;operator\&quot;: \&quot;contains\&quot;      }      } &#x60;&#x60;&#x60;      Operator can be strict, contains, gt or lt.      To search on all features, you can pass * as featureId. | [optional] 
+ **filters** | **str**|       &#x60;&#x60;&#x60;      name[value]&#x3D;string&amp;name[operator]&#x3D;strict&amp;duration[value]&#x3D;string&amp;duration[operator]&#x3D;gt      _______________        {      \&quot;name\&quot;: {      \&quot;value\&quot;: \&quot;string\&quot;,      \&quot;operator\&quot;: \&quot;strict\&quot;      },      \&quot;duration\&quot;: {      \&quot;value\&quot;: \&quot;string\&quot;,      \&quot;operator\&quot;: \&quot;gt\&quot;      }      } &#x60;&#x60;&#x60;      Operator can be strict, contains, gt or lt. | [optional] 
 
 ### Return type
 
