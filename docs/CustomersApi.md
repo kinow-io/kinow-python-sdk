@@ -29,6 +29,8 @@ Method | HTTP request | Description
 [**get_facebook_customer**](#get_facebook_customer) | **GET** /customers/facebook/{facebook_id} | 
 [**get_payment_methods**](#get_payment_methods) | **GET** /customers/{customer_id}/payments/{payment_name}/payment-methods | 
 [**get_pending_payments**](#get_pending_payments) | **GET** /customers/{customer_id}/payments/{payment_name}/pending | 
+[**password_token**](#password_token) | **POST** /customers/password-token | 
+[**password_token_consume**](#password_token_consume) | **POST** /customers/password-token-consume | 
 [**stop_subscription**](#stop_subscription) | **PUT** /customers/{customer_id}/unsubscribe | 
 [**update_customer**](#update_customer) | **PUT** /customers/{customer_id} | 
 [**update_payment_method**](#update_payment_method) | **PUT** /customers/{customer_id}/payments/{payment_name}/payment-method | 
@@ -1157,6 +1159,93 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**list[PaymentDetails]**](#PaymentDetails)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **password_token**
+> Token password_token(email)
+
+
+
+Create temporary token to update password
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.CustomersApi()
+email = 'email_example' # str | Email of the Customer
+
+try: 
+    api_response = api_instance.password_token(email)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CustomersApi->password_token: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **email** | **str**| Email of the Customer | 
+
+### Return type
+
+[**Token**](#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **password_token_consume**
+> password_token_consume(token, password)
+
+
+
+Consume password token and update password
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.CustomersApi()
+token = 'token_example' # str | Temporary token to consume
+password = 'password_example' # str | Password to set on Customer account
+
+try: 
+    api_instance.password_token_consume(token, password)
+except ApiException as e:
+    print("Exception when calling CustomersApi->password_token_consume: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **token** | **str**| Temporary token to consume | 
+ **password** | **str**| Password to set on Customer account | 
+
+### Return type
+
+void (empty response body)
 
 ### HTTP request headers
 
