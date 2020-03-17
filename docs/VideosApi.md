@@ -388,7 +388,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_customer_has_access_to_videos**
-> list[VideoAccessInfo] get_customer_has_access_to_videos(customer_id, body, ip_address=ip_address)
+> list[VideoAccessInfo] get_customer_has_access_to_videos(customer_id, body)
 
 
 
@@ -406,10 +406,9 @@ from pprint import pprint
 api_instance = kinow_client.VideosApi()
 customer_id = 789 # int | Customer ID to fetch
 body = kinow_client.VideoIDList() # VideoIDList | List of Video IDs separated by comma, eg. '42,21,84'
-ip_address = 'ip_address_example' # str | IP address (optional)
 
 try: 
-    api_response = api_instance.get_customer_has_access_to_videos(customer_id, body, ip_address=ip_address)
+    api_response = api_instance.get_customer_has_access_to_videos(customer_id, body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling VideosApi->get_customer_has_access_to_videos: %s\n" % e)
@@ -421,7 +420,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customer_id** | **int**| Customer ID to fetch | 
  **body** | [**VideoIDList**](#VideoIDList)| List of Video IDs separated by comma, eg. &#39;42,21,84&#39; | 
- **ip_address** | **str**| IP address | [optional] 
 
 ### Return type
 
