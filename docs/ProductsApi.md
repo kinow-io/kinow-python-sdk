@@ -626,7 +626,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_customer_has_access_to_products**
-> list[ProductAccessInfo] get_customer_has_access_to_products(customer_id, ip_address, body)
+> list[ProductAccessInfo] get_customer_has_access_to_products(customer_id, body, ip_address=ip_address)
 
 
 
@@ -643,11 +643,11 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = kinow_client.ProductsApi()
 customer_id = 789 # int | Customer ID to fetch
-ip_address = 'ip_address_example' # str | IP address
 body = kinow_client.ProductIDList() # ProductIDList | List of Product IDs separated by comma, eg. '42,21,84'
+ip_address = 'ip_address_example' # str | IP address (optional)
 
 try: 
-    api_response = api_instance.get_customer_has_access_to_products(customer_id, ip_address, body)
+    api_response = api_instance.get_customer_has_access_to_products(customer_id, body, ip_address=ip_address)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProductsApi->get_customer_has_access_to_products: %s\n" % e)
@@ -658,8 +658,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customer_id** | **int**| Customer ID to fetch | 
- **ip_address** | **str**| IP address | 
  **body** | [**ProductIDList**](#ProductIDList)| List of Product IDs separated by comma, eg. &#39;42,21,84&#39; | 
+ **ip_address** | **str**| IP address | [optional] 
 
 ### Return type
 

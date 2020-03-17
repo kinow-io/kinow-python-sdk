@@ -388,7 +388,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_customer_has_access_to_videos**
-> list[VideoAccessInfo] get_customer_has_access_to_videos(customer_id, ip_address, body)
+> list[VideoAccessInfo] get_customer_has_access_to_videos(customer_id, body, ip_address=ip_address)
 
 
 
@@ -405,11 +405,11 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = kinow_client.VideosApi()
 customer_id = 789 # int | Customer ID to fetch
-ip_address = 'ip_address_example' # str | IP address
 body = kinow_client.VideoIDList() # VideoIDList | List of Video IDs separated by comma, eg. '42,21,84'
+ip_address = 'ip_address_example' # str | IP address (optional)
 
 try: 
-    api_response = api_instance.get_customer_has_access_to_videos(customer_id, ip_address, body)
+    api_response = api_instance.get_customer_has_access_to_videos(customer_id, body, ip_address=ip_address)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling VideosApi->get_customer_has_access_to_videos: %s\n" % e)
@@ -420,8 +420,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customer_id** | **int**| Customer ID to fetch | 
- **ip_address** | **str**| IP address | 
  **body** | [**VideoIDList**](#VideoIDList)| List of Video IDs separated by comma, eg. &#39;42,21,84&#39; | 
+ **ip_address** | **str**| IP address | [optional] 
 
 ### Return type
 
@@ -612,7 +612,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_video_download_url**
-> DownloadUrl get_video_download_url(video_id, customer_id=customer_id)
+> DownloadUrl get_video_download_url(video_id, customer_id=customer_id, ip_address=ip_address)
 
 
 
@@ -630,9 +630,10 @@ from pprint import pprint
 api_instance = kinow_client.VideosApi()
 video_id = 789 # int | Video ID to fetch
 customer_id = 789 # int | Customer ID to fetch (optional)
+ip_address = 'ip_address_example' # str | IP address (optional)
 
 try: 
-    api_response = api_instance.get_video_download_url(video_id, customer_id=customer_id)
+    api_response = api_instance.get_video_download_url(video_id, customer_id=customer_id, ip_address=ip_address)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling VideosApi->get_video_download_url: %s\n" % e)
@@ -644,6 +645,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **video_id** | **int**| Video ID to fetch | 
  **customer_id** | **int**| Customer ID to fetch | [optional] 
+ **ip_address** | **str**| IP address | [optional] 
 
 ### Return type
 
@@ -755,7 +757,7 @@ Name | Type | Description  | Notes
 
 
 
-Check access to a product by geolocation
+Check access to a video by geolocation
 
 ### Example 
 ```python
@@ -799,7 +801,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_video_player**
-> Player get_video_player(video_id, customer_id=customer_id, country_id=country_id)
+> Player get_video_player(video_id, customer_id=customer_id, country_id=country_id, ip_address=ip_address)
 
 
 
@@ -818,9 +820,10 @@ api_instance = kinow_client.VideosApi()
 video_id = 789 # int | Video ID to fetch
 customer_id = 789 # int | Customer ID to fetch (optional)
 country_id = 789 # int | Country ID to use in video analytics (optional)
+ip_address = 'ip_address_example' # str | IP address (optional)
 
 try: 
-    api_response = api_instance.get_video_player(video_id, customer_id=customer_id, country_id=country_id)
+    api_response = api_instance.get_video_player(video_id, customer_id=customer_id, country_id=country_id, ip_address=ip_address)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling VideosApi->get_video_player: %s\n" % e)
@@ -833,6 +836,7 @@ Name | Type | Description  | Notes
  **video_id** | **int**| Video ID to fetch | 
  **customer_id** | **int**| Customer ID to fetch | [optional] 
  **country_id** | **int**| Country ID to use in video analytics | [optional] 
+ **ip_address** | **str**| IP address | [optional] 
 
 ### Return type
 
