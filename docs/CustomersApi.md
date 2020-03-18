@@ -29,6 +29,7 @@ Method | HTTP request | Description
 [**get_facebook_customer**](#get_facebook_customer) | **GET** /customers/facebook/{facebook_id} | 
 [**get_payment_methods**](#get_payment_methods) | **GET** /customers/{customer_id}/payments/{payment_name}/payment-methods | 
 [**get_pending_payments**](#get_pending_payments) | **GET** /customers/{customer_id}/payments/{payment_name}/pending | 
+[**login_with_facebook**](#login_with_facebook) | **POST** /customers/facebook-login | 
 [**password_token**](#password_token) | **POST** /customers/password-token | 
 [**password_token_consume**](#password_token_consume) | **POST** /customers/password-token-consume | 
 [**stop_subscription**](#stop_subscription) | **PUT** /customers/{customer_id}/unsubscribe | 
@@ -174,7 +175,7 @@ Name | Type | Description  | Notes
 
 
 
-Create new Facebook ID for user
+Link a Facebook account ID to a Customer
 
 ### Example 
 ```python
@@ -1039,7 +1040,7 @@ Name | Type | Description  | Notes
 
 
 
-Get customer ID by Facebook ID
+Get Customer ID linked to a Facebook ID
 
 ### Example 
 ```python
@@ -1159,6 +1160,53 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**list[PaymentDetails]**](#PaymentDetails)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **login_with_facebook**
+> Customer login_with_facebook(token_type, token, redirect_uri=redirect_uri)
+
+
+
+Create or retrieve existing Customer account using Facebook authorization token
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.CustomersApi()
+token_type = 'token_type_example' # str | Can be 'oauth2' or 'authorization'
+token = 'token_example' # str | oAuth2 token or authorization code given by Facebook
+redirect_uri = 'redirect_uri_example' # str | Redirect URI is required if you're using authorization code method (optional)
+
+try: 
+    api_response = api_instance.login_with_facebook(token_type, token, redirect_uri=redirect_uri)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CustomersApi->login_with_facebook: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **token_type** | **str**| Can be &#39;oauth2&#39; or &#39;authorization&#39; | 
+ **token** | **str**| oAuth2 token or authorization code given by Facebook | 
+ **redirect_uri** | **str**| Redirect URI is required if you&#39;re using authorization code method | [optional] 
+
+### Return type
+
+[**Customer**](#Customer)
 
 ### HTTP request headers
 
