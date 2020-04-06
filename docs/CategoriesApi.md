@@ -19,6 +19,7 @@ Method | HTTP request | Description
 [**get_subscription_categories**](#get_subscription_categories) | **GET** /subscriptions/{subscription_id}/categories | 
 [**get_videos_from_categories**](#get_videos_from_categories) | **GET** /categories/videos | 
 [**get_videos_from_category**](#get_videos_from_category) | **GET** /categories/{category_id}/videos | 
+[**update_category**](#update_category) | **PUT** /categories/{category_id} | 
 
 
 ## **create_category**
@@ -735,6 +736,51 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Videos**](#Videos)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **update_category**
+> Category update_category(category_id, body)
+
+
+
+Update category
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.CategoriesApi()
+category_id = 789 # int | Category ID to update
+body = kinow_client.Category() # Category | 
+
+try: 
+    api_response = api_instance.update_category(category_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CategoriesApi->update_category: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **category_id** | **int**| Category ID to update | 
+ **body** | [**Category**](#Category)|  | 
+
+### Return type
+
+[**Category**](#Category)
 
 ### HTTP request headers
 
