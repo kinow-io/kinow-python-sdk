@@ -33,6 +33,7 @@ Method | HTTP request | Description
 [**get_product_geolocations_by_ip**](#get_product_geolocations_by_ip) | **POST** /products/{product_id}/geolocations | 
 [**get_product_groups**](#get_product_groups) | **GET** /products/{product_id}/groups | 
 [**get_product_images**](#get_product_images) | **GET** /products/{product_id}/images | 
+[**get_product_screenshots**](#get_product_screenshots) | **GET** /products/{product_id}/screenshots | 
 [**get_product_subscription**](#get_product_subscription) | **GET** /products/{product_id}/subscription | 
 [**get_products**](#get_products) | **GET** /products | 
 [**get_products_from_product**](#get_products_from_product) | **GET** /products/{product_id}/products | 
@@ -41,6 +42,7 @@ Method | HTTP request | Description
 [**set_product_geolocation**](#set_product_geolocation) | **PUT** /products/{product_id}/geolocations | 
 [**update_product**](#update_product) | **PUT** /products/{product_id} | 
 [**update_product_group_restriction_behavior**](#update_product_group_restriction_behavior) | **PUT** /products/{product_id}/groups/behavior | 
+[**upload_product_cover**](#upload_product_cover) | **POST** /products/{product_id}/cover | 
 
 
 ## **attach_features_to_product**
@@ -1344,7 +1346,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = kinow_client.ProductsApi()
 product_id = 789 # int | Product ID to fetch
-type = 'type_example' # str | type as screen_small or screen_large (optional)
+type = 'type_example' # str | Filter on specific Image type (optional)
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 
@@ -1360,13 +1362,56 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **product_id** | **int**| Product ID to fetch | 
- **type** | **str**| type as screen_small or screen_large | [optional] 
+ **type** | **str**| Filter on specific Image type | [optional] 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
 
 ### Return type
 
 [**ProductImagesResponse**](#ProductImagesResponse)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_product_screenshots**
+> list[Screenshot] get_product_screenshots(product_id)
+
+
+
+Get product screenshots
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.ProductsApi()
+product_id = 789 # int | Product ID to fetch
+
+try: 
+    api_response = api_instance.get_product_screenshots(product_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ProductsApi->get_product_screenshots: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_id** | **int**| Product ID to fetch | 
+
+### Return type
+
+[**list[Screenshot]**](#Screenshot)
 
 ### HTTP request headers
 
@@ -1783,6 +1828,55 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **upload_product_cover**
+> Image upload_product_cover(product_id, file, hash, hash_algorithm=hash_algorithm)
+
+
+
+Upload product cover
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.ProductsApi()
+product_id = 3.4 # float | Product ID to fetch
+file = '/path/to/file.txt' # file | 
+hash = 'hash_example' # str | 
+hash_algorithm = 'hash_algorithm_example' # str | Hash algorithm to check the hash file (default value is: sha256) (optional)
+
+try: 
+    api_response = api_instance.upload_product_cover(product_id, file, hash, hash_algorithm=hash_algorithm)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ProductsApi->upload_product_cover: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_id** | **float**| Product ID to fetch | 
+ **file** | **file**|  | 
+ **hash** | **str**|  | 
+ **hash_algorithm** | **str**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
+
+### Return type
+
+[**Image**](#Image)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)

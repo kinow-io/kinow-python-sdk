@@ -8,12 +8,14 @@ Method | HTTP request | Description
 [**create_director**](#create_director) | **POST** /directors | 
 [**delete_director**](#delete_director) | **DELETE** /directors/{director_id} | 
 [**get_director**](#get_director) | **GET** /directors/{director_id} | 
+[**get_director_cover_image**](#get_director_cover_image) | **GET** /directors/{director_id}/cover | 
 [**get_director_products**](#get_director_products) | **GET** /directors/{director_id}/products | 
 [**get_director_products_role**](#get_director_products_role) | **GET** /directors/{director_id}/products-role | 
 [**get_directors**](#get_directors) | **GET** /directors | 
 [**get_product_directors**](#get_product_directors) | **GET** /products/{product_id}/directors | 
 [**get_product_directors_role**](#get_product_directors_role) | **GET** /products/{product_id}/directors-role | 
 [**update_director**](#update_director) | **PUT** /directors/{director_id} | 
+[**upload_director_cover**](#upload_director_cover) | **POST** /directors/{director_id}/cover | 
 
 
 ## **attach_product_to_director**
@@ -146,7 +148,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_director**
-> Director get_director(director_id, image_type=image_type)
+> Director get_director(director_id)
 
 
 
@@ -163,10 +165,9 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = kinow_client.DirectorsApi()
 director_id = 789 # int | Director ID to fetch
-image_type = 'image_type_example' # str |  (optional)
 
 try: 
-    api_response = api_instance.get_director(director_id, image_type=image_type)
+    api_response = api_instance.get_director(director_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DirectorsApi->get_director: %s\n" % e)
@@ -177,11 +178,53 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **director_id** | **int**| Director ID to fetch | 
- **image_type** | **str**|  | [optional] 
 
 ### Return type
 
 [**Director**](#Director)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_director_cover_image**
+> Image get_director_cover_image(director_id)
+
+
+
+Get cover image of a director
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.DirectorsApi()
+director_id = 789 # int | Director ID to fetch
+
+try: 
+    api_response = api_instance.get_director_cover_image(director_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DirectorsApi->get_director_cover_image: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **director_id** | **int**| Director ID to fetch | 
+
+### Return type
+
+[**Image**](#Image)
 
 ### HTTP request headers
 
@@ -295,7 +338,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_directors**
-> Directors get_directors(page=page, per_page=per_page, image_type=image_type)
+> Directors get_directors(page=page, per_page=per_page)
 
 
 
@@ -313,10 +356,9 @@ from pprint import pprint
 api_instance = kinow_client.DirectorsApi()
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
-image_type = 'image_type_example' # str |  (optional)
 
 try: 
-    api_response = api_instance.get_directors(page=page, per_page=per_page, image_type=image_type)
+    api_response = api_instance.get_directors(page=page, per_page=per_page)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DirectorsApi->get_directors: %s\n" % e)
@@ -328,7 +370,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
- **image_type** | **str**|  | [optional] 
 
 ### Return type
 
@@ -477,6 +518,55 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **upload_director_cover**
+> Image upload_director_cover(director_id, file, hash, hash_algorithm=hash_algorithm)
+
+
+
+Upload director cover
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.DirectorsApi()
+director_id = 3.4 # float | Director ID to fetch
+file = '/path/to/file.txt' # file | 
+hash = 'hash_example' # str | 
+hash_algorithm = 'hash_algorithm_example' # str | Hash algorithm to check the hash file (default value is: sha256) (optional)
+
+try: 
+    api_response = api_instance.upload_director_cover(director_id, file, hash, hash_algorithm=hash_algorithm)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DirectorsApi->upload_director_cover: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **director_id** | **float**| Director ID to fetch | 
+ **file** | **file**|  | 
+ **hash** | **str**|  | 
+ **hash_algorithm** | **str**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
+
+### Return type
+
+[**Image**](#Image)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)

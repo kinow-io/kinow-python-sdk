@@ -4,68 +4,21 @@ All URIs are relative to *https://api.kinow.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**delete_product_screenshot**](#delete_product_screenshot) | **DELETE** /products/{product_id}/screenshots/{image_id} | 
 [**get_actor_cover_image**](#get_actor_cover_image) | **GET** /actors/{actor_id}/cover | 
 [**get_category_banner**](#get_category_banner) | **GET** /categories/{category_id}/banner | 
 [**get_director_cover_image**](#get_director_cover_image) | **GET** /directors/{director_id}/cover | 
-[**get_intro_image**](#get_intro_image) | **GET** /widgets/intro/images | 
 [**get_product_cover_image**](#get_product_cover_image) | **GET** /products/{product_id}/cover | 
 [**get_product_images**](#get_product_images) | **GET** /products/{product_id}/images | 
 [**get_product_screenshots**](#get_product_screenshots) | **GET** /products/{product_id}/screenshots | 
+[**get_slider_image**](#get_slider_image) | **GET** /widgets/slider/images | 
 [**get_subscription_cover_image**](#get_subscription_cover_image) | **GET** /subscriptions/{subscription_id}/cover | 
 [**get_video_cover**](#get_video_cover) | **GET** /videos/{video_id}/cover | 
 [**upload_actor_cover**](#upload_actor_cover) | **POST** /actors/{actor_id}/cover | 
-[**upload_category_banner**](#upload_category_banner) | **POST** /category/{category_id}/banner | 
+[**upload_category_cover**](#upload_category_cover) | **POST** /categories/{category_id}/cover | 
 [**upload_director_cover**](#upload_director_cover) | **POST** /directors/{director_id}/cover | 
 [**upload_product_cover**](#upload_product_cover) | **POST** /products/{product_id}/cover | 
-[**upload_product_screenshot**](#upload_product_screenshot) | **PUT** /products/{product_id}/screenshots/{image_id} | 
-[**upload_product_screenshots**](#upload_product_screenshots) | **POST** /products/{product_id}/screenshots | 
 [**upload_subscription_cover**](#upload_subscription_cover) | **POST** /subscriptions/{subscription_id}/cover | 
 
-
-## **delete_product_screenshot**
-> delete_product_screenshot(product_id, image_id)
-
-
-
-Delete product screenshot
-
-### Example 
-```python
-from __future__ import print_statement
-import time
-import kinow_client
-from kinow_client.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = kinow_client.ImagesApi()
-product_id = 3.4 # float | Product ID to fetch
-image_id = 3.4 # float | Image ID to delete
-
-try: 
-    api_instance.delete_product_screenshot(product_id, image_id)
-except ApiException as e:
-    print("Exception when calling ImagesApi->delete_product_screenshot: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **product_id** | **float**| Product ID to fetch | 
- **image_id** | **float**| Image ID to delete | 
-
-### Return type
-
-void (empty response body)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_actor_cover_image**
 > Image get_actor_cover_image(actor_id)
@@ -115,7 +68,7 @@ Name | Type | Description  | Notes
 
 
 
-Get banner of a category
+Get Category banner
 
 ### Example 
 ```python
@@ -196,45 +149,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
-## **get_intro_image**
-> list[Image] get_intro_image()
-
-
-
-Get introduction image
-
-### Example 
-```python
-from __future__ import print_statement
-import time
-import kinow_client
-from kinow_client.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = kinow_client.ImagesApi()
-
-try: 
-    api_response = api_instance.get_intro_image()
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ImagesApi->get_intro_image: %s\n" % e)
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**list[Image]**](#Image)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
-
 ## **get_product_cover_image**
 > Image get_product_cover_image(product_id)
 
@@ -296,7 +210,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = kinow_client.ImagesApi()
 product_id = 789 # int | Product ID to fetch
-type = 'type_example' # str | type as screen_small or screen_large (optional)
+type = 'type_example' # str | Filter on specific Image type (optional)
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 
@@ -312,7 +226,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **product_id** | **int**| Product ID to fetch | 
- **type** | **str**| type as screen_small or screen_large | [optional] 
+ **type** | **str**| Filter on specific Image type | [optional] 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
 
@@ -362,6 +276,45 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**list[Screenshot]**](#Screenshot)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_slider_image**
+> list[Image] get_slider_image()
+
+
+
+Get slider images
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.ImagesApi()
+
+try: 
+    api_response = api_instance.get_slider_image()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ImagesApi->get_slider_image: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**list[Image]**](#Image)
 
 ### HTTP request headers
 
@@ -505,12 +458,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
-## **upload_category_banner**
-> Image upload_category_banner(category_id, file, hash, hash_algorithm=hash_algorithm)
+## **upload_category_cover**
+> Image upload_category_cover(category_id, file, hash, hash_algorithm=hash_algorithm)
 
 
 
-Upload category banner
+Upload Category cover
 
 ### Example 
 ```python
@@ -528,10 +481,10 @@ hash = 'hash_example' # str |
 hash_algorithm = 'hash_algorithm_example' # str | Hash algorithm to check the hash file (default value is: sha256) (optional)
 
 try: 
-    api_response = api_instance.upload_category_banner(category_id, file, hash, hash_algorithm=hash_algorithm)
+    api_response = api_instance.upload_category_cover(category_id, file, hash, hash_algorithm=hash_algorithm)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ImagesApi->upload_category_banner: %s\n" % e)
+    print("Exception when calling ImagesApi->upload_category_cover: %s\n" % e)
 ```
 
 ### Parameters
@@ -644,104 +597,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Image**](#Image)
-
-### HTTP request headers
-
- - **Content-Type**: multipart/form-data
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
-
-## **upload_product_screenshot**
-> Screenshot upload_product_screenshot(product_id, image_id, position=position)
-
-
-
-Upload product screenshot
-
-### Example 
-```python
-from __future__ import print_statement
-import time
-import kinow_client
-from kinow_client.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = kinow_client.ImagesApi()
-product_id = 3.4 # float | Product ID to fetch
-image_id = 3.4 # float | Image ID to fetch
-position = 3.4 # float |  (optional)
-
-try: 
-    api_response = api_instance.upload_product_screenshot(product_id, image_id, position=position)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ImagesApi->upload_product_screenshot: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **product_id** | **float**| Product ID to fetch | 
- **image_id** | **float**| Image ID to fetch | 
- **position** | **float**|  | [optional] 
-
-### Return type
-
-[**Screenshot**](#Screenshot)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
-
-## **upload_product_screenshots**
-> list[Screenshot] upload_product_screenshots(product_id, file, hash, hash_algorithm=hash_algorithm, position=position)
-
-
-
-Upload product screenshots
-
-### Example 
-```python
-from __future__ import print_statement
-import time
-import kinow_client
-from kinow_client.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = kinow_client.ImagesApi()
-product_id = 3.4 # float | Product ID to fetch
-file = '/path/to/file.txt' # file | 
-hash = 'hash_example' # str | 
-hash_algorithm = 'hash_algorithm_example' # str | Hash algorithm to check the hash file (default value is: sha256) (optional)
-position = 3.4 # float |  (optional)
-
-try: 
-    api_response = api_instance.upload_product_screenshots(product_id, file, hash, hash_algorithm=hash_algorithm, position=position)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ImagesApi->upload_product_screenshots: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **product_id** | **float**| Product ID to fetch | 
- **file** | **file**|  | 
- **hash** | **str**|  | 
- **hash_algorithm** | **str**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
- **position** | **float**|  | [optional] 
-
-### Return type
-
-[**list[Screenshot]**](#Screenshot)
 
 ### HTTP request headers
 

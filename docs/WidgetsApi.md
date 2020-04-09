@@ -4,7 +4,7 @@ All URIs are relative to *https://api.kinow.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_intro_image**](#get_intro_image) | **GET** /widgets/intro/images | 
+[**get_slider_image**](#get_slider_image) | **GET** /widgets/slider/images | 
 [**get_widget_analytics**](#get_widget_analytics) | **GET** /widgets/analytics | 
 [**get_widget_footer_menu**](#get_widget_footer_menu) | **GET** /widgets/footer-menu | 
 [**get_widget_hook_phrase**](#get_widget_hook_phrase) | **GET** /widgets/hook-phrase | 
@@ -13,12 +13,12 @@ Method | HTTP request | Description
 [**get_widget_top_menu**](#get_widget_top_menu) | **GET** /widgets/top-menu | 
 
 
-## **get_intro_image**
-> list[Image] get_intro_image()
+## **get_slider_image**
+> list[Image] get_slider_image()
 
 
 
-Get introduction image
+Get slider images
 
 ### Example 
 ```python
@@ -32,10 +32,10 @@ from pprint import pprint
 api_instance = kinow_client.WidgetsApi()
 
 try: 
-    api_response = api_instance.get_intro_image()
+    api_response = api_instance.get_slider_image()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling WidgetsApi->get_intro_image: %s\n" % e)
+    print("Exception when calling WidgetsApi->get_slider_image: %s\n" % e)
 ```
 
 ### Parameters

@@ -20,6 +20,7 @@ Method | HTTP request | Description
 [**get_videos_from_categories**](#get_videos_from_categories) | **GET** /categories/videos | 
 [**get_videos_from_category**](#get_videos_from_category) | **GET** /categories/{category_id}/videos | 
 [**update_category**](#update_category) | **PUT** /categories/{category_id} | 
+[**upload_category_cover**](#upload_category_cover) | **POST** /categories/{category_id}/cover | 
 
 
 ## **create_category**
@@ -304,7 +305,7 @@ Name | Type | Description  | Notes
 
 
 
-Get banner of a category
+Get Category banner
 
 ### Example 
 ```python
@@ -785,6 +786,55 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **upload_category_cover**
+> Image upload_category_cover(category_id, file, hash, hash_algorithm=hash_algorithm)
+
+
+
+Upload Category cover
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.CategoriesApi()
+category_id = 3.4 # float | Category ID to fetch
+file = '/path/to/file.txt' # file | 
+hash = 'hash_example' # str | 
+hash_algorithm = 'hash_algorithm_example' # str | Hash algorithm to check the hash file (default value is: sha256) (optional)
+
+try: 
+    api_response = api_instance.upload_category_cover(category_id, file, hash, hash_algorithm=hash_algorithm)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CategoriesApi->upload_category_cover: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **category_id** | **float**| Category ID to fetch | 
+ **file** | **file**|  | 
+ **hash** | **str**|  | 
+ **hash_algorithm** | **str**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
+
+### Return type
+
+[**Image**](#Image)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)

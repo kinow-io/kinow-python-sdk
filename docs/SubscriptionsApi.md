@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**get_subscription_categories**](#get_subscription_categories) | **GET** /subscriptions/{subscription_id}/categories | 
 [**get_subscription_cover_image**](#get_subscription_cover_image) | **GET** /subscriptions/{subscription_id}/cover | 
 [**get_subscriptions**](#get_subscriptions) | **GET** /subscriptions | 
+[**upload_subscription_cover**](#upload_subscription_cover) | **POST** /subscriptions/{subscription_id}/cover | 
 
 
 ## **get_disabled_subscriptions**
@@ -280,6 +281,55 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **upload_subscription_cover**
+> Image upload_subscription_cover(subscription_id, file, hash, hash_algorithm=hash_algorithm)
+
+
+
+Upload subscription cover
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.SubscriptionsApi()
+subscription_id = 3.4 # float | Subscription ID to fetch
+file = '/path/to/file.txt' # file | 
+hash = 'hash_example' # str | 
+hash_algorithm = 'hash_algorithm_example' # str | Hash algorithm to check the hash file (default value is: sha256) (optional)
+
+try: 
+    api_response = api_instance.upload_subscription_cover(subscription_id, file, hash, hash_algorithm=hash_algorithm)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SubscriptionsApi->upload_subscription_cover: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **subscription_id** | **float**| Subscription ID to fetch | 
+ **file** | **file**|  | 
+ **hash** | **str**|  | 
+ **hash_algorithm** | **str**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
+
+### Return type
+
+[**Image**](#Image)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)

@@ -8,12 +8,14 @@ Method | HTTP request | Description
 [**create_actor**](#create_actor) | **POST** /actors | 
 [**delete_actor**](#delete_actor) | **DELETE** /actors/{actor_id} | 
 [**get_actor**](#get_actor) | **GET** /actors/{actor_id} | 
+[**get_actor_cover_image**](#get_actor_cover_image) | **GET** /actors/{actor_id}/cover | 
 [**get_actor_products**](#get_actor_products) | **GET** /actors/{actor_id}/products | 
 [**get_actor_products_role**](#get_actor_products_role) | **GET** /actors/{actor_id}/products-role | 
 [**get_actors**](#get_actors) | **GET** /actors | 
 [**get_product_actors**](#get_product_actors) | **GET** /products/{product_id}/actors | 
 [**get_product_actors_role**](#get_product_actors_role) | **GET** /products/{product_id}/actors-role | 
 [**update_actor**](#update_actor) | **PUT** /actors/{actor_id} | 
+[**upload_actor_cover**](#upload_actor_cover) | **POST** /actors/{actor_id}/cover | 
 
 
 ## **attach_product_to_actor**
@@ -146,7 +148,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_actor**
-> Actor get_actor(actor_id, image_type=image_type)
+> Actor get_actor(actor_id)
 
 
 
@@ -163,10 +165,9 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = kinow_client.ActorsApi()
 actor_id = 789 # int | Actor ID to fetch
-image_type = 'image_type_example' # str |  (optional)
 
 try: 
-    api_response = api_instance.get_actor(actor_id, image_type=image_type)
+    api_response = api_instance.get_actor(actor_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ActorsApi->get_actor: %s\n" % e)
@@ -177,11 +178,53 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **actor_id** | **int**| Actor ID to fetch | 
- **image_type** | **str**|  | [optional] 
 
 ### Return type
 
 [**Actor**](#Actor)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_actor_cover_image**
+> Image get_actor_cover_image(actor_id)
+
+
+
+Get cover image of an actor
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.ActorsApi()
+actor_id = 789 # int | Actor ID to fetch
+
+try: 
+    api_response = api_instance.get_actor_cover_image(actor_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ActorsApi->get_actor_cover_image: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **actor_id** | **int**| Actor ID to fetch | 
+
+### Return type
+
+[**Image**](#Image)
 
 ### HTTP request headers
 
@@ -295,7 +338,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_actors**
-> Actors get_actors(page=page, per_page=per_page, image_type=image_type)
+> Actors get_actors(page=page, per_page=per_page)
 
 
 
@@ -313,10 +356,9 @@ from pprint import pprint
 api_instance = kinow_client.ActorsApi()
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
-image_type = 'image_type_example' # str |  (optional)
 
 try: 
-    api_response = api_instance.get_actors(page=page, per_page=per_page, image_type=image_type)
+    api_response = api_instance.get_actors(page=page, per_page=per_page)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ActorsApi->get_actors: %s\n" % e)
@@ -328,7 +370,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
- **image_type** | **str**|  | [optional] 
 
 ### Return type
 
@@ -477,6 +518,55 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **upload_actor_cover**
+> Image upload_actor_cover(actor_id, file, hash, hash_algorithm=hash_algorithm)
+
+
+
+Upload actor cover
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.ActorsApi()
+actor_id = 3.4 # float | Actor ID to fetch
+file = '/path/to/file.txt' # file | 
+hash = 'hash_example' # str | 
+hash_algorithm = 'hash_algorithm_example' # str | Hash algorithm to check the hash file (default value is: sha256) (optional)
+
+try: 
+    api_response = api_instance.upload_actor_cover(actor_id, file, hash, hash_algorithm=hash_algorithm)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ActorsApi->upload_actor_cover: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **actor_id** | **float**| Actor ID to fetch | 
+ **file** | **file**|  | 
+ **hash** | **str**|  | 
+ **hash_algorithm** | **str**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
+
+### Return type
+
+[**Image**](#Image)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
