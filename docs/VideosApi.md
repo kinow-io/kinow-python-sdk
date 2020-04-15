@@ -654,7 +654,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_video_download_url**
-> DownloadUrl get_video_download_url(video_id, customer_id=customer_id, ip_address=ip_address)
+> DownloadInformations get_video_download_url(video_id, customer_id=customer_id, ip_address=ip_address)
 
 
 
@@ -691,7 +691,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DownloadUrl**](#DownloadUrl)
+[**DownloadInformations**](#DownloadInformations)
 
 ### HTTP request headers
 
