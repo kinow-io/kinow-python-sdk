@@ -3,7 +3,7 @@
 ### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**download_url** | **str** |  | [optional] 
+**source_url** | **str** |  | [optional] 
 **manifest** | **object** |  | [optional] 
 **session_id** | **str** |  | [optional] 
 

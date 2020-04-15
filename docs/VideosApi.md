@@ -658,7 +658,7 @@ Name | Type | Description  | Notes
 
 
 
-Get video download url
+Get video download informations
 
 ### Example 
 ```python
