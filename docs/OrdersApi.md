@@ -149,7 +149,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_order_invoice**
-> str get_order_invoice(order_id)
+> str get_order_invoice(order_id, to_blob=to_blob)
 
 
 
@@ -166,9 +166,10 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = kinow_client.OrdersApi()
 order_id = 789 # int | Order ID to fetch
+to_blob = true # bool | Get PDF content in blob (optional) (default to true)
 
 try: 
-    api_response = api_instance.get_order_invoice(order_id)
+    api_response = api_instance.get_order_invoice(order_id, to_blob=to_blob)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling OrdersApi->get_order_invoice: %s\n" % e)
@@ -179,6 +180,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **order_id** | **int**| Order ID to fetch | 
+ **to_blob** | **bool**| Get PDF content in blob | [optional] [default to true]
 
 ### Return type
 

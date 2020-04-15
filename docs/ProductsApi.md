@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**detach_feature_to_product**](#detach_feature_to_product) | **DELETE** /products/{product_id}/features/{feature_id} | 
 [**detach_product_from_category**](#detach_product_from_category) | **DELETE** /products/{product_id}/categories/{category_id} | 
 [**detach_product_from_group**](#detach_product_from_group) | **DELETE** /products/{product_id}/groups/{group_id} | 
+[**get_best_sales**](#get_best_sales) | **GET** /products/best-sales | 
 [**get_category_products**](#get_category_products) | **GET** /categories/{category_id}/products | 
 [**get_customer_has_access_to_product**](#get_customer_has_access_to_product) | **GET** /customers/{customer_id}/products/{product_id}/has-access | 
 [**get_customer_has_access_to_products**](#get_customer_has_access_to_products) | **POST** /customers/{customer_id}/products/has-access | 
@@ -518,6 +519,53 @@ Name | Type | Description  | Notes
 ### Return type
 
 void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_best_sales**
+> Products get_best_sales(page=page, per_page=per_page, ip=ip)
+
+
+
+Get most saled Products
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.ProductsApi()
+page = 789 # int |  (optional)
+per_page = 789 # int |  (optional)
+ip = 'ip_example' # str | filter by Customer IP (optional)
+
+try: 
+    api_response = api_instance.get_best_sales(page=page, per_page=per_page, ip=ip)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ProductsApi->get_best_sales: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **int**|  | [optional] 
+ **per_page** | **int**|  | [optional] 
+ **ip** | **str**| filter by Customer IP | [optional] 
+
+### Return type
+
+[**Products**](#Products)
 
 ### HTTP request headers
 
