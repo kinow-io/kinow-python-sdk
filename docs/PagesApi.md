@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 
-Get page
+Get automatic page
 
 ### Example 
 ```python
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 
 
 
-Get pages
+Get automatic pages
 
 ### Example 
 ```python
