@@ -15,7 +15,6 @@ from .categories_api import CategoriesApi
 from .configuration_api import ConfigurationApi
 from .countries_api import CountriesApi
 from .currencies_api import CurrenciesApi
-from .customer_threads_api import CustomerThreadsApi
 from .customers_api import CustomersApi
 from .devices_api import DevicesApi
 from .directors_api import DirectorsApi
@@ -41,6 +40,7 @@ from .product_accesses_api import ProductAccessesApi
 from .products_api import ProductsApi
 from .stats_api import StatsApi
 from .subscriptions_api import SubscriptionsApi
+from .support_api import SupportApi
 from .tasks_api import TasksApi
 from .tax_rules_api import TaxRulesApi
 from .videos_api import VideosApi
