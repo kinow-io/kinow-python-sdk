@@ -15,6 +15,8 @@ Name | Type | Description | Notes
 **active** | **int** |  | [optional] 
 **message** | **str** |  | [optional] 
 **id_order** | **int** |  | [optional] 
+**date_renewal** | **str** |  | [optional] 
+**payment_method** | **str** |  | [optional] 
 
 [[Back to Model list]](#documentation-for-models) [[Back to API list]](#documentation-for-api-endpoints)
 

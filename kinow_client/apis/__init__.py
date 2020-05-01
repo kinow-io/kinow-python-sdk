@@ -18,6 +18,7 @@ from .currencies_api import CurrenciesApi
 from .customers_api import CustomersApi
 from .devices_api import DevicesApi
 from .directors_api import DirectorsApi
+from .employees_api import EmployeesApi
 from .extracts_api import ExtractsApi
 from .feature_values_api import FeatureValuesApi
 from .features_api import FeaturesApi
