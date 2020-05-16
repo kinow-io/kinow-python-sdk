@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 ## **create_message**
-> Support create_message(id_lang, email, id_contact, message, id_product, id_order=id_order)
+> Support create_message(id_lang, email, id_contact, message, id_product=id_product, id_order=id_order)
 
 
 
@@ -29,11 +29,11 @@ id_lang = 56 # int |
 email = 'email_example' # str | 
 id_contact = 56 # int | 
 message = 'message_example' # str | 
-id_product = 56 # int | 
+id_product = 56 # int |  (optional)
 id_order = 56 # int |  (optional)
 
 try: 
-    api_response = api_instance.create_message(id_lang, email, id_contact, message, id_product, id_order=id_order)
+    api_response = api_instance.create_message(id_lang, email, id_contact, message, id_product=id_product, id_order=id_order)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SupportApi->create_message: %s\n" % e)
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
  **email** | **str**|  | 
  **id_contact** | **int**|  | 
  **message** | **str**|  | 
- **id_product** | **int**|  | 
+ **id_product** | **int**|  | [optional] 
  **id_order** | **int**|  | [optional] 
 
 ### Return type
