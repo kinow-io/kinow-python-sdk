@@ -4,6 +4,7 @@ All URIs are relative to *https://api.kinow.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**associate_products**](#associate_products) | **POST** /products/{product_id}/products | 
 [**attach_features_to_product**](#attach_features_to_product) | **POST** /products/{product_id}/features | 
 [**attach_product_to_actor**](#attach_product_to_actor) | **POST** /products/{product_id}/actors | 
 [**attach_product_to_category**](#attach_product_to_category) | **POST** /products/{product_id}/categories | 
@@ -45,6 +46,50 @@ Method | HTTP request | Description
 [**update_product_group_restriction_behavior**](#update_product_group_restriction_behavior) | **PUT** /products/{product_id}/groups/behavior | 
 [**upload_product_cover**](#upload_product_cover) | **POST** /products/{product_id}/cover | 
 
+
+## **associate_products**
+> associate_products(product_id, associated_product_ids)
+
+
+
+Associate products to another product
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.ProductsApi()
+product_id = 789 # int | Product ID to fetch
+associated_product_ids = 'associated_product_ids_example' # str | Products IDs to associate to another product. IDs must be separated with comma (,)
+
+try: 
+    api_instance.associate_products(product_id, associated_product_ids)
+except ApiException as e:
+    print("Exception when calling ProductsApi->associate_products: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_id** | **int**| Product ID to fetch | 
+ **associated_product_ids** | **str**| Products IDs to associate to another product. IDs must be separated with comma (,) | 
+
+### Return type
+
+void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **attach_features_to_product**
 > attach_features_to_product(product_id, features)

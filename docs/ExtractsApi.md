@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**attach_cover_to_extract**](#attach_cover_to_extract) | **POST** /extracts/{extract_id}/cover | 
 [**attach_features_to_extract**](#attach_features_to_extract) | **POST** /extracts/{extract_id}/features | 
 [**create_extract**](#create_extract) | **POST** /extracts | 
+[**create_subtitle**](#create_subtitle) | **POST** /extracts/{extract_id}/subtitle | 
 [**delete_extract**](#delete_extract) | **DELETE** /extracts/{extract_id} | 
 [**get_extract**](#get_extract) | **GET** /extracts/{extract_id} | 
 [**get_extract_features**](#get_extract_features) | **GET** /extracts/{extract_id}/features | 
@@ -139,6 +140,51 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Extract**](#Extract)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **create_subtitle**
+> Subtitle create_subtitle(extract_id, body)
+
+
+
+Create new Extract Subtitle
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.ExtractsApi()
+extract_id = 789 # int | Extract ID to attach the created Subtitle
+body = kinow_client.CreateExtractSubtitleRequest() # CreateExtractSubtitleRequest | Subtitle settings
+
+try: 
+    api_response = api_instance.create_subtitle(extract_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExtractsApi->create_subtitle: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **extract_id** | **int**| Extract ID to attach the created Subtitle | 
+ **body** | [**CreateExtractSubtitleRequest**](#CreateExtractSubtitleRequest)| Subtitle settings | 
+
+### Return type
+
+[**Subtitle**](#Subtitle)
 
 ### HTTP request headers
 

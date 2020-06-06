@@ -5,6 +5,7 @@ All URIs are relative to *https://api.kinow.com/api*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**attach_cart_to_customer**](#attach_cart_to_customer) | **POST** /customers/{customer_id}/carts | 
+[**check_authentication_token**](#check_authentication_token) | **POST** /customers/check-authentication-token | 
 [**check_customer_credentials**](#check_customer_credentials) | **POST** /customers/check-credentials | 
 [**create_customer**](#create_customer) | **POST** /customers | 
 [**create_facebook_id**](#create_facebook_id) | **POST** /customers/facebook | 
@@ -74,6 +75,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Cart**](#Cart)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **check_authentication_token**
+> Customer check_authentication_token(token)
+
+
+
+Check authentication token
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.CustomersApi()
+token = 'token_example' # str | Authentication token
+
+try: 
+    api_response = api_instance.check_authentication_token(token)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CustomersApi->check_authentication_token: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **token** | **str**| Authentication token | 
+
+### Return type
+
+[**Customer**](#Customer)
 
 ### HTTP request headers
 

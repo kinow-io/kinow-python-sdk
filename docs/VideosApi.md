@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**attach_cover_to_video**](#attach_cover_to_video) | **POST** /videos/{video_id}/cover | 
 [**attach_features_to_video**](#attach_features_to_video) | **POST** /videos/{video_id}/features | 
 [**attach_video_to_product**](#attach_video_to_product) | **POST** /products/{product_id}/videos | 
+[**create_subtitle**](#create_subtitle) | **POST** /videos/{video_id}/subtitle | 
 [**create_video**](#create_video) | **POST** /videos | 
 [**delete_video**](#delete_video) | **DELETE** /videos/{video_id} | 
 [**get_category_video_player**](#get_category_video_player) | **GET** /categories/videos/{video_id}/player | 
@@ -157,6 +158,51 @@ Name | Type | Description  | Notes
 ### Return type
 
 void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **create_subtitle**
+> Subtitle create_subtitle(video_id, body)
+
+
+
+Create new Video Subtitle
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.VideosApi()
+video_id = 789 # int | Video ID to attach the created Subtitle
+body = kinow_client.CreateVideoSubtitleRequest() # CreateVideoSubtitleRequest | Subtitle settings
+
+try: 
+    api_response = api_instance.create_subtitle(video_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling VideosApi->create_subtitle: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **video_id** | **int**| Video ID to attach the created Subtitle | 
+ **body** | [**CreateVideoSubtitleRequest**](#CreateVideoSubtitleRequest)| Subtitle settings | 
+
+### Return type
+
+[**Subtitle**](#Subtitle)
 
 ### HTTP request headers
 
