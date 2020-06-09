@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_customer_group_total_watched**](#get_customer_group_total_watched) | **GET** /video-stats/customer-group | 
 [**get_customer_sessions**](#get_customer_sessions) | **GET** /video-stats/sessions | 
+[**get_customer_sessions_multiple**](#get_customer_sessions_multiple) | **POST** /video-stats/{customer_id}/sessions | 
 [**get_customer_video_stats**](#get_customer_video_stats) | **GET** /video-stats/customers | 
 [**get_video_stats**](#get_video_stats) | **GET** /video-stats/videos | 
 
@@ -100,6 +101,51 @@ Name | Type | Description  | Notes
  **date_to** | **str**| Search entries to this date | [optional] 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
+
+### Return type
+
+[**SessionVideoStats**](#SessionVideoStats)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_customer_sessions_multiple**
+> SessionVideoStats get_customer_sessions_multiple(customer_id, body)
+
+
+
+Get Customer sessions statistics for multiple videos
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.StatsApi()
+customer_id = 789 # int | Customer ID to fetch
+body = kinow_client.VideoIDList1() # VideoIDList1 | List of Video IDs separated by comma, eg. '42,21,84'
+
+try: 
+    api_response = api_instance.get_customer_sessions_multiple(customer_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling StatsApi->get_customer_sessions_multiple: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customer_id** | **int**| Customer ID to fetch | 
+ **body** | [**VideoIDList1**](#VideoIDList1)| List of Video IDs separated by comma, eg. &#39;42,21,84&#39; | 
 
 ### Return type
 
