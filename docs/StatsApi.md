@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 
 
-Get customer video sessions statistics
+Get Customer video sessions statistics
 
 ### Example 
 ```python
