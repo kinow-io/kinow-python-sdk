@@ -39,6 +39,7 @@ Name | Type | Description | Notes
 **behavior_non_detected_countries** | **str** |  | [optional] 
 **id_product_attribute** | **int** | Only available when the product is in a cart | [optional] 
 **roles** | **str** |  | [optional] 
+**categories** | [**list[ProductCategories]**](#ProductCategories) |  | [optional] 
 
 [[Back to Model list]](#documentation-for-models) [[Back to API list]](#documentation-for-api-endpoints)
 
