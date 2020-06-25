@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **id_order** | **int** |  | [optional] 
 **date_renewal** | **str** |  | [optional] 
 **payment_method** | **str** |  | [optional] 
+**renewed** | **int** |  | [optional] 
 
 [[Back to Model list]](#documentation-for-models) [[Back to API list]](#documentation-for-api-endpoints)
 
