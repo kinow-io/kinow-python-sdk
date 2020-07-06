@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**attach_cart_rule_to_cart**](#attach_cart_rule_to_cart) | **POST** /carts/{cart_id}/cart-rules | 
 [**create_cart_rule**](#create_cart_rule) | **POST** /cart-rules | 
 [**delete_cart_rule**](#delete_cart_rule) | **DELETE** /cart-rules/{cart_rule_id} | 
+[**detach_cart_rule_from_cart**](#detach_cart_rule_from_cart) | **DELETE** /carts/{cart_id}/cart-rules/{cart_rule_id} | 
 [**get_cart_rule**](#get_cart_rule) | **GET** /cart-rules/{cart_rule_id} | 
 [**get_cart_rules**](#get_cart_rules) | **GET** /cart-rules | 
 [**update_cart_rule**](#update_cart_rule) | **PUT** /cart-rules/{cart_rule_id} | 
@@ -128,6 +129,50 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cart_rule_id** | **int**|  | 
+
+### Return type
+
+void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **detach_cart_rule_from_cart**
+> detach_cart_rule_from_cart(cart_id, cart_rule_id)
+
+
+
+Detach Cart rule from Cart
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.CartRulesApi()
+cart_id = 789 # int | Cart ID to fetch
+cart_rule_id = 789 # int | Cart rule ID to detach
+
+try: 
+    api_instance.detach_cart_rule_from_cart(cart_id, cart_rule_id)
+except ApiException as e:
+    print("Exception when calling CartRulesApi->detach_cart_rule_from_cart: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cart_id** | **int**| Cart ID to fetch | 
+ **cart_rule_id** | **int**| Cart rule ID to detach | 
 
 ### Return type
 

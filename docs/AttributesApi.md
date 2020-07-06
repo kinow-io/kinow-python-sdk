@@ -5,6 +5,7 @@ All URIs are relative to *https://api.kinow.com/api*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_product_attribute**](#create_product_attribute) | **POST** /attributes | 
+[**delete_attribute**](#delete_attribute) | **DELETE** /attributes/{attribute_id} | 
 [**get_product_attributes**](#get_product_attributes) | **GET** /products/{product_id}/attributes | 
 
 
@@ -43,6 +44,48 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ProductAttribute**](#ProductAttribute)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **delete_attribute**
+> delete_attribute(attribute_id)
+
+
+
+Delete Attribute
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.AttributesApi()
+attribute_id = 789 # int | Attribute ID to delete
+
+try: 
+    api_instance.delete_attribute(attribute_id)
+except ApiException as e:
+    print("Exception when calling AttributesApi->delete_attribute: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **attribute_id** | **int**| Attribute ID to delete | 
+
+### Return type
+
+void (empty response body)
 
 ### HTTP request headers
 

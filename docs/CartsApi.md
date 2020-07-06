@@ -10,6 +10,8 @@ Method | HTTP request | Description
 [**create_cart**](#create_cart) | **POST** /carts | 
 [**delete_cart**](#delete_cart) | **DELETE** /carts/{cart_id} | 
 [**delete_product_from_cart**](#delete_product_from_cart) | **DELETE** /carts/{cart_id}/products | 
+[**detach_cart_rule_from_cart**](#detach_cart_rule_from_cart) | **DELETE** /carts/{cart_id}/cart-rules/{cart_rule_id} | 
+[**empty_cart**](#empty_cart) | **POST** /carts/{cart_id}/empty | 
 [**get_cart**](#get_cart) | **GET** /carts/{cart_id} | 
 [**get_customer_carts**](#get_customer_carts) | **GET** /customers/{customer_id}/carts | 
 [**get_last_cart**](#get_last_cart) | **GET** /customers/{customer_id}/last-cart | 
@@ -281,6 +283,92 @@ Name | Type | Description  | Notes
  **cart_id** | **int**| Cart ID to fetch | 
  **product_id** | **int**| Product ID to delete from cart | 
  **product_attribute_id** | **int**| Product attribute ID, required to add product to cart if product is not a subscription | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **detach_cart_rule_from_cart**
+> detach_cart_rule_from_cart(cart_id, cart_rule_id)
+
+
+
+Detach Cart rule from Cart
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.CartsApi()
+cart_id = 789 # int | Cart ID to fetch
+cart_rule_id = 789 # int | Cart rule ID to detach
+
+try: 
+    api_instance.detach_cart_rule_from_cart(cart_id, cart_rule_id)
+except ApiException as e:
+    print("Exception when calling CartsApi->detach_cart_rule_from_cart: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cart_id** | **int**| Cart ID to fetch | 
+ **cart_rule_id** | **int**| Cart rule ID to detach | 
+
+### Return type
+
+void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **empty_cart**
+> empty_cart(cart_id)
+
+
+
+Remove all items in a Cart
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.CartsApi()
+cart_id = 789 # int | Cart ID to empty
+
+try: 
+    api_instance.empty_cart(cart_id)
+except ApiException as e:
+    print("Exception when calling CartsApi->empty_cart: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cart_id** | **int**| Cart ID to empty | 
 
 ### Return type
 

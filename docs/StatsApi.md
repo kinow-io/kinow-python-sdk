@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_customer_sessions**
-> SessionVideoStats get_customer_sessions(customer_id=customer_id, video_id=video_id, date_from=date_from, date_to=date_to, page=page, per_page=per_page)
+> SessionVideoStats get_customer_sessions(customer_id=customer_id, group_id=group_id, video_id=video_id, date_from=date_from, date_to=date_to, page=page, per_page=per_page)
 
 
 
@@ -78,6 +78,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = kinow_client.StatsApi()
 customer_id = 789 # int | Customer ID to fetch (optional)
+group_id = 789 # int | Group ID to fetch (optional)
 video_id = 789 # int | Video ID to fetch (optional)
 date_from = 'date_from_example' # str | Search entries from this date (optional)
 date_to = 'date_to_example' # str | Search entries to this date (optional)
@@ -85,7 +86,7 @@ page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 
 try: 
-    api_response = api_instance.get_customer_sessions(customer_id=customer_id, video_id=video_id, date_from=date_from, date_to=date_to, page=page, per_page=per_page)
+    api_response = api_instance.get_customer_sessions(customer_id=customer_id, group_id=group_id, video_id=video_id, date_from=date_from, date_to=date_to, page=page, per_page=per_page)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling StatsApi->get_customer_sessions: %s\n" % e)
@@ -96,6 +97,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customer_id** | **int**| Customer ID to fetch | [optional] 
+ **group_id** | **int**| Group ID to fetch | [optional] 
  **video_id** | **int**| Video ID to fetch | [optional] 
  **date_from** | **str**| Search entries from this date | [optional] 
  **date_to** | **str**| Search entries to this date | [optional] 
