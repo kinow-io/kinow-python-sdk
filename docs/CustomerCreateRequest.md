@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **postcode** | **str** |  | [optional] 
 **address1** | **str** |  | [optional] 
 **company** | **str** |  | [optional] 
+**send_mail** | **bool** |  | [optional] 
 
 [[Back to Model list]](#documentation-for-models) [[Back to API list]](#documentation-for-api-endpoints)
 
