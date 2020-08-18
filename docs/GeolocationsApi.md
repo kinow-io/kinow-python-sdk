@@ -4,6 +4,7 @@ All URIs are relative to *https://api.kinow.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**get_geoloc_settings**](#get_geoloc_settings) | **GET** /geolocations/settings | 
 [**get_ip_location**](#get_ip_location) | **GET** /geolocations/ip | 
 [**get_platform_access_info**](#get_platform_access_info) | **GET** /geolocations/platform-access | 
 [**get_product_geolocations**](#get_product_geolocations) | **GET** /products/{product_id}/geolocations | 
@@ -12,6 +13,51 @@ Method | HTTP request | Description
 [**set_product_geolocation**](#set_product_geolocation) | **PUT** /products/{product_id}/geolocations | 
 [**set_video_geolocation**](#set_video_geolocation) | **PUT** /videos/{video_id}/geolocations | 
 
+
+## **get_geoloc_settings**
+> GeolocSettings get_geoloc_settings(type, type_id)
+
+
+
+Get geolocation settings for an item
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.GeolocationsApi()
+type = 'type_example' # str | Item type, available values are: category, subscription, product, video, extract, blogpage, slider, topmenu
+type_id = 56 # int | Item ID
+
+try: 
+    api_response = api_instance.get_geoloc_settings(type, type_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GeolocationsApi->get_geoloc_settings: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **type** | **str**| Item type, available values are: category, subscription, product, video, extract, blogpage, slider, topmenu | 
+ **type_id** | **int**| Item ID | 
+
+### Return type
+
+[**GeolocSettings**](#GeolocSettings)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_ip_location**
 > IPLocation get_ip_location(ip_address)
