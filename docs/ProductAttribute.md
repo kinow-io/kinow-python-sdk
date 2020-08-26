@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] 
+**video_group_id** | **int** |  | [optional] 
 **video_id** | **int** |  | [optional] 
 **name** | **str** |  | [optional] 
 **price** | **float** |  | [optional] 

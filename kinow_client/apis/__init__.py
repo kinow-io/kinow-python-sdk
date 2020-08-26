@@ -12,6 +12,7 @@ from .cms_pages_api import CMSPagesApi
 from .cart_rules_api import CartRulesApi
 from .carts_api import CartsApi
 from .categories_api import CategoriesApi
+from .category_videos_api import CategoryVideosApi
 from .configuration_api import ConfigurationApi
 from .countries_api import CountriesApi
 from .currencies_api import CurrenciesApi
@@ -45,5 +46,6 @@ from .subtitles_api import SubtitlesApi
 from .support_api import SupportApi
 from .tasks_api import TasksApi
 from .tax_rules_api import TaxRulesApi
+from .video_groups_api import VideoGroupsApi
 from .videos_api import VideosApi
 from .widgets_api import WidgetsApi
