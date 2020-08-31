@@ -6,6 +6,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_configuration**](#get_configuration) | **GET** /configuration | 
 [**get_configuration_by_name**](#get_configuration_by_name) | **GET** /configuration/{configuration_name} | 
+[**get_configuration_logo**](#get_configuration_logo) | **GET** /configuration/logo | 
+[**get_configuration_social**](#get_configuration_social) | **GET** /configuration/social | 
 
 
 ## **get_configuration**
@@ -88,6 +90,84 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Configuration**](#Configuration)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_configuration_logo**
+> LogoSettings get_configuration_logo()
+
+
+
+Get logo settings
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.ConfigurationApi()
+
+try: 
+    api_response = api_instance.get_configuration_logo()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConfigurationApi->get_configuration_logo: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**LogoSettings**](#LogoSettings)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_configuration_social**
+> SocialSettings get_configuration_social()
+
+
+
+Get social networks settings
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.ConfigurationApi()
+
+try: 
+    api_response = api_instance.get_configuration_social()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConfigurationApi->get_configuration_social: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**SocialSettings**](#SocialSettings)
 
 ### HTTP request headers
 
