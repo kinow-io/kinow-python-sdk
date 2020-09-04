@@ -23,6 +23,7 @@ from .employees_api import EmployeesApi
 from .extracts_api import ExtractsApi
 from .feature_values_api import FeatureValuesApi
 from .features_api import FeaturesApi
+from .free_gifts_api import FreeGiftsApi
 from .genders_api import GendersApi
 from .geolocations_api import GeolocationsApi
 from .gifts_api import GiftsApi
@@ -37,6 +38,7 @@ from .order_states_api import OrderStatesApi
 from .orders_api import OrdersApi
 from .pages_api import PagesApi
 from .payment_modules_api import PaymentModulesApi
+from .playlists_api import PlaylistsApi
 from .prepayments_api import PrepaymentsApi
 from .product_accesses_api import ProductAccessesApi
 from .products_api import ProductsApi

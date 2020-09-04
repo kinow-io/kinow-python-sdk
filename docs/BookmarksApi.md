@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 ## **attach_bookmark_to_customer**
-> attach_bookmark_to_customer(customer_id, product_id)
+> attach_bookmark_to_customer(customer_id, product_id, playlist_id=playlist_id)
 
 
 
@@ -28,9 +28,10 @@ from pprint import pprint
 api_instance = kinow_client.BookmarksApi()
 customer_id = 789 # int | Customer ID to fetch
 product_id = 789 # int | 
+playlist_id = 789 # int |  (optional)
 
 try: 
-    api_instance.attach_bookmark_to_customer(customer_id, product_id)
+    api_instance.attach_bookmark_to_customer(customer_id, product_id, playlist_id=playlist_id)
 except ApiException as e:
     print("Exception when calling BookmarksApi->attach_bookmark_to_customer: %s\n" % e)
 ```
@@ -41,6 +42,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customer_id** | **int**| Customer ID to fetch | 
  **product_id** | **int**|  | 
+ **playlist_id** | **int**|  | [optional] 
 
 ### Return type
 
@@ -54,7 +56,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **detach_bookmark_from_customer**
-> detach_bookmark_from_customer(customer_id, product_id)
+> detach_bookmark_from_customer(customer_id, product_id, playlist_id=playlist_id)
 
 
 
@@ -72,9 +74,10 @@ from pprint import pprint
 api_instance = kinow_client.BookmarksApi()
 customer_id = 789 # int | Customer ID to fetch
 product_id = 789 # int | 
+playlist_id = 789 # int |  (optional)
 
 try: 
-    api_instance.detach_bookmark_from_customer(customer_id, product_id)
+    api_instance.detach_bookmark_from_customer(customer_id, product_id, playlist_id=playlist_id)
 except ApiException as e:
     print("Exception when calling BookmarksApi->detach_bookmark_from_customer: %s\n" % e)
 ```
@@ -85,6 +88,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customer_id** | **int**| Customer ID to fetch | 
  **product_id** | **int**|  | 
+ **playlist_id** | **int**|  | [optional] 
 
 ### Return type
 
@@ -98,7 +102,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_customer_bookmarks**
-> Products get_customer_bookmarks(customer_id, page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction)
+> Products get_customer_bookmarks(customer_id, playlist_id=playlist_id, page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction)
 
 
 
@@ -115,13 +119,14 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = kinow_client.BookmarksApi()
 customer_id = 789 # int | 
+playlist_id = 789 # int |  (optional)
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 sort_by = 'sort_by_example' # str | Sort by this attribute (id by default) (optional)
 sort_direction = 'sort_direction_example' # str | Sorting direction (asc by default) (optional)
 
 try: 
-    api_response = api_instance.get_customer_bookmarks(customer_id, page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction)
+    api_response = api_instance.get_customer_bookmarks(customer_id, playlist_id=playlist_id, page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BookmarksApi->get_customer_bookmarks: %s\n" % e)
@@ -132,6 +137,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customer_id** | **int**|  | 
+ **playlist_id** | **int**|  | [optional] 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
  **sort_by** | **str**| Sort by this attribute (id by default) | [optional] 

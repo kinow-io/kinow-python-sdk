@@ -24,6 +24,7 @@ Method | HTTP request | Description
 [**get_customer_has_access_to_video**](#get_customer_has_access_to_video) | **GET** /customers/{customer_id}/videos/{video_id}/has-access | 
 [**get_customer_has_access_to_videos**](#get_customer_has_access_to_videos) | **POST** /customers/{customer_id}/videos/has-access | 
 [**get_customer_orders**](#get_customer_orders) | **GET** /customers/{customer_id}/orders | 
+[**get_customer_playlists**](#get_customer_playlists) | **GET** /customers/{customer_id}/playlists | 
 [**get_customer_prepayment_balances**](#get_customer_prepayment_balances) | **GET** /customers/{customer_id}/prepayment-balance | 
 [**get_customer_prepayment_operations**](#get_customer_prepayment_operations) | **GET** /customers/{customer_id}/prepayment-operations | 
 [**get_customers**](#get_customers) | **GET** /customers | 
@@ -178,7 +179,7 @@ Name | Type | Description  | Notes
 
 
 
-Create new customer
+Create new Customer
 
 ### Example 
 ```python
@@ -190,7 +191,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.CustomersApi()
-body = kinow_client.CustomerCreateRequest() # CustomerCreateRequest | Created user object
+body = kinow_client.CustomerCreateRequest() # CustomerCreateRequest | Customer settings
 
 try: 
     api_response = api_instance.create_customer(body)
@@ -203,7 +204,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CustomerCreateRequest**](#CustomerCreateRequest)| Created user object | 
+ **body** | [**CustomerCreateRequest**](#CustomerCreateRequest)| Customer settings | 
 
 ### Return type
 
@@ -938,6 +939,57 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
+## **get_customer_playlists**
+> Playlists get_customer_playlists(customer_id, page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction)
+
+
+
+Get customer playlists
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.CustomersApi()
+customer_id = 789 # int | 
+page = 789 # int |  (optional)
+per_page = 789 # int |  (optional)
+sort_by = 'sort_by_example' # str | Sort by this attribute (id by default) (optional)
+sort_direction = 'sort_direction_example' # str | Sorting direction (asc by default) (optional)
+
+try: 
+    api_response = api_instance.get_customer_playlists(customer_id, page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CustomersApi->get_customer_playlists: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customer_id** | **int**|  | 
+ **page** | **int**|  | [optional] 
+ **per_page** | **int**|  | [optional] 
+ **sort_by** | **str**| Sort by this attribute (id by default) | [optional] 
+ **sort_direction** | **str**| Sorting direction (asc by default) | [optional] 
+
+### Return type
+
+[**Playlists**](#Playlists)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
 ## **get_customer_prepayment_balances**
 > list[PrepaymentBalance] get_customer_prepayment_balances(customer_id)
 
@@ -1307,7 +1359,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **password_token**
-> Token password_token(email)
+> Token password_token(email, send_notification=send_notification)
 
 
 
@@ -1324,9 +1376,10 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = kinow_client.CustomersApi()
 email = 'email_example' # str | Email of the Customer
+send_notification = false # bool | Send notification email (optional) (default to false)
 
 try: 
-    api_response = api_instance.password_token(email)
+    api_response = api_instance.password_token(email, send_notification=send_notification)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CustomersApi->password_token: %s\n" % e)
@@ -1337,6 +1390,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **email** | **str**| Email of the Customer | 
+ **send_notification** | **bool**| Send notification email | [optional] [default to false]
 
 ### Return type
 

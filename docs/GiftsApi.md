@@ -21,7 +21,7 @@ Method | HTTP request | Description
 
 
 
-Consume gift
+Consume Gift
 
 ### Example 
 ```python
@@ -67,7 +67,7 @@ void (empty response body)
 
 
 
-Create gift
+Create Gift
 
 ### Example 
 ```python
@@ -79,7 +79,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.GiftsApi()
-body = kinow_client.Gift1() # Gift1 | Gift settings
+body = kinow_client.Gift2() # Gift2 | Gift settings
 
 try: 
     api_response = api_instance.create_gift(body)
@@ -92,7 +92,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Gift1**](#Gift1)| Gift settings | 
+ **body** | [**Gift2**](#Gift2)| Gift settings | 
 
 ### Return type
 
@@ -110,7 +110,7 @@ Name | Type | Description  | Notes
 
 
 
-Delete gift
+Delete Gift
 
 ### Example 
 ```python
@@ -152,7 +152,7 @@ void (empty response body)
 
 
 
-Delete gifts in cart
+Delete Gifts in cart
 
 ### Example 
 ```python
@@ -194,7 +194,7 @@ void (empty response body)
 
 
 
-Get gift
+Get Gift
 
 ### Example 
 ```python
@@ -237,7 +237,7 @@ Name | Type | Description  | Notes
 
 
 
-Get gift in cart
+Get Gift in Cart
 
 ### Example 
 ```python
@@ -280,7 +280,7 @@ Name | Type | Description  | Notes
 
 
 
-Get gift token
+Get Gift token
 
 ### Example 
 ```python
@@ -319,11 +319,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_gifts**
-> Gifts get_gifts(unused_only=unused_only)
+> Gifts1 get_gifts(unused_only=unused_only)
 
 
 
-Get gifts
+Get Gifts
 
 ### Example 
 ```python
@@ -335,7 +335,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.GiftsApi()
-unused_only = 56 # int | Only unused gifts (optional)
+unused_only = 56 # int | Only unused Gifts (optional)
 
 try: 
     api_response = api_instance.get_gifts(unused_only=unused_only)
@@ -348,11 +348,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **unused_only** | **int**| Only unused gifts | [optional] 
+ **unused_only** | **int**| Only unused Gifts | [optional] 
 
 ### Return type
 
-[**Gifts**](#Gifts)
+[**Gifts1**](#Gifts1)
 
 ### HTTP request headers
 
@@ -366,7 +366,7 @@ Name | Type | Description  | Notes
 
 
 
-Send gift
+Send Gift
 
 ### Example 
 ```python
@@ -408,7 +408,7 @@ void (empty response body)
 
 
 
-Update gift
+Update Gift
 
 ### Example 
 ```python
@@ -421,7 +421,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = kinow_client.GiftsApi()
 gift_id = 789 # int | Gift ID to fetch
-body = kinow_client.Gift2() # Gift2 | Gift settings
+body = kinow_client.Gift3() # Gift3 | Gift settings
 
 try: 
     api_response = api_instance.update_gift(gift_id, body)
@@ -435,7 +435,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **gift_id** | **int**| Gift ID to fetch | 
- **body** | [**Gift2**](#Gift2)| Gift settings | 
+ **body** | [**Gift3**](#Gift3)| Gift settings | 
 
 ### Return type
 
