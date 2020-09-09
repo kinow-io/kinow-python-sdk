@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pagination** | [**Pagination**](#Pagination) |  | [optional] 
-**data** | [**list[PlaylistBookmark]**](#PlaylistBookmark) |  | [optional] 
+**data** | [**list[Playlist]**](#Playlist) |  | [optional] 
 
 [[Back to Model list]](#documentation-for-models) [[Back to API list]](#documentation-for-api-endpoints)
 

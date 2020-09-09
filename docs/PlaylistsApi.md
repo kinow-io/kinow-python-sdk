@@ -4,19 +4,67 @@ All URIs are relative to *https://api.kinow.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_playlist_bookmark**](#create_playlist_bookmark) | **POST** /playlists | 
-[**delete_playlist_bookmark**](#delete_playlist_bookmark) | **DELETE** /playlists/{playlist_id} | 
+[**attach_bookmark_to_playlist**](#attach_bookmark_to_playlist) | **POST** /playlists/{playlist_id}/bookmarks | 
+[**create_playlist**](#create_playlist) | **POST** /playlists | 
+[**delete_playlist**](#delete_playlist) | **DELETE** /playlists/{playlist_id} | 
+[**detach_bookmark_from_playlist**](#detach_bookmark_from_playlist) | **DELETE** /playlists/{playlist_id}/bookmarks/{product_id} | 
 [**get_customer_playlists**](#get_customer_playlists) | **GET** /customers/{customer_id}/playlists | 
 [**get_playlist**](#get_playlist) | **GET** /playlists/{playlist_id} | 
-[**update_playlist_bookmark**](#update_playlist_bookmark) | **PUT** /playlists/{playlist_id} | 
+[**get_playlist_bookmarks**](#get_playlist_bookmarks) | **GET** /playlists/{playlist_id}/bookmarks | 
+[**get_playlists**](#get_playlists) | **GET** /playlists | 
+[**update_playlist**](#update_playlist) | **PUT** /playlists/{playlist_id} | 
 
 
-## **create_playlist_bookmark**
-> PlaylistBookmark create_playlist_bookmark(customer_id, name)
+## **attach_bookmark_to_playlist**
+> attach_bookmark_to_playlist(playlist_id, product_id)
 
 
 
-Create playlist bookmark
+Attach bookmark to playlist
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.PlaylistsApi()
+playlist_id = 789 # int | Playlist ID to fetch
+product_id = 789 # int | 
+
+try: 
+    api_instance.attach_bookmark_to_playlist(playlist_id, product_id)
+except ApiException as e:
+    print("Exception when calling PlaylistsApi->attach_bookmark_to_playlist: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **playlist_id** | **int**| Playlist ID to fetch | 
+ **product_id** | **int**|  | 
+
+### Return type
+
+void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **create_playlist**
+> Playlist create_playlist(customer_id, name)
+
+
+
+Create playlist
 
 ### Example 
 ```python
@@ -32,10 +80,10 @@ customer_id = 789 # int |
 name = 'name_example' # str | 
 
 try: 
-    api_response = api_instance.create_playlist_bookmark(customer_id, name)
+    api_response = api_instance.create_playlist(customer_id, name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling PlaylistsApi->create_playlist_bookmark: %s\n" % e)
+    print("Exception when calling PlaylistsApi->create_playlist: %s\n" % e)
 ```
 
 ### Parameters
@@ -47,7 +95,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PlaylistBookmark**](#PlaylistBookmark)
+[**Playlist**](#Playlist)
 
 ### HTTP request headers
 
@@ -56,12 +104,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
-## **delete_playlist_bookmark**
-> delete_playlist_bookmark(playlist_id)
+## **delete_playlist**
+> delete_playlist(playlist_id)
 
 
 
-Delete playlist bookmark
+Delete playlist
 
 ### Example 
 ```python
@@ -76,9 +124,9 @@ api_instance = kinow_client.PlaylistsApi()
 playlist_id = 56 # int | 
 
 try: 
-    api_instance.delete_playlist_bookmark(playlist_id)
+    api_instance.delete_playlist(playlist_id)
 except ApiException as e:
-    print("Exception when calling PlaylistsApi->delete_playlist_bookmark: %s\n" % e)
+    print("Exception when calling PlaylistsApi->delete_playlist: %s\n" % e)
 ```
 
 ### Parameters
@@ -86,6 +134,50 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **playlist_id** | **int**|  | 
+
+### Return type
+
+void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **detach_bookmark_from_playlist**
+> detach_bookmark_from_playlist(playlist_id, product_id)
+
+
+
+Detach bookmark from playlist
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.PlaylistsApi()
+playlist_id = 789 # int | Playlist ID to fetch
+product_id = 789 # int | 
+
+try: 
+    api_instance.detach_bookmark_from_playlist(playlist_id, product_id)
+except ApiException as e:
+    print("Exception when calling PlaylistsApi->detach_bookmark_from_playlist: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **playlist_id** | **int**| Playlist ID to fetch | 
+ **product_id** | **int**|  | 
 
 ### Return type
 
@@ -150,7 +242,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_playlist**
-> PlaylistBookmark get_playlist(playlist_id)
+> Playlist get_playlist(playlist_id)
 
 
 
@@ -183,7 +275,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PlaylistBookmark**](#PlaylistBookmark)
+[**Playlist**](#Playlist)
 
 ### HTTP request headers
 
@@ -192,8 +284,108 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
-## **update_playlist_bookmark**
-> PlaylistBookmark update_playlist_bookmark(playlist_id, body)
+## **get_playlist_bookmarks**
+> Products get_playlist_bookmarks(playlist_id, page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction)
+
+
+
+Get playlist bookmarks
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.PlaylistsApi()
+playlist_id = 789 # int | 
+page = 789 # int |  (optional)
+per_page = 789 # int |  (optional)
+sort_by = 'sort_by_example' # str | Sort by this attribute (id by default) (optional)
+sort_direction = 'sort_direction_example' # str | Sorting direction (asc by default) (optional)
+
+try: 
+    api_response = api_instance.get_playlist_bookmarks(playlist_id, page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PlaylistsApi->get_playlist_bookmarks: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **playlist_id** | **int**|  | 
+ **page** | **int**|  | [optional] 
+ **per_page** | **int**|  | [optional] 
+ **sort_by** | **str**| Sort by this attribute (id by default) | [optional] 
+ **sort_direction** | **str**| Sorting direction (asc by default) | [optional] 
+
+### Return type
+
+[**Products**](#Products)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_playlists**
+> Playlists get_playlists(page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction)
+
+
+
+Get playlists
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.PlaylistsApi()
+page = 789 # int |  (optional)
+per_page = 789 # int |  (optional)
+sort_by = 'sort_by_example' # str | Sort by this attribute (id by default) (optional)
+sort_direction = 'sort_direction_example' # str | Sorting direction (asc by default) (optional)
+
+try: 
+    api_response = api_instance.get_playlists(page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PlaylistsApi->get_playlists: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **int**|  | [optional] 
+ **per_page** | **int**|  | [optional] 
+ **sort_by** | **str**| Sort by this attribute (id by default) | [optional] 
+ **sort_direction** | **str**| Sorting direction (asc by default) | [optional] 
+
+### Return type
+
+[**Playlists**](#Playlists)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **update_playlist**
+> Playlist update_playlist(playlist_id, body)
 
 
 
@@ -210,13 +402,13 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = kinow_client.PlaylistsApi()
 playlist_id = 789 # int | Playlist ID to update
-body = kinow_client.PlaylistBookmarkUpdate() # PlaylistBookmarkUpdate | Playlist settings
+body = kinow_client.PlaylistUpdate() # PlaylistUpdate | Playlist settings
 
 try: 
-    api_response = api_instance.update_playlist_bookmark(playlist_id, body)
+    api_response = api_instance.update_playlist(playlist_id, body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling PlaylistsApi->update_playlist_bookmark: %s\n" % e)
+    print("Exception when calling PlaylistsApi->update_playlist: %s\n" % e)
 ```
 
 ### Parameters
@@ -224,11 +416,11 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **playlist_id** | **int**| Playlist ID to update | 
- **body** | [**PlaylistBookmarkUpdate**](#PlaylistBookmarkUpdate)| Playlist settings | 
+ **body** | [**PlaylistUpdate**](#PlaylistUpdate)| Playlist settings | 
 
 ### Return type
 
-[**PlaylistBookmark**](#PlaylistBookmark)
+[**Playlist**](#Playlist)
 
 ### HTTP request headers
 
