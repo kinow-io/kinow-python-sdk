@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 ## **get_customer_group_total_watched**
-> CustomerGroupVideoStats1 get_customer_group_total_watched(group_id, video_id, page=page, per_page=per_page)
+> CustomerGroupVideoStats1 get_customer_group_total_watched(group_id, date_from=date_from, date_to=date_to, page=page, per_page=per_page)
 
 
 
@@ -29,12 +29,13 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = kinow_client.StatsApi()
 group_id = 789 # int | Customer group ID to fecth
-video_id = 789 # int | Video ID to fetch
+date_from = 'date_from_example' # str | Search entries from this date (optional)
+date_to = 'date_to_example' # str | Search entries to this date (optional)
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 
 try: 
-    api_response = api_instance.get_customer_group_total_watched(group_id, video_id, page=page, per_page=per_page)
+    api_response = api_instance.get_customer_group_total_watched(group_id, date_from=date_from, date_to=date_to, page=page, per_page=per_page)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling StatsApi->get_customer_group_total_watched: %s\n" % e)
@@ -45,7 +46,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **group_id** | **int**| Customer group ID to fecth | 
- **video_id** | **int**| Video ID to fetch | 
+ **date_from** | **str**| Search entries from this date | [optional] 
+ **date_to** | **str**| Search entries to this date | [optional] 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
 
