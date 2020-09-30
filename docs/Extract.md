@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **active** | **bool** |  | [optional] 
 **date_add** | **str** |  | [optional] 
 **date_upd** | **str** |  | [optional] 
+**can_watch** | **bool** |  | [optional] 
 **name** | [**list[I18nField]**](#I18nField) |  | [optional] 
 **description** | [**list[I18nField]**](#I18nField) |  | [optional] 
 **cover** | **str** |  | [optional] 

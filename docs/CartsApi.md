@@ -13,10 +13,12 @@ Method | HTTP request | Description
 [**detach_cart_rule_from_cart**](#detach_cart_rule_from_cart) | **DELETE** /carts/{cart_id}/cart-rules/{cart_rule_id} | 
 [**empty_cart**](#empty_cart) | **POST** /carts/{cart_id}/empty | 
 [**get_cart**](#get_cart) | **GET** /carts/{cart_id} | 
+[**get_carts**](#get_carts) | **GET** /carts | 
 [**get_customer_carts**](#get_customer_carts) | **GET** /customers/{customer_id}/carts | 
 [**get_last_cart**](#get_last_cart) | **GET** /customers/{customer_id}/last-cart | 
 [**get_losts_carts**](#get_losts_carts) | **GET** /carts/losts-carts | 
 [**get_payment_url**](#get_payment_url) | **GET** /carts/{cart_id}/payments/{payment_name} | 
+[**get_price**](#get_price) | **POST** /carts/price | 
 [**prepare_payment**](#prepare_payment) | **POST** /carts/{cart_id}/payments/{payment_name}/prepare | 
 [**update_cart**](#update_cart) | **PUT** /carts/{cart_id} | 
 [**validate_free_order**](#validate_free_order) | **POST** /carts/{cart_id}/validate-free-order | 
@@ -425,6 +427,57 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
+## **get_carts**
+> Carts get_carts(page=page, per_page=per_page, filters=filters, sort_by=sort_by, sort_direction=sort_direction)
+
+
+
+Get Carts
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.CartsApi()
+page = 789 # int |  (optional)
+per_page = 789 # int |  (optional)
+filters = 'filters_example' # str |       ```      name[value]=string&name[operator]=contains&date_add[value]=string&date_add[operator]=lt      _______________        {      \"name\": {      \"value\": \"string\",      \"operator\": \"contains\"      },      \"date_add\": {      \"value\": \"string\",      \"operator\": \"lt\"      }      } ```      Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). (optional)
+sort_by = 'sort_by_example' # str | Sort by this attribute (id by default) (optional)
+sort_direction = 'sort_direction_example' # str | Sorting direction (asc by default) (optional)
+
+try: 
+    api_response = api_instance.get_carts(page=page, per_page=per_page, filters=filters, sort_by=sort_by, sort_direction=sort_direction)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CartsApi->get_carts: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **int**|  | [optional] 
+ **per_page** | **int**|  | [optional] 
+ **filters** | **str**|       &#x60;&#x60;&#x60;      name[value]&#x3D;string&amp;name[operator]&#x3D;contains&amp;date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt      _______________        {      \&quot;name\&quot;: {      \&quot;value\&quot;: \&quot;string\&quot;,      \&quot;operator\&quot;: \&quot;contains\&quot;      },      \&quot;date_add\&quot;: {      \&quot;value\&quot;: \&quot;string\&quot;,      \&quot;operator\&quot;: \&quot;lt\&quot;      }      } &#x60;&#x60;&#x60;      Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
+ **sort_by** | **str**| Sort by this attribute (id by default) | [optional] 
+ **sort_direction** | **str**| Sorting direction (asc by default) | [optional] 
+
+### Return type
+
+[**Carts**](#Carts)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
 ## **get_customer_carts**
 > Carts get_customer_carts(customer_id, page=page, per_page=per_page, filters=filters, sort_by=sort_by, sort_direction=sort_direction)
 
@@ -609,6 +662,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PaymentUrl**](#PaymentUrl)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_price**
+> list[CartPrice] get_price(body)
+
+
+
+Get prices for multiple Carts
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.CartsApi()
+body = kinow_client.CartIDList() # CartIDList | List of Cart IDs separated by comma, eg. '42,21,84'
+
+try: 
+    api_response = api_instance.get_price(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CartsApi->get_price: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**CartIDList**](#CartIDList)| List of Cart IDs separated by comma, eg. &#39;42,21,84&#39; | 
+
+### Return type
+
+[**list[CartPrice]**](#CartPrice)
 
 ### HTTP request headers
 
