@@ -714,7 +714,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **prepare_payment**
-> PaymentDetails1 prepare_payment(cart_id, payment_name)
+> PaymentDetails1 prepare_payment(cart_id, payment_name, ip_address=ip_address)
 
 
 
@@ -732,9 +732,10 @@ from pprint import pprint
 api_instance = kinow_client.CartsApi()
 cart_id = 789 # int | Cart ID to fetch
 payment_name = 'payment_name_example' # str | Payment gateway name
+ip_address = 'ip_address_example' # str | Filter by user IP (optional)
 
 try: 
-    api_response = api_instance.prepare_payment(cart_id, payment_name)
+    api_response = api_instance.prepare_payment(cart_id, payment_name, ip_address=ip_address)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CartsApi->prepare_payment: %s\n" % e)
@@ -746,6 +747,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cart_id** | **int**| Cart ID to fetch | 
  **payment_name** | **str**| Payment gateway name | 
+ **ip_address** | **str**| Filter by user IP | [optional] 
 
 ### Return type
 
