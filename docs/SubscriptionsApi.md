@@ -4,6 +4,8 @@ All URIs are relative to *https://api.kinow.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**attach_categories_to_subscription**](#attach_categories_to_subscription) | **POST** /subscriptions/{subscription_id}/categories | 
+[**detach_category_from_subscription**](#detach_category_from_subscription) | **DELETE** /subscriptions/{subscription_id}/categories/{category_id} | 
 [**get_disabled_subscriptions**](#get_disabled_subscriptions) | **GET** /videos/{video_id}/disabled-subscriptions | 
 [**get_product_subscription**](#get_product_subscription) | **GET** /products/{product_id}/subscription | 
 [**get_subscription**](#get_subscription) | **GET** /subscriptions/{subscription_id} | 
@@ -12,6 +14,94 @@ Method | HTTP request | Description
 [**get_subscriptions**](#get_subscriptions) | **GET** /subscriptions | 
 [**upload_subscription_cover**](#upload_subscription_cover) | **POST** /subscriptions/{subscription_id}/cover | 
 
+
+## **attach_categories_to_subscription**
+> attach_categories_to_subscription(subscription_id, category_ids)
+
+
+
+Attach categories to subscription
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.SubscriptionsApi()
+subscription_id = 789 # int | Subscription ID to fetch
+category_ids = 'category_ids_example' # str | List of category IDs to attach, separated with comma
+
+try: 
+    api_instance.attach_categories_to_subscription(subscription_id, category_ids)
+except ApiException as e:
+    print("Exception when calling SubscriptionsApi->attach_categories_to_subscription: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **subscription_id** | **int**| Subscription ID to fetch | 
+ **category_ids** | **str**| List of category IDs to attach, separated with comma | 
+
+### Return type
+
+void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **detach_category_from_subscription**
+> detach_category_from_subscription(subscription_id, category_id)
+
+
+
+Detach category from subscription
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.SubscriptionsApi()
+subscription_id = 789 # int | Subscription ID to fetch
+category_id = 789 # int | Category ID to detach
+
+try: 
+    api_instance.detach_category_from_subscription(subscription_id, category_id)
+except ApiException as e:
+    print("Exception when calling SubscriptionsApi->detach_category_from_subscription: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **subscription_id** | **int**| Subscription ID to fetch | 
+ **category_id** | **int**| Category ID to detach | 
+
+### Return type
+
+void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_disabled_subscriptions**
 > Subscriptions get_disabled_subscriptions(video_id, page=page, per_page=per_page)

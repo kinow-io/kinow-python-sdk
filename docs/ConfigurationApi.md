@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 
-       Get configuration by name.       Available :          - LANG_DEFAULT          - CURRENCY_DEFAULT          - COUNTRY_DEFAULT          - TIMEZONE          - FORCE_TAX_ID          - NB_DAYS_NEW_PRODUCT          - COPYRIGHT       
+      Get configuration by name.      Available :         - LANG_DEFAULT         - CURRENCY_DEFAULT         - COUNTRY_DEFAULT         - TIMEZONE         - FORCE_TAX_ID         - NB_DAYS_NEW_PRODUCT         - COPYRIGHT      
 
 ### Example 
 ```python
@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 
 
 
-      Get configuration by name.      Available :      - LANG_DEFAULT      - CURRENCY_DEFAULT      - COUNTRY_DEFAULT      - TIMEZONE      
+     Get configuration by name.     Available :     - LANG_DEFAULT     - CURRENCY_DEFAULT     - COUNTRY_DEFAULT     - TIMEZONE     
 
 ### Example 
 ```python
