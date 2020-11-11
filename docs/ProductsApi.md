@@ -20,6 +20,7 @@ Method | HTTP request | Description
 [**get_category_products**](#get_category_products) | **GET** /categories/{category_id}/products | 
 [**get_customer_has_access_to_product**](#get_customer_has_access_to_product) | **GET** /customers/{customer_id}/products/{product_id}/has-access | 
 [**get_customer_has_access_to_products**](#get_customer_has_access_to_products) | **POST** /customers/{customer_id}/products/has-access | 
+[**get_new_products**](#get_new_products) | **GET** /products/new | 
 [**get_price**](#get_price) | **POST** /products/price | 
 [**get_product**](#get_product) | **GET** /products/{product_id} | 
 [**get_product_actors**](#get_product_actors) | **GET** /products/{product_id}/actors | 
@@ -759,6 +760,53 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**list[ProductAccessInfo]**](#ProductAccessInfo)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_new_products**
+> Products get_new_products(page=page, per_page=per_page, ip=ip)
+
+
+
+Get new products list
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.ProductsApi()
+page = 789 # int |  (optional)
+per_page = 789 # int |  (optional)
+ip = 'ip_example' # str | Filter by user IP (optional)
+
+try: 
+    api_response = api_instance.get_new_products(page=page, per_page=per_page, ip=ip)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ProductsApi->get_new_products: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **int**|  | [optional] 
+ **per_page** | **int**|  | [optional] 
+ **ip** | **str**| Filter by user IP | [optional] 
+
+### Return type
+
+[**Products**](#Products)
 
 ### HTTP request headers
 
@@ -1771,7 +1819,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_videos_from_product**
-> Videos2 get_videos_from_product(product_id, page=page, filters=filters, per_page=per_page, ip=ip, sort_by=sort_by, sort_direction=sort_direction)
+> Videos2 get_videos_from_product(product_id, page=page, per_page=per_page, filters=filters, ip=ip, sort_by=sort_by, sort_direction=sort_direction)
 
 
 
@@ -1789,14 +1837,14 @@ from pprint import pprint
 api_instance = kinow_client.ProductsApi()
 product_id = 789 # int | Product ID to fetch
 page = 789 # int |  (optional)
-filters = 'filters_example' # str |      ```     name[value]=string&name[operator]=strict&duration[value]=string&duration[operator]=gt     _______________      {     \"name\": {     \"value\": \"string\",     \"operator\": \"strict\"     },     \"duration\": {     \"value\": \"string\",     \"operator\": \"gt\"     }     } ```     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). (optional)
 per_page = 789 # int |  (optional)
+filters = 'filters_example' # str |      ```     name[value]=string&name[operator]=strict&duration[value]=string&duration[operator]=gt     _______________      {     \"name\": {     \"value\": \"string\",     \"operator\": \"strict\"     },     \"duration\": {     \"value\": \"string\",     \"operator\": \"gt\"     }     } ```     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). (optional)
 ip = 'ip_example' # str | Filter by user IP (optional)
 sort_by = 'sort_by_example' # str | Sort by this attribute (default is ID) (optional)
 sort_direction = 'sort_direction_example' # str | Sorting direction (asc by default) (optional)
 
 try: 
-    api_response = api_instance.get_videos_from_product(product_id, page=page, filters=filters, per_page=per_page, ip=ip, sort_by=sort_by, sort_direction=sort_direction)
+    api_response = api_instance.get_videos_from_product(product_id, page=page, per_page=per_page, filters=filters, ip=ip, sort_by=sort_by, sort_direction=sort_direction)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProductsApi->get_videos_from_product: %s\n" % e)
@@ -1808,8 +1856,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **product_id** | **int**| Product ID to fetch | 
  **page** | **int**|  | [optional] 
- **filters** | **str**|      &#x60;&#x60;&#x60;     name[value]&#x3D;string&amp;name[operator]&#x3D;strict&amp;duration[value]&#x3D;string&amp;duration[operator]&#x3D;gt     _______________      {     \&quot;name\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;duration\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;gt\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
  **per_page** | **int**|  | [optional] 
+ **filters** | **str**|      &#x60;&#x60;&#x60;     name[value]&#x3D;string&amp;name[operator]&#x3D;strict&amp;duration[value]&#x3D;string&amp;duration[operator]&#x3D;gt     _______________      {     \&quot;name\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;duration\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;gt\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
  **ip** | **str**| Filter by user IP | [optional] 
  **sort_by** | **str**| Sort by this attribute (default is ID) | [optional] 
  **sort_direction** | **str**| Sorting direction (asc by default) | [optional] 

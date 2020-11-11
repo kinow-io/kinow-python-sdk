@@ -309,7 +309,7 @@ from pprint import pprint
 api_instance = kinow_client.PaymentModulesApi()
 cart_id = 789 # int | Cart ID to fetch
 payment_name = 'payment_name_example' # str | Payment gateway name
-ip_address = 'ip_address_example' # str | Filter by user IP (optional)
+ip_address = 'ip_address_example' # str | Use IP address in payment process (optional)
 
 try: 
     api_response = api_instance.prepare_payment(cart_id, payment_name, ip_address=ip_address)
@@ -324,7 +324,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cart_id** | **int**| Cart ID to fetch | 
  **payment_name** | **str**| Payment gateway name | 
- **ip_address** | **str**| Filter by user IP | [optional] 
+ **ip_address** | **str**| Use IP address in payment process | [optional] 
 
 ### Return type
 

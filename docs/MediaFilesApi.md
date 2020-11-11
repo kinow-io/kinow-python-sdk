@@ -4,9 +4,53 @@ All URIs are relative to *https://api.kinow.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**get_media_file**](#get_media_file) | **GET** /media-files/{media_file_id} | 
 [**get_media_source_files**](#get_media_source_files) | **GET** /media-sources/{source_id}/files | 
 [**post_media_source_files**](#post_media_source_files) | **POST** /media-sources/{source_id}/files | 
 
+
+## **get_media_file**
+> MediaFile get_media_file(media_file_id)
+
+
+
+Get Media file
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.MediaFilesApi()
+media_file_id = 789 # int | MediaFile ID to fetch
+
+try: 
+    api_response = api_instance.get_media_file(media_file_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling MediaFilesApi->get_media_file: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **media_file_id** | **int**| MediaFile ID to fetch | 
+
+### Return type
+
+[**MediaFile**](#MediaFile)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_media_source_files**
 > MediaFiles get_media_source_files(source_id, page=page, per_page=per_page, filters=filters, sort_by=sort_by, sort_direction=sort_direction)

@@ -319,7 +319,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_gifts**
-> Gifts1 get_gifts(unused_only=unused_only)
+> Gifts1 get_gifts(unused_only=unused_only, page=page, per_page=per_page)
 
 
 
@@ -336,9 +336,11 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = kinow_client.GiftsApi()
 unused_only = 56 # int | Only unused Gifts (optional)
+page = 789 # int |  (optional)
+per_page = 789 # int |  (optional)
 
 try: 
-    api_response = api_instance.get_gifts(unused_only=unused_only)
+    api_response = api_instance.get_gifts(unused_only=unused_only, page=page, per_page=per_page)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GiftsApi->get_gifts: %s\n" % e)
@@ -349,6 +351,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **unused_only** | **int**| Only unused Gifts | [optional] 
+ **page** | **int**|  | [optional] 
+ **per_page** | **int**|  | [optional] 
 
 ### Return type
 

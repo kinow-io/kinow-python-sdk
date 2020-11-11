@@ -471,7 +471,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **unsubscribe**
-> unsubscribe(product_access_id)
+> unsubscribe(product_access_id, message=message)
 
 
 
@@ -488,9 +488,10 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = kinow_client.ProductAccessesApi()
 product_access_id = 789 # int | Access ID to fetch
+message = 789 # int | Unsubscribe message (optional)
 
 try: 
-    api_instance.unsubscribe(product_access_id)
+    api_instance.unsubscribe(product_access_id, message=message)
 except ApiException as e:
     print("Exception when calling ProductAccessesApi->unsubscribe: %s\n" % e)
 ```
@@ -500,6 +501,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **product_access_id** | **int**| Access ID to fetch | 
+ **message** | **int**| Unsubscribe message | [optional] 
 
 ### Return type
 
