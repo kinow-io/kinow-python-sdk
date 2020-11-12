@@ -791,7 +791,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_video_player**
-> Player1 get_video_player(video_id, customer_id=customer_id, country_id=country_id, ip_address=ip_address)
+> PlayerConfiguration get_video_player(video_id, customer_id=customer_id, country_id=country_id, ip_address=ip_address)
 
 
 
@@ -830,7 +830,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Player1**](#Player1)
+[**PlayerConfiguration**](#PlayerConfiguration)
 
 ### HTTP request headers
 

@@ -326,7 +326,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_extract_player**
-> Player get_extract_player(extract_id)
+> PlayerConfiguration get_extract_player(extract_id)
 
 
 
@@ -359,7 +359,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Player**](#Player)
+[**PlayerConfiguration**](#PlayerConfiguration)
 
 ### HTTP request headers
 
