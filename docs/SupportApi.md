@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 ## **create_message**
-> Support create_message(id_lang, email, id_contact, message, id_product=id_product, id_order=id_order, send_mail=send_mail)
+> Support create_message(id_lang, email, id_contact, message, id_support=id_support, id_product=id_product, id_order=id_order, send_mail=send_mail)
 
 
 
@@ -25,16 +25,17 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.SupportApi()
-id_lang = 56 # int | 
-email = 'email_example' # str | 
-id_contact = 56 # int | 
-message = 'message_example' # str | 
-id_product = 56 # int |  (optional)
-id_order = 56 # int |  (optional)
-send_mail = true # bool |  (optional)
+id_lang = 56 # int | Language ID used by user to write his message
+email = 'email_example' # str | User email in order to send him a response
+id_contact = 56 # int | Contact ID to send the user message
+message = 'message_example' # str | User message
+id_support = 56 # int | Link the message to a previous message (optional)
+id_product = 56 # int | Link the message to a product in catalog (optional)
+id_order = 56 # int | Link the message to an existing order (optional)
+send_mail = true # bool | Send confirmation email to the providen email (optional)
 
 try: 
-    api_response = api_instance.create_message(id_lang, email, id_contact, message, id_product=id_product, id_order=id_order, send_mail=send_mail)
+    api_response = api_instance.create_message(id_lang, email, id_contact, message, id_support=id_support, id_product=id_product, id_order=id_order, send_mail=send_mail)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SupportApi->create_message: %s\n" % e)
@@ -44,13 +45,14 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id_lang** | **int**|  | 
- **email** | **str**|  | 
- **id_contact** | **int**|  | 
- **message** | **str**|  | 
- **id_product** | **int**|  | [optional] 
- **id_order** | **int**|  | [optional] 
- **send_mail** | **bool**|  | [optional] 
+ **id_lang** | **int**| Language ID used by user to write his message | 
+ **email** | **str**| User email in order to send him a response | 
+ **id_contact** | **int**| Contact ID to send the user message | 
+ **message** | **str**| User message | 
+ **id_support** | **int**| Link the message to a previous message | [optional] 
+ **id_product** | **int**| Link the message to a product in catalog | [optional] 
+ **id_order** | **int**| Link the message to an existing order | [optional] 
+ **send_mail** | **bool**| Send confirmation email to the providen email | [optional] 
 
 ### Return type
 
