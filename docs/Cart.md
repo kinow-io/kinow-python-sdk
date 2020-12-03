@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **total_trial** | **float** |  | [optional] 
 **available_checkout_processes** | **list[str]** |  | [optional] 
 **cart_rules** | [**list[CartRule]**](#CartRule) |  | [optional] 
-**products** | [**list[Product]**](#Product) |  | [optional] 
+**products** | [**list[CartProduct]**](#CartProduct) |  | [optional] 
 
 [[Back to Model list]](#documentation-for-models) [[Back to API list]](#documentation-for-api-endpoints)
 

@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **message** | **str** | Message for the recipient | 
 **custom** | **str** | Custom data | [optional] 
 **date_send** | **str** | Date to send the Gift to the recipient | [optional] 
+**auto_link** | **bool** | Auto-link Gift to an existing Product in Cart with same IDs - true by default | [optional] 
 
 [[Back to Model list]](#documentation-for-models) [[Back to API list]](#documentation-for-api-endpoints)
 

@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**get_gift_in_cart**](#get_gift_in_cart) | **GET** /carts/{cart_id}/gift | 
 [**get_gift_token**](#get_gift_token) | **GET** /gifts/{gift_id}/token | 
 [**get_gifts**](#get_gifts) | **GET** /gifts | 
+[**get_gifts_in_cart**](#get_gifts_in_cart) | **GET** /carts/{cart_id}/gifts | 
 [**send_gift**](#send_gift) | **POST** /gifts/{gift_id}/send | 
 [**update_gift**](#update_gift) | **PUT** /gifts/{gift_id} | 
 
@@ -357,6 +358,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Gifts1**](#Gifts1)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_gifts_in_cart**
+> list[Gift] get_gifts_in_cart(cart_id)
+
+
+
+Get Gifts in cart
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.GiftsApi()
+cart_id = 789 # int | Cart ID to fetch
+
+try: 
+    api_response = api_instance.get_gifts_in_cart(cart_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GiftsApi->get_gifts_in_cart: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cart_id** | **int**| Cart ID to fetch | 
+
+### Return type
+
+[**list[Gift]**](#Gift)
 
 ### HTTP request headers
 

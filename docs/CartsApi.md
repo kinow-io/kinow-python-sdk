@@ -26,7 +26,7 @@ Method | HTTP request | Description
 
 
 ## **add_product_to_cart**
-> Cart add_product_to_cart(cart_id, product_id, product_attribute_id=product_attribute_id, switch_subscription_id=switch_subscription_id, is_gift=is_gift, ip_address=ip_address)
+> Cart add_product_to_cart(cart_id, product_id, product_attribute_id=product_attribute_id, gift_id=gift_id, switch_subscription_id=switch_subscription_id, is_gift=is_gift, ip_address=ip_address)
 
 
 
@@ -45,12 +45,13 @@ api_instance = kinow_client.CartsApi()
 cart_id = 789 # int | Cart ID to fetch
 product_id = 789 # int | Product ID to add to cart
 product_attribute_id = 789 # int | ProductAttribute ID, required to add product to cart if product is not a subscription (optional)
+gift_id = 789 # int | Gift ID linked to the item in cart (optional)
 switch_subscription_id = 789 # int | When customer want to switch subscription, switch_subscription_id is the product access ID that match with the subscription to cancel (optional)
 is_gift = false # bool | Allows bypass of access check (in case the current user already bought the product and it cannot be reordered) (optional) (default to false)
 ip_address = 'ip_address_example' # str | IP address (optional)
 
 try: 
-    api_response = api_instance.add_product_to_cart(cart_id, product_id, product_attribute_id=product_attribute_id, switch_subscription_id=switch_subscription_id, is_gift=is_gift, ip_address=ip_address)
+    api_response = api_instance.add_product_to_cart(cart_id, product_id, product_attribute_id=product_attribute_id, gift_id=gift_id, switch_subscription_id=switch_subscription_id, is_gift=is_gift, ip_address=ip_address)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CartsApi->add_product_to_cart: %s\n" % e)
@@ -63,6 +64,7 @@ Name | Type | Description  | Notes
  **cart_id** | **int**| Cart ID to fetch | 
  **product_id** | **int**| Product ID to add to cart | 
  **product_attribute_id** | **int**| ProductAttribute ID, required to add product to cart if product is not a subscription | [optional] 
+ **gift_id** | **int**| Gift ID linked to the item in cart | [optional] 
  **switch_subscription_id** | **int**| When customer want to switch subscription, switch_subscription_id is the product access ID that match with the subscription to cancel | [optional] 
  **is_gift** | **bool**| Allows bypass of access check (in case the current user already bought the product and it cannot be reordered) | [optional] [default to false]
  **ip_address** | **str**| IP address | [optional] 
@@ -253,7 +255,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **delete_product_from_cart**
-> delete_product_from_cart(cart_id, product_id, product_attribute_id=product_attribute_id)
+> delete_product_from_cart(cart_id, product_id, product_attribute_id=product_attribute_id, gift_id=gift_id)
 
 
 
@@ -272,9 +274,10 @@ api_instance = kinow_client.CartsApi()
 cart_id = 789 # int | Cart ID to fetch
 product_id = 789 # int | Product ID to delete from cart
 product_attribute_id = 789 # int | Product attribute ID, required to add product to cart if product is not a subscription (optional)
+gift_id = 789 # int | Gift ID linked to the item in cart (optional)
 
 try: 
-    api_instance.delete_product_from_cart(cart_id, product_id, product_attribute_id=product_attribute_id)
+    api_instance.delete_product_from_cart(cart_id, product_id, product_attribute_id=product_attribute_id, gift_id=gift_id)
 except ApiException as e:
     print("Exception when calling CartsApi->delete_product_from_cart: %s\n" % e)
 ```
@@ -286,6 +289,7 @@ Name | Type | Description  | Notes
  **cart_id** | **int**| Cart ID to fetch | 
  **product_id** | **int**| Product ID to delete from cart | 
  **product_attribute_id** | **int**| Product attribute ID, required to add product to cart if product is not a subscription | [optional] 
+ **gift_id** | **int**| Gift ID linked to the item in cart | [optional] 
 
 ### Return type
 
