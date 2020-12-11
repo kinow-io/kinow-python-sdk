@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **quality** | **str** |  | [optional] 
 **duration** | **int** |  | [optional] 
 **watching_duration** | **int** |  | [optional] 
+**maximum_views** | **int** |  | [optional] 
 **active** | **int** |  | [optional] 
 
 [[Back to Model list]](#documentation-for-models) [[Back to API list]](#documentation-for-api-endpoints)
