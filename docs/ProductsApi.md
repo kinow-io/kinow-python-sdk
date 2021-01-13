@@ -20,6 +20,7 @@ Method | HTTP request | Description
 [**get_category_products**](#get_category_products) | **GET** /categories/{category_id}/products | 
 [**get_customer_has_access_to_product**](#get_customer_has_access_to_product) | **GET** /customers/{customer_id}/products/{product_id}/has-access | 
 [**get_customer_has_access_to_products**](#get_customer_has_access_to_products) | **POST** /customers/{customer_id}/products/has-access | 
+[**get_most_watched**](#get_most_watched) | **GET** /products/most-watched | 
 [**get_new_products**](#get_new_products) | **GET** /products/new | 
 [**get_price**](#get_price) | **POST** /products/price | 
 [**get_product**](#get_product) | **GET** /products/{product_id} | 
@@ -760,6 +761,53 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**list[ProductAccessInfo]**](#ProductAccessInfo)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_most_watched**
+> Products get_most_watched(page=page, per_page=per_page, ip=ip)
+
+
+
+Get most watched products list
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.ProductsApi()
+page = 789 # int |  (optional)
+per_page = 789 # int |  (optional)
+ip = 'ip_example' # str | Filter by user IP (optional)
+
+try: 
+    api_response = api_instance.get_most_watched(page=page, per_page=per_page, ip=ip)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ProductsApi->get_most_watched: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **int**|  | [optional] 
+ **per_page** | **int**|  | [optional] 
+ **ip** | **str**| Filter by user IP | [optional] 
+
+### Return type
+
+[**Products**](#Products)
 
 ### HTTP request headers
 

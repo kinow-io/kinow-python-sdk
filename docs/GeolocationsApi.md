@@ -31,7 +31,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kinow_client.GeolocationsApi()
-type = 'type_example' # str | Item type, available values are: category, subscription, product, video, extract, blogpage, slider, topmenu
+type = 'type_example' # str | Item type, available values are: category, subscription, product, video, extract, blogpage, slider, topmenu, homerail
 type_id = 56 # int | Item ID
 
 try: 
@@ -45,7 +45,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **type** | **str**| Item type, available values are: category, subscription, product, video, extract, blogpage, slider, topmenu | 
+ **type** | **str**| Item type, available values are: category, subscription, product, video, extract, blogpage, slider, topmenu, homerail | 
  **type_id** | **int**| Item ID | 
 
 ### Return type

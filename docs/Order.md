@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 **reference** | **str** |  | [optional] 
 **date_add** | **str** |  | [optional] 
 **date_upd** | **str** |  | [optional] 
+**histories** | [**list[OrderHistory]**](#OrderHistory) |  | [optional] 
 
 [[Back to Model list]](#documentation-for-models) [[Back to API list]](#documentation-for-api-endpoints)
 
