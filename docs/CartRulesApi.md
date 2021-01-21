@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 ## **attach_cart_rule_to_cart**
-> attach_cart_rule_to_cart(cart_id, code)
+> attach_cart_rule_to_cart(cart_id, code, ip=ip)
 
 
 
@@ -32,9 +32,10 @@ from pprint import pprint
 api_instance = kinow_client.CartRulesApi()
 cart_id = 789 # int | Cart ID to fetch
 code = 'code_example' # str | Code of the cart rule to attach
+ip = 'ip_example' # str | Filter by user IP (optional)
 
 try: 
-    api_instance.attach_cart_rule_to_cart(cart_id, code)
+    api_instance.attach_cart_rule_to_cart(cart_id, code, ip=ip)
 except ApiException as e:
     print("Exception when calling CartRulesApi->attach_cart_rule_to_cart: %s\n" % e)
 ```
@@ -45,6 +46,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cart_id** | **int**| Cart ID to fetch | 
  **code** | **str**| Code of the cart rule to attach | 
+ **ip** | **str**| Filter by user IP | [optional] 
 
 ### Return type
 
