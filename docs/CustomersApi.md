@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**check_customer_credentials**](#check_customer_credentials) | **POST** /customers/check-credentials | 
 [**create_customer**](#create_customer) | **POST** /customers | 
 [**create_facebook_id**](#create_facebook_id) | **POST** /customers/facebook | 
+[**create_google_id**](#create_google_id) | **POST** /customers/google | 
 [**delete_customer**](#delete_customer) | **DELETE** /customers/{customer_id} | 
 [**generate_authentication_token**](#generate_authentication_token) | **GET** /customers/{customer_id}/authentication-token | 
 [**get_customer**](#get_customer) | **GET** /customers/{customer_id} | 
@@ -29,12 +30,14 @@ Method | HTTP request | Description
 [**get_customer_prepayment_operations**](#get_customer_prepayment_operations) | **GET** /customers/{customer_id}/prepayment-operations | 
 [**get_customers**](#get_customers) | **GET** /customers | 
 [**get_facebook_customer**](#get_facebook_customer) | **GET** /customers/facebook/{facebook_id} | 
+[**get_google_customer**](#get_google_customer) | **GET** /customers/google/{google_id} | 
 [**get_payment_methods**](#get_payment_methods) | **GET** /customers/{customer_id}/payments/{payment_name}/payment-methods | 
 [**get_payment_methods_with_ip**](#get_payment_methods_with_ip) | **GET** /customers/{customer_id}/payments/{payment_name}/payment-methods/{ip_address} | 
 [**get_pending_payments**](#get_pending_payments) | **GET** /customers/{customer_id}/payments/{payment_name}/pending | 
 [**get_pending_payments_with_ip**](#get_pending_payments_with_ip) | **GET** /customers/{customer_id}/payments/{payment_name}/pending/{ip_address} | 
 [**get_registration_fields**](#get_registration_fields) | **GET** /customer/registration-fields | 
 [**login_with_facebook**](#login_with_facebook) | **POST** /customers/facebook-login | 
+[**login_with_google**](#login_with_google) | **POST** /customers/google-login | 
 [**password_token**](#password_token) | **POST** /customers/password-token | 
 [**password_token_consume**](#password_token_consume) | **POST** /customers/password-token-consume | 
 [**stop_subscription**](#stop_subscription) | **PUT** /customers/{customer_id}/unsubscribe | 
@@ -251,6 +254,50 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customer_id** | **int**| Customer ID | 
  **facebook_id** | **str**| Facebook ID | 
+
+### Return type
+
+void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **create_google_id**
+> create_google_id(customer_id, google_id)
+
+
+
+Link a Google account ID to a Customer
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.CustomersApi()
+customer_id = 789 # int | Customer ID
+google_id = 'google_id_example' # str | Google ID
+
+try: 
+    api_instance.create_google_id(customer_id, google_id)
+except ApiException as e:
+    print("Exception when calling CustomersApi->create_google_id: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customer_id** | **int**| Customer ID | 
+ **google_id** | **str**| Google ID | 
 
 ### Return type
 
@@ -1178,6 +1225,49 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
+## **get_google_customer**
+> CustomerId get_google_customer(google_id)
+
+
+
+Get Customer ID linked to a Google ID
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.CustomersApi()
+google_id = 789 # int | Google ID to fetch
+
+try: 
+    api_response = api_instance.get_google_customer(google_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CustomersApi->get_google_customer: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **google_id** | **int**| Google ID to fetch | 
+
+### Return type
+
+[**CustomerId**](#CustomerId)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
 ## **get_payment_methods**
 > list[PaymentMethods] get_payment_methods(customer_id, payment_name)
 
@@ -1442,6 +1532,49 @@ Name | Type | Description  | Notes
  **token_type** | **str**| Can be &#39;oauth2&#39; or &#39;authorization&#39; | 
  **token** | **str**| oAuth2 token or authorization code given by Facebook | 
  **redirect_uri** | **str**| Redirect URI is required if you&#39;re using authorization code method | [optional] 
+
+### Return type
+
+[**Customer**](#Customer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **login_with_google**
+> Customer login_with_google(token)
+
+
+
+Create or retrieve existing Customer account using Google authorization token
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.CustomersApi()
+token = 'token_example' # str | token given by Google
+
+try: 
+    api_response = api_instance.login_with_google(token)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CustomersApi->login_with_google: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **token** | **str**| token given by Google | 
 
 ### Return type
 
