@@ -7,10 +7,12 @@ Method | HTTP request | Description
 [**get_payment_methods**](#get_payment_methods) | **GET** /customers/{customer_id}/payments/{payment_name}/payment-methods | 
 [**get_payment_methods_with_ip**](#get_payment_methods_with_ip) | **GET** /customers/{customer_id}/payments/{payment_name}/payment-methods/{ip_address} | 
 [**get_payment_modules**](#get_payment_modules) | **GET** /payment-modules | 
+[**get_payment_token**](#get_payment_token) | **GET** /payment-modules/token/{token} | 
 [**get_payment_url**](#get_payment_url) | **GET** /carts/{cart_id}/payments/{payment_name} | 
 [**get_pending_payments**](#get_pending_payments) | **GET** /customers/{customer_id}/payments/{payment_name}/pending | 
 [**get_pending_payments_with_ip**](#get_pending_payments_with_ip) | **GET** /customers/{customer_id}/payments/{payment_name}/pending/{ip_address} | 
 [**prepare_payment**](#prepare_payment) | **POST** /carts/{cart_id}/payments/{payment_name}/prepare | 
+[**recurring_payment**](#recurring_payment) | **POST** /carts/{cart_id}/payments/{payment_name}/recurring | 
 [**update_payment_method**](#update_payment_method) | **PUT** /customers/{customer_id}/payments/{payment_name}/payment-method | 
 [**validate_free_order**](#validate_free_order) | **POST** /carts/{cart_id}/validate-free-order | 
 [**validate_payment**](#validate_payment) | **POST** /carts/{cart_id}/payments/{payment_name}/validate | 
@@ -145,6 +147,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PaymentModules**](#PaymentModules)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_payment_token**
+> PaymentToken1 get_payment_token(token)
+
+
+
+Get payment token details
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.PaymentModulesApi()
+token = 56 # int | Token to fetch
+
+try: 
+    api_response = api_instance.get_payment_token(token)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PaymentModulesApi->get_payment_token: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **token** | **int**| Token to fetch | 
+
+### Return type
+
+[**PaymentToken1**](#PaymentToken1)
 
 ### HTTP request headers
 
@@ -329,6 +374,52 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PaymentDetails1**](#PaymentDetails1)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **recurring_payment**
+> recurring_payment(cart_id, payment_name, payment_argument)
+
+
+
+Validate recurring payment on a payment gateway
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.PaymentModulesApi()
+cart_id = 789 # int | Cart ID to fetch
+payment_name = 'payment_name_example' # str | Payment gateway name
+payment_argument = kinow_client.PaymentArguments() # PaymentArguments | Payment argument
+
+try: 
+    api_instance.recurring_payment(cart_id, payment_name, payment_argument)
+except ApiException as e:
+    print("Exception when calling PaymentModulesApi->recurring_payment: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cart_id** | **int**| Cart ID to fetch | 
+ **payment_name** | **str**| Payment gateway name | 
+ **payment_argument** | [**PaymentArguments**](#PaymentArguments)| Payment argument | 
+
+### Return type
+
+void (empty response body)
 
 ### HTTP request headers
 

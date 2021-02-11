@@ -20,6 +20,7 @@ Method | HTTP request | Description
 [**get_payment_url**](#get_payment_url) | **GET** /carts/{cart_id}/payments/{payment_name} | 
 [**get_price**](#get_price) | **POST** /carts/price | 
 [**prepare_payment**](#prepare_payment) | **POST** /carts/{cart_id}/payments/{payment_name}/prepare | 
+[**recurring_payment**](#recurring_payment) | **POST** /carts/{cart_id}/payments/{payment_name}/recurring | 
 [**update_cart**](#update_cart) | **PUT** /carts/{cart_id} | 
 [**validate_free_order**](#validate_free_order) | **POST** /carts/{cart_id}/validate-free-order | 
 [**validate_payment**](#validate_payment) | **POST** /carts/{cart_id}/payments/{payment_name}/validate | 
@@ -758,6 +759,52 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PaymentDetails1**](#PaymentDetails1)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **recurring_payment**
+> recurring_payment(cart_id, payment_name, payment_argument)
+
+
+
+Validate recurring payment on a payment gateway
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = kinow_client.CartsApi()
+cart_id = 789 # int | Cart ID to fetch
+payment_name = 'payment_name_example' # str | Payment gateway name
+payment_argument = kinow_client.PaymentArguments() # PaymentArguments | Payment argument
+
+try: 
+    api_instance.recurring_payment(cart_id, payment_name, payment_argument)
+except ApiException as e:
+    print("Exception when calling CartsApi->recurring_payment: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cart_id** | **int**| Cart ID to fetch | 
+ **payment_name** | **str**| Payment gateway name | 
+ **payment_argument** | [**PaymentArguments**](#PaymentArguments)| Payment argument | 
+
+### Return type
+
+void (empty response body)
 
 ### HTTP request headers
 
