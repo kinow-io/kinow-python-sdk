@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_configuration_analytics**
-> Analytics get_configuration_analytics()
+> Analytics get_configuration_analytics(page=page, per_page=per_page)
 
 
 
@@ -91,16 +91,22 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = kinow_client.ConfigurationApi()
+page = 789 # int |  (optional)
+per_page = 789 # int |  (optional)
 
 try: 
-    api_response = api_instance.get_configuration_analytics()
+    api_response = api_instance.get_configuration_analytics(page=page, per_page=per_page)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ConfigurationApi->get_configuration_analytics: %s\n" % e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **int**|  | [optional] 
+ **per_page** | **int**|  | [optional] 
 
 ### Return type
 
