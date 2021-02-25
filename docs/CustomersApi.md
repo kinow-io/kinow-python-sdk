@@ -416,7 +416,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **generate_authentication_token**
-> generate_authentication_token(customer_id)
+> str generate_authentication_token(customer_id)
 
 
 
@@ -444,7 +444,8 @@ api_instance = kinow_client.CustomersApi()
 customer_id = 789 # int | Customer ID to authenticate
 
 try: 
-    api_instance.generate_authentication_token(customer_id)
+    api_response = api_instance.generate_authentication_token(customer_id)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling CustomersApi->generate_authentication_token: %s\n" % e)
 ```
@@ -457,7 +458,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**str**
 
 ### HTTP request headers
 
