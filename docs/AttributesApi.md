@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_product_attribute**](#create_product_attribute) | **POST** /attributes | 
 [**delete_attribute**](#delete_attribute) | **DELETE** /attributes/{attribute_id} | 
+[**get_attribute**](#get_attribute) | **GET** /attributes/{attribute_id} | 
 [**get_product_attributes**](#get_product_attributes) | **GET** /products/{product_id}/attributes | 
 
 
@@ -104,6 +105,58 @@ Name | Type | Description  | Notes
 ### Return type
 
 void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_attribute**
+> ProductAttribute get_attribute(attribute_id)
+
+
+
+Get Attribute
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: ApiClientId
+kinow_client.configuration.api_key['X-Client-Id'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Id'] = 'Bearer'
+# Configure API key authorization: ApiClientSecret
+kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Secret'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = kinow_client.AttributesApi()
+attribute_id = 789 # int | Attribute ID to get
+
+try: 
+    api_response = api_instance.get_attribute(attribute_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AttributesApi->get_attribute: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **attribute_id** | **int**| Attribute ID to get | 
+
+### Return type
+
+[**ProductAttribute**](#ProductAttribute)
 
 ### HTTP request headers
 
