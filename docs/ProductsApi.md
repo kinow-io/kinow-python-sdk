@@ -49,6 +49,7 @@ Method | HTTP request | Description
 [**update_product**](#update_product) | **PUT** /products/{product_id} | 
 [**update_product_group_restriction_behavior**](#update_product_group_restriction_behavior) | **PUT** /products/{product_id}/groups/behavior | 
 [**upload_product_cover**](#upload_product_cover) | **POST** /products/{product_id}/cover | 
+[**upload_product_image**](#upload_product_image) | **POST** /products/{product_id}/image | 
 
 
 ## **associate_products**
@@ -1862,7 +1863,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_product_images**
-> ProductImagesResponse get_product_images(product_id, type=type, page=page, per_page=per_page)
+> CategoryImagesResponse get_product_images(product_id, type=type, page=page, per_page=per_page)
 
 
 
@@ -1910,7 +1911,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProductImagesResponse**](#ProductImagesResponse)
+[**CategoryImagesResponse**](#CategoryImagesResponse)
 
 ### HTTP request headers
 
@@ -1920,7 +1921,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_product_screenshots**
-> list[Screenshot] get_product_screenshots(product_id)
+> list[Image] get_product_screenshots(product_id)
 
 
 
@@ -1962,7 +1963,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[Screenshot]**](#Screenshot)
+[**list[Image]**](#Image)
 
 ### HTTP request headers
 
@@ -2562,6 +2563,66 @@ Name | Type | Description  | Notes
  **product_id** | **float**| Product ID to fetch | 
  **file** | **file**|  | 
  **hash** | **str**|  | 
+ **hash_algorithm** | **str**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
+
+### Return type
+
+[**Image**](#Image)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **upload_product_image**
+> Image upload_product_image(product_id, file, hash, image_type_name, hash_algorithm=hash_algorithm)
+
+
+
+Upload product image
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: ApiClientId
+kinow_client.configuration.api_key['X-Client-Id'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Id'] = 'Bearer'
+# Configure API key authorization: ApiClientSecret
+kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Secret'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = kinow_client.ProductsApi()
+product_id = 3.4 # float | Product ID to fetch
+file = '/path/to/file.txt' # file | 
+hash = 'hash_example' # str | 
+image_type_name = 'image_type_name_example' # str | Image types name to use to generate image assets
+hash_algorithm = 'hash_algorithm_example' # str | Hash algorithm to check the hash file (default value is: sha256) (optional)
+
+try: 
+    api_response = api_instance.upload_product_image(product_id, file, hash, image_type_name, hash_algorithm=hash_algorithm)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ProductsApi->upload_product_image: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_id** | **float**| Product ID to fetch | 
+ **file** | **file**|  | 
+ **hash** | **str**|  | 
+ **image_type_name** | **str**| Image types name to use to generate image assets | 
  **hash_algorithm** | **str**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
 
 ### Return type
