@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] 
 **id_media_source** | **int** |  | [optional] 
+**type** | **str** |  | [optional] 
 **filename** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
 **cover** | **str** |  | [optional] 

@@ -686,7 +686,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_best_sales**
-> Products get_best_sales(page=page, per_page=per_page, ip=ip)
+> Products get_best_sales(page=page, per_page=per_page, ip=ip, iso_code=iso_code)
 
 
 
@@ -713,10 +713,11 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 api_instance = kinow_client.ProductsApi()
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
-ip = 'ip_example' # str | filter by Customer IP (optional)
+ip = 'ip_example' # str | Filter by Customer IP (optional)
+iso_code = 'iso_code_example' # str | Filter by ISO Code (optional)
 
 try: 
-    api_response = api_instance.get_best_sales(page=page, per_page=per_page, ip=ip)
+    api_response = api_instance.get_best_sales(page=page, per_page=per_page, ip=ip, iso_code=iso_code)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProductsApi->get_best_sales: %s\n" % e)
@@ -728,7 +729,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
- **ip** | **str**| filter by Customer IP | [optional] 
+ **ip** | **str**| Filter by Customer IP | [optional] 
+ **iso_code** | **str**| Filter by ISO Code | [optional] 
 
 ### Return type
 
@@ -915,7 +917,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_most_watched**
-> Products get_most_watched(page=page, per_page=per_page, ip=ip)
+> Products get_most_watched(page=page, per_page=per_page, ip=ip, iso_code=iso_code)
 
 
 
@@ -943,9 +945,10 @@ api_instance = kinow_client.ProductsApi()
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 ip = 'ip_example' # str | Filter by user IP (optional)
+iso_code = 'iso_code_example' # str | Filter by ISO Code (optional)
 
 try: 
-    api_response = api_instance.get_most_watched(page=page, per_page=per_page, ip=ip)
+    api_response = api_instance.get_most_watched(page=page, per_page=per_page, ip=ip, iso_code=iso_code)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProductsApi->get_most_watched: %s\n" % e)
@@ -958,6 +961,7 @@ Name | Type | Description  | Notes
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
  **ip** | **str**| Filter by user IP | [optional] 
+ **iso_code** | **str**| Filter by ISO Code | [optional] 
 
 ### Return type
 
