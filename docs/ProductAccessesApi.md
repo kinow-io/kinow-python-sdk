@@ -317,9 +317,9 @@ page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 type = 'type_example' # str | Filter by access type, available values are: video, sub (optional)
 date_add = 'date_add_example' # str | Filter by creation date (optional)
-date_add_direction = 'date_add_direction_example' # str | Choose the direction for date_add parameter, default value is after ,available values are: before, equal, after (optional)
+date_add_direction = 'date_add_direction_example' # str | Choose the direction for date_add parameter, default value is after, available values are: before, equal, after (optional)
 date_exp = 'date_exp_example' # str | Filter by expiration date (optional)
-date_exp_direction = 'date_exp_direction_example' # str | Choose the direction for date_exp parameter, default value is after ,available values are: before, equal, after (optional)
+date_exp_direction = 'date_exp_direction_example' # str | Choose the direction for date_exp parameter, default value is after, available values are: before, equal, after (optional)
 filters = 'filters_example' # str |      ```     type[value]=string&type[operator]=strict&cancel[value]=string&cancel[operator]=contains     _______________      {     \"type\": {     \"value\": \"string\",     \"operator\": \"strict\"     },     \"cancel\": {     \"value\": \"string\",     \"operator\": \"contains\"     }     } ```Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). (optional)
 
 try: 
@@ -337,9 +337,9 @@ Name | Type | Description  | Notes
  **per_page** | **int**|  | [optional] 
  **type** | **str**| Filter by access type, available values are: video, sub | [optional] 
  **date_add** | **str**| Filter by creation date | [optional] 
- **date_add_direction** | **str**| Choose the direction for date_add parameter, default value is after ,available values are: before, equal, after | [optional] 
+ **date_add_direction** | **str**| Choose the direction for date_add parameter, default value is after, available values are: before, equal, after | [optional] 
  **date_exp** | **str**| Filter by expiration date | [optional] 
- **date_exp_direction** | **str**| Choose the direction for date_exp parameter, default value is after ,available values are: before, equal, after | [optional] 
+ **date_exp_direction** | **str**| Choose the direction for date_exp parameter, default value is after, available values are: before, equal, after | [optional] 
  **filters** | **str**|      &#x60;&#x60;&#x60;     type[value]&#x3D;string&amp;type[operator]&#x3D;strict&amp;cancel[value]&#x3D;string&amp;cancel[operator]&#x3D;contains     _______________      {     \&quot;type\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;cancel\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;contains\&quot;     }     } &#x60;&#x60;&#x60;Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
 
 ### Return type

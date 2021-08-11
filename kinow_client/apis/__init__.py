@@ -42,6 +42,7 @@ from .playlists_api import PlaylistsApi
 from .prepayments_api import PrepaymentsApi
 from .product_accesses_api import ProductAccessesApi
 from .products_api import ProductsApi
+from .recommendations_api import RecommendationsApi
 from .stats_api import StatsApi
 from .subscriptions_api import SubscriptionsApi
 from .subtitles_api import SubtitlesApi
