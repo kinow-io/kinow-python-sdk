@@ -4,14 +4,20 @@ All URIs are relative to *https://api.kinow.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**attach_actor_to_category**](#attach_actor_to_category) | **POST** /categories/{category_id}/actors | 
+[**attach_director_to_category**](#attach_director_to_category) | **POST** /categories/{category_id}/directors | 
 [**attach_features_to_category**](#attach_features_to_category) | **POST** /categories/{category_id}/features | 
 [**create_category**](#create_category) | **POST** /categories | 
 [**delete_category**](#delete_category) | **DELETE** /categories/{category_id} | 
+[**detach_actor_from_category**](#detach_actor_from_category) | **DELETE** /categories/{category_id}/actors/{actor_id} | 
+[**detach_director_from_category**](#detach_director_from_category) | **DELETE** /categories/{category_id}/directors/{director_id} | 
 [**get_available_category**](#get_available_category) | **GET** /categories-accesses/{category_id} | 
 [**get_categories**](#get_categories) | **GET** /categories | 
 [**get_categories_from_category**](#get_categories_from_category) | **GET** /categories/{category_id}/categories | 
 [**get_category**](#get_category) | **GET** /categories/{category_id} | 
+[**get_category_actors**](#get_category_actors) | **GET** /categories/{category_id}/actors | 
 [**get_category_banner**](#get_category_banner) | **GET** /categories/{category_id}/banner | 
+[**get_category_directors**](#get_category_directors) | **GET** /categories/{category_id}/directors | 
 [**get_category_features**](#get_category_features) | **GET** /categories/{category_id}/features | 
 [**get_category_images**](#get_category_images) | **GET** /categories/{category_id}/images | 
 [**get_category_products**](#get_category_products) | **GET** /categories/{category_id}/products | 
@@ -25,6 +31,112 @@ Method | HTTP request | Description
 [**upload_category_cover**](#upload_category_cover) | **POST** /categories/{category_id}/cover | 
 [**upload_category_image**](#upload_category_image) | **POST** /categories/{category_id}/image | 
 
+
+## **attach_actor_to_category**
+> attach_actor_to_category(category_id, actor_id)
+
+
+
+Attach actor to category
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: ApiClientId
+kinow_client.configuration.api_key['X-Client-Id'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Id'] = 'Bearer'
+# Configure API key authorization: ApiClientSecret
+kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Secret'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = kinow_client.CategoriesApi()
+category_id = 789 # int | Category ID to fetch
+actor_id = 789 # int | Actor ID to attach
+
+try: 
+    api_instance.attach_actor_to_category(category_id, actor_id)
+except ApiException as e:
+    print("Exception when calling CategoriesApi->attach_actor_to_category: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **category_id** | **int**| Category ID to fetch | 
+ **actor_id** | **int**| Actor ID to attach | 
+
+### Return type
+
+void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **attach_director_to_category**
+> attach_director_to_category(category_id, director_id)
+
+
+
+Attach director to category
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: ApiClientId
+kinow_client.configuration.api_key['X-Client-Id'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Id'] = 'Bearer'
+# Configure API key authorization: ApiClientSecret
+kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Secret'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = kinow_client.CategoriesApi()
+category_id = 789 # int | Category ID to fetch
+director_id = 789 # int | Director ID to attach
+
+try: 
+    api_instance.attach_director_to_category(category_id, director_id)
+except ApiException as e:
+    print("Exception when calling CategoriesApi->attach_director_to_category: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **category_id** | **int**| Category ID to fetch | 
+ **director_id** | **int**| Director ID to attach | 
+
+### Return type
+
+void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **attach_features_to_category**
 > attach_features_to_category(category_id, features)
@@ -170,6 +282,112 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **category_id** | **int**| Category ID to fetch | 
+
+### Return type
+
+void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **detach_actor_from_category**
+> detach_actor_from_category(category_id, actor_id)
+
+
+
+Detach actor from category
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: ApiClientId
+kinow_client.configuration.api_key['X-Client-Id'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Id'] = 'Bearer'
+# Configure API key authorization: ApiClientSecret
+kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Secret'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = kinow_client.CategoriesApi()
+category_id = 789 # int | Category ID to fetch
+actor_id = 789 # int | Actor ID to detach
+
+try: 
+    api_instance.detach_actor_from_category(category_id, actor_id)
+except ApiException as e:
+    print("Exception when calling CategoriesApi->detach_actor_from_category: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **category_id** | **int**| Category ID to fetch | 
+ **actor_id** | **int**| Actor ID to detach | 
+
+### Return type
+
+void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **detach_director_from_category**
+> detach_director_from_category(category_id, director_id)
+
+
+
+Detach director from category
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: ApiClientId
+kinow_client.configuration.api_key['X-Client-Id'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Id'] = 'Bearer'
+# Configure API key authorization: ApiClientSecret
+kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Secret'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = kinow_client.CategoriesApi()
+category_id = 789 # int | Category ID to fetch
+director_id = 789 # int | Director ID to detach
+
+try: 
+    api_instance.detach_director_from_category(category_id, director_id)
+except ApiException as e:
+    print("Exception when calling CategoriesApi->detach_director_from_category: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **category_id** | **int**| Category ID to fetch | 
+ **director_id** | **int**| Director ID to detach | 
 
 ### Return type
 
@@ -410,6 +628,62 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
+## **get_category_actors**
+> Actors get_category_actors(category_id, page=page, per_page=per_page)
+
+
+
+Get actors attached to category
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: ApiClientId
+kinow_client.configuration.api_key['X-Client-Id'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Id'] = 'Bearer'
+# Configure API key authorization: ApiClientSecret
+kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Secret'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = kinow_client.CategoriesApi()
+category_id = 789 # int | Category ID to fetch
+page = 789 # int |  (optional)
+per_page = 789 # int |  (optional)
+
+try: 
+    api_response = api_instance.get_category_actors(category_id, page=page, per_page=per_page)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CategoriesApi->get_category_actors: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **category_id** | **int**| Category ID to fetch | 
+ **page** | **int**|  | [optional] 
+ **per_page** | **int**|  | [optional] 
+
+### Return type
+
+[**Actors**](#Actors)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
 ## **get_category_banner**
 > Image get_category_banner(category_id)
 
@@ -454,6 +728,62 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Image**](#Image)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_category_directors**
+> CategoryDirectorsResponse get_category_directors(category_id, page=page, per_page=per_page)
+
+
+
+Get directors attached to category
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: ApiClientId
+kinow_client.configuration.api_key['X-Client-Id'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Id'] = 'Bearer'
+# Configure API key authorization: ApiClientSecret
+kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Secret'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = kinow_client.CategoriesApi()
+category_id = 789 # int | Category ID to fetch
+page = 789 # int |  (optional)
+per_page = 789 # int |  (optional)
+
+try: 
+    api_response = api_instance.get_category_directors(category_id, page=page, per_page=per_page)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CategoriesApi->get_category_directors: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **category_id** | **int**| Category ID to fetch | 
+ **page** | **int**|  | [optional] 
+ **per_page** | **int**|  | [optional] 
+
+### Return type
+
+[**CategoryDirectorsResponse**](#CategoryDirectorsResponse)
 
 ### HTTP request headers
 

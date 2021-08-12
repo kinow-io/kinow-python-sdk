@@ -5,10 +5,10 @@ All URIs are relative to *https://api.kinow.com/api*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**associate_products**](#associate_products) | **POST** /products/{product_id}/products | 
+[**attach_actor_to_product**](#attach_actor_to_product) | **POST** /products/{product_id}/actors | 
+[**attach_director_to_product**](#attach_director_to_product) | **POST** /products/{product_id}/directors | 
 [**attach_features_to_product**](#attach_features_to_product) | **POST** /products/{product_id}/features | 
-[**attach_product_to_actor**](#attach_product_to_actor) | **POST** /products/{product_id}/actors | 
 [**attach_product_to_category**](#attach_product_to_category) | **POST** /products/{product_id}/categories | 
-[**attach_product_to_director**](#attach_product_to_director) | **POST** /products/{product_id}/directors | 
 [**attach_product_to_group**](#attach_product_to_group) | **POST** /products/{product_id}/groups | 
 [**attach_video_to_product**](#attach_video_to_product) | **POST** /products/{product_id}/videos | 
 [**create_product**](#create_product) | **POST** /products | 
@@ -105,6 +105,112 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
+## **attach_actor_to_product**
+> attach_actor_to_product(product_id, actor_id)
+
+
+
+Attach actor to product
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: ApiClientId
+kinow_client.configuration.api_key['X-Client-Id'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Id'] = 'Bearer'
+# Configure API key authorization: ApiClientSecret
+kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Secret'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = kinow_client.ProductsApi()
+product_id = 789 # int | Product ID to fetch
+actor_id = 789 # int | Actor ID to attach
+
+try: 
+    api_instance.attach_actor_to_product(product_id, actor_id)
+except ApiException as e:
+    print("Exception when calling ProductsApi->attach_actor_to_product: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_id** | **int**| Product ID to fetch | 
+ **actor_id** | **int**| Actor ID to attach | 
+
+### Return type
+
+void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **attach_director_to_product**
+> attach_director_to_product(product_id, director_id)
+
+
+
+Attach director to product
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: ApiClientId
+kinow_client.configuration.api_key['X-Client-Id'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Id'] = 'Bearer'
+# Configure API key authorization: ApiClientSecret
+kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Secret'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = kinow_client.ProductsApi()
+product_id = 789 # int | Product ID to fetch
+director_id = 789 # int | Director ID to attach
+
+try: 
+    api_instance.attach_director_to_product(product_id, director_id)
+except ApiException as e:
+    print("Exception when calling ProductsApi->attach_director_to_product: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_id** | **int**| Product ID to fetch | 
+ **director_id** | **int**| Director ID to attach | 
+
+### Return type
+
+void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
 ## **attach_features_to_product**
 > attach_features_to_product(product_id, features)
 
@@ -158,59 +264,6 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
-## **attach_product_to_actor**
-> attach_product_to_actor(product_id, actor_id)
-
-
-
-Attach product to actor
-
-### Example 
-```python
-from __future__ import print_statement
-import time
-import kinow_client
-from kinow_client.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: ApiClientId
-kinow_client.configuration.api_key['X-Client-Id'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# kinow_client.configuration.api_key_prefix['X-Client-Id'] = 'Bearer'
-# Configure API key authorization: ApiClientSecret
-kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# kinow_client.configuration.api_key_prefix['X-Client-Secret'] = 'Bearer'
-
-# create an instance of the API class
-api_instance = kinow_client.ProductsApi()
-product_id = 789 # int | Product ID to fetch
-actor_id = 789 # int | Actor ID to attach
-
-try: 
-    api_instance.attach_product_to_actor(product_id, actor_id)
-except ApiException as e:
-    print("Exception when calling ProductsApi->attach_product_to_actor: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **product_id** | **int**| Product ID to fetch | 
- **actor_id** | **int**| Actor ID to attach | 
-
-### Return type
-
-void (empty response body)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
-
 ## **attach_product_to_category**
 > attach_product_to_category(product_id, category_id)
 
@@ -252,59 +305,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **product_id** | **int**| Product ID to fetch | 
  **category_id** | **int**| Category ID to attach | 
-
-### Return type
-
-void (empty response body)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
-
-## **attach_product_to_director**
-> attach_product_to_director(product_id, director_id)
-
-
-
-Attach product to director
-
-### Example 
-```python
-from __future__ import print_statement
-import time
-import kinow_client
-from kinow_client.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: ApiClientId
-kinow_client.configuration.api_key['X-Client-Id'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# kinow_client.configuration.api_key_prefix['X-Client-Id'] = 'Bearer'
-# Configure API key authorization: ApiClientSecret
-kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# kinow_client.configuration.api_key_prefix['X-Client-Secret'] = 'Bearer'
-
-# create an instance of the API class
-api_instance = kinow_client.ProductsApi()
-product_id = 789 # int | Product ID to fetch
-director_id = 789 # int | Director ID to attach
-
-try: 
-    api_instance.attach_product_to_director(product_id, director_id)
-except ApiException as e:
-    print("Exception when calling ProductsApi->attach_product_to_director: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **product_id** | **int**| Product ID to fetch | 
- **director_id** | **int**| Director ID to attach | 
 
 ### Return type
 
@@ -1470,7 +1470,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_product_directors**
-> Directors get_product_directors(product_id, page=page, per_page=per_page, image_type=image_type)
+> CategoryDirectorsResponse get_product_directors(product_id, page=page, per_page=per_page, image_type=image_type)
 
 
 
@@ -1518,7 +1518,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Directors**](#Directors)
+[**CategoryDirectorsResponse**](#CategoryDirectorsResponse)
 
 ### HTTP request headers
 
@@ -1528,7 +1528,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_product_directors_role**
-> Directors get_product_directors_role(product_id, page=page, per_page=per_page)
+> CategoryDirectorsResponse get_product_directors_role(product_id, page=page, per_page=per_page)
 
 
 
@@ -1574,7 +1574,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Directors**](#Directors)
+[**CategoryDirectorsResponse**](#CategoryDirectorsResponse)
 
 ### HTTP request headers
 

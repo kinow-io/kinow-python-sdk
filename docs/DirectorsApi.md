@@ -4,9 +4,12 @@ All URIs are relative to *https://api.kinow.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**attach_product_to_director**](#attach_product_to_director) | **POST** /products/{product_id}/directors | 
+[**attach_director_to_category**](#attach_director_to_category) | **POST** /categories/{category_id}/directors | 
+[**attach_director_to_product**](#attach_director_to_product) | **POST** /products/{product_id}/directors | 
 [**create_director**](#create_director) | **POST** /directors | 
 [**delete_director**](#delete_director) | **DELETE** /directors/{director_id} | 
+[**detach_director_from_category**](#detach_director_from_category) | **DELETE** /categories/{category_id}/directors/{director_id} | 
+[**get_category_directors**](#get_category_directors) | **GET** /categories/{category_id}/directors | 
 [**get_director**](#get_director) | **GET** /directors/{director_id} | 
 [**get_director_cover_image**](#get_director_cover_image) | **GET** /directors/{director_id}/cover | 
 [**get_director_products**](#get_director_products) | **GET** /directors/{director_id}/products | 
@@ -18,12 +21,65 @@ Method | HTTP request | Description
 [**upload_director_cover**](#upload_director_cover) | **POST** /directors/{director_id}/cover | 
 
 
-## **attach_product_to_director**
-> attach_product_to_director(product_id, director_id)
+## **attach_director_to_category**
+> attach_director_to_category(category_id, director_id)
 
 
 
-Attach product to director
+Attach director to category
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: ApiClientId
+kinow_client.configuration.api_key['X-Client-Id'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Id'] = 'Bearer'
+# Configure API key authorization: ApiClientSecret
+kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Secret'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = kinow_client.DirectorsApi()
+category_id = 789 # int | Category ID to fetch
+director_id = 789 # int | Director ID to attach
+
+try: 
+    api_instance.attach_director_to_category(category_id, director_id)
+except ApiException as e:
+    print("Exception when calling DirectorsApi->attach_director_to_category: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **category_id** | **int**| Category ID to fetch | 
+ **director_id** | **int**| Director ID to attach | 
+
+### Return type
+
+void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **attach_director_to_product**
+> attach_director_to_product(product_id, director_id)
+
+
+
+Attach director to product
 
 ### Example 
 ```python
@@ -48,9 +104,9 @@ product_id = 789 # int | Product ID to fetch
 director_id = 789 # int | Director ID to attach
 
 try: 
-    api_instance.attach_product_to_director(product_id, director_id)
+    api_instance.attach_director_to_product(product_id, director_id)
 except ApiException as e:
-    print("Exception when calling DirectorsApi->attach_product_to_director: %s\n" % e)
+    print("Exception when calling DirectorsApi->attach_director_to_product: %s\n" % e)
 ```
 
 ### Parameters
@@ -166,6 +222,115 @@ Name | Type | Description  | Notes
 ### Return type
 
 void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **detach_director_from_category**
+> detach_director_from_category(category_id, director_id)
+
+
+
+Detach director from category
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: ApiClientId
+kinow_client.configuration.api_key['X-Client-Id'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Id'] = 'Bearer'
+# Configure API key authorization: ApiClientSecret
+kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Secret'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = kinow_client.DirectorsApi()
+category_id = 789 # int | Category ID to fetch
+director_id = 789 # int | Director ID to detach
+
+try: 
+    api_instance.detach_director_from_category(category_id, director_id)
+except ApiException as e:
+    print("Exception when calling DirectorsApi->detach_director_from_category: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **category_id** | **int**| Category ID to fetch | 
+ **director_id** | **int**| Director ID to detach | 
+
+### Return type
+
+void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_category_directors**
+> CategoryDirectorsResponse get_category_directors(category_id, page=page, per_page=per_page)
+
+
+
+Get directors attached to category
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: ApiClientId
+kinow_client.configuration.api_key['X-Client-Id'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Id'] = 'Bearer'
+# Configure API key authorization: ApiClientSecret
+kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Secret'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = kinow_client.DirectorsApi()
+category_id = 789 # int | Category ID to fetch
+page = 789 # int |  (optional)
+per_page = 789 # int |  (optional)
+
+try: 
+    api_response = api_instance.get_category_directors(category_id, page=page, per_page=per_page)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DirectorsApi->get_category_directors: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **category_id** | **int**| Category ID to fetch | 
+ **page** | **int**|  | [optional] 
+ **per_page** | **int**|  | [optional] 
+
+### Return type
+
+[**CategoryDirectorsResponse**](#CategoryDirectorsResponse)
 
 ### HTTP request headers
 
@@ -401,7 +566,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_directors**
-> Directors get_directors(page=page, per_page=per_page)
+> CategoryDirectorsResponse get_directors(page=page, per_page=per_page)
 
 
 
@@ -445,7 +610,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Directors**](#Directors)
+[**CategoryDirectorsResponse**](#CategoryDirectorsResponse)
 
 ### HTTP request headers
 
@@ -455,7 +620,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_product_directors**
-> Directors get_product_directors(product_id, page=page, per_page=per_page, image_type=image_type)
+> CategoryDirectorsResponse get_product_directors(product_id, page=page, per_page=per_page, image_type=image_type)
 
 
 
@@ -503,7 +668,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Directors**](#Directors)
+[**CategoryDirectorsResponse**](#CategoryDirectorsResponse)
 
 ### HTTP request headers
 
@@ -513,7 +678,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_product_directors_role**
-> Directors get_product_directors_role(product_id, page=page, per_page=per_page)
+> CategoryDirectorsResponse get_product_directors_role(product_id, page=page, per_page=per_page)
 
 
 
@@ -559,7 +724,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Directors**](#Directors)
+[**CategoryDirectorsResponse**](#CategoryDirectorsResponse)
 
 ### HTTP request headers
 
