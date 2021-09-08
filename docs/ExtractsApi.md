@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**get_extract_player**](#get_extract_player) | **GET** /extracts/{extract_id}/player | 
 [**get_extracts**](#get_extracts) | **GET** /extracts | 
 [**get_product_extracts**](#get_product_extracts) | **GET** /products/{product_id}/extracts | 
+[**has_access_to_extracts**](#has_access_to_extracts) | **POST** /extracts/has-access | 
 [**update_extract**](#update_extract) | **PUT** /extracts/{extract_id} | 
 
 
@@ -389,7 +390,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_extract_player**
-> PlayerConfiguration get_extract_player(extract_id)
+> PlayerConfiguration get_extract_player(extract_id, ip_address=ip_address)
 
 
 
@@ -415,9 +416,10 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = kinow_client.ExtractsApi()
 extract_id = 789 # int | Extract ID to fetch
+ip_address = 'ip_address_example' # str | IP address (optional)
 
 try: 
-    api_response = api_instance.get_extract_player(extract_id)
+    api_response = api_instance.get_extract_player(extract_id, ip_address=ip_address)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ExtractsApi->get_extract_player: %s\n" % e)
@@ -428,6 +430,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **extract_id** | **int**| Extract ID to fetch | 
+ **ip_address** | **str**| IP address | [optional] 
 
 ### Return type
 
@@ -550,6 +553,58 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Videos1**](#Videos1)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **has_access_to_extracts**
+> list[ExtractAccessInfo] has_access_to_extracts(body)
+
+
+
+Check access to Extracts
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: ApiClientId
+kinow_client.configuration.api_key['X-Client-Id'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Id'] = 'Bearer'
+# Configure API key authorization: ApiClientSecret
+kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Secret'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = kinow_client.ExtractsApi()
+body = kinow_client.ExtractIDList() # ExtractIDList | List of Extract IDs separated by comma, eg. '42,21,84'
+
+try: 
+    api_response = api_instance.has_access_to_extracts(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExtractsApi->has_access_to_extracts: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ExtractIDList**](#ExtractIDList)| List of Extract IDs separated by comma, eg. &#39;42,21,84&#39; | 
+
+### Return type
+
+[**list[ExtractAccessInfo]**](#ExtractAccessInfo)
 
 ### HTTP request headers
 
