@@ -98,7 +98,7 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = kinow_client.GiftsApi()
-body = kinow_client.Gift2() # Gift2 | Gift settings
+body = kinow_client.Gift1() # Gift1 | Gift settings
 
 try: 
     api_response = api_instance.create_gift(body)
@@ -111,7 +111,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Gift2**](#Gift2)| Gift settings | 
+ **body** | [**Gift1**](#Gift1)| Gift settings | 
 
 ### Return type
 
@@ -570,7 +570,7 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = kinow_client.GiftsApi()
 gift_id = 789 # int | Gift ID to fetch
-body = kinow_client.Gift3() # Gift3 | Gift settings
+body = kinow_client.Gift2() # Gift2 | Gift settings
 
 try: 
     api_response = api_instance.update_gift(gift_id, body)
@@ -584,7 +584,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **gift_id** | **int**| Gift ID to fetch | 
- **body** | [**Gift3**](#Gift3)| Gift settings | 
+ **body** | [**Gift2**](#Gift2)| Gift settings | 
 
 ### Return type
 

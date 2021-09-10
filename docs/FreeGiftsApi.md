@@ -11,7 +11,6 @@ Method | HTTP request | Description
 [**get_free_gift_token**](#get_free_gift_token) | **GET** /free-gifts/{free_gift_id}/token | 
 [**get_free_gifts**](#get_free_gifts) | **GET** /free-gifts | 
 [**send_free_gift**](#send_free_gift) | **POST** /free-gifts/{free_gift_id}/send | 
-[**update_free_gift**](#update_free_gift) | **PUT** /free-gifts/{free_gift_id} | 
 
 
 ## **consume_free_gift**
@@ -371,60 +370,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 void (empty response body)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
-
-## **update_free_gift**
-> FreeGift update_free_gift(free_gift_id, body)
-
-
-
-Update free Gift
-
-### Example 
-```python
-from __future__ import print_statement
-import time
-import kinow_client
-from kinow_client.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: ApiClientId
-kinow_client.configuration.api_key['X-Client-Id'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# kinow_client.configuration.api_key_prefix['X-Client-Id'] = 'Bearer'
-# Configure API key authorization: ApiClientSecret
-kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# kinow_client.configuration.api_key_prefix['X-Client-Secret'] = 'Bearer'
-
-# create an instance of the API class
-api_instance = kinow_client.FreeGiftsApi()
-free_gift_id = 789 # int | Free Gift ID to fetch
-body = kinow_client.Gift1() # Gift1 | Free Gift settings
-
-try: 
-    api_response = api_instance.update_free_gift(free_gift_id, body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FreeGiftsApi->update_free_gift: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **free_gift_id** | **int**| Free Gift ID to fetch | 
- **body** | [**Gift1**](#Gift1)| Free Gift settings | 
-
-### Return type
-
-[**FreeGift**](#FreeGift)
 
 ### HTTP request headers
 
