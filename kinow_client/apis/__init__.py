@@ -7,6 +7,7 @@ from .attributes_api import AttributesApi
 from .blog_categories_api import BlogCategoriesApi
 from .blog_pages_api import BlogPagesApi
 from .bookmarks_api import BookmarksApi
+from .bundles_api import BundlesApi
 from .cms_categories_api import CMSCategoriesApi
 from .cms_pages_api import CMSPagesApi
 from .cart_rules_api import CartRulesApi
