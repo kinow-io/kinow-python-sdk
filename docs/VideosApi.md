@@ -7,8 +7,8 @@ Method | HTTP request | Description
 [**attach_cover_to_video**](#attach_cover_to_video) | **POST** /videos/{video_id}/cover | 
 [**attach_features_to_video**](#attach_features_to_video) | **POST** /videos/{video_id}/features | 
 [**attach_video_to_product**](#attach_video_to_product) | **POST** /products/{product_id}/videos | 
-[**create_subtitle**](#create_subtitle) | **POST** /videos/{video_id}/subtitle | 
 [**create_video**](#create_video) | **POST** /videos | 
+[**create_video_subtitle**](#create_video_subtitle) | **POST** /videos/{video_id}/subtitle | 
 [**delete_video**](#delete_video) | **DELETE** /videos/{video_id} | 
 [**get_customer_has_access_to_video**](#get_customer_has_access_to_video) | **GET** /customers/{customer_id}/videos/{video_id}/has-access | 
 [**get_customer_has_access_to_videos**](#get_customer_has_access_to_videos) | **POST** /customers/{customer_id}/videos/has-access | 
@@ -189,60 +189,6 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
-## **create_subtitle**
-> Subtitle create_subtitle(video_id, body)
-
-
-
-Create new Video Subtitle
-
-### Example 
-```python
-from __future__ import print_statement
-import time
-import kinow_client
-from kinow_client.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: ApiClientId
-kinow_client.configuration.api_key['X-Client-Id'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# kinow_client.configuration.api_key_prefix['X-Client-Id'] = 'Bearer'
-# Configure API key authorization: ApiClientSecret
-kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# kinow_client.configuration.api_key_prefix['X-Client-Secret'] = 'Bearer'
-
-# create an instance of the API class
-api_instance = kinow_client.VideosApi()
-video_id = 789 # int | Video ID to attach the created Subtitle
-body = kinow_client.CreateVideoSubtitleRequest() # CreateVideoSubtitleRequest | Subtitle settings
-
-try: 
-    api_response = api_instance.create_subtitle(video_id, body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VideosApi->create_subtitle: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **video_id** | **int**| Video ID to attach the created Subtitle | 
- **body** | [**CreateVideoSubtitleRequest**](#CreateVideoSubtitleRequest)| Subtitle settings | 
-
-### Return type
-
-[**Subtitle**](#Subtitle)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
-
 ## **create_video**
 > Video create_video(body)
 
@@ -287,6 +233,60 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Video**](#Video)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **create_video_subtitle**
+> Subtitle create_video_subtitle(video_id, body)
+
+
+
+Create new Video Subtitle
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: ApiClientId
+kinow_client.configuration.api_key['X-Client-Id'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Id'] = 'Bearer'
+# Configure API key authorization: ApiClientSecret
+kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Secret'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = kinow_client.VideosApi()
+video_id = 789 # int | Video ID to attach the created Subtitle
+body = kinow_client.CreateVideoSubtitleRequest() # CreateVideoSubtitleRequest | Subtitle settings
+
+try: 
+    api_response = api_instance.create_video_subtitle(video_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling VideosApi->create_video_subtitle: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **video_id** | **int**| Video ID to attach the created Subtitle | 
+ **body** | [**CreateVideoSubtitleRequest**](#CreateVideoSubtitleRequest)| Subtitle settings | 
+
+### Return type
+
+[**Subtitle**](#Subtitle)
 
 ### HTTP request headers
 

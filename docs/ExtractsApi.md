@@ -7,11 +7,12 @@ Method | HTTP request | Description
 [**attach_cover_to_extract**](#attach_cover_to_extract) | **POST** /extracts/{extract_id}/cover | 
 [**attach_features_to_extract**](#attach_features_to_extract) | **POST** /extracts/{extract_id}/features | 
 [**create_extract**](#create_extract) | **POST** /extracts | 
-[**create_subtitle**](#create_subtitle) | **POST** /extracts/{extract_id}/subtitle | 
+[**create_extract_subtitle**](#create_extract_subtitle) | **POST** /extracts/{extract_id}/subtitle | 
 [**delete_extract**](#delete_extract) | **DELETE** /extracts/{extract_id} | 
 [**get_extract**](#get_extract) | **GET** /extracts/{extract_id} | 
 [**get_extract_features**](#get_extract_features) | **GET** /extracts/{extract_id}/features | 
 [**get_extract_player**](#get_extract_player) | **GET** /extracts/{extract_id}/player | 
+[**get_extract_subtitles**](#get_extract_subtitles) | **GET** /extracts/{extract_id}/subtitles | 
 [**get_extracts**](#get_extracts) | **GET** /extracts | 
 [**get_product_extracts**](#get_product_extracts) | **GET** /products/{product_id}/extracts | 
 [**has_access_to_extracts**](#has_access_to_extracts) | **POST** /extracts/has-access | 
@@ -176,8 +177,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
-## **create_subtitle**
-> Subtitle create_subtitle(extract_id, body)
+## **create_extract_subtitle**
+> Subtitle create_extract_subtitle(extract_id, body)
 
 
 
@@ -206,10 +207,10 @@ extract_id = 789 # int | Extract ID to attach the created Subtitle
 body = kinow_client.CreateExtractSubtitleRequest() # CreateExtractSubtitleRequest | Subtitle settings
 
 try: 
-    api_response = api_instance.create_subtitle(extract_id, body)
+    api_response = api_instance.create_extract_subtitle(extract_id, body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ExtractsApi->create_subtitle: %s\n" % e)
+    print("Exception when calling ExtractsApi->create_extract_subtitle: %s\n" % e)
 ```
 
 ### Parameters
@@ -435,6 +436,62 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PlayerConfiguration**](#PlayerConfiguration)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_extract_subtitles**
+> VideoSubtitlesResponse get_extract_subtitles(extract_id, page=page, per_page=per_page)
+
+
+
+Get subtitles of an extract
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: ApiClientId
+kinow_client.configuration.api_key['X-Client-Id'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Id'] = 'Bearer'
+# Configure API key authorization: ApiClientSecret
+kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Secret'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = kinow_client.ExtractsApi()
+extract_id = 789 # int | Extract ID to fetch
+page = 789 # int |  (optional)
+per_page = 789 # int |  (optional)
+
+try: 
+    api_response = api_instance.get_extract_subtitles(extract_id, page=page, per_page=per_page)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExtractsApi->get_extract_subtitles: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **extract_id** | **int**| Extract ID to fetch | 
+ **page** | **int**|  | [optional] 
+ **per_page** | **int**|  | [optional] 
+
+### Return type
+
+[**VideoSubtitlesResponse**](#VideoSubtitlesResponse)
 
 ### HTTP request headers
 
