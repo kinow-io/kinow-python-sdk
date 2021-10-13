@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **total_discount_formatted** | **str** |  | [optional] 
 **total_trial_formatted** | **str** |  | [optional] 
 **total_formatted** | **str** |  | [optional] 
+**taxes** | [**list[TaxPrice]**](#TaxPrice) |  | [optional] 
 
 [[Back to Model list]](#documentation-for-models) [[Back to API list]](#documentation-for-api-endpoints)
 
