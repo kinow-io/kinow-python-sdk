@@ -7,15 +7,17 @@ Method | HTTP request | Description
 [**get_customer_prepayment_balances**](#get_customer_prepayment_balances) | **GET** /customers/{customer_id}/prepayment-balance | 
 [**get_customer_prepayment_operations**](#get_customer_prepayment_operations) | **GET** /customers/{customer_id}/prepayment-operations | 
 [**get_prepayment_bonus**](#get_prepayment_bonus) | **GET** /prepayment/bonus/{prepayment_bonus_id} | 
+[**get_prepayment_bonus_amount**](#get_prepayment_bonus_amount) | **POST** /prepayment/bonus/amount | 
 [**get_prepayment_bonus_list**](#get_prepayment_bonus_list) | **GET** /prepayment/bonus | 
 [**get_prepayment_operation**](#get_prepayment_operation) | **GET** /prepayment/operations/{prepayment_operation_id} | 
 [**get_prepayment_operations**](#get_prepayment_operations) | **GET** /prepayment/operations | 
+[**get_prepayment_operations_amount**](#get_prepayment_operations_amount) | **POST** /prepayment/operations/amount | 
 [**get_prepayment_recharge**](#get_prepayment_recharge) | **GET** /prepayment/recharges/{prepayment_recharge_id} | 
 [**get_prepayment_recharges**](#get_prepayment_recharges) | **GET** /prepayment/recharges | 
 
 
 ## **get_customer_prepayment_balances**
-> list[PrepaymentBalance] get_customer_prepayment_balances(customer_id)
+> list[PrepaymentBalance] get_customer_prepayment_balances(customer_id, currency_id=currency_id)
 
 
 
@@ -41,9 +43,10 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = kinow_client.PrepaymentsApi()
 customer_id = 789 # int | Customer ID to fetch
+currency_id = 56 # int | Currency ID to format amount (optional)
 
 try: 
-    api_response = api_instance.get_customer_prepayment_balances(customer_id)
+    api_response = api_instance.get_customer_prepayment_balances(customer_id, currency_id=currency_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PrepaymentsApi->get_customer_prepayment_balances: %s\n" % e)
@@ -54,6 +57,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customer_id** | **int**| Customer ID to fetch | 
+ **currency_id** | **int**| Currency ID to format amount | [optional] 
 
 ### Return type
 
@@ -168,6 +172,58 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PrepaymentBonus**](#PrepaymentBonus)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_prepayment_bonus_amount**
+> list[PrepaymentBonusAmount] get_prepayment_bonus_amount(body)
+
+
+
+Get prices for multiple PrepaymentBonus
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: ApiClientId
+kinow_client.configuration.api_key['X-Client-Id'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Id'] = 'Bearer'
+# Configure API key authorization: ApiClientSecret
+kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Secret'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = kinow_client.PrepaymentsApi()
+body = kinow_client.PrepaymentBonusIDList() # PrepaymentBonusIDList | List of PrepaymentBonus IDs separated by comma, eg. '42,21,84'
+
+try: 
+    api_response = api_instance.get_prepayment_bonus_amount(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PrepaymentsApi->get_prepayment_bonus_amount: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**PrepaymentBonusIDList**](#PrepaymentBonusIDList)| List of PrepaymentBonus IDs separated by comma, eg. &#39;42,21,84&#39; | 
+
+### Return type
+
+[**list[PrepaymentBonusAmount]**](#PrepaymentBonusAmount)
 
 ### HTTP request headers
 
@@ -330,6 +386,58 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PrepaymentOperations**](#PrepaymentOperations)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_prepayment_operations_amount**
+> list[PrepaymentOperationAmount] get_prepayment_operations_amount(body)
+
+
+
+Get prices for multiple PrepaymentOperations
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: ApiClientId
+kinow_client.configuration.api_key['X-Client-Id'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Id'] = 'Bearer'
+# Configure API key authorization: ApiClientSecret
+kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Secret'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = kinow_client.PrepaymentsApi()
+body = kinow_client.PrepaymentOperationIDList() # PrepaymentOperationIDList | List of PrepaymentOperation IDs separated by comma, eg. '42,21,84'
+
+try: 
+    api_response = api_instance.get_prepayment_operations_amount(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PrepaymentsApi->get_prepayment_operations_amount: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**PrepaymentOperationIDList**](#PrepaymentOperationIDList)| List of PrepaymentOperation IDs separated by comma, eg. &#39;42,21,84&#39; | 
+
+### Return type
+
+[**list[PrepaymentOperationAmount]**](#PrepaymentOperationAmount)
 
 ### HTTP request headers
 

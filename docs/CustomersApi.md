@@ -1239,7 +1239,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_customer_prepayment_balances**
-> list[PrepaymentBalance] get_customer_prepayment_balances(customer_id)
+> list[PrepaymentBalance] get_customer_prepayment_balances(customer_id, currency_id=currency_id)
 
 
 
@@ -1265,9 +1265,10 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = kinow_client.CustomersApi()
 customer_id = 789 # int | Customer ID to fetch
+currency_id = 56 # int | Currency ID to format amount (optional)
 
 try: 
-    api_response = api_instance.get_customer_prepayment_balances(customer_id)
+    api_response = api_instance.get_customer_prepayment_balances(customer_id, currency_id=currency_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CustomersApi->get_customer_prepayment_balances: %s\n" % e)
@@ -1278,6 +1279,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customer_id** | **int**| Customer ID to fetch | 
+ **currency_id** | **int**| Currency ID to format amount | [optional] 
 
 ### Return type
 
