@@ -3,7 +3,6 @@
 ### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] 
 **name** | **str** |  | [optional] 
 **value** | **object** |  | [optional] 
 
