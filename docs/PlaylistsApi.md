@@ -69,7 +69,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **create_playlist**
-> Playlist create_playlist(customer_id, name)
+> PlaylistResponse create_playlist(customer_id, name)
 
 
 
@@ -113,7 +113,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Playlist**](#Playlist)
+[**PlaylistResponse**](#PlaylistResponse)
 
 ### HTTP request headers
 
@@ -227,7 +227,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_customer_playlists**
-> Playlists get_customer_playlists(customer_id, page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction)
+> PlaylistListResponse get_customer_playlists(customer_id, page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction)
 
 
 
@@ -277,7 +277,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Playlists**](#Playlists)
+[**PlaylistListResponse**](#PlaylistListResponse)
 
 ### HTTP request headers
 
@@ -287,7 +287,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_playlist**
-> Playlist get_playlist(playlist_id)
+> PlaylistResponse get_playlist(playlist_id)
 
 
 
@@ -329,7 +329,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Playlist**](#Playlist)
+[**PlaylistResponse**](#PlaylistResponse)
 
 ### HTTP request headers
 
@@ -339,7 +339,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_playlist_bookmarks**
-> Products get_playlist_bookmarks(playlist_id, page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction)
+> ProductListResponse get_playlist_bookmarks(playlist_id, page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction)
 
 
 
@@ -389,7 +389,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Products**](#Products)
+[**ProductListResponse**](#ProductListResponse)
 
 ### HTTP request headers
 
@@ -399,7 +399,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_playlists**
-> Playlists get_playlists(page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction)
+> PlaylistListResponse get_playlists(page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction)
 
 
 
@@ -447,7 +447,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Playlists**](#Playlists)
+[**PlaylistListResponse**](#PlaylistListResponse)
 
 ### HTTP request headers
 
@@ -457,7 +457,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **update_playlist**
-> Playlist update_playlist(playlist_id, body)
+> PlaylistResponse update_playlist(playlist_id, body)
 
 
 
@@ -501,7 +501,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Playlist**](#Playlist)
+[**PlaylistResponse**](#PlaylistResponse)
 
 ### HTTP request headers
 

@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 ## **get_genders**
-> Genders get_genders(page=page, per_page=per_page)
+> GenderListResponse get_genders(page=page, per_page=per_page)
 
 
 
@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Genders**](#Genders)
+[**GenderListResponse**](#GenderListResponse)
 
 ### HTTP request headers
 

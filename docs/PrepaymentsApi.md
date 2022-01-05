@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 ## **get_customer_prepayment_balances**
-> list[PrepaymentBalance] get_customer_prepayment_balances(customer_id, currency_id=currency_id)
+> PrepaymentBalanceListResponse get_customer_prepayment_balances(customer_id, currency_id=currency_id)
 
 
 
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[PrepaymentBalance]**](#PrepaymentBalance)
+[**PrepaymentBalanceListResponse**](#PrepaymentBalanceListResponse)
 
 ### HTTP request headers
 
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_customer_prepayment_operations**
-> PrepaymentOperations get_customer_prepayment_operations(customer_id, type=type, page=page, per_page=per_page)
+> PrepaymentOperationListResponse get_customer_prepayment_operations(customer_id, type=type, page=page, per_page=per_page)
 
 
 
@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PrepaymentOperations**](#PrepaymentOperations)
+[**PrepaymentOperationListResponse**](#PrepaymentOperationListResponse)
 
 ### HTTP request headers
 
@@ -129,7 +129,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_prepayment_bonus**
-> PrepaymentBonus get_prepayment_bonus(prepayment_bonus_id)
+> PrepaymentBonusResponse get_prepayment_bonus(prepayment_bonus_id)
 
 
 
@@ -171,7 +171,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PrepaymentBonus**](#PrepaymentBonus)
+[**PrepaymentBonusResponse**](#PrepaymentBonusResponse)
 
 ### HTTP request headers
 
@@ -233,7 +233,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_prepayment_bonus_list**
-> PrepaymentBonus1 get_prepayment_bonus_list(page=page, per_page=per_page)
+> PrepaymentBonusListResponse get_prepayment_bonus_list(page=page, per_page=per_page)
 
 
 
@@ -277,7 +277,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PrepaymentBonus1**](#PrepaymentBonus1)
+[**PrepaymentBonusListResponse**](#PrepaymentBonusListResponse)
 
 ### HTTP request headers
 
@@ -287,7 +287,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_prepayment_operation**
-> PrepaymentOperation get_prepayment_operation(prepayment_operation_id)
+> PrepaymentOperationResponse get_prepayment_operation(prepayment_operation_id)
 
 
 
@@ -329,7 +329,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PrepaymentOperation**](#PrepaymentOperation)
+[**PrepaymentOperationResponse**](#PrepaymentOperationResponse)
 
 ### HTTP request headers
 
@@ -339,7 +339,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_prepayment_operations**
-> PrepaymentOperations get_prepayment_operations(type=type, page=page, per_page=per_page)
+> PrepaymentOperationListResponse get_prepayment_operations(type=type, page=page, per_page=per_page)
 
 
 
@@ -385,7 +385,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PrepaymentOperations**](#PrepaymentOperations)
+[**PrepaymentOperationListResponse**](#PrepaymentOperationListResponse)
 
 ### HTTP request headers
 
@@ -447,7 +447,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_prepayment_recharge**
-> PrepaymentRecharge get_prepayment_recharge(prepayment_recharge_id)
+> PrepaymentRechargeResponse get_prepayment_recharge(prepayment_recharge_id)
 
 
 
@@ -489,7 +489,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PrepaymentRecharge**](#PrepaymentRecharge)
+[**PrepaymentRechargeResponse**](#PrepaymentRechargeResponse)
 
 ### HTTP request headers
 
@@ -499,7 +499,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_prepayment_recharges**
-> PrepaymentRecharges get_prepayment_recharges(page=page, per_page=per_page)
+> PrepaymentRechargeListResponse get_prepayment_recharges(page=page, per_page=per_page)
 
 
 
@@ -543,7 +543,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PrepaymentRecharges**](#PrepaymentRecharges)
+[**PrepaymentRechargeListResponse**](#PrepaymentRechargeListResponse)
 
 ### HTTP request headers
 

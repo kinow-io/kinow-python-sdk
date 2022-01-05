@@ -126,7 +126,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **create_extract**
-> Extract create_extract(body)
+> ExtractResponse create_extract(body)
 
 
 
@@ -151,7 +151,7 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = kinow_client.ExtractsApi()
-body = kinow_client.Extract() # Extract | 
+body = kinow_client.CreateExtractRequest() # CreateExtractRequest | 
 
 try: 
     api_response = api_instance.create_extract(body)
@@ -164,11 +164,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Extract**](#Extract)|  | 
+ **body** | [**CreateExtractRequest**](#CreateExtractRequest)|  | 
 
 ### Return type
 
-[**Extract**](#Extract)
+[**ExtractResponse**](#ExtractResponse)
 
 ### HTTP request headers
 
@@ -178,7 +178,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **create_extract_subtitle**
-> Subtitle create_extract_subtitle(extract_id, body)
+> SubtitleResponse create_extract_subtitle(extract_id, body)
 
 
 
@@ -222,7 +222,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Subtitle**](#Subtitle)
+[**SubtitleResponse**](#SubtitleResponse)
 
 ### HTTP request headers
 
@@ -257,7 +257,7 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = kinow_client.ExtractsApi()
-extract_id = 789 # int | Extract ID to update
+extract_id = 789 # int | Extract ID to delete
 
 try: 
     api_instance.delete_extract(extract_id)
@@ -269,7 +269,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **extract_id** | **int**| Extract ID to update | 
+ **extract_id** | **int**| Extract ID to delete | 
 
 ### Return type
 
@@ -283,7 +283,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_extract**
-> Extract get_extract(extract_id)
+> ExtractResponse get_extract(extract_id)
 
 
 
@@ -325,7 +325,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Extract**](#Extract)
+[**ExtractResponse**](#ExtractResponse)
 
 ### HTTP request headers
 
@@ -445,7 +445,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_extract_subtitles**
-> VideoSubtitlesResponse get_extract_subtitles(extract_id, page=page, per_page=per_page)
+> ExtractSubtitlesResponse get_extract_subtitles(extract_id, page=page, per_page=per_page)
 
 
 
@@ -491,7 +491,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VideoSubtitlesResponse**](#VideoSubtitlesResponse)
+[**ExtractSubtitlesResponse**](#ExtractSubtitlesResponse)
 
 ### HTTP request headers
 
@@ -501,7 +501,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_extracts**
-> Videos1 get_extracts(page=page, per_page=per_page, features=features, filters=filters, ip=ip)
+> ExtractListResponse get_extracts(page=page, per_page=per_page, features=features, filters=filters, ip=ip)
 
 
 
@@ -528,8 +528,8 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 api_instance = kinow_client.ExtractsApi()
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
-features = 'features_example' # str |      ```     features[*][value]=string&features[*][operator]=strict&features[1][value]=string&features[1][operator]=strict     _______________      {     \"*\": {     \"value\": \"string\",     \"operator\": \"strict\"     },     \"1\": {     \"value\": \"string\",     \"operator\": \"contains\"     }     } ```     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).     To search on all features, you can pass * as featureId. (optional)
-filters = 'filters_example' # str |      ```     name[value]=string&name[operator]=strict&duration[value]=string&duration[operator]=gt     _______________      {     \"name\": {     \"value\": \"string\",     \"operator\": \"strict\"     },     \"duration\": {     \"value\": \"string\",     \"operator\": \"gt\"     }     } ```     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). (optional)
+features = 'features_example' # str |  ``` features[*][value]=string&features[*][operator]=strict&features[1][value]=string&features[1][operator]=strict _______________  { \"*\": { \"value\": \"string\", \"operator\": \"strict\" }, \"1\": { \"value\": \"string\", \"operator\": \"contains\" } } ``` Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). To search on all features, you can pass * as featureId. (optional)
+filters = 'filters_example' # str |  ``` name[value]=string&name][operator]=contains&date_add[value]=string&date_add[operator]=lt _______________  { \"name\": { \"value\": \"string\", \"operator\": \"contains\" }, \"date_add\": { \"value\": \"string\", \"operator\": \"lt\" } } ``` Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). (optional)
 ip = 'ip_example' # str | Filter by user IP (optional)
 
 try: 
@@ -545,13 +545,13 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
- **features** | **str**|      &#x60;&#x60;&#x60;     features[*][value]&#x3D;string&amp;features[*][operator]&#x3D;strict&amp;features[1][value]&#x3D;string&amp;features[1][operator]&#x3D;strict     _______________      {     \&quot;*\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;1\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;contains\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).     To search on all features, you can pass * as featureId. | [optional] 
- **filters** | **str**|      &#x60;&#x60;&#x60;     name[value]&#x3D;string&amp;name[operator]&#x3D;strict&amp;duration[value]&#x3D;string&amp;duration[operator]&#x3D;gt     _______________      {     \&quot;name\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;duration\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;gt\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
+ **features** | **str**|  &#x60;&#x60;&#x60; features[*][value]&#x3D;string&amp;features[*][operator]&#x3D;strict&amp;features[1][value]&#x3D;string&amp;features[1][operator]&#x3D;strict _______________  { \&quot;*\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;strict\&quot; }, \&quot;1\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;contains\&quot; } } &#x60;&#x60;&#x60; Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). To search on all features, you can pass * as featureId. | [optional] 
+ **filters** | **str**|  &#x60;&#x60;&#x60; name[value]&#x3D;string&amp;name][operator]&#x3D;contains&amp;date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt _______________  { \&quot;name\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;contains\&quot; }, \&quot;date_add\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;lt\&quot; } } &#x60;&#x60;&#x60; Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
  **ip** | **str**| Filter by user IP | [optional] 
 
 ### Return type
 
-[**Videos1**](#Videos1)
+[**ExtractListResponse**](#ExtractListResponse)
 
 ### HTTP request headers
 
@@ -561,7 +561,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_product_extracts**
-> Videos1 get_product_extracts(product_id, ip=ip, page=page, per_page=per_page)
+> ExtractListResponse get_product_extracts(product_id, page=page, per_page=per_page, ip=ip)
 
 
 
@@ -587,12 +587,12 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = kinow_client.ExtractsApi()
 product_id = 789 # int | Product ID to fetch
-ip = 'ip_example' # str | Filter by user IP (optional)
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
+ip = 'ip_example' # str | Filter by user IP (optional)
 
 try: 
-    api_response = api_instance.get_product_extracts(product_id, ip=ip, page=page, per_page=per_page)
+    api_response = api_instance.get_product_extracts(product_id, page=page, per_page=per_page, ip=ip)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ExtractsApi->get_product_extracts: %s\n" % e)
@@ -603,13 +603,13 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **product_id** | **int**| Product ID to fetch | 
- **ip** | **str**| Filter by user IP | [optional] 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
+ **ip** | **str**| Filter by user IP | [optional] 
 
 ### Return type
 
-[**Videos1**](#Videos1)
+[**ExtractListResponse**](#ExtractListResponse)
 
 ### HTTP request headers
 
@@ -671,7 +671,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **update_extract**
-> Extract update_extract(extract_id, body)
+> ExtractResponse update_extract(extract_id, body)
 
 
 
@@ -697,7 +697,7 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = kinow_client.ExtractsApi()
 extract_id = 789 # int | Extract ID to fetch
-body = kinow_client.Extract() # Extract | 
+body = kinow_client.UpdateExtractRequest() # UpdateExtractRequest | 
 
 try: 
     api_response = api_instance.update_extract(extract_id, body)
@@ -711,11 +711,11 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **extract_id** | **int**| Extract ID to fetch | 
- **body** | [**Extract**](#Extract)|  | 
+ **body** | [**UpdateExtractRequest**](#UpdateExtractRequest)|  | 
 
 ### Return type
 
-[**Extract**](#Extract)
+[**ExtractResponse**](#ExtractResponse)
 
 ### HTTP request headers
 

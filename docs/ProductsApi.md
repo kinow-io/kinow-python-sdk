@@ -424,7 +424,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **create_product**
-> Product create_product(body)
+> ProductResponse create_product(body)
 
 
 
@@ -449,7 +449,7 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = kinow_client.ProductsApi()
-body = kinow_client.Product() # Product | 
+body = kinow_client.CreateProductRequest() # CreateProductRequest | Product parameters
 
 try: 
     api_response = api_instance.create_product(body)
@@ -462,11 +462,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Product**](#Product)|  | 
+ **body** | [**CreateProductRequest**](#CreateProductRequest)| Product parameters | 
 
 ### Return type
 
-[**Product**](#Product)
+[**ProductResponse**](#ProductResponse)
 
 ### HTTP request headers
 
@@ -501,7 +501,7 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = kinow_client.ProductsApi()
-product_id = 789 # int | Product ID to fetch
+product_id = 789 # int | ID of the product to delete
 
 try: 
     api_instance.delete_product(product_id)
@@ -513,7 +513,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_id** | **int**| Product ID to fetch | 
+ **product_id** | **int**| ID of the product to delete | 
 
 ### Return type
 
@@ -686,7 +686,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_best_sales**
-> Products get_best_sales(page=page, per_page=per_page, ip=ip, iso_code=iso_code)
+> ProductListResponse get_best_sales(page=page, per_page=per_page, ip=ip, iso_code=iso_code)
 
 
 
@@ -713,7 +713,7 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 api_instance = kinow_client.ProductsApi()
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
-ip = 'ip_example' # str | Filter by Customer IP (optional)
+ip = 'ip_example' # str | Filter by user IP (optional)
 iso_code = 'iso_code_example' # str | Filter by ISO Code (optional)
 
 try: 
@@ -729,12 +729,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
- **ip** | **str**| Filter by Customer IP | [optional] 
+ **ip** | **str**| Filter by user IP | [optional] 
  **iso_code** | **str**| Filter by ISO Code | [optional] 
 
 ### Return type
 
-[**Products**](#Products)
+[**ProductListResponse**](#ProductListResponse)
 
 ### HTTP request headers
 
@@ -744,7 +744,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_category_products**
-> Products get_category_products(category_id, page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction, ip=ip, features=features, filters=filters)
+> ProductListResponse get_category_products(category_id, page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction, ip=ip, features=features, filters=filters)
 
 
 
@@ -775,8 +775,8 @@ per_page = 789 # int |  (optional)
 sort_by = 'sort_by_example' # str | Sort by this attribute (id by default) (optional)
 sort_direction = 'sort_direction_example' # str | Sorting direction (asc by default) (optional)
 ip = 'ip_example' # str | Filter by user IP (optional)
-features = 'features_example' # str |      ```     features[*][value]=string&features[*][operator]=strict&features[1][value]=string&features[1][operator]=strict     _______________      {     \"*\": {     \"value\": \"string\",     \"operator\": \"strict\"     },     \"1\": {     \"value\": \"string\",     \"operator\": \"contains\"     }     } ```     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).     To search on all features, you can pass * as featureId. (optional)
-filters = 'filters_example' # str |      ```     name[value]=string&name][operator]=contains&date_add[value]=string&date_add[operator]=lt     _______________      {     \"name\": {     \"value\": \"string\",     \"operator\": \"contains\"     },     \"date_add\": {     \"value\": \"string\",     \"operator\": \"lt\"     }     } ```     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). (optional)
+features = 'features_example' # str |  ``` features[*][value]=string&features[*][operator]=strict&features[1][value]=string&features[1][operator]=strict _______________  { \"*\": { \"value\": \"string\", \"operator\": \"strict\" }, \"1\": { \"value\": \"string\", \"operator\": \"contains\" } } ``` Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). To search on all features, you can pass * as featureId. (optional)
+filters = 'filters_example' # str |  ``` name[value]=string&name][operator]=contains&date_add[value]=string&date_add[operator]=lt _______________  { \"name\": { \"value\": \"string\", \"operator\": \"contains\" }, \"date_add\": { \"value\": \"string\", \"operator\": \"lt\" } } ``` Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). (optional)
 
 try: 
     api_response = api_instance.get_category_products(category_id, page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction, ip=ip, features=features, filters=filters)
@@ -795,12 +795,12 @@ Name | Type | Description  | Notes
  **sort_by** | **str**| Sort by this attribute (id by default) | [optional] 
  **sort_direction** | **str**| Sorting direction (asc by default) | [optional] 
  **ip** | **str**| Filter by user IP | [optional] 
- **features** | **str**|      &#x60;&#x60;&#x60;     features[*][value]&#x3D;string&amp;features[*][operator]&#x3D;strict&amp;features[1][value]&#x3D;string&amp;features[1][operator]&#x3D;strict     _______________      {     \&quot;*\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;1\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;contains\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).     To search on all features, you can pass * as featureId. | [optional] 
- **filters** | **str**|      &#x60;&#x60;&#x60;     name[value]&#x3D;string&amp;name][operator]&#x3D;contains&amp;date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt     _______________      {     \&quot;name\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;contains\&quot;     },     \&quot;date_add\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;lt\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
+ **features** | **str**|  &#x60;&#x60;&#x60; features[*][value]&#x3D;string&amp;features[*][operator]&#x3D;strict&amp;features[1][value]&#x3D;string&amp;features[1][operator]&#x3D;strict _______________  { \&quot;*\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;strict\&quot; }, \&quot;1\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;contains\&quot; } } &#x60;&#x60;&#x60; Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). To search on all features, you can pass * as featureId. | [optional] 
+ **filters** | **str**|  &#x60;&#x60;&#x60; name[value]&#x3D;string&amp;name][operator]&#x3D;contains&amp;date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt _______________  { \&quot;name\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;contains\&quot; }, \&quot;date_add\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;lt\&quot; } } &#x60;&#x60;&#x60; Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
 
 ### Return type
 
-[**Products**](#Products)
+[**ProductListResponse**](#ProductListResponse)
 
 ### HTTP request headers
 
@@ -863,7 +863,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_customer_has_access_to_products**
-> list[ProductAccessInfo] get_customer_has_access_to_products(customer_id, body)
+> list[ProductAccessInfoResponse] get_customer_has_access_to_products(customer_id, body)
 
 
 
@@ -907,7 +907,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[ProductAccessInfo]**](#ProductAccessInfo)
+[**list[ProductAccessInfoResponse]**](#ProductAccessInfoResponse)
 
 ### HTTP request headers
 
@@ -917,7 +917,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_most_watched**
-> Products get_most_watched(page=page, per_page=per_page, ip=ip, iso_code=iso_code)
+> BlogPageProductsResponse get_most_watched(page=page, per_page=per_page, ip=ip, iso_code=iso_code)
 
 
 
@@ -965,7 +965,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Products**](#Products)
+[**BlogPageProductsResponse**](#BlogPageProductsResponse)
 
 ### HTTP request headers
 
@@ -975,7 +975,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_new_products**
-> Products get_new_products(page=page, per_page=per_page, ip=ip)
+> ProductListResponse get_new_products(page=page, per_page=per_page, ip=ip)
 
 
 
@@ -1021,7 +1021,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Products**](#Products)
+[**ProductListResponse**](#ProductListResponse)
 
 ### HTTP request headers
 
@@ -1031,7 +1031,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_price**
-> list[ProductPrice] get_price(body)
+> list[CartPriceResponse] get_price(body)
 
 
 
@@ -1073,7 +1073,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[ProductPrice]**](#ProductPrice)
+[**list[CartPriceResponse]**](#CartPriceResponse)
 
 ### HTTP request headers
 
@@ -1083,7 +1083,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_product**
-> Product get_product(product_id)
+> ProductResponse get_product(product_id)
 
 
 
@@ -1125,7 +1125,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Product**](#Product)
+[**ProductResponse**](#ProductResponse)
 
 ### HTTP request headers
 
@@ -1135,7 +1135,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_product_actors**
-> Actors get_product_actors(product_id, page=page, per_page=per_page, image_type=image_type)
+> ActorListResponse get_product_actors(product_id, page=page, per_page=per_page, image_type=image_type)
 
 
 
@@ -1183,7 +1183,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Actors**](#Actors)
+[**ActorListResponse**](#ActorListResponse)
 
 ### HTTP request headers
 
@@ -1193,7 +1193,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_product_actors_role**
-> Actors get_product_actors_role(product_id, page=page, per_page=per_page)
+> ActorRoleListResponse get_product_actors_role(product_id, page=page, per_page=per_page)
 
 
 
@@ -1239,7 +1239,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Actors**](#Actors)
+[**ActorRoleListResponse**](#ActorRoleListResponse)
 
 ### HTTP request headers
 
@@ -1249,7 +1249,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_product_attributes**
-> ProductAttributesResponse get_product_attributes(product_id, page=page, per_page=per_page)
+> ProductAttributeListResponse get_product_attributes(product_id, page=page, per_page=per_page)
 
 
 
@@ -1295,7 +1295,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProductAttributesResponse**](#ProductAttributesResponse)
+[**ProductAttributeListResponse**](#ProductAttributeListResponse)
 
 ### HTTP request headers
 
@@ -1356,7 +1356,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_product_categories**
-> Categories get_product_categories(product_id, page=page, per_page=per_page, filters=filters, sort_by=sort_by, sort_direction=sort_direction)
+> CategoryListResponse get_product_categories(product_id, page=page, per_page=per_page, filters=filters, sort_by=sort_by, sort_direction=sort_direction)
 
 
 
@@ -1384,7 +1384,7 @@ api_instance = kinow_client.ProductsApi()
 product_id = 789 # int | Product ID to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
-filters = 'filters_example' # str |      ```     name[value]=string&name[operator]=contains&date_add[value]=string&date_add[operator]=lt     _______________      {     \"name\": {     \"value\": \"string\",     \"operator\": \"contains\"     },     \"date_add\": {     \"value\": \"string\",     \"operator\": \"lt\"     }     } ```     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). (optional)
+filters = 'filters_example' # str |  ``` name[value]=string&name][operator]=contains&date_add[value]=string&date_add[operator]=lt _______________  { \"name\": { \"value\": \"string\", \"operator\": \"contains\" }, \"date_add\": { \"value\": \"string\", \"operator\": \"lt\" } } ``` Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). (optional)
 sort_by = 'sort_by_example' # str | Sort by this attribute (id by default) (optional)
 sort_direction = 'sort_direction_example' # str | Sorting direction (asc by default) (optional)
 
@@ -1402,13 +1402,13 @@ Name | Type | Description  | Notes
  **product_id** | **int**| Product ID to fetch | 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
- **filters** | **str**|      &#x60;&#x60;&#x60;     name[value]&#x3D;string&amp;name[operator]&#x3D;contains&amp;date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt     _______________      {     \&quot;name\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;contains\&quot;     },     \&quot;date_add\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;lt\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
+ **filters** | **str**|  &#x60;&#x60;&#x60; name[value]&#x3D;string&amp;name][operator]&#x3D;contains&amp;date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt _______________  { \&quot;name\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;contains\&quot; }, \&quot;date_add\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;lt\&quot; } } &#x60;&#x60;&#x60; Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
  **sort_by** | **str**| Sort by this attribute (id by default) | [optional] 
  **sort_direction** | **str**| Sorting direction (asc by default) | [optional] 
 
 ### Return type
 
-[**Categories**](#Categories)
+[**CategoryListResponse**](#CategoryListResponse)
 
 ### HTTP request headers
 
@@ -1418,7 +1418,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_product_cover_image**
-> Image get_product_cover_image(product_id)
+> ImageResponse get_product_cover_image(product_id)
 
 
 
@@ -1460,7 +1460,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Image**](#Image)
+[**ImageResponse**](#ImageResponse)
 
 ### HTTP request headers
 
@@ -1470,7 +1470,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_product_directors**
-> CategoryDirectorsResponse get_product_directors(product_id, page=page, per_page=per_page, image_type=image_type)
+> DirectorListResponse get_product_directors(product_id, page=page, per_page=per_page, image_type=image_type)
 
 
 
@@ -1518,7 +1518,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CategoryDirectorsResponse**](#CategoryDirectorsResponse)
+[**DirectorListResponse**](#DirectorListResponse)
 
 ### HTTP request headers
 
@@ -1528,7 +1528,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_product_directors_role**
-> CategoryDirectorsResponse get_product_directors_role(product_id, page=page, per_page=per_page)
+> DirectorRoleListResponse get_product_directors_role(product_id, page=page, per_page=per_page)
 
 
 
@@ -1574,7 +1574,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CategoryDirectorsResponse**](#CategoryDirectorsResponse)
+[**DirectorRoleListResponse**](#DirectorRoleListResponse)
 
 ### HTTP request headers
 
@@ -1584,7 +1584,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_product_extracts**
-> Videos1 get_product_extracts(product_id, ip=ip, page=page, per_page=per_page)
+> ExtractListResponse get_product_extracts(product_id, page=page, per_page=per_page, ip=ip)
 
 
 
@@ -1610,12 +1610,12 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = kinow_client.ProductsApi()
 product_id = 789 # int | Product ID to fetch
-ip = 'ip_example' # str | Filter by user IP (optional)
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
+ip = 'ip_example' # str | Filter by user IP (optional)
 
 try: 
-    api_response = api_instance.get_product_extracts(product_id, ip=ip, page=page, per_page=per_page)
+    api_response = api_instance.get_product_extracts(product_id, page=page, per_page=per_page, ip=ip)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProductsApi->get_product_extracts: %s\n" % e)
@@ -1626,13 +1626,13 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **product_id** | **int**| Product ID to fetch | 
- **ip** | **str**| Filter by user IP | [optional] 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
+ **ip** | **str**| Filter by user IP | [optional] 
 
 ### Return type
 
-[**Videos1**](#Videos1)
+[**ExtractListResponse**](#ExtractListResponse)
 
 ### HTTP request headers
 
@@ -1642,7 +1642,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_product_features**
-> Features get_product_features(product_id, page=page, per_page=per_page)
+> FeatureListResponse get_product_features(product_id, page=page, per_page=per_page)
 
 
 
@@ -1688,7 +1688,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Features**](#Features)
+[**FeatureListResponse**](#FeatureListResponse)
 
 ### HTTP request headers
 
@@ -1698,7 +1698,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_product_geolocations**
-> Geolocs get_product_geolocations(product_id, page=page, per_page=per_page)
+> GeolocationListResponse get_product_geolocations(product_id, page=page, per_page=per_page)
 
 
 
@@ -1744,7 +1744,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Geolocs**](#Geolocs)
+[**GeolocationListResponse**](#GeolocationListResponse)
 
 ### HTTP request headers
 
@@ -1811,7 +1811,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_product_groups**
-> Groups get_product_groups(product_id, page=page, per_page=per_page)
+> GroupListResponse get_product_groups(product_id, page=page, per_page=per_page)
 
 
 
@@ -1857,7 +1857,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Groups**](#Groups)
+[**GroupListResponse**](#GroupListResponse)
 
 ### HTTP request headers
 
@@ -1867,7 +1867,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_product_images**
-> CategoryImagesResponse get_product_images(product_id, type=type, page=page, per_page=per_page)
+> ImageListResponse get_product_images(product_id, type=type, page=page, per_page=per_page)
 
 
 
@@ -1915,7 +1915,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CategoryImagesResponse**](#CategoryImagesResponse)
+[**ImageListResponse**](#ImageListResponse)
 
 ### HTTP request headers
 
@@ -1977,7 +1977,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_product_subscription**
-> Subscription get_product_subscription(product_id)
+> SubscriptionResponse get_product_subscription(product_id)
 
 
 
@@ -2019,7 +2019,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Subscription**](#Subscription)
+[**SubscriptionResponse**](#SubscriptionResponse)
 
 ### HTTP request headers
 
@@ -2029,7 +2029,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_products**
-> Products get_products(page=page, per_page=per_page, features=features, filters=filters, sort_by=sort_by, sort_direction=sort_direction, ip=ip, customer_id=customer_id)
+> ProductListResponse get_products(page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction, ip=ip, features=features, filters=filters, customer_id=customer_id)
 
 
 
@@ -2056,15 +2056,15 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 api_instance = kinow_client.ProductsApi()
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
-features = 'features_example' # str |      ```     featureId[value]=string&featureId[operator]=strict     _______________      {     \"*\": {     \"value\": \"string\",     \"operator\": \"strict\"     },     \"1\": {     \"value\": \"string\",     \"operator\": \"contains\"     }     } ```     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).     To search on all features, you can pass * as featureId. (optional)
-filters = 'filters_example' # str |      ```     name[value]=string&name[operator]=contains&date_add[value]=string&date_add[operator]=lt     _______________      {     \"name\": {     \"value\": \"string\",     \"operator\": \"contains\"     },     \"date_add\": {     \"value\": \"string\",     \"operator\": \"lt\"     }     } ```     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). (optional)
 sort_by = 'sort_by_example' # str | Sort by this attribute (id by default) (optional)
 sort_direction = 'sort_direction_example' # str | Sorting direction (asc by default) (optional)
 ip = 'ip_example' # str | Filter by user IP (optional)
+features = 'features_example' # str |  ``` features[*][value]=string&features[*][operator]=strict&features[1][value]=string&features[1][operator]=strict _______________  { \"*\": { \"value\": \"string\", \"operator\": \"strict\" }, \"1\": { \"value\": \"string\", \"operator\": \"contains\" } } ``` Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). To search on all features, you can pass * as featureId. (optional)
+filters = 'filters_example' # str |  ``` name[value]=string&name][operator]=contains&date_add[value]=string&date_add[operator]=lt _______________  { \"name\": { \"value\": \"string\", \"operator\": \"contains\" }, \"date_add\": { \"value\": \"string\", \"operator\": \"lt\" } } ``` Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). (optional)
 customer_id = 'customer_id_example' # str | Check if customer can see this product, if it's group is not restricted (optional)
 
 try: 
-    api_response = api_instance.get_products(page=page, per_page=per_page, features=features, filters=filters, sort_by=sort_by, sort_direction=sort_direction, ip=ip, customer_id=customer_id)
+    api_response = api_instance.get_products(page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction, ip=ip, features=features, filters=filters, customer_id=customer_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProductsApi->get_products: %s\n" % e)
@@ -2076,16 +2076,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
- **features** | **str**|      &#x60;&#x60;&#x60;     featureId[value]&#x3D;string&amp;featureId[operator]&#x3D;strict     _______________      {     \&quot;*\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;1\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;contains\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).     To search on all features, you can pass * as featureId. | [optional] 
- **filters** | **str**|      &#x60;&#x60;&#x60;     name[value]&#x3D;string&amp;name[operator]&#x3D;contains&amp;date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt     _______________      {     \&quot;name\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;contains\&quot;     },     \&quot;date_add\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;lt\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
  **sort_by** | **str**| Sort by this attribute (id by default) | [optional] 
  **sort_direction** | **str**| Sorting direction (asc by default) | [optional] 
  **ip** | **str**| Filter by user IP | [optional] 
+ **features** | **str**|  &#x60;&#x60;&#x60; features[*][value]&#x3D;string&amp;features[*][operator]&#x3D;strict&amp;features[1][value]&#x3D;string&amp;features[1][operator]&#x3D;strict _______________  { \&quot;*\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;strict\&quot; }, \&quot;1\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;contains\&quot; } } &#x60;&#x60;&#x60; Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). To search on all features, you can pass * as featureId. | [optional] 
+ **filters** | **str**|  &#x60;&#x60;&#x60; name[value]&#x3D;string&amp;name][operator]&#x3D;contains&amp;date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt _______________  { \&quot;name\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;contains\&quot; }, \&quot;date_add\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;lt\&quot; } } &#x60;&#x60;&#x60; Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
  **customer_id** | **str**| Check if customer can see this product, if it&#39;s group is not restricted | [optional] 
 
 ### Return type
 
-[**Products**](#Products)
+[**ProductListResponse**](#ProductListResponse)
 
 ### HTTP request headers
 
@@ -2095,7 +2095,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_products_from_product**
-> Products get_products_from_product(product_id, page=page, per_page=per_page, features=features, filters=filters, sort_by=sort_by, sort_direction=sort_direction, ip=ip)
+> ProductListResponse get_products_from_product(product_id, page=page, per_page=per_page, features=features, filters=filters, sort_by=sort_by, sort_direction=sort_direction, ip=ip)
 
 
 
@@ -2123,8 +2123,8 @@ api_instance = kinow_client.ProductsApi()
 product_id = 789 # int | 
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
-features = 'features_example' # str |      ```     featureId[value]=string&featureId[operator]=strict     _______________      {     \"*\": {     \"value\": \"string\",     \"operator\": \"strict\"     },     \"1\": {     \"value\": \"string\",     \"operator\": \"contains\"     }     } ```     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).     To search on all features, you can pass * as featureId. (optional)
-filters = 'filters_example' # str |      ```     name[value]=string&name[operator]=contains&date_add[value]=string&date_add[operator]=lt     _______________      {     \"name\": {     \"value\": \"string\",     \"operator\": \"contains\"     },     \"date_add\": {     \"value\": \"string\",     \"operator\": \"lt\"     }     } ```     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). (optional)
+features = 'features_example' # str |  ``` features[*][value]=string&features[*][operator]=strict&features[1][value]=string&features[1][operator]=strict _______________  { \"*\": { \"value\": \"string\", \"operator\": \"strict\" }, \"1\": { \"value\": \"string\", \"operator\": \"contains\" } } ``` Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). To search on all features, you can pass * as featureId. (optional)
+filters = 'filters_example' # str |  ``` name[value]=string&name][operator]=contains&date_add[value]=string&date_add[operator]=lt _______________  { \"name\": { \"value\": \"string\", \"operator\": \"contains\" }, \"date_add\": { \"value\": \"string\", \"operator\": \"lt\" } } ``` Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). (optional)
 sort_by = 'sort_by_example' # str | Sort by this attribute (id by default) (optional)
 sort_direction = 'sort_direction_example' # str | Sorting direction (asc by default) (optional)
 ip = 'ip_example' # str | Filter by user IP (optional)
@@ -2143,15 +2143,15 @@ Name | Type | Description  | Notes
  **product_id** | **int**|  | 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
- **features** | **str**|      &#x60;&#x60;&#x60;     featureId[value]&#x3D;string&amp;featureId[operator]&#x3D;strict     _______________      {     \&quot;*\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;1\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;contains\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).     To search on all features, you can pass * as featureId. | [optional] 
- **filters** | **str**|      &#x60;&#x60;&#x60;     name[value]&#x3D;string&amp;name[operator]&#x3D;contains&amp;date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt     _______________      {     \&quot;name\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;contains\&quot;     },     \&quot;date_add\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;lt\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
+ **features** | **str**|  &#x60;&#x60;&#x60; features[*][value]&#x3D;string&amp;features[*][operator]&#x3D;strict&amp;features[1][value]&#x3D;string&amp;features[1][operator]&#x3D;strict _______________  { \&quot;*\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;strict\&quot; }, \&quot;1\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;contains\&quot; } } &#x60;&#x60;&#x60; Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). To search on all features, you can pass * as featureId. | [optional] 
+ **filters** | **str**|  &#x60;&#x60;&#x60; name[value]&#x3D;string&amp;name][operator]&#x3D;contains&amp;date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt _______________  { \&quot;name\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;contains\&quot; }, \&quot;date_add\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;lt\&quot; } } &#x60;&#x60;&#x60; Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
  **sort_by** | **str**| Sort by this attribute (id by default) | [optional] 
  **sort_direction** | **str**| Sorting direction (asc by default) | [optional] 
  **ip** | **str**| Filter by user IP | [optional] 
 
 ### Return type
 
-[**Products**](#Products)
+[**ProductListResponse**](#ProductListResponse)
 
 ### HTTP request headers
 
@@ -2161,7 +2161,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_video_groups_from_product**
-> VideoGroup1 get_video_groups_from_product(product_id, page=page, filters=filters, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction)
+> VideoGroupListResponse get_video_groups_from_product(product_id, page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction, filters=filters)
 
 
 
@@ -2188,13 +2188,13 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 api_instance = kinow_client.ProductsApi()
 product_id = 789 # int | Product ID to fetch
 page = 789 # int |  (optional)
-filters = 'filters_example' # str |      ```     name[value]=string&name[operator]=strict&duration[value]=string&duration[operator]=gt     _______________      {     \"name\": {     \"value\": \"string\",     \"operator\": \"strict\"     },     \"duration\": {     \"value\": \"string\",     \"operator\": \"gt\"     }     } ```     Operator can be strict, contains, gt or lt. (optional)
 per_page = 789 # int |  (optional)
 sort_by = 'sort_by_example' # str | Sort by this attribute (id by default) (optional)
 sort_direction = 'sort_direction_example' # str | Sorting direction (asc by default) (optional)
+filters = 'filters_example' # str |  ``` name[value]=string&name][operator]=contains&date_add[value]=string&date_add[operator]=lt _______________  { \"name\": { \"value\": \"string\", \"operator\": \"contains\" }, \"date_add\": { \"value\": \"string\", \"operator\": \"lt\" } } ``` Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). (optional)
 
 try: 
-    api_response = api_instance.get_video_groups_from_product(product_id, page=page, filters=filters, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction)
+    api_response = api_instance.get_video_groups_from_product(product_id, page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction, filters=filters)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProductsApi->get_video_groups_from_product: %s\n" % e)
@@ -2206,14 +2206,14 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **product_id** | **int**| Product ID to fetch | 
  **page** | **int**|  | [optional] 
- **filters** | **str**|      &#x60;&#x60;&#x60;     name[value]&#x3D;string&amp;name[operator]&#x3D;strict&amp;duration[value]&#x3D;string&amp;duration[operator]&#x3D;gt     _______________      {     \&quot;name\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;duration\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;gt\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be strict, contains, gt or lt. | [optional] 
  **per_page** | **int**|  | [optional] 
  **sort_by** | **str**| Sort by this attribute (id by default) | [optional] 
  **sort_direction** | **str**| Sorting direction (asc by default) | [optional] 
+ **filters** | **str**|  &#x60;&#x60;&#x60; name[value]&#x3D;string&amp;name][operator]&#x3D;contains&amp;date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt _______________  { \&quot;name\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;contains\&quot; }, \&quot;date_add\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;lt\&quot; } } &#x60;&#x60;&#x60; Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
 
 ### Return type
 
-[**VideoGroup1**](#VideoGroup1)
+[**VideoGroupListResponse**](#VideoGroupListResponse)
 
 ### HTTP request headers
 
@@ -2223,7 +2223,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_videos_from_product**
-> Videos2 get_videos_from_product(product_id, page=page, per_page=per_page, filters=filters, ip=ip, sort_by=sort_by, sort_direction=sort_direction)
+> ProductVideoListResponse get_videos_from_product(product_id, page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction, ip=ip, filters=filters)
 
 
 
@@ -2251,13 +2251,13 @@ api_instance = kinow_client.ProductsApi()
 product_id = 789 # int | Product ID to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
-filters = 'filters_example' # str |      ```     name[value]=string&name[operator]=strict&duration[value]=string&duration[operator]=gt     _______________      {     \"name\": {     \"value\": \"string\",     \"operator\": \"strict\"     },     \"duration\": {     \"value\": \"string\",     \"operator\": \"gt\"     }     } ```     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). (optional)
-ip = 'ip_example' # str | Filter by user IP (optional)
-sort_by = 'sort_by_example' # str | Sort by this attribute (default is ID) (optional)
+sort_by = 'sort_by_example' # str | Sort by this attribute (id by default) (optional)
 sort_direction = 'sort_direction_example' # str | Sorting direction (asc by default) (optional)
+ip = 'ip_example' # str | Filter by user IP (optional)
+filters = 'filters_example' # str |  ``` name[value]=string&name][operator]=contains&date_add[value]=string&date_add[operator]=lt _______________  { \"name\": { \"value\": \"string\", \"operator\": \"contains\" }, \"date_add\": { \"value\": \"string\", \"operator\": \"lt\" } } ``` Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). (optional)
 
 try: 
-    api_response = api_instance.get_videos_from_product(product_id, page=page, per_page=per_page, filters=filters, ip=ip, sort_by=sort_by, sort_direction=sort_direction)
+    api_response = api_instance.get_videos_from_product(product_id, page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction, ip=ip, filters=filters)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProductsApi->get_videos_from_product: %s\n" % e)
@@ -2270,14 +2270,14 @@ Name | Type | Description  | Notes
  **product_id** | **int**| Product ID to fetch | 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
- **filters** | **str**|      &#x60;&#x60;&#x60;     name[value]&#x3D;string&amp;name[operator]&#x3D;strict&amp;duration[value]&#x3D;string&amp;duration[operator]&#x3D;gt     _______________      {     \&quot;name\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;duration\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;gt\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
- **ip** | **str**| Filter by user IP | [optional] 
- **sort_by** | **str**| Sort by this attribute (default is ID) | [optional] 
+ **sort_by** | **str**| Sort by this attribute (id by default) | [optional] 
  **sort_direction** | **str**| Sorting direction (asc by default) | [optional] 
+ **ip** | **str**| Filter by user IP | [optional] 
+ **filters** | **str**|  &#x60;&#x60;&#x60; name[value]&#x3D;string&amp;name][operator]&#x3D;contains&amp;date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt _______________  { \&quot;name\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;contains\&quot; }, \&quot;date_add\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;lt\&quot; } } &#x60;&#x60;&#x60; Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
 
 ### Return type
 
-[**Videos2**](#Videos2)
+[**ProductVideoListResponse**](#ProductVideoListResponse)
 
 ### HTTP request headers
 
@@ -2287,7 +2287,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **search_products**
-> Products search_products(search_query, page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction, in_categories=in_categories, in_features=in_features, feature_values=feature_values)
+> ProductListResponse search_products(search_query, page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction, in_categories=in_categories, in_features=in_features, feature_values=feature_values)
 
 
 
@@ -2315,8 +2315,8 @@ api_instance = kinow_client.ProductsApi()
 search_query = 'search_query_example' # str | Keyword used to search the products
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
-sort_by = 'sort_by_example' # str | default: position (optional)
-sort_direction = 'sort_direction_example' # str | default: desc (optional)
+sort_by = 'sort_by_example' # str | Sort by this attribute (id by default) (optional)
+sort_direction = 'sort_direction_example' # str | Sorting direction (asc by default) (optional)
 in_categories = 'in_categories_example' # str | Search in given categories. Values are separated with comma (,) (optional)
 in_features = 'in_features_example' # str | Search in given features. Values are separated with comma (,) (optional)
 feature_values = 'feature_values_example' # str | Search by feature values. Values are separated with comma (,) (optional)
@@ -2335,15 +2335,15 @@ Name | Type | Description  | Notes
  **search_query** | **str**| Keyword used to search the products | 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
- **sort_by** | **str**| default: position | [optional] 
- **sort_direction** | **str**| default: desc | [optional] 
+ **sort_by** | **str**| Sort by this attribute (id by default) | [optional] 
+ **sort_direction** | **str**| Sorting direction (asc by default) | [optional] 
  **in_categories** | **str**| Search in given categories. Values are separated with comma (,) | [optional] 
  **in_features** | **str**| Search in given features. Values are separated with comma (,) | [optional] 
  **feature_values** | **str**| Search by feature values. Values are separated with comma (,) | [optional] 
 
 ### Return type
 
-[**Products**](#Products)
+[**ProductListResponse**](#ProductListResponse)
 
 ### HTTP request headers
 
@@ -2416,7 +2416,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **update_product**
-> Product update_product(product_id, body)
+> ProductResponse update_product(product_id, body)
 
 
 
@@ -2441,8 +2441,8 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = kinow_client.ProductsApi()
-product_id = 789 # int | Product ID to fetch
-body = kinow_client.Product() # Product | 
+product_id = 789 # int | ID of the product to update
+body = kinow_client.UpdateProductRequest() # UpdateProductRequest | Update product request
 
 try: 
     api_response = api_instance.update_product(product_id, body)
@@ -2455,12 +2455,12 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_id** | **int**| Product ID to fetch | 
- **body** | [**Product**](#Product)|  | 
+ **product_id** | **int**| ID of the product to update | 
+ **body** | [**UpdateProductRequest**](#UpdateProductRequest)| Update product request | 
 
 ### Return type
 
-[**Product**](#Product)
+[**ProductResponse**](#ProductResponse)
 
 ### HTTP request headers
 
@@ -2523,7 +2523,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **upload_product_cover**
-> Image upload_product_cover(product_id, file, hash, hash_algorithm=hash_algorithm)
+> ImageResponse upload_product_cover(body)
 
 
 
@@ -2548,13 +2548,10 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = kinow_client.ProductsApi()
-product_id = 3.4 # float | Product ID to fetch
-file = '/path/to/file.txt' # file | 
-hash = 'hash_example' # str | 
-hash_algorithm = 'hash_algorithm_example' # str | Hash algorithm to check the hash file (default value is: sha256) (optional)
+body = kinow_client.UploadProductCoverRequest() # UploadProductCoverRequest | 
 
 try: 
-    api_response = api_instance.upload_product_cover(product_id, file, hash, hash_algorithm=hash_algorithm)
+    api_response = api_instance.upload_product_cover(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProductsApi->upload_product_cover: %s\n" % e)
@@ -2564,14 +2561,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_id** | **float**| Product ID to fetch | 
- **file** | **file**|  | 
- **hash** | **str**|  | 
- **hash_algorithm** | **str**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
+ **body** | [**UploadProductCoverRequest**](#UploadProductCoverRequest)|  | 
 
 ### Return type
 
-[**Image**](#Image)
+[**ImageResponse**](#ImageResponse)
 
 ### HTTP request headers
 

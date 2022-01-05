@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 ## **get_slider_image**
-> list[Image] get_slider_image()
+> ImageListResponse get_slider_image()
 
 
 
@@ -53,7 +53,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**list[Image]**](#Image)
+[**ImageListResponse**](#ImageListResponse)
 
 ### HTTP request headers
 
@@ -63,7 +63,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_widget_analytics**
-> GoogleAnalytics get_widget_analytics()
+> GoogleAnalyticsResponse get_widget_analytics()
 
 
 
@@ -101,7 +101,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**GoogleAnalytics**](#GoogleAnalytics)
+[**GoogleAnalyticsResponse**](#GoogleAnalyticsResponse)
 
 ### HTTP request headers
 
@@ -111,7 +111,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_widget_footer_menu**
-> WidgetFooterMenus get_widget_footer_menu(page=page, per_page=per_page)
+> WidgetFooterMenuListResponse get_widget_footer_menu(page=page, per_page=per_page)
 
 
 
@@ -155,7 +155,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WidgetFooterMenus**](#WidgetFooterMenus)
+[**WidgetFooterMenuListResponse**](#WidgetFooterMenuListResponse)
 
 ### HTTP request headers
 
@@ -165,7 +165,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_widget_home_rail**
-> WidgetHomeRails get_widget_home_rail(page=page, per_page=per_page)
+> WidgetHomeRailListResponse get_widget_home_rail(page=page, per_page=per_page)
 
 
 
@@ -209,7 +209,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WidgetHomeRails**](#WidgetHomeRails)
+[**WidgetHomeRailListResponse**](#WidgetHomeRailListResponse)
 
 ### HTTP request headers
 
@@ -219,7 +219,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_widget_hook_phrase**
-> WidgetHookPhrases get_widget_hook_phrase(page=page, per_page=per_page)
+> WidgetHookPhraseListResponse get_widget_hook_phrase(page=page, per_page=per_page)
 
 
 
@@ -263,7 +263,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WidgetHookPhrases**](#WidgetHookPhrases)
+[**WidgetHookPhraseListResponse**](#WidgetHookPhraseListResponse)
 
 ### HTTP request headers
 
@@ -273,7 +273,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_widget_slider**
-> WidgetSliders get_widget_slider(page=page, per_page=per_page)
+> WidgetSliderListResponse get_widget_slider(page=page, per_page=per_page)
 
 
 
@@ -317,7 +317,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WidgetSliders**](#WidgetSliders)
+[**WidgetSliderListResponse**](#WidgetSliderListResponse)
 
 ### HTTP request headers
 
@@ -327,7 +327,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_widget_slider_item**
-> WidgetSlider get_widget_slider_item(slider_id)
+> WidgetSliderResponse get_widget_slider_item(slider_id)
 
 
 
@@ -369,7 +369,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WidgetSlider**](#WidgetSlider)
+[**WidgetSliderResponse**](#WidgetSliderResponse)
 
 ### HTTP request headers
 
@@ -379,7 +379,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_widget_top_menu**
-> WidgetTopMenus get_widget_top_menu(page=page, per_page=per_page)
+> WidgetTopMenuListResponse get_widget_top_menu(page=page, per_page=per_page)
 
 
 
@@ -423,7 +423,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WidgetTopMenus**](#WidgetTopMenus)
+[**WidgetTopMenuListResponse**](#WidgetTopMenuListResponse)
 
 ### HTTP request headers
 

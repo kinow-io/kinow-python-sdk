@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 ## **get_customer_recommendations**
-> Products get_customer_recommendations(customer_id, page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction, ip=ip, iso_code=iso_code)
+> BlogPageProductsResponse get_customer_recommendations(customer_id, page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction, ip=ip, iso_code=iso_code)
 
 
 
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Products**](#Products)
+[**BlogPageProductsResponse**](#BlogPageProductsResponse)
 
 ### HTTP request headers
 

@@ -128,7 +128,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **create_actor**
-> Actor create_actor(body)
+> ActorResponse create_actor(body)
 
 
 
@@ -153,7 +153,7 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = kinow_client.ActorsApi()
-body = kinow_client.Actor1() # Actor1 | Actor settings
+body = kinow_client.CreateActorRequest() # CreateActorRequest | Create an actor
 
 try: 
     api_response = api_instance.create_actor(body)
@@ -166,11 +166,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Actor1**](#Actor1)| Actor settings | 
+ **body** | [**CreateActorRequest**](#CreateActorRequest)| Create an actor | 
 
 ### Return type
 
-[**Actor**](#Actor)
+[**ActorResponse**](#ActorResponse)
 
 ### HTTP request headers
 
@@ -284,7 +284,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_actor**
-> Actor get_actor(actor_id)
+> ActorResponse get_actor(actor_id)
 
 
 
@@ -326,7 +326,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Actor**](#Actor)
+[**ActorResponse**](#ActorResponse)
 
 ### HTTP request headers
 
@@ -336,7 +336,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_actor_cover_image**
-> Image get_actor_cover_image(actor_id)
+> ImageResponse get_actor_cover_image(actor_id)
 
 
 
@@ -378,7 +378,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Image**](#Image)
+[**ImageResponse**](#ImageResponse)
 
 ### HTTP request headers
 
@@ -388,7 +388,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_actor_products**
-> Products get_actor_products(actor_id, page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction, ip=ip, features=features, filters=filters)
+> ActorProductListResponse get_actor_products(actor_id, page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction, ip=ip, features=features, filters=filters)
 
 
 
@@ -419,8 +419,8 @@ per_page = 789 # int |  (optional)
 sort_by = 'sort_by_example' # str | Sort by this attribute (id by default) (optional)
 sort_direction = 'sort_direction_example' # str | Sorting direction (asc by default) (optional)
 ip = 'ip_example' # str | Filter by user IP (optional)
-features = 'features_example' # str |      ```     features[*][value]=string&features[*][operator]=strict&features[1][value]=string&features[1][operator]=strict     _______________      {     \"*\": {     \"value\": \"string\",     \"operator\": \"strict\"     },     \"1\": {     \"value\": \"string\",     \"operator\": \"contains\"     }     } ```     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).     To search on all features, you can pass * as featureId. (optional)
-filters = 'filters_example' # str |      ```     name[value]=string&name][operator]=contains&date_add[value]=string&date_add[operator]=lt     _______________      {     \"name\": {     \"value\": \"string\",     \"operator\": \"contains\"     },     \"date_add\": {     \"value\": \"string\",     \"operator\": \"lt\"     }     } ```     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). (optional)
+features = 'features_example' # str |  ``` features[*][value]=string&features[*][operator]=strict&features[1][value]=string&features[1][operator]=strict _______________  { \"*\": { \"value\": \"string\", \"operator\": \"strict\" }, \"1\": { \"value\": \"string\", \"operator\": \"contains\" } } ``` Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). To search on all features, you can pass * as featureId. (optional)
+filters = 'filters_example' # str |  ``` name[value]=string&name][operator]=contains&date_add[value]=string&date_add[operator]=lt _______________  { \"name\": { \"value\": \"string\", \"operator\": \"contains\" }, \"date_add\": { \"value\": \"string\", \"operator\": \"lt\" } } ``` Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). (optional)
 
 try: 
     api_response = api_instance.get_actor_products(actor_id, page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction, ip=ip, features=features, filters=filters)
@@ -439,12 +439,12 @@ Name | Type | Description  | Notes
  **sort_by** | **str**| Sort by this attribute (id by default) | [optional] 
  **sort_direction** | **str**| Sorting direction (asc by default) | [optional] 
  **ip** | **str**| Filter by user IP | [optional] 
- **features** | **str**|      &#x60;&#x60;&#x60;     features[*][value]&#x3D;string&amp;features[*][operator]&#x3D;strict&amp;features[1][value]&#x3D;string&amp;features[1][operator]&#x3D;strict     _______________      {     \&quot;*\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;1\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;contains\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than).     To search on all features, you can pass * as featureId. | [optional] 
- **filters** | **str**|      &#x60;&#x60;&#x60;     name[value]&#x3D;string&amp;name][operator]&#x3D;contains&amp;date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt     _______________      {     \&quot;name\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;contains\&quot;     },     \&quot;date_add\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;lt\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
+ **features** | **str**|  &#x60;&#x60;&#x60; features[*][value]&#x3D;string&amp;features[*][operator]&#x3D;strict&amp;features[1][value]&#x3D;string&amp;features[1][operator]&#x3D;strict _______________  { \&quot;*\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;strict\&quot; }, \&quot;1\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;contains\&quot; } } &#x60;&#x60;&#x60; Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). To search on all features, you can pass * as featureId. | [optional] 
+ **filters** | **str**|  &#x60;&#x60;&#x60; name[value]&#x3D;string&amp;name][operator]&#x3D;contains&amp;date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt _______________  { \&quot;name\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;contains\&quot; }, \&quot;date_add\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;lt\&quot; } } &#x60;&#x60;&#x60; Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
 
 ### Return type
 
-[**Products**](#Products)
+[**ActorProductListResponse**](#ActorProductListResponse)
 
 ### HTTP request headers
 
@@ -454,7 +454,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_actor_products_role**
-> Products get_actor_products_role(actor_id, page=page, per_page=per_page)
+> ActorProductRoleListResponse get_actor_products_role(actor_id, page=page, per_page=per_page)
 
 
 
@@ -500,7 +500,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Products**](#Products)
+[**ActorProductRoleListResponse**](#ActorProductRoleListResponse)
 
 ### HTTP request headers
 
@@ -510,7 +510,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_actors**
-> Actors get_actors(page=page, per_page=per_page)
+> ActorListResponse get_actors(page=page, per_page=per_page)
 
 
 
@@ -554,7 +554,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Actors**](#Actors)
+[**ActorListResponse**](#ActorListResponse)
 
 ### HTTP request headers
 
@@ -564,7 +564,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_category_actors**
-> Actors get_category_actors(category_id, page=page, per_page=per_page)
+> CategoryActorsResponse get_category_actors(category_id, page=page, per_page=per_page)
 
 
 
@@ -610,7 +610,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Actors**](#Actors)
+[**CategoryActorsResponse**](#CategoryActorsResponse)
 
 ### HTTP request headers
 
@@ -620,7 +620,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_product_actors**
-> Actors get_product_actors(product_id, page=page, per_page=per_page, image_type=image_type)
+> ActorListResponse get_product_actors(product_id, page=page, per_page=per_page, image_type=image_type)
 
 
 
@@ -668,7 +668,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Actors**](#Actors)
+[**ActorListResponse**](#ActorListResponse)
 
 ### HTTP request headers
 
@@ -678,7 +678,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_product_actors_role**
-> Actors get_product_actors_role(product_id, page=page, per_page=per_page)
+> ActorRoleListResponse get_product_actors_role(product_id, page=page, per_page=per_page)
 
 
 
@@ -724,7 +724,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Actors**](#Actors)
+[**ActorRoleListResponse**](#ActorRoleListResponse)
 
 ### HTTP request headers
 
@@ -760,7 +760,7 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = kinow_client.ActorsApi()
 actor_id = 56 # int | 
-body = kinow_client.Actor2() # Actor2 | Actor settings
+body = kinow_client.UpdateActorRequest() # UpdateActorRequest | Actor settings
 
 try: 
     api_instance.update_actor(actor_id, body)
@@ -773,7 +773,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **actor_id** | **int**|  | 
- **body** | [**Actor2**](#Actor2)| Actor settings | 
+ **body** | [**UpdateActorRequest**](#UpdateActorRequest)| Actor settings | 
 
 ### Return type
 
@@ -787,7 +787,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **upload_actor_cover**
-> Image upload_actor_cover(actor_id, file, hash, hash_algorithm=hash_algorithm)
+> ImageResponse upload_actor_cover(body)
 
 
 
@@ -812,13 +812,10 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = kinow_client.ActorsApi()
-actor_id = 3.4 # float | Actor ID to fetch
-file = '/path/to/file.txt' # file | 
-hash = 'hash_example' # str | 
-hash_algorithm = 'hash_algorithm_example' # str | Hash algorithm to check the hash file (default value is: sha256) (optional)
+body = kinow_client.UploadActorCoverRequest() # UploadActorCoverRequest | 
 
 try: 
-    api_response = api_instance.upload_actor_cover(actor_id, file, hash, hash_algorithm=hash_algorithm)
+    api_response = api_instance.upload_actor_cover(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ActorsApi->upload_actor_cover: %s\n" % e)
@@ -828,14 +825,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **actor_id** | **float**| Actor ID to fetch | 
- **file** | **file**|  | 
- **hash** | **str**|  | 
- **hash_algorithm** | **str**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
+ **body** | [**UploadActorCoverRequest**](#UploadActorCoverRequest)|  | 
 
 ### Return type
 
-[**Image**](#Image)
+[**ImageResponse**](#ImageResponse)
 
 ### HTTP request headers
 

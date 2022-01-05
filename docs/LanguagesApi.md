@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 ## **get_languages**
-> Languages get_languages(page=page, per_page=per_page)
+> LanguageListResponse get_languages(page=page, per_page=per_page)
 
 
 
@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Languages**](#Languages)
+[**LanguageListResponse**](#LanguageListResponse)
 
 ### HTTP request headers
 

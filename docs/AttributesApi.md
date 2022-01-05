@@ -166,7 +166,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_product_attributes**
-> ProductAttributesResponse get_product_attributes(product_id, page=page, per_page=per_page)
+> ProductAttributeListResponse get_product_attributes(product_id, page=page, per_page=per_page)
 
 
 
@@ -212,7 +212,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProductAttributesResponse**](#ProductAttributesResponse)
+[**ProductAttributeListResponse**](#ProductAttributeListResponse)
 
 ### HTTP request headers
 

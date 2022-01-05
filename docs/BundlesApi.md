@@ -65,7 +65,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_bundle_products**
-> Products get_bundle_products(bundle_id, page=page, per_page=per_page)
+> BlogPageProductsResponse get_bundle_products(bundle_id, page=page, per_page=per_page)
 
 
 
@@ -111,7 +111,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Products**](#Products)
+[**BlogPageProductsResponse**](#BlogPageProductsResponse)
 
 ### HTTP request headers
 

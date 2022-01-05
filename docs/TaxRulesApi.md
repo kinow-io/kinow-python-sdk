@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 ## **get_tax_rules**
-> TaxRules get_tax_rules(page=page, per_page=per_page)
+> TaxRuleListResponse get_tax_rules(page=page, per_page=per_page)
 
 
 
@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TaxRules**](#TaxRules)
+[**TaxRuleListResponse**](#TaxRuleListResponse)
 
 ### HTTP request headers
 

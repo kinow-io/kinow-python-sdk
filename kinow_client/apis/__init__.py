@@ -33,7 +33,6 @@ from .images_api import ImagesApi
 from .languages_api import LanguagesApi
 from .media_files_api import MediaFilesApi
 from .media_sources_api import MediaSourcesApi
-from .o_auth_api import OAuthApi
 from .order_histories_api import OrderHistoriesApi
 from .order_states_api import OrderStatesApi
 from .orders_api import OrdersApi

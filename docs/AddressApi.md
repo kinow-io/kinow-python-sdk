@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 ## **get_customer_address**
-> Address get_customer_address(customer_id)
+> AddressResponse get_customer_address(customer_id)
 
 
 
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Address**](#Address)
+[**AddressResponse**](#AddressResponse)
 
 ### HTTP request headers
 
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **update_address**
-> Address update_address(address_id, body)
+> AddressResponse update_address(address_id, body)
 
 
 
@@ -87,7 +87,7 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = kinow_client.AddressApi()
 address_id = 789 # int | Address ID to update
-body = kinow_client.Address1() # Address1 | Address settings
+body = kinow_client.UpdateAddressRequest() # UpdateAddressRequest | Address settings
 
 try: 
     api_response = api_instance.update_address(address_id, body)
@@ -101,11 +101,11 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **address_id** | **int**| Address ID to update | 
- **body** | [**Address1**](#Address1)| Address settings | 
+ **body** | [**UpdateAddressRequest**](#UpdateAddressRequest)| Address settings | 
 
 ### Return type
 
-[**Address**](#Address)
+[**AddressResponse**](#AddressResponse)
 
 ### HTTP request headers
 

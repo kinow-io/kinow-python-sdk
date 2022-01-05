@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 
 ## **create_product_access**
-> ProductAccess create_product_access(body)
+> ProductAccessResponse create_product_access(body)
 
 
 
@@ -44,7 +44,7 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = kinow_client.ProductAccessesApi()
-body = kinow_client.ProductAccess() # ProductAccess | 
+body = kinow_client.CreateProductAccessRequest() # CreateProductAccessRequest | 
 
 try: 
     api_response = api_instance.create_product_access(body)
@@ -57,11 +57,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ProductAccess**](#ProductAccess)|  | 
+ **body** | [**CreateProductAccessRequest**](#CreateProductAccessRequest)|  | 
 
 ### Return type
 
-[**ProductAccess**](#ProductAccess)
+[**ProductAccessResponse**](#ProductAccessResponse)
 
 ### HTTP request headers
 
@@ -122,7 +122,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_customer_accesses_subscriptions**
-> SubscriptionAccesses get_customer_accesses_subscriptions(customer_id, page=page, per_page=per_page, filters=filters)
+> ProductAccessListResponse get_customer_accesses_subscriptions(customer_id, page=page, per_page=per_page, filters=filters)
 
 
 
@@ -150,7 +150,7 @@ api_instance = kinow_client.ProductAccessesApi()
 customer_id = 789 # int | Customer ID to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
-filters = 'filters_example' # str |      ```     type[value]=string&type[operator]=strict&cancel[value]=string&cancel[operator]=contains     _______________      {     \"type\": {     \"value\": \"string\",     \"operator\": \"strict\"     },     \"cancel\": {     \"value\": \"string\",     \"operator\": \"contains\"     }     } ```Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). (optional)
+filters = 'filters_example' # str |  ``` name[value]=string&name][operator]=contains&date_add[value]=string&date_add[operator]=lt _______________  { \"name\": { \"value\": \"string\", \"operator\": \"contains\" }, \"date_add\": { \"value\": \"string\", \"operator\": \"lt\" } } ``` Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). (optional)
 
 try: 
     api_response = api_instance.get_customer_accesses_subscriptions(customer_id, page=page, per_page=per_page, filters=filters)
@@ -166,11 +166,11 @@ Name | Type | Description  | Notes
  **customer_id** | **int**| Customer ID to fetch | 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
- **filters** | **str**|      &#x60;&#x60;&#x60;     type[value]&#x3D;string&amp;type[operator]&#x3D;strict&amp;cancel[value]&#x3D;string&amp;cancel[operator]&#x3D;contains     _______________      {     \&quot;type\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;cancel\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;contains\&quot;     }     } &#x60;&#x60;&#x60;Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
+ **filters** | **str**|  &#x60;&#x60;&#x60; name[value]&#x3D;string&amp;name][operator]&#x3D;contains&amp;date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt _______________  { \&quot;name\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;contains\&quot; }, \&quot;date_add\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;lt\&quot; } } &#x60;&#x60;&#x60; Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
 
 ### Return type
 
-[**SubscriptionAccesses**](#SubscriptionAccesses)
+[**ProductAccessListResponse**](#ProductAccessListResponse)
 
 ### HTTP request headers
 
@@ -180,7 +180,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_customer_accesses_videos**
-> SubscriptionAccesses get_customer_accesses_videos(customer_id, page=page, per_page=per_page)
+> ProductAccessListResponse get_customer_accesses_videos(customer_id, page=page, per_page=per_page)
 
 
 
@@ -226,7 +226,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SubscriptionAccesses**](#SubscriptionAccesses)
+[**ProductAccessListResponse**](#ProductAccessListResponse)
 
 ### HTTP request headers
 
@@ -236,7 +236,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_product_access**
-> ProductAccess get_product_access(product_access_id)
+> ProductAccessResponse get_product_access(product_access_id)
 
 
 
@@ -278,7 +278,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProductAccess**](#ProductAccess)
+[**ProductAccessResponse**](#ProductAccessResponse)
 
 ### HTTP request headers
 
@@ -288,7 +288,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_product_accesses**
-> SubscriptionAccesses get_product_accesses(page=page, per_page=per_page, type=type, date_add=date_add, date_add_direction=date_add_direction, date_exp=date_exp, date_exp_direction=date_exp_direction, filters=filters)
+> ProductAccessListResponse get_product_accesses(page=page, per_page=per_page, filters=filters, type=type, date_add=date_add, date_add_direction=date_add_direction, date_exp=date_exp, date_exp_direction=date_exp_direction)
 
 
 
@@ -315,15 +315,15 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 api_instance = kinow_client.ProductAccessesApi()
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
+filters = 'filters_example' # str |  ``` name[value]=string&name][operator]=contains&date_add[value]=string&date_add[operator]=lt _______________  { \"name\": { \"value\": \"string\", \"operator\": \"contains\" }, \"date_add\": { \"value\": \"string\", \"operator\": \"lt\" } } ``` Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). (optional)
 type = 'type_example' # str | Filter by access type, available values are: video, sub (optional)
 date_add = 'date_add_example' # str | Filter by creation date (optional)
 date_add_direction = 'date_add_direction_example' # str | Choose the direction for date_add parameter, default value is after, available values are: before, equal, after (optional)
 date_exp = 'date_exp_example' # str | Filter by expiration date (optional)
 date_exp_direction = 'date_exp_direction_example' # str | Choose the direction for date_exp parameter, default value is after, available values are: before, equal, after (optional)
-filters = 'filters_example' # str |      ```     type[value]=string&type[operator]=strict&cancel[value]=string&cancel[operator]=contains     _______________      {     \"type\": {     \"value\": \"string\",     \"operator\": \"strict\"     },     \"cancel\": {     \"value\": \"string\",     \"operator\": \"contains\"     }     } ```Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). (optional)
 
 try: 
-    api_response = api_instance.get_product_accesses(page=page, per_page=per_page, type=type, date_add=date_add, date_add_direction=date_add_direction, date_exp=date_exp, date_exp_direction=date_exp_direction, filters=filters)
+    api_response = api_instance.get_product_accesses(page=page, per_page=per_page, filters=filters, type=type, date_add=date_add, date_add_direction=date_add_direction, date_exp=date_exp, date_exp_direction=date_exp_direction)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProductAccessesApi->get_product_accesses: %s\n" % e)
@@ -335,16 +335,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
+ **filters** | **str**|  &#x60;&#x60;&#x60; name[value]&#x3D;string&amp;name][operator]&#x3D;contains&amp;date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt _______________  { \&quot;name\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;contains\&quot; }, \&quot;date_add\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;lt\&quot; } } &#x60;&#x60;&#x60; Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
  **type** | **str**| Filter by access type, available values are: video, sub | [optional] 
  **date_add** | **str**| Filter by creation date | [optional] 
  **date_add_direction** | **str**| Choose the direction for date_add parameter, default value is after, available values are: before, equal, after | [optional] 
  **date_exp** | **str**| Filter by expiration date | [optional] 
  **date_exp_direction** | **str**| Choose the direction for date_exp parameter, default value is after, available values are: before, equal, after | [optional] 
- **filters** | **str**|      &#x60;&#x60;&#x60;     type[value]&#x3D;string&amp;type[operator]&#x3D;strict&amp;cancel[value]&#x3D;string&amp;cancel[operator]&#x3D;contains     _______________      {     \&quot;type\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;strict\&quot;     },     \&quot;cancel\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;contains\&quot;     }     } &#x60;&#x60;&#x60;Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
 
 ### Return type
 
-[**SubscriptionAccesses**](#SubscriptionAccesses)
+[**ProductAccessListResponse**](#ProductAccessListResponse)
 
 ### HTTP request headers
 
@@ -509,7 +509,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **switch_subscription_pending**
-> Subscription switch_subscription_pending(product_access_id)
+> SubscriptionResponse switch_subscription_pending(product_access_id)
 
 
 
@@ -551,7 +551,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Subscription**](#Subscription)
+[**SubscriptionResponse**](#SubscriptionResponse)
 
 ### HTTP request headers
 
@@ -614,7 +614,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **update_product_access**
-> ProductAccess update_product_access(product_access_id, body)
+> ProductAccessResponse update_product_access(product_access_id, body)
 
 
 
@@ -640,7 +640,7 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = kinow_client.ProductAccessesApi()
 product_access_id = 789 # int | Product access ID to update
-body = kinow_client.ProductAccess() # ProductAccess | 
+body = kinow_client.UpdateProductAccessRequest() # UpdateProductAccessRequest | 
 
 try: 
     api_response = api_instance.update_product_access(product_access_id, body)
@@ -654,11 +654,11 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **product_access_id** | **int**| Product access ID to update | 
- **body** | [**ProductAccess**](#ProductAccess)|  | 
+ **body** | [**UpdateProductAccessRequest**](#UpdateProductAccessRequest)|  | 
 
 ### Return type
 
-[**ProductAccess**](#ProductAccess)
+[**ProductAccessResponse**](#ProductAccessResponse)
 
 ### HTTP request headers
 

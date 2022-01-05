@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 ## **get_geoloc_settings**
-> GeolocSettings get_geoloc_settings(type, type_id)
+> GeolocSettingsResponse get_geoloc_settings(type, type_id)
 
 
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GeolocSettings**](#GeolocSettings)
+[**GeolocSettingsResponse**](#GeolocSettingsResponse)
 
 ### HTTP request headers
 
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_ip_location**
-> IPLocation get_ip_location(ip_address)
+> IPLocationResponse get_ip_location(ip_address)
 
 
 
@@ -111,7 +111,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**IPLocation**](#IPLocation)
+[**IPLocationResponse**](#IPLocationResponse)
 
 ### HTTP request headers
 
@@ -121,7 +121,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_platform_access_info**
-> PlatformAccessInfo get_platform_access_info(ip_address)
+> PlatformAccessResponse get_platform_access_info(ip_address)
 
 
 
@@ -163,7 +163,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PlatformAccessInfo**](#PlatformAccessInfo)
+[**PlatformAccessResponse**](#PlatformAccessResponse)
 
 ### HTTP request headers
 
@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_product_geolocations**
-> Geolocs get_product_geolocations(product_id, page=page, per_page=per_page)
+> GeolocationListResponse get_product_geolocations(product_id, page=page, per_page=per_page)
 
 
 
@@ -219,7 +219,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Geolocs**](#Geolocs)
+[**GeolocationListResponse**](#GeolocationListResponse)
 
 ### HTTP request headers
 

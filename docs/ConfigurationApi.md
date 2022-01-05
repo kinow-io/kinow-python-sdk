@@ -12,11 +12,11 @@ Method | HTTP request | Description
 
 
 ## **get_configuration**
-> ConfigurationList get_configuration(page=page, per_page=per_page)
+> ConfigurationListResponse get_configuration(page=page, per_page=per_page)
 
 
 
-      Get configuration by name.      Available :         - PLATFORM_NAME         - ACTIVE         - LANG_DEFAULT         - CURRENCY_DEFAULT         - COUNTRY_DEFAULT         - TIMEZONE         - COPYRIGHT         - COOKIE_WARNING         - RECAPTCHA_KEY         - CUSTOMER_REGISTRATION         - CATALOG_RESTRICTED         - CATALOG_SUBSCRIPTION         - PRODUCTS_ORDER_BY         - PRODUCTS_ORDER_WAY         - PRODUCTS_RAIL_NB         - PRODUCTS_NEW_DAYS         - FORCE_TAX_ID         - CMS_CONDITIONS_ID         - GEOLOCATION_WHITELIST         - PASSWORD_MIN_LENGTH         - PASSWORD_MIN_CAPITALIZE         - PASSWORD_MIN_NUMERIC         - PASSWORD_MIN_SPECIAL      
+Get all configurations
 
 ### Example 
 ```python
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ConfigurationList**](#ConfigurationList)
+[**ConfigurationListResponse**](#ConfigurationListResponse)
 
 ### HTTP request headers
 
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_configuration_analytics**
-> Analytics get_configuration_analytics(page=page, per_page=per_page)
+> AnalyticListResponse get_configuration_analytics(page=page, per_page=per_page)
 
 
 
@@ -110,7 +110,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Analytics**](#Analytics)
+[**AnalyticListResponse**](#AnalyticListResponse)
 
 ### HTTP request headers
 
@@ -120,11 +120,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_configuration_by_name**
-> Configuration get_configuration_by_name(configuration_name)
+> ConfigurationResponse get_configuration_by_name(configuration_name)
 
 
 
-     Get configuration by name.     Available :     - LANG_DEFAULT     - CURRENCY_DEFAULT     - COUNTRY_DEFAULT     - TIMEZONE     
+Get configuration by name
 
 ### Example 
 ```python
@@ -162,7 +162,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Configuration**](#Configuration)
+[**ConfigurationResponse**](#ConfigurationResponse)
 
 ### HTTP request headers
 

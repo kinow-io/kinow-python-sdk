@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_category_video_subtitles**
-> VideoSubtitlesResponse get_category_video_subtitles(video_id, page=page, per_page=per_page)
+> SubtitleListResponse get_category_video_subtitles(video_id, page=page, per_page=per_page)
 
 
 
@@ -113,7 +113,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VideoSubtitlesResponse**](#VideoSubtitlesResponse)
+[**SubtitleListResponse**](#SubtitleListResponse)
 
 ### HTTP request headers
 
@@ -123,7 +123,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_videos_from_categories**
-> Videos get_videos_from_categories(page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction)
+> VideoCategoryListResponse get_videos_from_categories(page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction)
 
 
 
@@ -171,7 +171,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Videos**](#Videos)
+[**VideoCategoryListResponse**](#VideoCategoryListResponse)
 
 ### HTTP request headers
 
@@ -181,7 +181,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_videos_from_category**
-> Videos get_videos_from_category(category_id, page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction)
+> VideoCategoryListResponse get_videos_from_category(category_id, page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction)
 
 
 
@@ -231,7 +231,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Videos**](#Videos)
+[**VideoCategoryListResponse**](#VideoCategoryListResponse)
 
 ### HTTP request headers
 

@@ -278,7 +278,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_feature_values**
-> Products1 get_feature_values(page=page, per_page=per_page)
+> Products get_feature_values(page=page, per_page=per_page)
 
 
 
@@ -322,7 +322,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Products1**](#Products1)
+[**Products**](#Products)
 
 ### HTTP request headers
 

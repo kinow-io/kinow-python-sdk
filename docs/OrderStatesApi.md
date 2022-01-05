@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 ## **get_order_state**
-> OrderState get_order_state(order_state_id)
+> OrderStateResponse get_order_state(order_state_id)
 
 
 
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OrderState**](#OrderState)
+[**OrderStateResponse**](#OrderStateResponse)
 
 ### HTTP request headers
 
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_order_states**
-> OrderStates get_order_states(page=page, per_page=per_page)
+> OrderStateListResponse get_order_states(page=page, per_page=per_page)
 
 
 
@@ -105,7 +105,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OrderStates**](#OrderStates)
+[**OrderStateListResponse**](#OrderStateListResponse)
 
 ### HTTP request headers
 

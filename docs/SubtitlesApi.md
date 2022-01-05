@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 ## **create_extract_subtitle**
-> Subtitle create_extract_subtitle(extract_id, body)
+> SubtitleResponse create_extract_subtitle(extract_id, body)
 
 
 
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Subtitle**](#Subtitle)
+[**SubtitleResponse**](#SubtitleResponse)
 
 ### HTTP request headers
 
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **create_video_subtitle**
-> Subtitle create_video_subtitle(video_id, body)
+> SubtitleResponse create_video_subtitle(video_id, body)
 
 
 
@@ -111,7 +111,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Subtitle**](#Subtitle)
+[**SubtitleResponse**](#SubtitleResponse)
 
 ### HTTP request headers
 
@@ -121,7 +121,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_category_video_subtitles**
-> VideoSubtitlesResponse get_category_video_subtitles(video_id, page=page, per_page=per_page)
+> SubtitleListResponse get_category_video_subtitles(video_id, page=page, per_page=per_page)
 
 
 
@@ -167,7 +167,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VideoSubtitlesResponse**](#VideoSubtitlesResponse)
+[**SubtitleListResponse**](#SubtitleListResponse)
 
 ### HTTP request headers
 
@@ -177,7 +177,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_extract_subtitles**
-> VideoSubtitlesResponse get_extract_subtitles(extract_id, page=page, per_page=per_page)
+> ExtractSubtitlesResponse get_extract_subtitles(extract_id, page=page, per_page=per_page)
 
 
 
@@ -223,7 +223,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VideoSubtitlesResponse**](#VideoSubtitlesResponse)
+[**ExtractSubtitlesResponse**](#ExtractSubtitlesResponse)
 
 ### HTTP request headers
 
@@ -233,7 +233,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_subtitles**
-> SubtitleFiles get_subtitles(page=page, per_page=per_page)
+> SubtitleFileListResponse get_subtitles(page=page, per_page=per_page)
 
 
 
@@ -277,7 +277,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SubtitleFiles**](#SubtitleFiles)
+[**SubtitleFileListResponse**](#SubtitleFileListResponse)
 
 ### HTTP request headers
 
@@ -287,7 +287,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_video_subtitles**
-> VideoSubtitlesResponse get_video_subtitles(video_id, page=page, per_page=per_page)
+> ExtractSubtitlesResponse get_video_subtitles(video_id, page=page, per_page=per_page)
 
 
 
@@ -333,7 +333,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VideoSubtitlesResponse**](#VideoSubtitlesResponse)
+[**ExtractSubtitlesResponse**](#ExtractSubtitlesResponse)
 
 ### HTTP request headers
 

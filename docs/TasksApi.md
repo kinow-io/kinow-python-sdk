@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 ## **create_task**
-> Task create_task(body)
+> TaskResponse create_task(body)
 
 
 
@@ -33,7 +33,7 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = kinow_client.TasksApi()
-body = kinow_client.TaskCreateRequest() # TaskCreateRequest | Create task object
+body = kinow_client.CreateTaskRequest() # CreateTaskRequest | Create task object
 
 try: 
     api_response = api_instance.create_task(body)
@@ -46,11 +46,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TaskCreateRequest**](#TaskCreateRequest)| Create task object | 
+ **body** | [**CreateTaskRequest**](#CreateTaskRequest)| Create task object | 
 
 ### Return type
 
-[**Task**](#Task)
+[**TaskResponse**](#TaskResponse)
 
 ### HTTP request headers
 

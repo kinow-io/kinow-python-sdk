@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 ## **create_devices**
-> Device create_devices(body)
+> DeviceResponse create_devices(body)
 
 
 
@@ -35,7 +35,7 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = kinow_client.DevicesApi()
-body = kinow_client.ProductAttributeCreateRequest1() # ProductAttributeCreateRequest1 | 
+body = kinow_client.CreateDeviceRequest() # CreateDeviceRequest | 
 
 try: 
     api_response = api_instance.create_devices(body)
@@ -48,11 +48,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ProductAttributeCreateRequest1**](#ProductAttributeCreateRequest1)|  | 
+ **body** | [**CreateDeviceRequest**](#CreateDeviceRequest)|  | 
 
 ### Return type
 
-[**Device**](#Device)
+[**DeviceResponse**](#DeviceResponse)
 
 ### HTTP request headers
 
@@ -113,7 +113,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_customer_devices**
-> DeviceList get_customer_devices(customer_id, page=page, per_page=per_page)
+> DeviceListResponse get_customer_devices(customer_id, page=page, per_page=per_page)
 
 
 
@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeviceList**](#DeviceList)
+[**DeviceListResponse**](#DeviceListResponse)
 
 ### HTTP request headers
 

@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 ## **create_cms_page**
-> CMSPage create_cms_page(body)
+> CMSPageResponse create_cms_page(body)
 
 
 
@@ -35,7 +35,7 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = kinow_client.CMSPagesApi()
-body = kinow_client.CMSPage() # CMSPage | 
+body = kinow_client.CreateCMSPageRequest() # CreateCMSPageRequest | 
 
 try: 
     api_response = api_instance.create_cms_page(body)
@@ -48,11 +48,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CMSPage**](#CMSPage)|  | 
+ **body** | [**CreateCMSPageRequest**](#CreateCMSPageRequest)|  | 
 
 ### Return type
 
-[**CMSPage**](#CMSPage)
+[**CMSPageResponse**](#CMSPageResponse)
 
 ### HTTP request headers
 
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_cms_pages**
-> CMSPageLists get_cms_pages(page=page, per_page=per_page, filters=filters, sort_by=sort_by, sort_direction=sort_direction)
+> CMSPageListResponse get_cms_pages(page=page, per_page=per_page, filters=filters, sort_by=sort_by, sort_direction=sort_direction)
 
 
 
@@ -89,7 +89,7 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 api_instance = kinow_client.CMSPagesApi()
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
-filters = 'filters_example' # str |      ```     name[value]=string&name[operator]=contains&date_add[value]=string&date_add[operator]=lt     _______________      {     \"name\": {     \"value\": \"string\",     \"operator\": \"contains\"     },     \"date_add\": {     \"value\": \"string\",     \"operator\": \"lt\"     }     } ```     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). (optional)
+filters = 'filters_example' # str |  ``` name[value]=string&name][operator]=contains&date_add[value]=string&date_add[operator]=lt _______________  { \"name\": { \"value\": \"string\", \"operator\": \"contains\" }, \"date_add\": { \"value\": \"string\", \"operator\": \"lt\" } } ``` Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). (optional)
 sort_by = 'sort_by_example' # str | Sort by this attribute (id by default) (optional)
 sort_direction = 'sort_direction_example' # str | Sorting direction (asc by default) (optional)
 
@@ -106,13 +106,13 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
- **filters** | **str**|      &#x60;&#x60;&#x60;     name[value]&#x3D;string&amp;name[operator]&#x3D;contains&amp;date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt     _______________      {     \&quot;name\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;contains\&quot;     },     \&quot;date_add\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;lt\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
+ **filters** | **str**|  &#x60;&#x60;&#x60; name[value]&#x3D;string&amp;name][operator]&#x3D;contains&amp;date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt _______________  { \&quot;name\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;contains\&quot; }, \&quot;date_add\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;lt\&quot; } } &#x60;&#x60;&#x60; Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
  **sort_by** | **str**| Sort by this attribute (id by default) | [optional] 
  **sort_direction** | **str**| Sorting direction (asc by default) | [optional] 
 
 ### Return type
 
-[**CMSPageLists**](#CMSPageLists)
+[**CMSPageListResponse**](#CMSPageListResponse)
 
 ### HTTP request headers
 
@@ -122,7 +122,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **update_cms_page**
-> CMSPage update_cms_page(cms_page_id, body)
+> CMSPageResponse update_cms_page(cms_page_id, body)
 
 
 
@@ -148,7 +148,7 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = kinow_client.CMSPagesApi()
 cms_page_id = 789 # int | CMS page ID to update
-body = kinow_client.CMSPage() # CMSPage | 
+body = kinow_client.UpdateCMSPageRequest() # UpdateCMSPageRequest | 
 
 try: 
     api_response = api_instance.update_cms_page(cms_page_id, body)
@@ -162,11 +162,11 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cms_page_id** | **int**| CMS page ID to update | 
- **body** | [**CMSPage**](#CMSPage)|  | 
+ **body** | [**UpdateCMSPageRequest**](#UpdateCMSPageRequest)|  | 
 
 ### Return type
 
-[**CMSPage**](#CMSPage)
+[**CMSPageResponse**](#CMSPageResponse)
 
 ### HTTP request headers
 

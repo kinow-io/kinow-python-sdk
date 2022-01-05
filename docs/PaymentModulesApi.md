@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_payment_methods**
-> list[PaymentMethods] get_payment_methods(customer_id, payment_name)
+> list[PaymentMethodsResponse] get_payment_methods(customer_id, payment_name)
 
 
 
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[PaymentMethods]**](#PaymentMethods)
+[**list[PaymentMethodsResponse]**](#PaymentMethodsResponse)
 
 ### HTTP request headers
 
@@ -130,7 +130,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_payment_methods_with_ip**
-> list[PaymentMethods] get_payment_methods_with_ip(customer_id, payment_name, ip_address)
+> list[PaymentMethodsResponse] get_payment_methods_with_ip(customer_id, payment_name, ip_address)
 
 
 
@@ -176,7 +176,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[PaymentMethods]**](#PaymentMethods)
+[**list[PaymentMethodsResponse]**](#PaymentMethodsResponse)
 
 ### HTTP request headers
 
@@ -186,7 +186,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_payment_modules**
-> PaymentModules get_payment_modules(page=page, per_page=per_page)
+> PaymentModuleListResponse get_payment_modules(page=page, per_page=per_page)
 
 
 
@@ -230,7 +230,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaymentModules**](#PaymentModules)
+[**PaymentModuleListResponse**](#PaymentModuleListResponse)
 
 ### HTTP request headers
 
@@ -292,7 +292,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_payment_url**
-> PaymentUrl get_payment_url(cart_id, payment_name)
+> PaymentUrlResponse get_payment_url(cart_id, payment_name)
 
 
 
@@ -336,7 +336,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaymentUrl**](#PaymentUrl)
+[**PaymentUrlResponse**](#PaymentUrlResponse)
 
 ### HTTP request headers
 
@@ -346,7 +346,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_pending_payments**
-> list[PaymentDetails] get_pending_payments(payment_name, customer_id)
+> list[PaymentDetailsResponse] get_pending_payments(payment_name, customer_id)
 
 
 
@@ -390,7 +390,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[PaymentDetails]**](#PaymentDetails)
+[**list[PaymentDetailsResponse]**](#PaymentDetailsResponse)
 
 ### HTTP request headers
 
@@ -400,7 +400,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_pending_payments_with_ip**
-> list[PaymentDetails] get_pending_payments_with_ip(payment_name, customer_id, ip_address)
+> PaymentDetailsListResponse get_pending_payments_with_ip(payment_name, customer_id, ip_address)
 
 
 
@@ -446,7 +446,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[PaymentDetails]**](#PaymentDetails)
+[**PaymentDetailsListResponse**](#PaymentDetailsListResponse)
 
 ### HTTP request headers
 
@@ -456,7 +456,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **prepare_payment**
-> PaymentDetails1 prepare_payment(cart_id, payment_name, ip_address=ip_address)
+> PaymentDetailsResponse1 prepare_payment(cart_id, payment_name, ip_address=ip_address)
 
 
 
@@ -502,7 +502,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaymentDetails1**](#PaymentDetails1)
+[**PaymentDetailsResponse1**](#PaymentDetailsResponse1)
 
 ### HTTP request headers
 
@@ -594,7 +594,7 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 api_instance = kinow_client.PaymentModulesApi()
 customer_id = 789 # int | 
 payment_name = 'payment_name_example' # str | 
-payment_arguments = kinow_client.PaymentArguments() # PaymentArguments | Payment arguments
+payment_arguments = kinow_client.UpdatePaymentRequest() # UpdatePaymentRequest | Payment arguments
 ip_address = 'ip_address_example' # str | Filter by user IP (optional)
 
 try: 
@@ -609,7 +609,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customer_id** | **int**|  | 
  **payment_name** | **str**|  | 
- **payment_arguments** | [**PaymentArguments**](#PaymentArguments)| Payment arguments | 
+ **payment_arguments** | [**UpdatePaymentRequest**](#UpdatePaymentRequest)| Payment arguments | 
  **ip_address** | **str**| Filter by user IP | [optional] 
 
 ### Return type
@@ -702,7 +702,7 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 api_instance = kinow_client.PaymentModulesApi()
 cart_id = 789 # int | Cart ID to fetch
 payment_name = 'payment_name_example' # str | Payment gateway name
-payment_argument = kinow_client.PaymentArguments() # PaymentArguments | Payment argument
+payment_argument = kinow_client.PaymentArgumentsResponse() # PaymentArgumentsResponse | Payment argument
 
 try: 
     api_instance.validate_payment(cart_id, payment_name, payment_argument)
@@ -716,7 +716,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cart_id** | **int**| Cart ID to fetch | 
  **payment_name** | **str**| Payment gateway name | 
- **payment_argument** | [**PaymentArguments**](#PaymentArguments)| Payment argument | 
+ **payment_argument** | [**PaymentArgumentsResponse**](#PaymentArgumentsResponse)| Payment argument | 
 
 ### Return type
 

@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 ## **get_order_histories**
-> OrderHistories get_order_histories(order_id, page=page, per_page=per_page)
+> OrderHistoryListResponse get_order_histories(order_id, page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction)
 
 
 
@@ -36,9 +36,11 @@ api_instance = kinow_client.OrderHistoriesApi()
 order_id = 789 # int | Order ID to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
+sort_by = 'sort_by_example' # str | Sort by this attribute (id by default) (optional)
+sort_direction = 'sort_direction_example' # str | Sorting direction (asc by default) (optional)
 
 try: 
-    api_response = api_instance.get_order_histories(order_id, page=page, per_page=per_page)
+    api_response = api_instance.get_order_histories(order_id, page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling OrderHistoriesApi->get_order_histories: %s\n" % e)
@@ -51,10 +53,12 @@ Name | Type | Description  | Notes
  **order_id** | **int**| Order ID to fetch | 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
+ **sort_by** | **str**| Sort by this attribute (id by default) | [optional] 
+ **sort_direction** | **str**| Sorting direction (asc by default) | [optional] 
 
 ### Return type
 
-[**OrderHistories**](#OrderHistories)
+[**OrderHistoryListResponse**](#OrderHistoryListResponse)
 
 ### HTTP request headers
 

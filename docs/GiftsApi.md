@@ -73,7 +73,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **create_gift**
-> Gift create_gift(body)
+> GiftResponse create_gift(body)
 
 
 
@@ -98,7 +98,7 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = kinow_client.GiftsApi()
-body = kinow_client.Gift1() # Gift1 | Gift settings
+body = kinow_client.CreateGiftRequest() # CreateGiftRequest | Gift settings
 
 try: 
     api_response = api_instance.create_gift(body)
@@ -111,11 +111,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Gift1**](#Gift1)| Gift settings | 
+ **body** | [**CreateGiftRequest**](#CreateGiftRequest)| Gift settings | 
 
 ### Return type
 
-[**Gift**](#Gift)
+[**GiftResponse**](#GiftResponse)
 
 ### HTTP request headers
 
@@ -227,7 +227,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_gift**
-> Gift get_gift(gift_id)
+> GiftResponse get_gift(gift_id)
 
 
 
@@ -269,7 +269,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Gift**](#Gift)
+[**GiftResponse**](#GiftResponse)
 
 ### HTTP request headers
 
@@ -279,7 +279,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_gift_in_cart**
-> Gift get_gift_in_cart(cart_id)
+> GiftResponse get_gift_in_cart(cart_id)
 
 
 
@@ -321,7 +321,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Gift**](#Gift)
+[**GiftResponse**](#GiftResponse)
 
 ### HTTP request headers
 
@@ -331,7 +331,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_gift_token**
-> GiftToken get_gift_token(gift_id)
+> GiftTokenResponse get_gift_token(gift_id)
 
 
 
@@ -373,7 +373,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GiftToken**](#GiftToken)
+[**GiftTokenResponse**](#GiftTokenResponse)
 
 ### HTTP request headers
 
@@ -383,7 +383,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_gifts**
-> Gifts1 get_gifts(unused_only=unused_only, paid_only=paid_only, page=page, per_page=per_page)
+> GiftListResponse get_gifts(unused_only=unused_only, paid_only=paid_only, page=page, per_page=per_page)
 
 
 
@@ -431,7 +431,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Gifts1**](#Gifts1)
+[**GiftListResponse**](#GiftListResponse)
 
 ### HTTP request headers
 
@@ -441,7 +441,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_gifts_in_cart**
-> list[Gift] get_gifts_in_cart(cart_id)
+> GiftListResponse get_gifts_in_cart(cart_id)
 
 
 
@@ -483,7 +483,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[Gift]**](#Gift)
+[**GiftListResponse**](#GiftListResponse)
 
 ### HTTP request headers
 
@@ -544,7 +544,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **update_gift**
-> Gift update_gift(gift_id, body)
+> GiftResponse update_gift(gift_id, body)
 
 
 
@@ -570,7 +570,7 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = kinow_client.GiftsApi()
 gift_id = 789 # int | Gift ID to fetch
-body = kinow_client.Gift2() # Gift2 | Gift settings
+body = kinow_client.UpdateGiftRequest() # UpdateGiftRequest | Gift settings
 
 try: 
     api_response = api_instance.update_gift(gift_id, body)
@@ -584,11 +584,11 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **gift_id** | **int**| Gift ID to fetch | 
- **body** | [**Gift2**](#Gift2)| Gift settings | 
+ **body** | [**UpdateGiftRequest**](#UpdateGiftRequest)| Gift settings | 
 
 ### Return type
 
-[**Gift**](#Gift)
+[**GiftResponse**](#GiftResponse)
 
 ### HTTP request headers
 

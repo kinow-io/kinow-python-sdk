@@ -116,7 +116,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_customer_bookmarks**
-> Products get_customer_bookmarks(customer_id, page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction)
+> ProductListResponse get_customer_bookmarks(customer_id, page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction)
 
 
 
@@ -166,7 +166,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Products**](#Products)
+[**ProductListResponse**](#ProductListResponse)
 
 ### HTTP request headers
 

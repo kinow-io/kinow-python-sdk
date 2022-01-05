@@ -26,7 +26,7 @@ Method | HTTP request | Description
 
 
 ## **get_actor_cover_image**
-> Image get_actor_cover_image(actor_id)
+> ImageResponse get_actor_cover_image(actor_id)
 
 
 
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Image**](#Image)
+[**ImageResponse**](#ImageResponse)
 
 ### HTTP request headers
 
@@ -78,7 +78,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_category_banner**
-> Image get_category_banner(category_id)
+> ImageResponse get_category_banner(category_id)
 
 
 
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Image**](#Image)
+[**ImageResponse**](#ImageResponse)
 
 ### HTTP request headers
 
@@ -236,7 +236,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_director_cover_image**
-> Image get_director_cover_image(director_id)
+> ImageResponse get_director_cover_image(director_id)
 
 
 
@@ -278,7 +278,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Image**](#Image)
+[**ImageResponse**](#ImageResponse)
 
 ### HTTP request headers
 
@@ -288,7 +288,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_product_cover_image**
-> Image get_product_cover_image(product_id)
+> ImageResponse get_product_cover_image(product_id)
 
 
 
@@ -330,7 +330,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Image**](#Image)
+[**ImageResponse**](#ImageResponse)
 
 ### HTTP request headers
 
@@ -388,7 +388,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_product_images**
-> CategoryImagesResponse get_product_images(product_id, type=type, page=page, per_page=per_page)
+> ImageListResponse get_product_images(product_id, type=type, page=page, per_page=per_page)
 
 
 
@@ -436,7 +436,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CategoryImagesResponse**](#CategoryImagesResponse)
+[**ImageListResponse**](#ImageListResponse)
 
 ### HTTP request headers
 
@@ -498,7 +498,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_slider_image**
-> list[Image] get_slider_image()
+> ImageListResponse get_slider_image()
 
 
 
@@ -536,7 +536,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**list[Image]**](#Image)
+[**ImageListResponse**](#ImageListResponse)
 
 ### HTTP request headers
 
@@ -546,7 +546,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_subscription_cover_image**
-> Image get_subscription_cover_image(subscription_id)
+> ImageResponse get_subscription_cover_image(subscription_id)
 
 
 
@@ -588,7 +588,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Image**](#Image)
+[**ImageResponse**](#ImageResponse)
 
 ### HTTP request headers
 
@@ -598,7 +598,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_video_cover**
-> Image get_video_cover(video_id)
+> ImageResponse get_video_cover(video_id)
 
 
 
@@ -640,7 +640,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Image**](#Image)
+[**ImageResponse**](#ImageResponse)
 
 ### HTTP request headers
 
@@ -650,7 +650,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **upload_actor_cover**
-> Image upload_actor_cover(actor_id, file, hash, hash_algorithm=hash_algorithm)
+> ImageResponse upload_actor_cover(body)
 
 
 
@@ -675,13 +675,10 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = kinow_client.ImagesApi()
-actor_id = 3.4 # float | Actor ID to fetch
-file = '/path/to/file.txt' # file | 
-hash = 'hash_example' # str | 
-hash_algorithm = 'hash_algorithm_example' # str | Hash algorithm to check the hash file (default value is: sha256) (optional)
+body = kinow_client.UploadActorCoverRequest() # UploadActorCoverRequest | 
 
 try: 
-    api_response = api_instance.upload_actor_cover(actor_id, file, hash, hash_algorithm=hash_algorithm)
+    api_response = api_instance.upload_actor_cover(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ImagesApi->upload_actor_cover: %s\n" % e)
@@ -691,14 +688,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **actor_id** | **float**| Actor ID to fetch | 
- **file** | **file**|  | 
- **hash** | **str**|  | 
- **hash_algorithm** | **str**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
+ **body** | [**UploadActorCoverRequest**](#UploadActorCoverRequest)|  | 
 
 ### Return type
 
-[**Image**](#Image)
+[**ImageResponse**](#ImageResponse)
 
 ### HTTP request headers
 
@@ -708,7 +702,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **upload_category_cover**
-> Image upload_category_cover(category_id, file, hash, hash_algorithm=hash_algorithm)
+> ImageResponse upload_category_cover(body)
 
 
 
@@ -733,13 +727,10 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = kinow_client.ImagesApi()
-category_id = 3.4 # float | Category ID to fetch
-file = '/path/to/file.txt' # file | 
-hash = 'hash_example' # str | 
-hash_algorithm = 'hash_algorithm_example' # str | Hash algorithm to check the hash file (default value is: sha256) (optional)
+body = kinow_client.UploadCategoryCoverRequest() # UploadCategoryCoverRequest | 
 
 try: 
-    api_response = api_instance.upload_category_cover(category_id, file, hash, hash_algorithm=hash_algorithm)
+    api_response = api_instance.upload_category_cover(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ImagesApi->upload_category_cover: %s\n" % e)
@@ -749,14 +740,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **category_id** | **float**| Category ID to fetch | 
- **file** | **file**|  | 
- **hash** | **str**|  | 
- **hash_algorithm** | **str**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
+ **body** | [**UploadCategoryCoverRequest**](#UploadCategoryCoverRequest)|  | 
 
 ### Return type
 
-[**Image**](#Image)
+[**ImageResponse**](#ImageResponse)
 
 ### HTTP request headers
 
@@ -826,7 +814,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **upload_director_cover**
-> Image upload_director_cover(director_id, file, hash, hash_algorithm=hash_algorithm)
+> Image upload_director_cover(body)
 
 
 
@@ -851,13 +839,10 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = kinow_client.ImagesApi()
-director_id = 3.4 # float | Director ID to fetch
-file = '/path/to/file.txt' # file | 
-hash = 'hash_example' # str | 
-hash_algorithm = 'hash_algorithm_example' # str | Hash algorithm to check the hash file (default value is: sha256) (optional)
+body = kinow_client.UploadDirectorCoverRequest() # UploadDirectorCoverRequest | 
 
 try: 
-    api_response = api_instance.upload_director_cover(director_id, file, hash, hash_algorithm=hash_algorithm)
+    api_response = api_instance.upload_director_cover(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ImagesApi->upload_director_cover: %s\n" % e)
@@ -867,10 +852,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **director_id** | **float**| Director ID to fetch | 
- **file** | **file**|  | 
- **hash** | **str**|  | 
- **hash_algorithm** | **str**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
+ **body** | [**UploadDirectorCoverRequest**](#UploadDirectorCoverRequest)|  | 
 
 ### Return type
 
@@ -884,7 +866,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **upload_product_cover**
-> Image upload_product_cover(product_id, file, hash, hash_algorithm=hash_algorithm)
+> ImageResponse upload_product_cover(body)
 
 
 
@@ -909,13 +891,10 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = kinow_client.ImagesApi()
-product_id = 3.4 # float | Product ID to fetch
-file = '/path/to/file.txt' # file | 
-hash = 'hash_example' # str | 
-hash_algorithm = 'hash_algorithm_example' # str | Hash algorithm to check the hash file (default value is: sha256) (optional)
+body = kinow_client.UploadProductCoverRequest() # UploadProductCoverRequest | 
 
 try: 
-    api_response = api_instance.upload_product_cover(product_id, file, hash, hash_algorithm=hash_algorithm)
+    api_response = api_instance.upload_product_cover(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ImagesApi->upload_product_cover: %s\n" % e)
@@ -925,14 +904,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product_id** | **float**| Product ID to fetch | 
- **file** | **file**|  | 
- **hash** | **str**|  | 
- **hash_algorithm** | **str**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
+ **body** | [**UploadProductCoverRequest**](#UploadProductCoverRequest)|  | 
 
 ### Return type
 
-[**Image**](#Image)
+[**ImageResponse**](#ImageResponse)
 
 ### HTTP request headers
 
@@ -1002,7 +978,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **upload_subscription_cover**
-> Image upload_subscription_cover(subscription_id, file, hash, hash_algorithm=hash_algorithm)
+> ImageResponse upload_subscription_cover(body)
 
 
 
@@ -1027,13 +1003,10 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = kinow_client.ImagesApi()
-subscription_id = 3.4 # float | Subscription ID to fetch
-file = '/path/to/file.txt' # file | 
-hash = 'hash_example' # str | 
-hash_algorithm = 'hash_algorithm_example' # str | Hash algorithm to check the hash file (default value is: sha256) (optional)
+body = kinow_client.UploadSubscriptionCoverRequest() # UploadSubscriptionCoverRequest | 
 
 try: 
-    api_response = api_instance.upload_subscription_cover(subscription_id, file, hash, hash_algorithm=hash_algorithm)
+    api_response = api_instance.upload_subscription_cover(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ImagesApi->upload_subscription_cover: %s\n" % e)
@@ -1043,14 +1016,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **subscription_id** | **float**| Subscription ID to fetch | 
- **file** | **file**|  | 
- **hash** | **str**|  | 
- **hash_algorithm** | **str**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
+ **body** | [**UploadSubscriptionCoverRequest**](#UploadSubscriptionCoverRequest)|  | 
 
 ### Return type
 
-[**Image**](#Image)
+[**ImageResponse**](#ImageResponse)
 
 ### HTTP request headers
 

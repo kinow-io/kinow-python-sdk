@@ -9,7 +9,6 @@ Method | HTTP request | Description
 [**attach_cart_to_customer**](#attach_cart_to_customer) | **POST** /customers/{customer_id}/carts | 
 [**create_cart**](#create_cart) | **POST** /carts | 
 [**delete_cart**](#delete_cart) | **DELETE** /carts/{cart_id} | 
-[**delete_product_from_cart**](#delete_product_from_cart) | **DELETE** /carts/{cart_id}/products | 
 [**detach_cart_rule_from_cart**](#detach_cart_rule_from_cart) | **DELETE** /carts/{cart_id}/cart-rules/{cart_rule_id} | 
 [**empty_cart**](#empty_cart) | **POST** /carts/{cart_id}/empty | 
 [**get_cart**](#get_cart) | **GET** /carts/{cart_id} | 
@@ -22,13 +21,14 @@ Method | HTTP request | Description
 [**get_price**](#get_price) | **POST** /carts/price | 
 [**prepare_payment**](#prepare_payment) | **POST** /carts/{cart_id}/payments/{payment_name}/prepare | 
 [**recurring_payment**](#recurring_payment) | **POST** /carts/{cart_id}/payments/{payment_name}/recurring | 
+[**remove_product_from_cart**](#remove_product_from_cart) | **DELETE** /carts/{cart_id}/products | 
 [**update_cart**](#update_cart) | **PUT** /carts/{cart_id} | 
 [**validate_free_order**](#validate_free_order) | **POST** /carts/{cart_id}/validate-free-order | 
 [**validate_payment**](#validate_payment) | **POST** /carts/{cart_id}/payments/{payment_name}/validate | 
 
 
 ## **add_product_to_cart**
-> Cart add_product_to_cart(cart_id, product_id, product_attribute_id=product_attribute_id, gift_id=gift_id, switch_subscription_id=switch_subscription_id, is_gift=is_gift, ip_address=ip_address)
+> CartResponse add_product_to_cart(cart_id, body)
 
 
 
@@ -54,15 +54,10 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = kinow_client.CartsApi()
 cart_id = 789 # int | Cart ID to fetch
-product_id = 789 # int | Product ID to add to cart
-product_attribute_id = 789 # int | ProductAttribute ID, required to add product to cart if product is not a subscription (optional)
-gift_id = 789 # int | Gift ID linked to the item in cart (optional)
-switch_subscription_id = 789 # int | When customer want to switch subscription, switch_subscription_id is the product access ID that match with the subscription to cancel (optional)
-is_gift = false # bool | Allows bypass of access check (in case the current user already bought the product and it cannot be reordered) (optional) (default to false)
-ip_address = 'ip_address_example' # str | IP address (optional)
+body = kinow_client.AddProductToCartRequest() # AddProductToCartRequest | Add product to cart request
 
 try: 
-    api_response = api_instance.add_product_to_cart(cart_id, product_id, product_attribute_id=product_attribute_id, gift_id=gift_id, switch_subscription_id=switch_subscription_id, is_gift=is_gift, ip_address=ip_address)
+    api_response = api_instance.add_product_to_cart(cart_id, body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CartsApi->add_product_to_cart: %s\n" % e)
@@ -73,16 +68,11 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cart_id** | **int**| Cart ID to fetch | 
- **product_id** | **int**| Product ID to add to cart | 
- **product_attribute_id** | **int**| ProductAttribute ID, required to add product to cart if product is not a subscription | [optional] 
- **gift_id** | **int**| Gift ID linked to the item in cart | [optional] 
- **switch_subscription_id** | **int**| When customer want to switch subscription, switch_subscription_id is the product access ID that match with the subscription to cancel | [optional] 
- **is_gift** | **bool**| Allows bypass of access check (in case the current user already bought the product and it cannot be reordered) | [optional] [default to false]
- **ip_address** | **str**| IP address | [optional] 
+ **body** | [**AddProductToCartRequest**](#AddProductToCartRequest)| Add product to cart request | 
 
 ### Return type
 
-[**Cart**](#Cart)
+[**CartResponse**](#CartResponse)
 
 ### HTTP request headers
 
@@ -147,7 +137,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **attach_cart_to_customer**
-> Cart attach_cart_to_customer(customer_id, cart_id)
+> CartResponse attach_cart_to_customer(customer_id, cart_id)
 
 
 
@@ -191,7 +181,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Cart**](#Cart)
+[**CartResponse**](#CartResponse)
 
 ### HTTP request headers
 
@@ -201,7 +191,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **create_cart**
-> Cart create_cart(body)
+> CartResponse create_cart(body)
 
 
 
@@ -226,7 +216,7 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = kinow_client.CartsApi()
-body = kinow_client.Cart1() # Cart1 | Cart settings
+body = kinow_client.CreateCartRequest() # CreateCartRequest | Cart settings
 
 try: 
     api_response = api_instance.create_cart(body)
@@ -239,11 +229,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Cart1**](#Cart1)| Cart settings | 
+ **body** | [**CreateCartRequest**](#CreateCartRequest)| Cart settings | 
 
 ### Return type
 
-[**Cart**](#Cart)
+[**CartResponse**](#CartResponse)
 
 ### HTTP request headers
 
@@ -291,63 +281,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cart_id** | **int**| Cart ID to fetch | 
-
-### Return type
-
-void (empty response body)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
-
-## **delete_product_from_cart**
-> delete_product_from_cart(cart_id, product_id, product_attribute_id=product_attribute_id, gift_id=gift_id)
-
-
-
-Remove product from cart
-
-### Example 
-```python
-from __future__ import print_statement
-import time
-import kinow_client
-from kinow_client.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: ApiClientId
-kinow_client.configuration.api_key['X-Client-Id'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# kinow_client.configuration.api_key_prefix['X-Client-Id'] = 'Bearer'
-# Configure API key authorization: ApiClientSecret
-kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# kinow_client.configuration.api_key_prefix['X-Client-Secret'] = 'Bearer'
-
-# create an instance of the API class
-api_instance = kinow_client.CartsApi()
-cart_id = 789 # int | Cart ID to fetch
-product_id = 789 # int | Product ID to delete from cart
-product_attribute_id = 789 # int | Product attribute ID, required to add product to cart if product is not a subscription (optional)
-gift_id = 789 # int | Gift ID linked to the item in cart (optional)
-
-try: 
-    api_instance.delete_product_from_cart(cart_id, product_id, product_attribute_id=product_attribute_id, gift_id=gift_id)
-except ApiException as e:
-    print("Exception when calling CartsApi->delete_product_from_cart: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cart_id** | **int**| Cart ID to fetch | 
- **product_id** | **int**| Product ID to delete from cart | 
- **product_attribute_id** | **int**| Product attribute ID, required to add product to cart if product is not a subscription | [optional] 
- **gift_id** | **int**| Gift ID linked to the item in cart | [optional] 
 
 ### Return type
 
@@ -465,7 +398,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_cart**
-> Cart get_cart(cart_id)
+> CartResponse get_cart(cart_id)
 
 
 
@@ -507,7 +440,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Cart**](#Cart)
+[**CartResponse**](#CartResponse)
 
 ### HTTP request headers
 
@@ -600,7 +533,7 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 api_instance = kinow_client.CartsApi()
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
-filters = 'filters_example' # str |      ```     name[value]=string&name[operator]=contains&date_add[value]=string&date_add[operator]=lt     _______________      {     \"name\": {     \"value\": \"string\",     \"operator\": \"contains\"     },     \"date_add\": {     \"value\": \"string\",     \"operator\": \"lt\"     }     } ```     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). (optional)
+filters = 'filters_example' # str |  ``` name[value]=string&name][operator]=contains&date_add[value]=string&date_add[operator]=lt _______________  { \"name\": { \"value\": \"string\", \"operator\": \"contains\" }, \"date_add\": { \"value\": \"string\", \"operator\": \"lt\" } } ``` Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). (optional)
 sort_by = 'sort_by_example' # str | Sort by this attribute (id by default) (optional)
 sort_direction = 'sort_direction_example' # str | Sorting direction (asc by default) (optional)
 
@@ -617,7 +550,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
- **filters** | **str**|      &#x60;&#x60;&#x60;     name[value]&#x3D;string&amp;name[operator]&#x3D;contains&amp;date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt     _______________      {     \&quot;name\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;contains\&quot;     },     \&quot;date_add\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;lt\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
+ **filters** | **str**|  &#x60;&#x60;&#x60; name[value]&#x3D;string&amp;name][operator]&#x3D;contains&amp;date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt _______________  { \&quot;name\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;contains\&quot; }, \&quot;date_add\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;lt\&quot; } } &#x60;&#x60;&#x60; Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
  **sort_by** | **str**| Sort by this attribute (id by default) | [optional] 
  **sort_direction** | **str**| Sorting direction (asc by default) | [optional] 
 
@@ -633,7 +566,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_customer_carts**
-> Carts get_customer_carts(customer_id, page=page, per_page=per_page, filters=filters, sort_by=sort_by, sort_direction=sort_direction)
+> CartListResponse get_customer_carts(customer_id, page=page, per_page=per_page, filters=filters, sort_by=sort_by, sort_direction=sort_direction)
 
 
 
@@ -661,7 +594,7 @@ api_instance = kinow_client.CartsApi()
 customer_id = 789 # int | Customer ID to fetch
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
-filters = 'filters_example' # str |      ```     date_add[value]=string&date_add[operator]=lt     _______________      {     \"date_add\": {     \"value\": \"string\",     \"operator\": \"lt\"     }     } ```     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). (optional)
+filters = 'filters_example' # str |  ``` name[value]=string&name][operator]=contains&date_add[value]=string&date_add[operator]=lt _______________  { \"name\": { \"value\": \"string\", \"operator\": \"contains\" }, \"date_add\": { \"value\": \"string\", \"operator\": \"lt\" } } ``` Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). (optional)
 sort_by = 'sort_by_example' # str | Sort by this attribute (id by default) (optional)
 sort_direction = 'sort_direction_example' # str | Sorting direction (asc by default) (optional)
 
@@ -679,13 +612,13 @@ Name | Type | Description  | Notes
  **customer_id** | **int**| Customer ID to fetch | 
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
- **filters** | **str**|      &#x60;&#x60;&#x60;     date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt     _______________      {     \&quot;date_add\&quot;: {     \&quot;value\&quot;: \&quot;string\&quot;,     \&quot;operator\&quot;: \&quot;lt\&quot;     }     } &#x60;&#x60;&#x60;     Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
+ **filters** | **str**|  &#x60;&#x60;&#x60; name[value]&#x3D;string&amp;name][operator]&#x3D;contains&amp;date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt _______________  { \&quot;name\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;contains\&quot; }, \&quot;date_add\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;lt\&quot; } } &#x60;&#x60;&#x60; Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
  **sort_by** | **str**| Sort by this attribute (id by default) | [optional] 
  **sort_direction** | **str**| Sorting direction (asc by default) | [optional] 
 
 ### Return type
 
-[**Carts**](#Carts)
+[**CartListResponse**](#CartListResponse)
 
 ### HTTP request headers
 
@@ -695,7 +628,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_last_cart**
-> Cart get_last_cart(customer_id)
+> CartResponse get_last_cart(customer_id)
 
 
 
@@ -737,7 +670,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Cart**](#Cart)
+[**CartResponse**](#CartResponse)
 
 ### HTTP request headers
 
@@ -747,7 +680,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_losts_carts**
-> Carts get_losts_carts(page=page, per_page=per_page, filters=filters, sort_by=sort_by, sort_direction=sort_direction)
+> CartListResponse get_losts_carts(page=page, per_page=per_page, filters=filters, sort_by=sort_by, sort_direction=sort_direction)
 
 
 
@@ -774,7 +707,7 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 api_instance = kinow_client.CartsApi()
 page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
-filters = 'filters_example' # str |  ``` date_add[value]=string&date_add[operator]=lt _______________  {     \"date_add\": {         \"value\": \"string\",         \"operator\": \"lt\"     } } ``` Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). (optional)
+filters = 'filters_example' # str |  ``` name[value]=string&name][operator]=contains&date_add[value]=string&date_add[operator]=lt _______________  { \"name\": { \"value\": \"string\", \"operator\": \"contains\" }, \"date_add\": { \"value\": \"string\", \"operator\": \"lt\" } } ``` Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). (optional)
 sort_by = 'sort_by_example' # str | Sort by this attribute (id by default) (optional)
 sort_direction = 'sort_direction_example' # str | Sorting direction (asc by default) (optional)
 
@@ -791,13 +724,13 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**|  | [optional] 
  **per_page** | **int**|  | [optional] 
- **filters** | **str**|  &#x60;&#x60;&#x60; date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt _______________  {     \&quot;date_add\&quot;: {         \&quot;value\&quot;: \&quot;string\&quot;,         \&quot;operator\&quot;: \&quot;lt\&quot;     } } &#x60;&#x60;&#x60; Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
+ **filters** | **str**|  &#x60;&#x60;&#x60; name[value]&#x3D;string&amp;name][operator]&#x3D;contains&amp;date_add[value]&#x3D;string&amp;date_add[operator]&#x3D;lt _______________  { \&quot;name\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;contains\&quot; }, \&quot;date_add\&quot;: { \&quot;value\&quot;: \&quot;string\&quot;, \&quot;operator\&quot;: \&quot;lt\&quot; } } &#x60;&#x60;&#x60; Operator can be: strict, contains, between, in, gt (greater than), lt (lower than). | [optional] 
  **sort_by** | **str**| Sort by this attribute (id by default) | [optional] 
  **sort_direction** | **str**| Sorting direction (asc by default) | [optional] 
 
 ### Return type
 
-[**Carts**](#Carts)
+[**CartListResponse**](#CartListResponse)
 
 ### HTTP request headers
 
@@ -807,7 +740,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_payment_url**
-> PaymentUrl get_payment_url(cart_id, payment_name)
+> PaymentUrlResponse get_payment_url(cart_id, payment_name)
 
 
 
@@ -851,7 +784,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaymentUrl**](#PaymentUrl)
+[**PaymentUrlResponse**](#PaymentUrlResponse)
 
 ### HTTP request headers
 
@@ -861,7 +794,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_price**
-> list[CartPrice] get_price(body)
+> list[CartPriceResponse] get_price(body)
 
 
 
@@ -903,7 +836,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[CartPrice]**](#CartPrice)
+[**list[CartPriceResponse]**](#CartPriceResponse)
 
 ### HTTP request headers
 
@@ -913,7 +846,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **prepare_payment**
-> PaymentDetails1 prepare_payment(cart_id, payment_name, ip_address=ip_address)
+> PaymentDetailsResponse1 prepare_payment(cart_id, payment_name, ip_address=ip_address)
 
 
 
@@ -959,7 +892,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaymentDetails1**](#PaymentDetails1)
+[**PaymentDetailsResponse1**](#PaymentDetailsResponse1)
 
 ### HTTP request headers
 
@@ -1023,8 +956,65 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
+## **remove_product_from_cart**
+> remove_product_from_cart(cart_id, product_id, product_attribute_id=product_attribute_id, gift_id=gift_id)
+
+
+
+Remove product from cart
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: ApiClientId
+kinow_client.configuration.api_key['X-Client-Id'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Id'] = 'Bearer'
+# Configure API key authorization: ApiClientSecret
+kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Secret'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = kinow_client.CartsApi()
+cart_id = 789 # int | Cart ID to fetch
+product_id = 789 # int | Product ID to delete from cart
+product_attribute_id = 789 # int | Product attribute ID, required to add product to cart if product is not a subscription (optional)
+gift_id = 789 # int | Gift ID linked to the item in cart (optional)
+
+try: 
+    api_instance.remove_product_from_cart(cart_id, product_id, product_attribute_id=product_attribute_id, gift_id=gift_id)
+except ApiException as e:
+    print("Exception when calling CartsApi->remove_product_from_cart: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cart_id** | **int**| Cart ID to fetch | 
+ **product_id** | **int**| Product ID to delete from cart | 
+ **product_attribute_id** | **int**| Product attribute ID, required to add product to cart if product is not a subscription | [optional] 
+ **gift_id** | **int**| Gift ID linked to the item in cart | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
 ## **update_cart**
-> Cart update_cart(cart_id, body)
+> CartResponse update_cart(cart_id, body)
 
 
 
@@ -1050,7 +1040,7 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = kinow_client.CartsApi()
 cart_id = 789 # int | Cart id
-body = kinow_client.Cart2() # Cart2 | Cart settings
+body = kinow_client.UpdateCartRequest() # UpdateCartRequest | Cart settings
 
 try: 
     api_response = api_instance.update_cart(cart_id, body)
@@ -1064,11 +1054,11 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cart_id** | **int**| Cart id | 
- **body** | [**Cart2**](#Cart2)| Cart settings | 
+ **body** | [**UpdateCartRequest**](#UpdateCartRequest)| Cart settings | 
 
 ### Return type
 
-[**Cart**](#Cart)
+[**CartResponse**](#CartResponse)
 
 ### HTTP request headers
 
@@ -1156,7 +1146,7 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 api_instance = kinow_client.CartsApi()
 cart_id = 789 # int | Cart ID to fetch
 payment_name = 'payment_name_example' # str | Payment gateway name
-payment_argument = kinow_client.PaymentArguments() # PaymentArguments | Payment argument
+payment_argument = kinow_client.PaymentArgumentsResponse() # PaymentArgumentsResponse | Payment argument
 
 try: 
     api_instance.validate_payment(cart_id, payment_name, payment_argument)
@@ -1170,7 +1160,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cart_id** | **int**| Cart ID to fetch | 
  **payment_name** | **str**| Payment gateway name | 
- **payment_argument** | [**PaymentArguments**](#PaymentArguments)| Payment argument | 
+ **payment_argument** | [**PaymentArgumentsResponse**](#PaymentArgumentsResponse)| Payment argument | 
 
 ### Return type
 

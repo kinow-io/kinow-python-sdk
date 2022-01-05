@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 ## **get_countries**
-> Countries get_countries(page=page, per_page=per_page, bypass_pagination=bypass_pagination)
+> CountryListResponse get_countries(page=page, per_page=per_page, bypass_pagination=bypass_pagination)
 
 
 
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Countries**](#Countries)
+[**CountryListResponse**](#CountryListResponse)
 
 ### HTTP request headers
 

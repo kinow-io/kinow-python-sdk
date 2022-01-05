@@ -122,7 +122,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_disabled_subscriptions**
-> Subscriptions get_disabled_subscriptions(video_id, page=page, per_page=per_page)
+> SubscriptionListResponse get_disabled_subscriptions(video_id, page=page, per_page=per_page)
 
 
 
@@ -168,7 +168,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Subscriptions**](#Subscriptions)
+[**SubscriptionListResponse**](#SubscriptionListResponse)
 
 ### HTTP request headers
 
@@ -178,7 +178,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_product_subscription**
-> Subscription get_product_subscription(product_id)
+> SubscriptionResponse get_product_subscription(product_id)
 
 
 
@@ -220,7 +220,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Subscription**](#Subscription)
+[**SubscriptionResponse**](#SubscriptionResponse)
 
 ### HTTP request headers
 
@@ -230,7 +230,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_subscription**
-> Subscription get_subscription(subscription_id)
+> SubscriptionResponse get_subscription(subscription_id)
 
 
 
@@ -272,7 +272,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Subscription**](#Subscription)
+[**SubscriptionResponse**](#SubscriptionResponse)
 
 ### HTTP request headers
 
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_subscription_categories**
-> Categories get_subscription_categories(subscription_id, page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction)
+> CategoryListResponse get_subscription_categories(subscription_id, page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction)
 
 
 
@@ -332,7 +332,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Categories**](#Categories)
+[**CategoryListResponse**](#CategoryListResponse)
 
 ### HTTP request headers
 
@@ -342,7 +342,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_subscription_cover_image**
-> Image get_subscription_cover_image(subscription_id)
+> ImageResponse get_subscription_cover_image(subscription_id)
 
 
 
@@ -384,7 +384,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Image**](#Image)
+[**ImageResponse**](#ImageResponse)
 
 ### HTTP request headers
 
@@ -394,7 +394,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_subscriptions**
-> Subscriptions get_subscriptions(page=page, per_page=per_page)
+> SubscriptionListResponse get_subscriptions(page=page, per_page=per_page)
 
 
 
@@ -438,7 +438,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Subscriptions**](#Subscriptions)
+[**SubscriptionListResponse**](#SubscriptionListResponse)
 
 ### HTTP request headers
 
@@ -448,7 +448,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **upload_subscription_cover**
-> Image upload_subscription_cover(subscription_id, file, hash, hash_algorithm=hash_algorithm)
+> ImageResponse upload_subscription_cover(body)
 
 
 
@@ -473,13 +473,10 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = kinow_client.SubscriptionsApi()
-subscription_id = 3.4 # float | Subscription ID to fetch
-file = '/path/to/file.txt' # file | 
-hash = 'hash_example' # str | 
-hash_algorithm = 'hash_algorithm_example' # str | Hash algorithm to check the hash file (default value is: sha256) (optional)
+body = kinow_client.UploadSubscriptionCoverRequest() # UploadSubscriptionCoverRequest | 
 
 try: 
-    api_response = api_instance.upload_subscription_cover(subscription_id, file, hash, hash_algorithm=hash_algorithm)
+    api_response = api_instance.upload_subscription_cover(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SubscriptionsApi->upload_subscription_cover: %s\n" % e)
@@ -489,14 +486,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **subscription_id** | **float**| Subscription ID to fetch | 
- **file** | **file**|  | 
- **hash** | **str**|  | 
- **hash_algorithm** | **str**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
+ **body** | [**UploadSubscriptionCoverRequest**](#UploadSubscriptionCoverRequest)|  | 
 
 ### Return type
 
-[**Image**](#Image)
+[**ImageResponse**](#ImageResponse)
 
 ### HTTP request headers
 

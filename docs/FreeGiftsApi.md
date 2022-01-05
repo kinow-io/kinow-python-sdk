@@ -94,7 +94,7 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = kinow_client.FreeGiftsApi()
-body = kinow_client.FreeGift1() # FreeGift1 | Free Gift settings
+body = kinow_client.CreateFreeGiftRequest() # CreateFreeGiftRequest | Free Gift settings
 
 try: 
     api_response = api_instance.create_free_gift(body)
@@ -107,7 +107,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**FreeGift1**](#FreeGift1)| Free Gift settings | 
+ **body** | [**CreateFreeGiftRequest**](#CreateFreeGiftRequest)| Free Gift settings | 
 
 ### Return type
 
@@ -172,7 +172,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_free_gift**
-> FreeGift get_free_gift(free_gift_id)
+> FreeGiftResponse get_free_gift(free_gift_id)
 
 
 
@@ -214,7 +214,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FreeGift**](#FreeGift)
+[**FreeGiftResponse**](#FreeGiftResponse)
 
 ### HTTP request headers
 
@@ -276,7 +276,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_free_gifts**
-> Gifts get_free_gifts(unused_only=unused_only)
+> FreeGiftListResponse get_free_gifts(unused_only=unused_only)
 
 
 
@@ -318,7 +318,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Gifts**](#Gifts)
+[**FreeGiftListResponse**](#FreeGiftListResponse)
 
 ### HTTP request headers
 

@@ -283,7 +283,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_category_features**
-> Features get_category_features(category_id, page=page, per_page=per_page)
+> FeatureListResponse get_category_features(category_id, page=page, per_page=per_page)
 
 
 
@@ -329,7 +329,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Features**](#Features)
+[**FeatureListResponse**](#FeatureListResponse)
 
 ### HTTP request headers
 
@@ -395,7 +395,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_feature_values**
-> Products1 get_feature_values(page=page, per_page=per_page)
+> Products get_feature_values(page=page, per_page=per_page)
 
 
 
@@ -439,7 +439,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Products1**](#Products1)
+[**Products**](#Products)
 
 ### HTTP request headers
 
@@ -449,7 +449,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_features**
-> Features get_features(page=page, per_page=per_page)
+> FeatureListResponse get_features(page=page, per_page=per_page)
 
 
 
@@ -493,7 +493,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Features**](#Features)
+[**FeatureListResponse**](#FeatureListResponse)
 
 ### HTTP request headers
 
@@ -503,7 +503,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_product_features**
-> Features get_product_features(product_id, page=page, per_page=per_page)
+> FeatureListResponse get_product_features(product_id, page=page, per_page=per_page)
 
 
 
@@ -549,7 +549,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Features**](#Features)
+[**FeatureListResponse**](#FeatureListResponse)
 
 ### HTTP request headers
 

@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 ## **create_message**
-> Support create_message(id_lang, email, id_contact, message, id_support=id_support, id_product=id_product, id_order=id_order, send_mail=send_mail)
+> SupportResponse create_message(body)
 
 
 
@@ -34,17 +34,10 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = kinow_client.SupportApi()
-id_lang = 56 # int | Language ID used by user to write his message
-email = 'email_example' # str | User email in order to send him a response
-id_contact = 56 # int | Contact ID to send the user message
-message = 'message_example' # str | User message
-id_support = 56 # int | Link the message to a previous message (optional)
-id_product = 56 # int | Link the message to a product in catalog (optional)
-id_order = 56 # int | Link the message to an existing order (optional)
-send_mail = true # bool | Send confirmation email to the providen email (optional)
+body = kinow_client.CreateMessageRequest() # CreateMessageRequest | Message parameters
 
 try: 
-    api_response = api_instance.create_message(id_lang, email, id_contact, message, id_support=id_support, id_product=id_product, id_order=id_order, send_mail=send_mail)
+    api_response = api_instance.create_message(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SupportApi->create_message: %s\n" % e)
@@ -54,18 +47,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id_lang** | **int**| Language ID used by user to write his message | 
- **email** | **str**| User email in order to send him a response | 
- **id_contact** | **int**| Contact ID to send the user message | 
- **message** | **str**| User message | 
- **id_support** | **int**| Link the message to a previous message | [optional] 
- **id_product** | **int**| Link the message to a product in catalog | [optional] 
- **id_order** | **int**| Link the message to an existing order | [optional] 
- **send_mail** | **bool**| Send confirmation email to the providen email | [optional] 
+ **body** | [**CreateMessageRequest**](#CreateMessageRequest)| Message parameters | 
 
 ### Return type
 
-[**Support**](#Support)
+[**SupportResponse**](#SupportResponse)
 
 ### HTTP request headers
 
@@ -75,7 +61,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_contacts**
-> Contacts get_contacts(page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction)
+> ContactListResponse get_contacts(page=page, per_page=per_page, sort_by=sort_by, sort_direction=sort_direction)
 
 
 
@@ -123,7 +109,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Contacts**](#Contacts)
+[**ContactListResponse**](#ContactListResponse)
 
 ### HTTP request headers
 
