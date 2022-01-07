@@ -1379,7 +1379,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **upload_category_cover**
-> ImageResponse upload_category_cover(body)
+> ImageResponse upload_category_cover(category_id, file=file, hash=hash, hash_algorithm=hash_algorithm)
 
 
 
@@ -1404,10 +1404,13 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = kinow_client.CategoriesApi()
-body = kinow_client.UploadCategoryCoverRequest() # UploadCategoryCoverRequest | 
+category_id = 3.4 # float | Category ID to fetch
+file = '/path/to/file.txt' # file |  (optional)
+hash = 'hash_example' # str |  (optional)
+hash_algorithm = 'hash_algorithm_example' # str | Hash algorithm to check the hash file (default value is: sha256) (optional)
 
 try: 
-    api_response = api_instance.upload_category_cover(body)
+    api_response = api_instance.upload_category_cover(category_id, file=file, hash=hash, hash_algorithm=hash_algorithm)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CategoriesApi->upload_category_cover: %s\n" % e)
@@ -1417,7 +1420,10 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UploadCategoryCoverRequest**](#UploadCategoryCoverRequest)|  | 
+ **category_id** | **float**| Category ID to fetch | 
+ **file** | **file**|  | [optional] 
+ **hash** | **str**|  | [optional] 
+ **hash_algorithm** | **str**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
 
 ### Return type
 
@@ -1431,7 +1437,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **upload_category_image**
-> Image upload_category_image(category_id, file, hash, image_type_name, hash_algorithm=hash_algorithm)
+> Image upload_category_image(category_id, image_type_name, file=file, hash=hash, hash_algorithm=hash_algorithm)
 
 
 
@@ -1457,13 +1463,13 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = kinow_client.CategoriesApi()
 category_id = 3.4 # float | Category ID to fetch
-file = '/path/to/file.txt' # file | 
-hash = 'hash_example' # str | 
 image_type_name = 'image_type_name_example' # str | Image types name to use to generate image assets
+file = '/path/to/file.txt' # file |  (optional)
+hash = 'hash_example' # str |  (optional)
 hash_algorithm = 'hash_algorithm_example' # str | Hash algorithm to check the hash file (default value is: sha256) (optional)
 
 try: 
-    api_response = api_instance.upload_category_image(category_id, file, hash, image_type_name, hash_algorithm=hash_algorithm)
+    api_response = api_instance.upload_category_image(category_id, image_type_name, file=file, hash=hash, hash_algorithm=hash_algorithm)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CategoriesApi->upload_category_image: %s\n" % e)
@@ -1474,9 +1480,9 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **category_id** | **float**| Category ID to fetch | 
- **file** | **file**|  | 
- **hash** | **str**|  | 
  **image_type_name** | **str**| Image types name to use to generate image assets | 
+ **file** | **file**|  | [optional] 
+ **hash** | **str**|  | [optional] 
  **hash_algorithm** | **str**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
 
 ### Return type

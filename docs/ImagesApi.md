@@ -650,7 +650,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **upload_actor_cover**
-> ImageResponse upload_actor_cover(body)
+> ImageResponse upload_actor_cover(actor_id, file=file, hash=hash, hash_algorithm=hash_algorithm)
 
 
 
@@ -675,10 +675,13 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = kinow_client.ImagesApi()
-body = kinow_client.UploadActorCoverRequest() # UploadActorCoverRequest | 
+actor_id = 3.4 # float | Actor ID to fetch
+file = '/path/to/file.txt' # file |  (optional)
+hash = 'hash_example' # str |  (optional)
+hash_algorithm = 'hash_algorithm_example' # str | Hash algorithm to check the hash file (default value is: sha256) (optional)
 
 try: 
-    api_response = api_instance.upload_actor_cover(body)
+    api_response = api_instance.upload_actor_cover(actor_id, file=file, hash=hash, hash_algorithm=hash_algorithm)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ImagesApi->upload_actor_cover: %s\n" % e)
@@ -688,7 +691,10 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UploadActorCoverRequest**](#UploadActorCoverRequest)|  | 
+ **actor_id** | **float**| Actor ID to fetch | 
+ **file** | **file**|  | [optional] 
+ **hash** | **str**|  | [optional] 
+ **hash_algorithm** | **str**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
 
 ### Return type
 
@@ -702,7 +708,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **upload_category_cover**
-> ImageResponse upload_category_cover(body)
+> ImageResponse upload_category_cover(category_id, file=file, hash=hash, hash_algorithm=hash_algorithm)
 
 
 
@@ -727,10 +733,13 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = kinow_client.ImagesApi()
-body = kinow_client.UploadCategoryCoverRequest() # UploadCategoryCoverRequest | 
+category_id = 3.4 # float | Category ID to fetch
+file = '/path/to/file.txt' # file |  (optional)
+hash = 'hash_example' # str |  (optional)
+hash_algorithm = 'hash_algorithm_example' # str | Hash algorithm to check the hash file (default value is: sha256) (optional)
 
 try: 
-    api_response = api_instance.upload_category_cover(body)
+    api_response = api_instance.upload_category_cover(category_id, file=file, hash=hash, hash_algorithm=hash_algorithm)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ImagesApi->upload_category_cover: %s\n" % e)
@@ -740,7 +749,10 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UploadCategoryCoverRequest**](#UploadCategoryCoverRequest)|  | 
+ **category_id** | **float**| Category ID to fetch | 
+ **file** | **file**|  | [optional] 
+ **hash** | **str**|  | [optional] 
+ **hash_algorithm** | **str**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
 
 ### Return type
 
@@ -754,7 +766,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **upload_category_image**
-> Image upload_category_image(category_id, file, hash, image_type_name, hash_algorithm=hash_algorithm)
+> Image upload_category_image(category_id, image_type_name, file=file, hash=hash, hash_algorithm=hash_algorithm)
 
 
 
@@ -780,13 +792,13 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = kinow_client.ImagesApi()
 category_id = 3.4 # float | Category ID to fetch
-file = '/path/to/file.txt' # file | 
-hash = 'hash_example' # str | 
 image_type_name = 'image_type_name_example' # str | Image types name to use to generate image assets
+file = '/path/to/file.txt' # file |  (optional)
+hash = 'hash_example' # str |  (optional)
 hash_algorithm = 'hash_algorithm_example' # str | Hash algorithm to check the hash file (default value is: sha256) (optional)
 
 try: 
-    api_response = api_instance.upload_category_image(category_id, file, hash, image_type_name, hash_algorithm=hash_algorithm)
+    api_response = api_instance.upload_category_image(category_id, image_type_name, file=file, hash=hash, hash_algorithm=hash_algorithm)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ImagesApi->upload_category_image: %s\n" % e)
@@ -797,9 +809,9 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **category_id** | **float**| Category ID to fetch | 
- **file** | **file**|  | 
- **hash** | **str**|  | 
  **image_type_name** | **str**| Image types name to use to generate image assets | 
+ **file** | **file**|  | [optional] 
+ **hash** | **str**|  | [optional] 
  **hash_algorithm** | **str**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
 
 ### Return type
@@ -814,7 +826,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **upload_director_cover**
-> Image upload_director_cover(body)
+> Image upload_director_cover(director_id, file=file, hash=hash, hash_algorithm=hash_algorithm)
 
 
 
@@ -839,10 +851,13 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = kinow_client.ImagesApi()
-body = kinow_client.UploadDirectorCoverRequest() # UploadDirectorCoverRequest | 
+director_id = 3.4 # float | Director ID to fetch
+file = '/path/to/file.txt' # file |  (optional)
+hash = 'hash_example' # str |  (optional)
+hash_algorithm = 'hash_algorithm_example' # str | Hash algorithm to check the hash file (default value is: sha256) (optional)
 
 try: 
-    api_response = api_instance.upload_director_cover(body)
+    api_response = api_instance.upload_director_cover(director_id, file=file, hash=hash, hash_algorithm=hash_algorithm)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ImagesApi->upload_director_cover: %s\n" % e)
@@ -852,7 +867,10 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UploadDirectorCoverRequest**](#UploadDirectorCoverRequest)|  | 
+ **director_id** | **float**| Director ID to fetch | 
+ **file** | **file**|  | [optional] 
+ **hash** | **str**|  | [optional] 
+ **hash_algorithm** | **str**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
 
 ### Return type
 
@@ -860,13 +878,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: multipart/form-data
+ - **Content-Type**: Not defined
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **upload_product_cover**
-> ImageResponse upload_product_cover(body)
+> ImageResponse upload_product_cover(product_id, file=file, hash=hash, hash_algorithm=hash_algorithm)
 
 
 
@@ -891,10 +909,13 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = kinow_client.ImagesApi()
-body = kinow_client.UploadProductCoverRequest() # UploadProductCoverRequest | 
+product_id = 3.4 # float | Product ID to fetch
+file = '/path/to/file.txt' # file |  (optional)
+hash = 'hash_example' # str |  (optional)
+hash_algorithm = 'hash_algorithm_example' # str | Hash algorithm to check the hash file (default value is: sha256) (optional)
 
 try: 
-    api_response = api_instance.upload_product_cover(body)
+    api_response = api_instance.upload_product_cover(product_id, file=file, hash=hash, hash_algorithm=hash_algorithm)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ImagesApi->upload_product_cover: %s\n" % e)
@@ -904,7 +925,10 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UploadProductCoverRequest**](#UploadProductCoverRequest)|  | 
+ **product_id** | **float**| Product ID to fetch | 
+ **file** | **file**|  | [optional] 
+ **hash** | **str**|  | [optional] 
+ **hash_algorithm** | **str**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
 
 ### Return type
 
@@ -918,7 +942,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **upload_product_image**
-> Image upload_product_image(product_id, file, hash, image_type_name, hash_algorithm=hash_algorithm)
+> Image upload_product_image(product_id, image_type_name, file=file, hash=hash, hash_algorithm=hash_algorithm)
 
 
 
@@ -944,13 +968,13 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = kinow_client.ImagesApi()
 product_id = 3.4 # float | Product ID to fetch
-file = '/path/to/file.txt' # file | 
-hash = 'hash_example' # str | 
 image_type_name = 'image_type_name_example' # str | Image types name to use to generate image assets
+file = '/path/to/file.txt' # file |  (optional)
+hash = 'hash_example' # str |  (optional)
 hash_algorithm = 'hash_algorithm_example' # str | Hash algorithm to check the hash file (default value is: sha256) (optional)
 
 try: 
-    api_response = api_instance.upload_product_image(product_id, file, hash, image_type_name, hash_algorithm=hash_algorithm)
+    api_response = api_instance.upload_product_image(product_id, image_type_name, file=file, hash=hash, hash_algorithm=hash_algorithm)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ImagesApi->upload_product_image: %s\n" % e)
@@ -961,9 +985,9 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **product_id** | **float**| Product ID to fetch | 
- **file** | **file**|  | 
- **hash** | **str**|  | 
  **image_type_name** | **str**| Image types name to use to generate image assets | 
+ **file** | **file**|  | [optional] 
+ **hash** | **str**|  | [optional] 
  **hash_algorithm** | **str**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
 
 ### Return type
@@ -978,7 +1002,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **upload_subscription_cover**
-> ImageResponse upload_subscription_cover(body)
+> ImageResponse upload_subscription_cover(subscription_id, file=file, hash=hash, hash_algorithm=hash_algorithm)
 
 
 
@@ -1003,10 +1027,13 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = kinow_client.ImagesApi()
-body = kinow_client.UploadSubscriptionCoverRequest() # UploadSubscriptionCoverRequest | 
+subscription_id = 3.4 # float | Subscription ID to fetch
+file = '/path/to/file.txt' # file |  (optional)
+hash = 'hash_example' # str |  (optional)
+hash_algorithm = 'hash_algorithm_example' # str | Hash algorithm to check the hash file (default value is: sha256) (optional)
 
 try: 
-    api_response = api_instance.upload_subscription_cover(body)
+    api_response = api_instance.upload_subscription_cover(subscription_id, file=file, hash=hash, hash_algorithm=hash_algorithm)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ImagesApi->upload_subscription_cover: %s\n" % e)
@@ -1016,7 +1043,10 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UploadSubscriptionCoverRequest**](#UploadSubscriptionCoverRequest)|  | 
+ **subscription_id** | **float**| Subscription ID to fetch | 
+ **file** | **file**|  | [optional] 
+ **hash** | **str**|  | [optional] 
+ **hash_algorithm** | **str**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
 
 ### Return type
 

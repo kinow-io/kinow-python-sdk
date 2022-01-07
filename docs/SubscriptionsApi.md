@@ -448,7 +448,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **upload_subscription_cover**
-> ImageResponse upload_subscription_cover(body)
+> ImageResponse upload_subscription_cover(subscription_id, file=file, hash=hash, hash_algorithm=hash_algorithm)
 
 
 
@@ -473,10 +473,13 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = kinow_client.SubscriptionsApi()
-body = kinow_client.UploadSubscriptionCoverRequest() # UploadSubscriptionCoverRequest | 
+subscription_id = 3.4 # float | Subscription ID to fetch
+file = '/path/to/file.txt' # file |  (optional)
+hash = 'hash_example' # str |  (optional)
+hash_algorithm = 'hash_algorithm_example' # str | Hash algorithm to check the hash file (default value is: sha256) (optional)
 
 try: 
-    api_response = api_instance.upload_subscription_cover(body)
+    api_response = api_instance.upload_subscription_cover(subscription_id, file=file, hash=hash, hash_algorithm=hash_algorithm)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SubscriptionsApi->upload_subscription_cover: %s\n" % e)
@@ -486,7 +489,10 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UploadSubscriptionCoverRequest**](#UploadSubscriptionCoverRequest)|  | 
+ **subscription_id** | **float**| Subscription ID to fetch | 
+ **file** | **file**|  | [optional] 
+ **hash** | **str**|  | [optional] 
+ **hash_algorithm** | **str**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
 
 ### Return type
 

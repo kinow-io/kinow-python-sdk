@@ -787,7 +787,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **upload_actor_cover**
-> ImageResponse upload_actor_cover(body)
+> ImageResponse upload_actor_cover(actor_id, file=file, hash=hash, hash_algorithm=hash_algorithm)
 
 
 
@@ -812,10 +812,13 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = kinow_client.ActorsApi()
-body = kinow_client.UploadActorCoverRequest() # UploadActorCoverRequest | 
+actor_id = 3.4 # float | Actor ID to fetch
+file = '/path/to/file.txt' # file |  (optional)
+hash = 'hash_example' # str |  (optional)
+hash_algorithm = 'hash_algorithm_example' # str | Hash algorithm to check the hash file (default value is: sha256) (optional)
 
 try: 
-    api_response = api_instance.upload_actor_cover(body)
+    api_response = api_instance.upload_actor_cover(actor_id, file=file, hash=hash, hash_algorithm=hash_algorithm)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ActorsApi->upload_actor_cover: %s\n" % e)
@@ -825,7 +828,10 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UploadActorCoverRequest**](#UploadActorCoverRequest)|  | 
+ **actor_id** | **float**| Actor ID to fetch | 
+ **file** | **file**|  | [optional] 
+ **hash** | **str**|  | [optional] 
+ **hash_algorithm** | **str**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
 
 ### Return type
 

@@ -787,7 +787,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **upload_director_cover**
-> Image upload_director_cover(body)
+> Image upload_director_cover(director_id, file=file, hash=hash, hash_algorithm=hash_algorithm)
 
 
 
@@ -812,10 +812,13 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = kinow_client.DirectorsApi()
-body = kinow_client.UploadDirectorCoverRequest() # UploadDirectorCoverRequest | 
+director_id = 3.4 # float | Director ID to fetch
+file = '/path/to/file.txt' # file |  (optional)
+hash = 'hash_example' # str |  (optional)
+hash_algorithm = 'hash_algorithm_example' # str | Hash algorithm to check the hash file (default value is: sha256) (optional)
 
 try: 
-    api_response = api_instance.upload_director_cover(body)
+    api_response = api_instance.upload_director_cover(director_id, file=file, hash=hash, hash_algorithm=hash_algorithm)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DirectorsApi->upload_director_cover: %s\n" % e)
@@ -825,7 +828,10 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UploadDirectorCoverRequest**](#UploadDirectorCoverRequest)|  | 
+ **director_id** | **float**| Director ID to fetch | 
+ **file** | **file**|  | [optional] 
+ **hash** | **str**|  | [optional] 
+ **hash_algorithm** | **str**| Hash algorithm to check the hash file (default value is: sha256) | [optional] 
 
 ### Return type
 
@@ -833,7 +839,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: multipart/form-data
+ - **Content-Type**: Not defined
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
