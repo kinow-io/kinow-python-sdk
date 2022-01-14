@@ -766,7 +766,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **upload_category_image**
-> Image upload_category_image(category_id, image_type_name, file=file, hash=hash, hash_algorithm=hash_algorithm)
+> ImageResponse upload_category_image(category_id, image_type_name, file=file, hash=hash, hash_algorithm=hash_algorithm)
 
 
 
@@ -816,7 +816,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Image**](#Image)
+[**ImageResponse**](#ImageResponse)
 
 ### HTTP request headers
 
@@ -826,7 +826,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **upload_director_cover**
-> Image upload_director_cover(director_id, file=file, hash=hash, hash_algorithm=hash_algorithm)
+> ImageResponse upload_director_cover(director_id, file=file, hash=hash, hash_algorithm=hash_algorithm)
 
 
 
@@ -874,11 +874,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Image**](#Image)
+[**ImageResponse**](#ImageResponse)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: multipart/form-data
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
@@ -942,7 +942,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **upload_product_image**
-> Image upload_product_image(product_id, image_type_name, file=file, hash=hash, hash_algorithm=hash_algorithm)
+> ImageResponse upload_product_image(product_id, image_type_name, file=file, hash=hash, hash_algorithm=hash_algorithm)
 
 
 
@@ -992,7 +992,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Image**](#Image)
+[**ImageResponse**](#ImageResponse)
 
 ### HTTP request headers
 

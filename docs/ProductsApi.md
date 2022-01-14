@@ -2581,7 +2581,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **upload_product_image**
-> Image upload_product_image(product_id, image_type_name, file=file, hash=hash, hash_algorithm=hash_algorithm)
+> ImageResponse upload_product_image(product_id, image_type_name, file=file, hash=hash, hash_algorithm=hash_algorithm)
 
 
 
@@ -2631,7 +2631,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Image**](#Image)
+[**ImageResponse**](#ImageResponse)
 
 ### HTTP request headers
 
