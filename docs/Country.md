@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **iso_code** | **str** |  | [optional] 
 **id_zone** | **str** |  | [optional] 
 **name** | [**list[I18nField]**](#I18nField) |  | [optional] 
+**states** | [**list[State]**](#State) |  | [optional] 
 
 [[Back to Model list]](#documentation-for-models) [[Back to API list]](#documentation-for-api-endpoints)
 

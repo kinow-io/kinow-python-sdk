@@ -20,7 +20,6 @@ Name | Type | Description | Notes
 **custom** | **str** |  | [optional] 
 **password** | **str** | Only available in body | [optional] 
 **last_passwd_gen** | **str** |  | [optional] 
-**id_country** | **int** | Only available in body | [optional] 
 
 [[Back to Model list]](#documentation-for-models) [[Back to API list]](#documentation-for-api-endpoints)
 
