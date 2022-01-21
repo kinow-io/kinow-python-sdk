@@ -36,7 +36,7 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = kinow_client.AttributesApi()
-body = kinow_client.ProductAttributeCreateRequest() # ProductAttributeCreateRequest | 
+body = kinow_client.CreateAttributeRequest() # CreateAttributeRequest | Attribute settings
 
 try: 
     api_response = api_instance.create_product_attribute(body)
@@ -49,7 +49,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ProductAttributeCreateRequest**](#ProductAttributeCreateRequest)|  | 
+ **body** | [**CreateAttributeRequest**](#CreateAttributeRequest)| Attribute settings | 
 
 ### Return type
 
