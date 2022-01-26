@@ -629,7 +629,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_category_actors**
-> CategoryActorsResponse get_category_actors(category_id, page=page, per_page=per_page)
+> CategoryActorsListResponse get_category_actors(category_id, page=page, per_page=per_page)
 
 
 
@@ -675,7 +675,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CategoryActorsResponse**](#CategoryActorsResponse)
+[**CategoryActorsListResponse**](#CategoryActorsListResponse)
 
 ### HTTP request headers
 
@@ -737,7 +737,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_category_directors**
-> CategoryDirectorsResponse get_category_directors(category_id, page=page, per_page=per_page)
+> CategoryDirectorsListResponse get_category_directors(category_id, page=page, per_page=per_page)
 
 
 
@@ -783,7 +783,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CategoryDirectorsResponse**](#CategoryDirectorsResponse)
+[**CategoryDirectorsListResponse**](#CategoryDirectorsListResponse)
 
 ### HTTP request headers
 
@@ -849,7 +849,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_category_images**
-> CategoryImagesResponse get_category_images(category_id, type=type, page=page, per_page=per_page)
+> CategoryImagesListResponse get_category_images(category_id, type=type, page=page, per_page=per_page)
 
 
 
@@ -897,7 +897,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CategoryImagesResponse**](#CategoryImagesResponse)
+[**CategoryImagesListResponse**](#CategoryImagesListResponse)
 
 ### HTTP request headers
 

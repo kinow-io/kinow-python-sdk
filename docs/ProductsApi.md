@@ -1031,7 +1031,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_price**
-> list[CartPriceResponse] get_price(body)
+> list[ProductPrice] get_price(body)
 
 
 
@@ -1073,7 +1073,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[CartPriceResponse]**](#CartPriceResponse)
+[**list[ProductPrice]**](#ProductPrice)
 
 ### HTTP request headers
 

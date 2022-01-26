@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_cms_categories**
-> CMSCategoriesLists get_cms_categories(page=page, per_page=per_page, filters=filters, sort_by=sort_by, sort_direction=sort_direction)
+> CMSCategoriesListResponse get_cms_categories(page=page, per_page=per_page, filters=filters, sort_by=sort_by, sort_direction=sort_direction)
 
 
 
@@ -112,7 +112,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CMSCategoriesLists**](#CMSCategoriesLists)
+[**CMSCategoriesListResponse**](#CMSCategoriesListResponse)
 
 ### HTTP request headers
 

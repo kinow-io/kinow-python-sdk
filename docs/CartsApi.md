@@ -450,7 +450,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_cart_payment_modules**
-> PaymentModules get_cart_payment_modules(cart_id, page=page, per_page=per_page)
+> PaymentModuleListResponse1 get_cart_payment_modules(cart_id, page=page, per_page=per_page)
 
 
 
@@ -496,7 +496,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaymentModules**](#PaymentModules)
+[**PaymentModuleListResponse1**](#PaymentModuleListResponse1)
 
 ### HTTP request headers
 
@@ -506,7 +506,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_carts**
-> Carts get_carts(page=page, per_page=per_page, filters=filters, sort_by=sort_by, sort_direction=sort_direction)
+> CartListResponse1 get_carts(page=page, per_page=per_page, filters=filters, sort_by=sort_by, sort_direction=sort_direction)
 
 
 
@@ -556,7 +556,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Carts**](#Carts)
+[**CartListResponse1**](#CartListResponse1)
 
 ### HTTP request headers
 
@@ -794,7 +794,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_price**
-> list[CartPriceResponse] get_price(body)
+> list[CartPrice] get_price(body)
 
 
 
@@ -836,7 +836,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[CartPriceResponse]**](#CartPriceResponse)
+[**list[CartPrice]**](#CartPrice)
 
 ### HTTP request headers
 
@@ -846,7 +846,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **prepare_payment**
-> PaymentDetailsResponse1 prepare_payment(cart_id, payment_name, ip_address=ip_address)
+> PaymentDetailsResponse prepare_payment(cart_id, payment_name, ip_address=ip_address)
 
 
 
@@ -892,7 +892,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaymentDetailsResponse1**](#PaymentDetailsResponse1)
+[**PaymentDetailsResponse**](#PaymentDetailsResponse)
 
 ### HTTP request headers
 

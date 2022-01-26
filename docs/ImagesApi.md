@@ -178,7 +178,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_category_images**
-> CategoryImagesResponse get_category_images(category_id, type=type, page=page, per_page=per_page)
+> CategoryImagesListResponse get_category_images(category_id, type=type, page=page, per_page=per_page)
 
 
 
@@ -226,7 +226,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CategoryImagesResponse**](#CategoryImagesResponse)
+[**CategoryImagesListResponse**](#CategoryImagesListResponse)
 
 ### HTTP request headers
 

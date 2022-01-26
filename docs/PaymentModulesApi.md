@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 
 ## **get_cart_payment_modules**
-> PaymentModules get_cart_payment_modules(cart_id, page=page, per_page=per_page)
+> PaymentModuleListResponse1 get_cart_payment_modules(cart_id, page=page, per_page=per_page)
 
 
 
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaymentModules**](#PaymentModules)
+[**PaymentModuleListResponse1**](#PaymentModuleListResponse1)
 
 ### HTTP request headers
 
@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_payment_methods**
-> list[PaymentMethodsResponse] get_payment_methods(customer_id, payment_name)
+> list[PaymentMethods] get_payment_methods(customer_id, payment_name)
 
 
 
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[PaymentMethodsResponse]**](#PaymentMethodsResponse)
+[**list[PaymentMethods]**](#PaymentMethods)
 
 ### HTTP request headers
 
@@ -130,7 +130,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_payment_methods_with_ip**
-> list[PaymentMethodsResponse] get_payment_methods_with_ip(customer_id, payment_name, ip_address)
+> list[PaymentMethods] get_payment_methods_with_ip(customer_id, payment_name, ip_address)
 
 
 
@@ -176,7 +176,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[PaymentMethodsResponse]**](#PaymentMethodsResponse)
+[**list[PaymentMethods]**](#PaymentMethods)
 
 ### HTTP request headers
 
@@ -346,7 +346,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_pending_payments**
-> list[PaymentDetailsResponse] get_pending_payments(payment_name, customer_id)
+> list[PaymentDetails] get_pending_payments(payment_name, customer_id)
 
 
 
@@ -390,7 +390,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[PaymentDetailsResponse]**](#PaymentDetailsResponse)
+[**list[PaymentDetails]**](#PaymentDetails)
 
 ### HTTP request headers
 
@@ -456,7 +456,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **prepare_payment**
-> PaymentDetailsResponse1 prepare_payment(cart_id, payment_name, ip_address=ip_address)
+> PaymentDetailsResponse prepare_payment(cart_id, payment_name, ip_address=ip_address)
 
 
 
@@ -502,7 +502,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaymentDetailsResponse1**](#PaymentDetailsResponse1)
+[**PaymentDetailsResponse**](#PaymentDetailsResponse)
 
 ### HTTP request headers
 

@@ -1238,7 +1238,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_customer_has_access_to_videos**
-> list[VideoAccessInfoResponse] get_customer_has_access_to_videos(customer_id, body)
+> list[VideoAccessInfo] get_customer_has_access_to_videos(customer_id, body)
 
 
 
@@ -1282,7 +1282,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[VideoAccessInfoResponse]**](#VideoAccessInfoResponse)
+[**list[VideoAccessInfo]**](#VideoAccessInfo)
 
 ### HTTP request headers
 
@@ -1408,7 +1408,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_customer_prepayment_balances**
-> PrepaymentBalanceListResponse get_customer_prepayment_balances(customer_id, currency_id=currency_id)
+> list[PrepaymentBalance] get_customer_prepayment_balances(customer_id, currency_id=currency_id)
 
 
 
@@ -1452,7 +1452,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PrepaymentBalanceListResponse**](#PrepaymentBalanceListResponse)
+[**list[PrepaymentBalance]**](#PrepaymentBalance)
 
 ### HTTP request headers
 
@@ -1684,7 +1684,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_payment_methods**
-> list[PaymentMethodsResponse] get_payment_methods(customer_id, payment_name)
+> list[PaymentMethods] get_payment_methods(customer_id, payment_name)
 
 
 
@@ -1728,7 +1728,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[PaymentMethodsResponse]**](#PaymentMethodsResponse)
+[**list[PaymentMethods]**](#PaymentMethods)
 
 ### HTTP request headers
 
@@ -1738,7 +1738,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_payment_methods_with_ip**
-> list[PaymentMethodsResponse] get_payment_methods_with_ip(customer_id, payment_name, ip_address)
+> list[PaymentMethods] get_payment_methods_with_ip(customer_id, payment_name, ip_address)
 
 
 
@@ -1784,7 +1784,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[PaymentMethodsResponse]**](#PaymentMethodsResponse)
+[**list[PaymentMethods]**](#PaymentMethods)
 
 ### HTTP request headers
 
@@ -1794,7 +1794,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_pending_payments**
-> list[PaymentDetailsResponse] get_pending_payments(payment_name, customer_id)
+> list[PaymentDetails] get_pending_payments(payment_name, customer_id)
 
 
 
@@ -1838,7 +1838,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[PaymentDetailsResponse]**](#PaymentDetailsResponse)
+[**list[PaymentDetails]**](#PaymentDetails)
 
 ### HTTP request headers
 

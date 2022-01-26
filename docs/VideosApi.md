@@ -400,7 +400,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_customer_has_access_to_videos**
-> list[VideoAccessInfoResponse] get_customer_has_access_to_videos(customer_id, body)
+> list[VideoAccessInfo] get_customer_has_access_to_videos(customer_id, body)
 
 
 
@@ -444,7 +444,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[VideoAccessInfoResponse]**](#VideoAccessInfoResponse)
+[**list[VideoAccessInfo]**](#VideoAccessInfo)
 
 ### HTTP request headers
 

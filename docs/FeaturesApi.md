@@ -395,7 +395,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_feature_values**
-> Products get_feature_values(page=page, per_page=per_page)
+> FeatureValueListResponse1 get_feature_values(page=page, per_page=per_page)
 
 
 
@@ -439,7 +439,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Products**](#Products)
+[**FeatureValueListResponse1**](#FeatureValueListResponse1)
 
 ### HTTP request headers
 

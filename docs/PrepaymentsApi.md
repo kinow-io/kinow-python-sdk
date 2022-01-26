@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 ## **get_customer_prepayment_balances**
-> PrepaymentBalanceListResponse get_customer_prepayment_balances(customer_id, currency_id=currency_id)
+> list[PrepaymentBalance] get_customer_prepayment_balances(customer_id, currency_id=currency_id)
 
 
 
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PrepaymentBalanceListResponse**](#PrepaymentBalanceListResponse)
+[**list[PrepaymentBalance]**](#PrepaymentBalance)
 
 ### HTTP request headers
 

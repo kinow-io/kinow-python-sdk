@@ -564,7 +564,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_category_actors**
-> CategoryActorsResponse get_category_actors(category_id, page=page, per_page=per_page)
+> CategoryActorsListResponse get_category_actors(category_id, page=page, per_page=per_page)
 
 
 
@@ -610,7 +610,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CategoryActorsResponse**](#CategoryActorsResponse)
+[**CategoryActorsListResponse**](#CategoryActorsListResponse)
 
 ### HTTP request headers
 

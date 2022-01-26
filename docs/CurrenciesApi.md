@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 ## **get_currencies**
-> Currencies get_currencies(page=page, per_page=per_page)
+> CurrencyListResponse1 get_currencies(page=page, per_page=per_page)
 
 
 
@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Currencies**](#Currencies)
+[**CurrencyListResponse1**](#CurrencyListResponse1)
 
 ### HTTP request headers
 

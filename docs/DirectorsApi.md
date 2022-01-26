@@ -284,7 +284,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_category_directors**
-> CategoryDirectorsResponse get_category_directors(category_id, page=page, per_page=per_page)
+> CategoryDirectorsListResponse get_category_directors(category_id, page=page, per_page=per_page)
 
 
 
@@ -330,7 +330,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CategoryDirectorsResponse**](#CategoryDirectorsResponse)
+[**CategoryDirectorsListResponse**](#CategoryDirectorsListResponse)
 
 ### HTTP request headers
 

@@ -136,7 +136,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_customer_sessions_multiple**
-> list[SessionVideoStatResponse] get_customer_sessions_multiple(customer_id, body)
+> list[SessionVideoStat] get_customer_sessions_multiple(customer_id, body)
 
 
 
@@ -180,7 +180,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[SessionVideoStatResponse]**](#SessionVideoStatResponse)
+[**list[SessionVideoStat]**](#SessionVideoStat)
 
 ### HTTP request headers
 
