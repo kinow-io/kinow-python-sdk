@@ -1848,7 +1848,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_pending_payments_with_ip**
-> PaymentDetailsListResponse get_pending_payments_with_ip(payment_name, customer_id, ip_address)
+> list[PaymentDetails] get_pending_payments_with_ip(payment_name, customer_id, ip_address)
 
 
 
@@ -1894,7 +1894,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaymentDetailsListResponse**](#PaymentDetailsListResponse)
+[**list[PaymentDetails]**](#PaymentDetails)
 
 ### HTTP request headers
 
