@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **type_id** | **int** |  | [optional] 
 **blank** | **int** |  | [optional] 
 **position** | **int** |  | [optional] 
+**visibility** | **str** |  | [optional] 
 
 [[Back to Model list]](#documentation-for-models) [[Back to API list]](#documentation-for-api-endpoints)
 

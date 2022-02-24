@@ -4,6 +4,7 @@ All URIs are relative to *https://api.kinow.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**delete_image**](#delete_image) | **DELETE** /images/{image_id} | 
 [**get_actor_cover_image**](#get_actor_cover_image) | **GET** /actors/{actor_id}/cover | 
 [**get_category_banner**](#get_category_banner) | **GET** /categories/{category_id}/banner | 
 [**get_category_image_types**](#get_category_image_types) | **GET** /categories/image-types | 
@@ -24,6 +25,57 @@ Method | HTTP request | Description
 [**upload_product_image**](#upload_product_image) | **POST** /products/{product_id}/image | 
 [**upload_subscription_cover**](#upload_subscription_cover) | **POST** /subscriptions/{subscription_id}/cover | 
 
+
+## **delete_image**
+> delete_image(image_id)
+
+
+
+Delete image
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: ApiClientId
+kinow_client.configuration.api_key['X-Client-Id'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Id'] = 'Bearer'
+# Configure API key authorization: ApiClientSecret
+kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Secret'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = kinow_client.ImagesApi()
+image_id = 789 # int | Image ID to delete
+
+try: 
+    api_instance.delete_image(image_id)
+except ApiException as e:
+    print("Exception when calling ImagesApi->delete_image: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **image_id** | **int**| Image ID to delete | 
+
+### Return type
+
+void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_actor_cover_image**
 > ImageResponse get_actor_cover_image(actor_id)
