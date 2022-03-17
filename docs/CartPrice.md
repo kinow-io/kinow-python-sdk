@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **total_trial_formatted** | **str** |  | [optional] 
 **total_formatted** | **str** |  | [optional] 
 **taxes** | [**list[TaxPrice]**](#TaxPrice) |  | [optional] 
+**cart_rules** | [**list[CartRulePrice]**](#CartRulePrice) |  | [optional] 
 
 [[Back to Model list]](#documentation-for-models) [[Back to API list]](#documentation-for-api-endpoints)
 

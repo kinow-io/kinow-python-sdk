@@ -8,7 +8,9 @@ Method | HTTP request | Description
 [**get_customer_sessions**](#get_customer_sessions) | **GET** /video-stats/sessions | 
 [**get_customer_sessions_multiple**](#get_customer_sessions_multiple) | **POST** /video-stats/{customer_id}/sessions | 
 [**get_customer_video_stats**](#get_customer_video_stats) | **GET** /video-stats/customers | 
+[**get_customer_videos_view_informations**](#get_customer_videos_view_informations) | **POST** /video-stats/views/{customer_id} | 
 [**get_video_stats**](#get_video_stats) | **GET** /video-stats/videos | 
+[**set_customer_video_view_informations**](#set_customer_video_view_informations) | **PUT** /video-stats/views/{customer_id}/{video_id} | 
 
 
 ## **get_customer_group_total_watched**
@@ -162,7 +164,7 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = kinow_client.StatsApi()
 customer_id = 789 # int | Customer ID to fetch
-body = kinow_client.VideoIDList1() # VideoIDList1 | List of Video IDs separated by comma, eg. '42,21,84'
+body = kinow_client.VideoIDList2() # VideoIDList2 | List of Video IDs separated by comma, eg. '42,21,84'
 
 try: 
     api_response = api_instance.get_customer_sessions_multiple(customer_id, body)
@@ -176,7 +178,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customer_id** | **int**| Customer ID to fetch | 
- **body** | [**VideoIDList1**](#VideoIDList1)| List of Video IDs separated by comma, eg. &#39;42,21,84&#39; | 
+ **body** | [**VideoIDList2**](#VideoIDList2)| List of Video IDs separated by comma, eg. &#39;42,21,84&#39; | 
 
 ### Return type
 
@@ -249,6 +251,60 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
+## **get_customer_videos_view_informations**
+> list[VideoViewInformations] get_customer_videos_view_informations(customer_id, body)
+
+
+
+Get a list of videos view informations for a customer
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: ApiClientId
+kinow_client.configuration.api_key['X-Client-Id'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Id'] = 'Bearer'
+# Configure API key authorization: ApiClientSecret
+kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Secret'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = kinow_client.StatsApi()
+customer_id = 789 # int | Customer ID to fetch
+body = kinow_client.VideoIDList1() # VideoIDList1 | List of Video IDs separated by comma, eg. '42,21,84'
+
+try: 
+    api_response = api_instance.get_customer_videos_view_informations(customer_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling StatsApi->get_customer_videos_view_informations: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customer_id** | **int**| Customer ID to fetch | 
+ **body** | [**VideoIDList1**](#VideoIDList1)| List of Video IDs separated by comma, eg. &#39;42,21,84&#39; | 
+
+### Return type
+
+[**list[VideoViewInformations]**](#VideoViewInformations)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
 ## **get_video_stats**
 > VideoStatListResponse get_video_stats(video_id=video_id, date_from=date_from, date_to=date_to, page=page)
 
@@ -299,6 +355,61 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**VideoStatListResponse**](#VideoStatListResponse)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **set_customer_video_view_informations**
+> set_customer_video_view_informations(customer_id, video_id, body)
+
+
+
+Set a video view informations for a customer
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: ApiClientId
+kinow_client.configuration.api_key['X-Client-Id'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Id'] = 'Bearer'
+# Configure API key authorization: ApiClientSecret
+kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Secret'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = kinow_client.StatsApi()
+customer_id = 789 # int | Customer ID to fetch
+video_id = 789 # int | Video ID to fetch
+body = kinow_client.View() # View | Boolean view
+
+try: 
+    api_instance.set_customer_video_view_informations(customer_id, video_id, body)
+except ApiException as e:
+    print("Exception when calling StatsApi->set_customer_video_view_informations: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customer_id** | **int**| Customer ID to fetch | 
+ **video_id** | **int**| Video ID to fetch | 
+ **body** | [**View**](#View)| Boolean view | 
+
+### Return type
+
+void (empty response body)
 
 ### HTTP request headers
 
