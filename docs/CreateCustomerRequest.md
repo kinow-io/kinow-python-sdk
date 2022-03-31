@@ -13,6 +13,9 @@ Name | Type | Description | Notes
 **optin** | **bool** |  | [optional] 
 **active** | **bool** |  | [optional] 
 **id_lang** | **int** |  | [optional] 
+**notification** | **bool** |  | [optional] 
+**max_viewing** | **int** |  | [optional] 
+**custom** | **str** |  | [optional] 
 **id_country** | **int** |  | 
 **id_state** | **int** |  | [optional] 
 **city** | **str** |  | [optional] 

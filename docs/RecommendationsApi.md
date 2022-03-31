@@ -38,7 +38,7 @@ page = 789 # int |  (optional)
 per_page = 789 # int |  (optional)
 sort_by = 'sort_by_example' # str | Sort by this attribute (id by default) (optional)
 sort_direction = 'sort_direction_example' # str | Sorting direction (asc by default) (optional)
-ip = 'ip_example' # str | Filter by Customer IP (optional)
+ip = 'ip_example' # str | Filter by user IP (optional)
 iso_code = 'iso_code_example' # str | Filter by ISO Code (optional)
 
 try: 
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
  **per_page** | **int**|  | [optional] 
  **sort_by** | **str**| Sort by this attribute (id by default) | [optional] 
  **sort_direction** | **str**| Sorting direction (asc by default) | [optional] 
- **ip** | **str**| Filter by Customer IP | [optional] 
+ **ip** | **str**| Filter by user IP | [optional] 
  **iso_code** | **str**| Filter by ISO Code | [optional] 
 
 ### Return type
