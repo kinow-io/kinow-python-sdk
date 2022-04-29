@@ -4,6 +4,7 @@ All URIs are relative to *https://api.kinow.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**create_video_stat_session**](#create_video_stat_session) | **POST** /video-stats/sessions | 
 [**get_customer_group_total_watched**](#get_customer_group_total_watched) | **GET** /video-stats/customer-group | 
 [**get_customer_sessions**](#get_customer_sessions) | **GET** /video-stats/sessions | 
 [**get_customer_sessions_multiple**](#get_customer_sessions_multiple) | **POST** /video-stats/{customer_id}/sessions | 
@@ -14,6 +15,58 @@ Method | HTTP request | Description
 [**get_videos_watching**](#get_videos_watching) | **GET** /video-stats/videos-watching | 
 [**set_customer_video_view_informations**](#set_customer_video_view_informations) | **PUT** /video-stats/views/{customer_id}/{video_id} | 
 
+
+## **create_video_stat_session**
+> CreateVideoStatSessionResponse create_video_stat_session(body)
+
+
+
+Create a video stat session for a customer
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: ApiClientId
+kinow_client.configuration.api_key['X-Client-Id'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Id'] = 'Bearer'
+# Configure API key authorization: ApiClientSecret
+kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Secret'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = kinow_client.StatsApi()
+body = kinow_client.CreateVideoStatSessionRequest() # CreateVideoStatSessionRequest | Video stat session parameters
+
+try: 
+    api_response = api_instance.create_video_stat_session(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling StatsApi->create_video_stat_session: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**CreateVideoStatSessionRequest**](#CreateVideoStatSessionRequest)| Video stat session parameters | 
+
+### Return type
+
+[**CreateVideoStatSessionResponse**](#CreateVideoStatSessionResponse)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_customer_group_total_watched**
 > CustomerGroupVideoStatsListResponse get_customer_group_total_watched(group_id, date_from=date_from, date_to=date_to, page=page, per_page=per_page)

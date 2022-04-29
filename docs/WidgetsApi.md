@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**get_widget_hook_phrase**](#get_widget_hook_phrase) | **GET** /widgets/hook-phrase | 
 [**get_widget_slider**](#get_widget_slider) | **GET** /widgets/slider | 
 [**get_widget_slider_item**](#get_widget_slider_item) | **GET** /widgets/slider/{slider_id} | 
+[**get_widget_slider_video_player**](#get_widget_slider_video_player) | **GET** /widgets/slider/{slider_id}/player | 
 [**get_widget_top_menu**](#get_widget_top_menu) | **GET** /widgets/top-menu | 
 
 
@@ -370,6 +371,62 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**WidgetSliderResponse**](#WidgetSliderResponse)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_widget_slider_video_player**
+> Player get_widget_slider_video_player(slider_id, customer_id=customer_id, country_id=country_id)
+
+
+
+Get video player
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: ApiClientId
+kinow_client.configuration.api_key['X-Client-Id'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Id'] = 'Bearer'
+# Configure API key authorization: ApiClientSecret
+kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Secret'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = kinow_client.WidgetsApi()
+slider_id = 789 # int | Slider ID to fetch
+customer_id = 789 # int | Customer ID to fetch (optional)
+country_id = 789 # int | Country ID to use in video analytics (optional)
+
+try: 
+    api_response = api_instance.get_widget_slider_video_player(slider_id, customer_id=customer_id, country_id=country_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WidgetsApi->get_widget_slider_video_player: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **slider_id** | **int**| Slider ID to fetch | 
+ **customer_id** | **int**| Customer ID to fetch | [optional] 
+ **country_id** | **int**| Country ID to use in video analytics | [optional] 
+
+### Return type
+
+[**Player**](#Player)
 
 ### HTTP request headers
 
