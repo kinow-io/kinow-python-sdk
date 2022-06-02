@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**create_actor**](#create_actor) | **POST** /actors | 
 [**delete_actor**](#delete_actor) | **DELETE** /actors/{actor_id} | 
 [**detach_actor_from_category**](#detach_actor_from_category) | **DELETE** /categories/{category_id}/actors/{actor_id} | 
+[**detach_actor_from_product**](#detach_actor_from_product) | **DELETE** /products/{product_id}/actors/{actor_id} | 
 [**get_actor**](#get_actor) | **GET** /actors/{actor_id} | 
 [**get_actor_cover_image**](#get_actor_cover_image) | **GET** /actors/{actor_id}/cover | 
 [**get_actor_products**](#get_actor_products) | **GET** /actors/{actor_id}/products | 
@@ -270,6 +271,59 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **category_id** | **int**| Category ID to fetch | 
+ **actor_id** | **int**| Actor ID to detach | 
+
+### Return type
+
+void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **detach_actor_from_product**
+> detach_actor_from_product(product_id, actor_id)
+
+
+
+Detach actor from product
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: ApiClientId
+kinow_client.configuration.api_key['X-Client-Id'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Id'] = 'Bearer'
+# Configure API key authorization: ApiClientSecret
+kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Secret'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = kinow_client.ActorsApi()
+product_id = 789 # int | Product ID to fetch
+actor_id = 789 # int | Actor ID to detach
+
+try: 
+    api_instance.detach_actor_from_product(product_id, actor_id)
+except ApiException as e:
+    print("Exception when calling ActorsApi->detach_actor_from_product: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_id** | **int**| Product ID to fetch | 
  **actor_id** | **int**| Actor ID to detach | 
 
 ### Return type

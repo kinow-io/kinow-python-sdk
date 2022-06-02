@@ -944,7 +944,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_video_player**
-> PlayerConfiguration get_video_player(video_id, customer_id=customer_id, country_id=country_id, ip_address=ip_address)
+> PlayerConfiguration get_video_player(video_id, customer_id=customer_id, country_id=country_id, ip_address=ip_address, force_reload=force_reload)
 
 
 
@@ -973,9 +973,10 @@ video_id = 789 # int | Video ID to fetch
 customer_id = 789 # int | Customer ID to fetch (optional)
 country_id = 789 # int | Country ID to use in video analytics (optional)
 ip_address = 'ip_address_example' # str | IP address (optional)
+force_reload = 'force_reload_example' # str | Force seekbar to the begining and ignore viewing resume (optional)
 
 try: 
-    api_response = api_instance.get_video_player(video_id, customer_id=customer_id, country_id=country_id, ip_address=ip_address)
+    api_response = api_instance.get_video_player(video_id, customer_id=customer_id, country_id=country_id, ip_address=ip_address, force_reload=force_reload)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling VideosApi->get_video_player: %s\n" % e)
@@ -989,6 +990,7 @@ Name | Type | Description  | Notes
  **customer_id** | **int**| Customer ID to fetch | [optional] 
  **country_id** | **int**| Country ID to use in video analytics | [optional] 
  **ip_address** | **str**| IP address | [optional] 
+ **force_reload** | **str**| Force seekbar to the begining and ignore viewing resume | [optional] 
 
 ### Return type
 

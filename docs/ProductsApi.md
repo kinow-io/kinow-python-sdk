@@ -13,6 +13,8 @@ Method | HTTP request | Description
 [**attach_video_to_product**](#attach_video_to_product) | **POST** /products/{product_id}/videos | 
 [**create_product**](#create_product) | **POST** /products | 
 [**delete_product**](#delete_product) | **DELETE** /products/{product_id} | 
+[**detach_actor_from_product**](#detach_actor_from_product) | **DELETE** /products/{product_id}/actors/{actor_id} | 
+[**detach_director_from_product**](#detach_director_from_product) | **DELETE** /products/{product_id}/directors/{director_id} | 
 [**detach_feature_to_product**](#detach_feature_to_product) | **DELETE** /products/{product_id}/features/{feature_id} | 
 [**detach_product_from_category**](#detach_product_from_category) | **DELETE** /products/{product_id}/categories/{category_id} | 
 [**detach_product_from_group**](#detach_product_from_group) | **DELETE** /products/{product_id}/groups/{group_id} | 
@@ -514,6 +516,112 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **product_id** | **int**| ID of the product to delete | 
+
+### Return type
+
+void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **detach_actor_from_product**
+> detach_actor_from_product(product_id, actor_id)
+
+
+
+Detach actor from product
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: ApiClientId
+kinow_client.configuration.api_key['X-Client-Id'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Id'] = 'Bearer'
+# Configure API key authorization: ApiClientSecret
+kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Secret'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = kinow_client.ProductsApi()
+product_id = 789 # int | Product ID to fetch
+actor_id = 789 # int | Actor ID to detach
+
+try: 
+    api_instance.detach_actor_from_product(product_id, actor_id)
+except ApiException as e:
+    print("Exception when calling ProductsApi->detach_actor_from_product: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_id** | **int**| Product ID to fetch | 
+ **actor_id** | **int**| Actor ID to detach | 
+
+### Return type
+
+void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **detach_director_from_product**
+> detach_director_from_product(product_id, director_id)
+
+
+
+Detach director from product
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: ApiClientId
+kinow_client.configuration.api_key['X-Client-Id'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Id'] = 'Bearer'
+# Configure API key authorization: ApiClientSecret
+kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Secret'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = kinow_client.ProductsApi()
+product_id = 789 # int | Product ID to fetch
+director_id = 789 # int | Director ID to detach
+
+try: 
+    api_instance.detach_director_from_product(product_id, director_id)
+except ApiException as e:
+    print("Exception when calling ProductsApi->detach_director_from_product: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_id** | **int**| Product ID to fetch | 
+ **director_id** | **int**| Director ID to detach | 
 
 ### Return type
 

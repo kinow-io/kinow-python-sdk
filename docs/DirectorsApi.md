@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**create_director**](#create_director) | **POST** /directors | 
 [**delete_director**](#delete_director) | **DELETE** /directors/{director_id} | 
 [**detach_director_from_category**](#detach_director_from_category) | **DELETE** /categories/{category_id}/directors/{director_id} | 
+[**detach_director_from_product**](#detach_director_from_product) | **DELETE** /products/{product_id}/directors/{director_id} | 
 [**get_category_directors**](#get_category_directors) | **GET** /categories/{category_id}/directors | 
 [**get_director**](#get_director) | **GET** /directors/{director_id} | 
 [**get_director_cover_image**](#get_director_cover_image) | **GET** /directors/{director_id}/cover | 
@@ -270,6 +271,59 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **category_id** | **int**| Category ID to fetch | 
+ **director_id** | **int**| Director ID to detach | 
+
+### Return type
+
+void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **detach_director_from_product**
+> detach_director_from_product(product_id, director_id)
+
+
+
+Detach director from product
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: ApiClientId
+kinow_client.configuration.api_key['X-Client-Id'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Id'] = 'Bearer'
+# Configure API key authorization: ApiClientSecret
+kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Secret'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = kinow_client.DirectorsApi()
+product_id = 789 # int | Product ID to fetch
+director_id = 789 # int | Director ID to detach
+
+try: 
+    api_instance.detach_director_from_product(product_id, director_id)
+except ApiException as e:
+    print("Exception when calling DirectorsApi->detach_director_from_product: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_id** | **int**| Product ID to fetch | 
  **director_id** | **int**| Director ID to detach | 
 
 ### Return type
