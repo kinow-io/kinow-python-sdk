@@ -4,18 +4,18 @@ All URIs are relative to *https://api.kinow.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_category_video_player**](#get_category_video_player) | **GET** /categories/videos/{video_id}/player | 
+[**get_category_player**](#get_category_player) | **GET** /categories/videos/{video_id}/player | 
 [**get_category_video_subtitles**](#get_category_video_subtitles) | **GET** /categories/videos/{video_id}/subtitles | 
 [**get_videos_from_categories**](#get_videos_from_categories) | **GET** /categories/videos | 
 [**get_videos_from_category**](#get_videos_from_category) | **GET** /categories/{category_id}/videos | 
 
 
-## **get_category_video_player**
-> Player get_category_video_player(video_id, customer_id=customer_id, country_id=country_id)
+## **get_category_player**
+> Player get_category_player(video_id, customer_id=customer_id, country_id=country_id, iso_code=iso_code)
 
 
 
-Get video player
+Get category player
 
 ### Example 
 ```python
@@ -39,12 +39,13 @@ api_instance = kinow_client.CategoryVideosApi()
 video_id = 789 # int | Video ID to fetch
 customer_id = 789 # int | Customer ID to fetch (optional)
 country_id = 789 # int | Country ID to use in video analytics (optional)
+iso_code = 'iso_code_example' # str | Define the player UI language. If not providen, fallback on platform default language. (optional)
 
 try: 
-    api_response = api_instance.get_category_video_player(video_id, customer_id=customer_id, country_id=country_id)
+    api_response = api_instance.get_category_player(video_id, customer_id=customer_id, country_id=country_id, iso_code=iso_code)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CategoryVideosApi->get_category_video_player: %s\n" % e)
+    print("Exception when calling CategoryVideosApi->get_category_player: %s\n" % e)
 ```
 
 ### Parameters
@@ -54,6 +55,7 @@ Name | Type | Description  | Notes
  **video_id** | **int**| Video ID to fetch | 
  **customer_id** | **int**| Customer ID to fetch | [optional] 
  **country_id** | **int**| Country ID to use in video analytics | [optional] 
+ **iso_code** | **str**| Define the player UI language. If not providen, fallback on platform default language. | [optional] 
 
 ### Return type
 

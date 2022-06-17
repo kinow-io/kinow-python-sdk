@@ -391,7 +391,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_extract_player**
-> PlayerConfiguration get_extract_player(extract_id, ip_address=ip_address)
+> PlayerConfiguration get_extract_player(extract_id, ip_address=ip_address, iso_code=iso_code)
 
 
 
@@ -418,9 +418,10 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 api_instance = kinow_client.ExtractsApi()
 extract_id = 789 # int | Extract ID to fetch
 ip_address = 'ip_address_example' # str | IP address (optional)
+iso_code = 'iso_code_example' # str | Define the player UI language. If not providen, fallback on platform default language. (optional)
 
 try: 
-    api_response = api_instance.get_extract_player(extract_id, ip_address=ip_address)
+    api_response = api_instance.get_extract_player(extract_id, ip_address=ip_address, iso_code=iso_code)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ExtractsApi->get_extract_player: %s\n" % e)
@@ -432,6 +433,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **extract_id** | **int**| Extract ID to fetch | 
  **ip_address** | **str**| IP address | [optional] 
+ **iso_code** | **str**| Define the player UI language. If not providen, fallback on platform default language. | [optional] 
 
 ### Return type
 
