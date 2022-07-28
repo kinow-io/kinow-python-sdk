@@ -233,7 +233,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_subtitles**
->  get_subtitles(page=page, per_page=per_page)
+> SubtitleListResponse get_subtitles(page=page, per_page=per_page)
 
 
 
@@ -277,7 +277,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[****](#)
+[**SubtitleListResponse**](#SubtitleListResponse)
 
 ### HTTP request headers
 
