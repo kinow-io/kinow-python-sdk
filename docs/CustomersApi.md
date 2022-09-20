@@ -525,7 +525,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **generate_authentication_token**
-> str generate_authentication_token(customer_id)
+> str generate_authentication_token(customer_id, force_client_api_refresh=force_client_api_refresh, force_client_api_access=force_client_api_access)
 
 
 
@@ -551,9 +551,11 @@ kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = kinow_client.CustomersApi()
 customer_id = 789 # int | Customer ID to authenticate
+force_client_api_refresh = true # bool | Return Client API refresh token (optional)
+force_client_api_access = true # bool | Return Client API access token (optional)
 
 try: 
-    api_response = api_instance.generate_authentication_token(customer_id)
+    api_response = api_instance.generate_authentication_token(customer_id, force_client_api_refresh=force_client_api_refresh, force_client_api_access=force_client_api_access)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CustomersApi->generate_authentication_token: %s\n" % e)
@@ -564,6 +566,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customer_id** | **int**| Customer ID to authenticate | 
+ **force_client_api_refresh** | **bool**| Return Client API refresh token | [optional] 
+ **force_client_api_access** | **bool**| Return Client API access token | [optional] 
 
 ### Return type
 

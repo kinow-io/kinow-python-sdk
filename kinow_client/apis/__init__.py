@@ -14,6 +14,7 @@ from .cart_rules_api import CartRulesApi
 from .carts_api import CartsApi
 from .categories_api import CategoriesApi
 from .category_videos_api import CategoryVideosApi
+from .comments_api import CommentsApi
 from .configuration_api import ConfigurationApi
 from .countries_api import CountriesApi
 from .currencies_api import CurrenciesApi
