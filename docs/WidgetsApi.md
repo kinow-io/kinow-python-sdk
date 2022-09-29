@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**get_widget_analytics**](#get_widget_analytics) | **GET** /widgets/analytics | 
 [**get_widget_footer_menu**](#get_widget_footer_menu) | **GET** /widgets/footer-menu | 
 [**get_widget_home_rail**](#get_widget_home_rail) | **GET** /widgets/home-rail | 
+[**get_widget_home_rail_video**](#get_widget_home_rail_video) | **GET** /widgets/home-rail/{homerail_id}/videos | 
 [**get_widget_hook_phrase**](#get_widget_hook_phrase) | **GET** /widgets/hook-phrase | 
 [**get_widget_slider**](#get_widget_slider) | **GET** /widgets/slider | 
 [**get_widget_slider_item**](#get_widget_slider_item) | **GET** /widgets/slider/{slider_id} | 
@@ -211,6 +212,62 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**WidgetHomeRailListResponse**](#WidgetHomeRailListResponse)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_widget_home_rail_video**
+> WidgetHomeRailVideoListResponse get_widget_home_rail_video(homerail_id, page=page, per_page=per_page)
+
+
+
+Get home rails list
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: ApiClientId
+kinow_client.configuration.api_key['X-Client-Id'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Id'] = 'Bearer'
+# Configure API key authorization: ApiClientSecret
+kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Secret'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = kinow_client.WidgetsApi()
+homerail_id = 789 # int | Homerail ID to fetch
+page = 789 # int |  (optional)
+per_page = 789 # int |  (optional)
+
+try: 
+    api_response = api_instance.get_widget_home_rail_video(homerail_id, page=page, per_page=per_page)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WidgetsApi->get_widget_home_rail_video: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **homerail_id** | **int**| Homerail ID to fetch | 
+ **page** | **int**|  | [optional] 
+ **per_page** | **int**|  | [optional] 
+
+### Return type
+
+[**WidgetHomeRailVideoListResponse**](#WidgetHomeRailVideoListResponse)
 
 ### HTTP request headers
 

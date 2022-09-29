@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **type_id** | **int** |  | [optional] 
 **visibility** | **str** |  | [optional] 
 **position** | **int** |  | [optional] 
+**video_focus** | **int** |  | [optional] 
 
 [[Back to Model list]](#documentation-for-models) [[Back to API list]](#documentation-for-api-endpoints)
 
