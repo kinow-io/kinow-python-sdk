@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**attach_product_to_group**](#attach_product_to_group) | **POST** /products/{product_id}/groups | 
 [**attach_video_to_product**](#attach_video_to_product) | **POST** /products/{product_id}/videos | 
 [**create_product**](#create_product) | **POST** /products | 
+[**create_product_comment**](#create_product_comment) | **POST** /products/{product_id}/comments | 
 [**delete_product**](#delete_product) | **DELETE** /products/{product_id} | 
 [**detach_actor_from_product**](#detach_actor_from_product) | **DELETE** /products/{product_id}/actors/{actor_id} | 
 [**detach_director_from_product**](#detach_director_from_product) | **DELETE** /products/{product_id}/directors/{director_id} | 
@@ -31,6 +32,7 @@ Method | HTTP request | Description
 [**get_product_attributes**](#get_product_attributes) | **GET** /products/{product_id}/attributes | 
 [**get_product_availability**](#get_product_availability) | **GET** /products/{product_id}/access | 
 [**get_product_categories**](#get_product_categories) | **GET** /products/{product_id}/categories | 
+[**get_product_comments**](#get_product_comments) | **GET** /products/{product_id}/comments | 
 [**get_product_cover_image**](#get_product_cover_image) | **GET** /products/{product_id}/cover | 
 [**get_product_directors**](#get_product_directors) | **GET** /products/{product_id}/directors | 
 [**get_product_directors_role**](#get_product_directors_role) | **GET** /products/{product_id}/directors-role | 
@@ -469,6 +471,60 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ProductResponse**](#ProductResponse)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **create_product_comment**
+> ProductCommentResponse create_product_comment(product_id, body)
+
+
+
+Create product comment
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: ApiClientId
+kinow_client.configuration.api_key['X-Client-Id'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Id'] = 'Bearer'
+# Configure API key authorization: ApiClientSecret
+kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Secret'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = kinow_client.ProductsApi()
+product_id = 789 # int | Product ID to fetch
+body = kinow_client.CreateCommentRequest() # CreateCommentRequest | Create a comment
+
+try: 
+    api_response = api_instance.create_product_comment(product_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ProductsApi->create_product_comment: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_id** | **int**| Product ID to fetch | 
+ **body** | [**CreateCommentRequest**](#CreateCommentRequest)| Create a comment | 
+
+### Return type
+
+[**ProductCommentResponse**](#ProductCommentResponse)
 
 ### HTTP request headers
 
@@ -1517,6 +1573,58 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CategoryListResponse**](#CategoryListResponse)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_product_comments**
+> ProductCommentListResponse1 get_product_comments(product_id)
+
+
+
+Get product comments
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: ApiClientId
+kinow_client.configuration.api_key['X-Client-Id'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Id'] = 'Bearer'
+# Configure API key authorization: ApiClientSecret
+kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Secret'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = kinow_client.ProductsApi()
+product_id = 789 # int | Product ID to fetch
+
+try: 
+    api_response = api_instance.get_product_comments(product_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ProductsApi->get_product_comments: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_id** | **int**| Product ID to fetch | 
+
+### Return type
+
+[**ProductCommentListResponse1**](#ProductCommentListResponse1)
 
 ### HTTP request headers
 

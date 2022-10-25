@@ -21,6 +21,7 @@ Method | HTTP request | Description
 [**get_customer_bookmarks**](#get_customer_bookmarks) | **GET** /customers/{customer_id}/bookmarks | 
 [**get_customer_can_see_product**](#get_customer_can_see_product) | **GET** /customers/{customer_id}/products/{product_id}/can-see | 
 [**get_customer_carts**](#get_customer_carts) | **GET** /customers/{customer_id}/carts | 
+[**get_customer_comments**](#get_customer_comments) | **GET** /customers/{customer_id}/comments | 
 [**get_customer_current_views**](#get_customer_current_views) | **GET** /customers/{customer_id}/current-views | 
 [**get_customer_groups**](#get_customer_groups) | **GET** /customers/{customer_id}/groups | 
 [**get_customer_has_access_to_product**](#get_customer_has_access_to_product) | **GET** /customers/{customer_id}/products/{product_id}/has-access | 
@@ -965,6 +966,58 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CartListResponse**](#CartListResponse)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_customer_comments**
+> CustomerCommentListResponse1 get_customer_comments(customer_id)
+
+
+
+Get customer comments
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: ApiClientId
+kinow_client.configuration.api_key['X-Client-Id'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Id'] = 'Bearer'
+# Configure API key authorization: ApiClientSecret
+kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Secret'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = kinow_client.CustomersApi()
+customer_id = 789 # int | Customer ID to fetch
+
+try: 
+    api_response = api_instance.get_customer_comments(customer_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CustomersApi->get_customer_comments: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customer_id** | **int**| Customer ID to fetch | 
+
+### Return type
+
+[**CustomerCommentListResponse1**](#CustomerCommentListResponse1)
 
 ### HTTP request headers
 
