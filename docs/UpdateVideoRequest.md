@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **id_media_source** | **int** |  | [optional] 
 **name** | [**list[I18nField]**](#I18nField) |  | [optional] 
 **description** | [**list[I18nField]**](#I18nField) |  | [optional] 
+**description_short** | [**list[I18nField]**](#I18nField) |  | [optional] 
 **duration** | **int** |  | [optional] 
 **filename** | **str** |  | [optional] 
 **position** | **int** |  | [optional] 
