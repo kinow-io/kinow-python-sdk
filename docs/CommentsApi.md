@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **get_comments**
-> CommentListResponse get_comments(page=page, per_page=per_page, filters=filters, sort_by=sort_by, sort_direction=sort_direction)
+> CommentListResponse1 get_comments(page=page, per_page=per_page, filters=filters, sort_by=sort_by, sort_direction=sort_direction)
 
 
 
@@ -168,7 +168,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CommentListResponse**](#CommentListResponse)
+[**CommentListResponse1**](#CommentListResponse1)
 
 ### HTTP request headers
 
