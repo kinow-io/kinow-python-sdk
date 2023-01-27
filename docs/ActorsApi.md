@@ -6,12 +6,14 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**attach_actor_to_category**](#attach_actor_to_category) | **POST** /categories/{category_id}/actors | 
 [**attach_actor_to_product**](#attach_actor_to_product) | **POST** /products/{product_id}/actors | 
+[**attach_features_to_actor**](#attach_features_to_actor) | **POST** /actors/{actor_id}/features | 
 [**create_actor**](#create_actor) | **POST** /actors | 
 [**delete_actor**](#delete_actor) | **DELETE** /actors/{actor_id} | 
 [**detach_actor_from_category**](#detach_actor_from_category) | **DELETE** /categories/{category_id}/actors/{actor_id} | 
 [**detach_actor_from_product**](#detach_actor_from_product) | **DELETE** /products/{product_id}/actors/{actor_id} | 
 [**get_actor**](#get_actor) | **GET** /actors/{actor_id} | 
 [**get_actor_cover_image**](#get_actor_cover_image) | **GET** /actors/{actor_id}/cover | 
+[**get_actor_features**](#get_actor_features) | **GET** /actors/{actor_id}/features | 
 [**get_actor_products**](#get_actor_products) | **GET** /actors/{actor_id}/products | 
 [**get_actor_products_role**](#get_actor_products_role) | **GET** /actors/{actor_id}/products-role | 
 [**get_actors**](#get_actors) | **GET** /actors | 
@@ -116,6 +118,59 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **product_id** | **int**| Product ID to fetch | 
  **actor_id** | **int**| Actor ID to attach | 
+
+### Return type
+
+void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **attach_features_to_actor**
+> attach_features_to_actor(actor_id, features)
+
+
+
+Attach feature to actor
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: ApiClientId
+kinow_client.configuration.api_key['X-Client-Id'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Id'] = 'Bearer'
+# Configure API key authorization: ApiClientSecret
+kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Secret'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = kinow_client.ActorsApi()
+actor_id = 789 # int | 
+features = 'features_example' # str |      To attach existing FeatureValue to actor:     ```     [{     \"id_feature\":3,     \"id_feature_value\":5     }]     ```      To create a custom FeatureValue:     ```     [{     \"id_feature\":3,     \"custom_value\":[{     \"lang\": 1,     \"value\": \"string\"     }]     }]     ```
+
+try: 
+    api_instance.attach_features_to_actor(actor_id, features)
+except ApiException as e:
+    print("Exception when calling ActorsApi->attach_features_to_actor: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **actor_id** | **int**|  | 
+ **features** | **str**|      To attach existing FeatureValue to actor:     &#x60;&#x60;&#x60;     [{     \&quot;id_feature\&quot;:3,     \&quot;id_feature_value\&quot;:5     }]     &#x60;&#x60;&#x60;      To create a custom FeatureValue:     &#x60;&#x60;&#x60;     [{     \&quot;id_feature\&quot;:3,     \&quot;custom_value\&quot;:[{     \&quot;lang\&quot;: 1,     \&quot;value\&quot;: \&quot;string\&quot;     }]     }]     &#x60;&#x60;&#x60; | 
 
 ### Return type
 
@@ -433,6 +488,62 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ImageResponse**](#ImageResponse)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_actor_features**
+> FeatureListResponse get_actor_features(actor_id, page=page, per_page=per_page)
+
+
+
+Get actor features
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: ApiClientId
+kinow_client.configuration.api_key['X-Client-Id'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Id'] = 'Bearer'
+# Configure API key authorization: ApiClientSecret
+kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Secret'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = kinow_client.ActorsApi()
+actor_id = 789 # int | Actor ID to fetch
+page = 789 # int |  (optional)
+per_page = 789 # int |  (optional)
+
+try: 
+    api_response = api_instance.get_actor_features(actor_id, page=page, per_page=per_page)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ActorsApi->get_actor_features: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **actor_id** | **int**| Actor ID to fetch | 
+ **page** | **int**|  | [optional] 
+ **per_page** | **int**|  | [optional] 
+
+### Return type
+
+[**FeatureListResponse**](#FeatureListResponse)
 
 ### HTTP request headers
 

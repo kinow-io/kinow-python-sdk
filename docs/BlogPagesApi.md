@@ -4,12 +4,67 @@ All URIs are relative to *https://api.kinow.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**attach_features_to_blog_page**](#attach_features_to_blog_page) | **POST** /blog-pages/{blog_page_id}/features | 
 [**attach_product_to_blog_page**](#attach_product_to_blog_page) | **POST** /blog-pages/{blog_page_id}/products | 
 [**detach_product_from_blog_page**](#detach_product_from_blog_page) | **DELETE** /blog-pages/{blog_page_id}/products/{product_id} | 
 [**get_blog_page**](#get_blog_page) | **GET** /blog-pages/{blog_page_id} | 
+[**get_blog_page_features**](#get_blog_page_features) | **GET** /blog-pages/{blog_page_id}/features | 
 [**get_blog_page_products**](#get_blog_page_products) | **GET** /blog-pages/{blog_page_id}/products | 
 [**get_blog_pages**](#get_blog_pages) | **GET** /blog-pages | 
 
+
+## **attach_features_to_blog_page**
+> attach_features_to_blog_page(blog_page_id, features)
+
+
+
+Attach feature to blog page
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: ApiClientId
+kinow_client.configuration.api_key['X-Client-Id'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Id'] = 'Bearer'
+# Configure API key authorization: ApiClientSecret
+kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Secret'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = kinow_client.BlogPagesApi()
+blog_page_id = 789 # int | 
+features = 'features_example' # str |      To attach existing FeatureValue to blog page:     ```     [{     \"id_feature\":3,     \"id_feature_value\":5     }]     ```      To create a custom FeatureValue:     ```     [{     \"id_feature\":3,     \"custom_value\":[{     \"lang\": 1,     \"value\": \"string\"     }]     }]     ```
+
+try: 
+    api_instance.attach_features_to_blog_page(blog_page_id, features)
+except ApiException as e:
+    print("Exception when calling BlogPagesApi->attach_features_to_blog_page: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **blog_page_id** | **int**|  | 
+ **features** | **str**|      To attach existing FeatureValue to blog page:     &#x60;&#x60;&#x60;     [{     \&quot;id_feature\&quot;:3,     \&quot;id_feature_value\&quot;:5     }]     &#x60;&#x60;&#x60;      To create a custom FeatureValue:     &#x60;&#x60;&#x60;     [{     \&quot;id_feature\&quot;:3,     \&quot;custom_value\&quot;:[{     \&quot;lang\&quot;: 1,     \&quot;value\&quot;: \&quot;string\&quot;     }]     }]     &#x60;&#x60;&#x60; | 
+
+### Return type
+
+void (empty response body)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
 
 ## **attach_product_to_blog_page**
 > attach_product_to_blog_page(blog_page_id, product_id)
@@ -161,6 +216,62 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**BlogPageResponse**](#BlogPageResponse)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](#documentation-for-api-endpoints) [[Back to Model list]](#documentation-for-models)
+
+## **get_blog_page_features**
+> FeatureListResponse get_blog_page_features(blog_page_id, page=page, per_page=per_page)
+
+
+
+Get blog page features
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import kinow_client
+from kinow_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: ApiClientId
+kinow_client.configuration.api_key['X-Client-Id'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Id'] = 'Bearer'
+# Configure API key authorization: ApiClientSecret
+kinow_client.configuration.api_key['X-Client-Secret'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# kinow_client.configuration.api_key_prefix['X-Client-Secret'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = kinow_client.BlogPagesApi()
+blog_page_id = 789 # int | Blog page ID to fetch
+page = 789 # int |  (optional)
+per_page = 789 # int |  (optional)
+
+try: 
+    api_response = api_instance.get_blog_page_features(blog_page_id, page=page, per_page=per_page)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling BlogPagesApi->get_blog_page_features: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **blog_page_id** | **int**| Blog page ID to fetch | 
+ **page** | **int**|  | [optional] 
+ **per_page** | **int**|  | [optional] 
+
+### Return type
+
+[**FeatureListResponse**](#FeatureListResponse)
 
 ### HTTP request headers
 
