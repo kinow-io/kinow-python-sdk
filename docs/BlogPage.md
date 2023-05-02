@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **date_add** | **str** |  | [optional] 
 **date_issue** | **str** |  | [optional] 
 **date_upd** | **str** |  | [optional] 
-**active** | **int** |  | [optional] 
+**active** | **bool** |  | [optional] 
 **id_blog_category** | **int** |  | [optional] 
 **cover** | **str** |  | [optional] 
 **id** | **int** |  | [optional] 

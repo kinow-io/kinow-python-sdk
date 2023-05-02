@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **position** | **int** |  | [optional] 
-**active** | **int** |  | [optional] 
+**active** | **bool** |  | [optional] 
 **date_add** | **str** |  | [optional] 
 **date_upd** | **str** |  | [optional] 
 **name** | [**list[I18nField]**](#I18nField) |  | [optional] 
